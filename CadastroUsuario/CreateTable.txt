@@ -1,0 +1,6 @@
+Create Table tUsuario(
+usuario varchar(50) not null,
+nome varchar(100) not null,
+cidade varchar(80) not null,
+Primary Key(usuario)
+);
