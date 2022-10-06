@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,7 +53,6 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(17, 16);
@@ -62,7 +63,6 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(17, 45);
@@ -74,7 +74,6 @@
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(17, 76);
@@ -86,31 +85,33 @@
             // 
             // CodAutor
             // 
-            this.CodAutor.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CodAutor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.CodAutor.AutoCompleteCustomSource.AddRange(new string[] {
+            "1",
+            "2",
+            "3"});
+            this.CodAutor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.CodAutor.Location = new System.Drawing.Point(161, 12);
             this.CodAutor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CodAutor.Name = "CodAutor";
-            this.CodAutor.Size = new System.Drawing.Size(426, 23);
+            this.CodAutor.Size = new System.Drawing.Size(45, 23);
             this.CodAutor.TabIndex = 4;
+            this.CodAutor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.CodAutor.TextChanged += new System.EventHandler(this.CodAutor_TextChanged);
             this.CodAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CodAutor_KeyPress);
             // 
             // NomeAutor
             // 
-            this.NomeAutor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NomeAutor.Location = new System.Drawing.Point(161, 43);
             this.NomeAutor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NomeAutor.MaxLength = 50;
             this.NomeAutor.Name = "NomeAutor";
-            this.NomeAutor.Size = new System.Drawing.Size(426, 23);
+            this.NomeAutor.Size = new System.Drawing.Size(250, 23);
             this.NomeAutor.TabIndex = 5;
             this.NomeAutor.TextChanged += new System.EventHandler(this.NomeAutor_TextChanged);
             this.NomeAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NomeAutor_KeyPress);
             // 
             // InfAutor
             // 
-            this.InfAutor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.InfAutor.Location = new System.Drawing.Point(161, 74);
             this.InfAutor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.InfAutor.MaxLength = 1000;
@@ -122,11 +123,11 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDelete.Location = new System.Drawing.Point(393, 118);
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnDelete.Location = new System.Drawing.Point(320, 118);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(105, 32);
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "Excluir";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -135,12 +136,21 @@
             // dataGridView1
             // 
             this.dataGridView1.AccessibleDescription = "NOT NULL";
+            this.dataGridView1.AllowDrop = true;
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.ColumnHeadersHeight = 25;
             this.dataGridView1.Location = new System.Drawing.Point(20, 158);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
@@ -149,6 +159,7 @@
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
+            this.dataGridView1.Layout += new System.Windows.Forms.LayoutEventHandler(this.dataGridView1_Layout);
             // 
             // statusStrip1
             // 
@@ -172,11 +183,11 @@
             // 
             // AddAutor
             // 
-            this.AddAutor.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddAutor.Location = new System.Drawing.Point(265, 117);
+            this.AddAutor.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.AddAutor.Location = new System.Drawing.Point(239, 118);
             this.AddAutor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddAutor.Name = "AddAutor";
-            this.AddAutor.Size = new System.Drawing.Size(105, 32);
+            this.AddAutor.Size = new System.Drawing.Size(75, 23);
             this.AddAutor.TabIndex = 18;
             this.AddAutor.Text = "Adicionar";
             this.AddAutor.UseVisualStyleBackColor = true;
@@ -190,13 +201,13 @@
             // 
             // btnLoadImage
             // 
-            this.btnLoadImage.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnLoadImage.Location = new System.Drawing.Point(599, 118);
+            this.btnLoadImage.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnLoadImage.Location = new System.Drawing.Point(620, 118);
             this.btnLoadImage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLoadImage.Name = "btnLoadImage";
-            this.btnLoadImage.Size = new System.Drawing.Size(117, 32);
+            this.btnLoadImage.Size = new System.Drawing.Size(75, 23);
             this.btnLoadImage.TabIndex = 20;
-            this.btnLoadImage.Text = "Carregar Imagem";
+            this.btnLoadImage.Text = "Inserir Foto ";
             this.btnLoadImage.UseVisualStyleBackColor = true;
             this.btnLoadImage.Click += new System.EventHandler(this.btnLoadImage_Click);
             // 
@@ -207,7 +218,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureBox1.Image = global::Biblioteca_Estágio.Properties.Resources._11;
             this.pictureBox1.Location = new System.Drawing.Point(599, 11);
@@ -221,7 +231,8 @@
             // 
             // CadastroAutor
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(732, 331);
             this.Controls.Add(this.btnLoadImage);
@@ -239,6 +250,7 @@
             this.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MinimumSize = new System.Drawing.Size(748, 370);
             this.Name = "CadastroAutor";
             this.Text = "Cadastro do Autor";
             this.Load += new System.EventHandler(this.Form1_Load);
