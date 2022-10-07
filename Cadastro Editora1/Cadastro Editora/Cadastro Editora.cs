@@ -18,9 +18,6 @@ namespace Cadastro_Editora
         private CadEditora editora = new CadEditora();
 
         
-
-
-
         private void AddEditora_Click(object sender, EventArgs e)
         {
             editora.Código = int.Parse(CodEditora.Text);
@@ -41,7 +38,7 @@ namespace Cadastro_Editora
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT Código, Nome FROM Cadastro_Editora";
+                    string sqlQuery = "SELECT Código, Nome FROM Cadastro_Editora1";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())

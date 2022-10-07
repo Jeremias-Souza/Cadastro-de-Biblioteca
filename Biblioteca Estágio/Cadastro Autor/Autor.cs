@@ -27,7 +27,7 @@ namespace Biblioteca_Estágio
 
             if (autor.Código != autor.Código)
             {
-                var sql = "INSERT INTO Cadastro_autor (Código, Nome, Descrição) VALUES (@Código, @Nome, @Descrição)";
+                var sql = "INSERT INTO CADASTRO (Código, Nome, Descrição) VALUES (@Código, @Nome, @Descrição)";
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
 
@@ -49,7 +49,7 @@ namespace Biblioteca_Estágio
 
             else
             {
-                var sql = "UPDATE Cadastro_autor SET Nome = @Nome, Descrição = @Descrição WHERE Código=" + autor.Código;
+                var sql = "UPDATE CADASTRO SET Nome = @Nome, Descrição = @Descrição WHERE Código=" + autor.Código;
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
 
@@ -70,12 +70,40 @@ namespace Biblioteca_Estágio
                 }
 
             }
-                      
+
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+                {
+                    cn.Open();
+
+                    string sqlQuery = "CADASTRO Código, Nome, Descrição FROM CADASTRO";
+                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            da.Fill(dt);
+                            //dataGridView1.DataSource = dt;
+                        }
+                    }
+                }
+               // toolStripStatusLabel1.Text = "Finalizado com sucesso";
+               // statusStrip1.Refresh();
+
+            }
+            catch (Exception ex)
+            {
+               // toolStripStatusLabel1.Text = "Falha!";
+               // statusStrip1.Refresh();
+                MessageBox.Show("Falha! \n" + ex.Message);
+
+            }
+
         }
 
 
 
-        /*public static bool EditAutor(Autor autor)
+        public static bool EditAutor(Autor autor)
         {
             bool res;
             SqlDataAdapter da = null;
@@ -98,7 +126,7 @@ namespace Biblioteca_Estágio
             }
 
             return res;
-        }*/
+        }
 
 
 

@@ -137,7 +137,6 @@
             // 
             this.dataGridView1.AccessibleDescription = "NOT NULL";
             this.dataGridView1.AllowDrop = true;
-            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.NullValue = null;
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;

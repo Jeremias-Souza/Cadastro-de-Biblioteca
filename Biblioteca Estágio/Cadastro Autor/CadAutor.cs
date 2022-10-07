@@ -61,7 +61,7 @@ namespace Biblioteca_Estágio
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT Código, Nome, Descrição FROM Cadastro_Autor";
+                    string sqlQuery = "SELECT Código, Nome, Descrição FROM CADASTRO";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -86,7 +86,7 @@ namespace Biblioteca_Estágio
 
         }
 
-        /*public void Salvar(Autor autor)
+        public void Salvar(Autor autor)
         {
 
 
@@ -134,20 +134,36 @@ namespace Biblioteca_Estágio
                 }
 
             }
-        }*/
+        }
 
         private void AddAutor_Click(object sender, EventArgs e) //Botao para adicionar o autor 
-        {               
-
+        {
+                autor.Salvar(autor);
                 autor.Código = int.Parse(CodAutor.Text); 
                 autor.Nome = NomeAutor.Text;
                 autor.Descrição = InfAutor.Text;
                 //autor.CaminhoFoto = caminhoFoto;                                   
           
 
-                autor.Salvar(autor);
+                
 
-                MessageBox.Show("Cadastro feito com sucesso!"); //Aviso casa seja feito com exito
+            using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+            {
+                cn.Open();
+
+                string sqlQuery = "SELECT Código, Nome, Descrição FROM CADASTRO";
+                using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
+                {
+                    using (DataTable dt = new DataTable())
+                    {
+                        da.Fill(dt);
+                        dataGridView1.DataSource = dt;
+                    }
+                }
+            }
+
+
+            MessageBox.Show("Cadastro feito com sucesso!"); //Aviso casa seja feito com exito
                 ClearTextBoxes();
 
                 toolStripStatusLabel1.Text = "Pronto";
@@ -161,7 +177,7 @@ namespace Biblioteca_Estágio
             toolStripStatusLabel1.Text = "Conectando, aguarde";
             statusStrip1.Refresh();
 
-            if (MessageBox.Show("Deseja realmente DELETAR o autor? ", "Cadastro autor", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show("Deseja realmente DELETAR o autor? ", "Cadastro_autor", MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 return;
             }
@@ -174,7 +190,7 @@ namespace Biblioteca_Estágio
 
 
 
-                    var sqlQuery = "DELETE Cadastro_autor Where Código = '" + CodAutor.Text + "'" + "SELECT Código, Nome, Descrição FROM Cadastro_Autor";  //Deleta o autor pelo código digitado na caixa de código
+                    var sqlQuery = "DELETE CADASTRO Where Código = '" + CodAutor.Text + "'" + "SELECT Código, Nome, Descrição FROM Cadastro_Autor";  //Deleta o autor pelo código digitado na caixa de código
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -207,7 +223,7 @@ namespace Biblioteca_Estágio
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT Código, Nome, Descrição FROM Cadastro_Autor";
+                    string sqlQuery = "SELECT Código, Nome, Descrição FROM CADASTRO";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -281,9 +297,9 @@ namespace Biblioteca_Estágio
             indexRow = e.RowIndex;
             DataGridViewRow row = dataGridView1.Rows[indexRow];
 
-            CodAutor.Text = row.Cells[0].Value.ToString();
-            NomeAutor.Text = row.Cells[1].Value.ToString();
-            InfAutor.Text = row.Cells[2].Value.ToString();        
+            CodAutor.Text = $"{row.Cells[0].Value}";
+            NomeAutor.Text = $"{row.Cells[1].Value}";
+            InfAutor.Text = $"{row.Cells[2].Value}";        
         }
 
        
