@@ -55,6 +55,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Editora.resx">
+      <DependentUpon>Editora.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu Principal.resx">
       <DependentUpon>Menu Principal.cs</DependentUpon>
     </EmbeddedResource>

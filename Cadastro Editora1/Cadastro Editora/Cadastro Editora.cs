@@ -17,7 +17,7 @@ namespace Cadastro_Editora
     {
         private CadEditora editora = new CadEditora();
 
-        
+
         private void AddEditora_Click(object sender, EventArgs e)
         {
             editora.Código = int.Parse(CodEditora.Text);

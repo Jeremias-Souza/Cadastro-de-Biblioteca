@@ -11,10 +11,10 @@ namespace Biblioteca_Estágio
 {
     internal class Conn
     {
-        private static string server = @"DESKTOP-LMGKQ6A\TREINAMENTO";
-        private static string dataBase = "CADASTRO_EDITORA";
-        private static string user = "Jeremias Souza";
-        private static string password = "MOVTECH2022";
+        private static string server = @"DESKTOP-JTN552H\SQLEXPRESS";
+        private static string dataBase = "Cadastro_Editora";
+        private static string user = "sa";
+        private static string password = "05092002";
         
 
         public static string Strcon
