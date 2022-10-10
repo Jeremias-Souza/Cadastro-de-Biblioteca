@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,14 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cadastro_Editora
+namespace Cadastro_Item_Acervo
 {
-    
-    public partial class CadEditora : Form
+    public partial class CadAcervo : Form
     {
         public int indexRow { get; private set; }
 
-        public CadEditora()
+        public CadAcervo()
         {
             InitializeComponent();
 
@@ -27,7 +25,7 @@ namespace Cadastro_Editora
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT CodEditora, Nome FROM MvtBibEditoraa";
+                    string sqlQuery = "SELECT codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma FROM MvtBibItemAcervo";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -37,29 +35,39 @@ namespace Cadastro_Editora
                         }
                     }
                 }
-                
+
 
             }
             catch (Exception ex)
-            {                
+            {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
 
             this.formatColumns();
         }
 
-        
-
-        private void saveEditora_Click(object sender, EventArgs e)
+        private void saveAcervo_Click(object sender, EventArgs e)
         {
-            var editora = new Editora()
+            var acervo = new Acervo()
             {
-                nome = this.nomeEditora.Text,
-                //codEditora = int.Parse(this.codeEditora.Text)
+                codLocal = this.codLocal.Text,
+                nome = this.nomeAcervo.Text,
+               // codLocal = this.codLocal.Text,
+                nomeLocal = this.nomeLocal.Text,
+                nomeAutor = this.nomeAutor.Text,
+                nomeEditora = this.nomeEditora.Text,
+                // = this.nomeColecao.Text,
+                numExemplar = this.numeroExemplar.Text,
+                volume = this.volume.Text,
+                anoEdicao = this.anoEdicao.Text,
+                localizacao = this.localizacao.Text, 
+                secao = this.secao.Text,
+                idioma = this.idioma.Text,
+                
             };
 
-            editora.Salvar();
-            
+            acervo.Salvar();
+
 
             MessageBox.Show("Cadastro feito com sucesso!");
 
@@ -69,7 +77,7 @@ namespace Cadastro_Editora
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT CodEditora, Nome FROM MvtBibEditoraa";
+                    string sqlQuery = "SELECT CodItem, Nome FROM MvtBibItemAcervo";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -93,9 +101,9 @@ namespace Cadastro_Editora
             }
         }
 
-        private void deleteEditora_Click(object sender, EventArgs e)
+        private void deleteAcervo_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente DELETAR a Editora? ", "Cadastro Editora", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show("Deseja realmente DELETAR o Item do Acervo? ", "Cadastro Item do Acervo", MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 return;
             }
@@ -108,7 +116,7 @@ namespace Cadastro_Editora
 
 
 
-                    var sqlQuery = "DELETE MvtBibEditoraa Where codEditora = '" + codeEditora.Text + "'" + "SELECT codEditora, nome FROM MvtBibEditoraa";  
+                    var sqlQuery = "DELETE MvtBibItemAcervo Where codItem = '" + codItem.Text + "'" + "SELECT codItem, codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -128,36 +136,11 @@ namespace Cadastro_Editora
             }
             catch (Exception ex) //Mostra mensagem caso haver falha 
             {
-              
+
                 MessageBox.Show("Falha! \n" + ex.Message);
 
             }
         }
-
-        /*public static bool existeEditora(Editora editora)
-        {
-            bool res;
-            SqlDataAdapter da = null;
-            DataTable dt = new DataTable();
-
-            using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-            {
-                cn.Open();
-                string sqlQuery = "Select nome FROM MvtBibEditoraa WHERE nome='" + editora.nome + "'";
-                da = new SqlDataAdapter(sqlQuery, cn);
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    res = true;
-                }
-                else
-                {
-                    res = false;
-                }
-            }
-
-            return res;
-        }*/
 
         private void formatColumns()
         {
@@ -168,16 +151,6 @@ namespace Cadastro_Editora
             //Nome editora
             this.dataGridView1.Columns[1]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            indexRow = e.RowIndex;
-            DataGridViewRow row = dataGridView1.Rows[indexRow];
-
-            codeEditora.Text = $"{row.Cells[0].Value}";
-            nomeEditora.Text = $"{row.Cells[1].Value}";
-            
         }
 
         private void ClearTextBoxes() //Função para limpar formularios depois de salvar
@@ -199,9 +172,13 @@ namespace Cadastro_Editora
             func(Controls);
         }
 
-        private void nomeEditora_TextChanged(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            indexRow = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[indexRow];
+
+            codItem.Text = $"{row.Cells[0].Value}";
+            codLocal.Text = $"{row.Cells[1].Value}";
         }
     }
 }

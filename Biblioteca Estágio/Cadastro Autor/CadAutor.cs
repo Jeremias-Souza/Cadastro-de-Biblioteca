@@ -78,6 +78,7 @@ namespace Biblioteca_Estágio
                 MessageBox.Show("Falha! \n" + ex.Message);
 
             }
+            this.formatColumns();
 
 
         }
@@ -87,54 +88,44 @@ namespace Biblioteca_Estágio
        
         private void AddAutor_Click(object sender, EventArgs e) //Botao para adicionar o autor 
         {
-            
+            var autor = new Autor()
+            {
+                //Código = int.Parse(this.CodAutor.Text)
+                Nome = this.NomeAutor.Text,
+                Descrição = this.InfAutor.Text,
+                
+            };
+
             autor.Salvar(autor);
-            autor.Código = int.Parse(CodAutor.Text); 
-            autor.Nome = NomeAutor.Text;
-            autor.Descrição = InfAutor.Text;
 
-            var sql = "INSERT INTO MvtBibAutor (Código, Nome, Descrição) VALUES (@Código, @Nome, @Descrição)";
-            using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+
+            MessageBox.Show("Cadastro feito com sucesso!");
+
+            try
             {
-
-                cn.Open();
-                using (var cmd = new SqlCommand(sql, cn))
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
+                    cn.Open();
 
-                    cmd.Parameters.AddWithValue("@Código", autor.Código);
-                    cmd.Parameters.AddWithValue("@Nome", autor.Nome);
-                    cmd.Parameters.AddWithValue("@Descrição", autor.Descrição);
-                    //cmd.Parameters.Add("@foto", System.Data.SqlDbType.Image, foto.Length).Value = foto;
-
-                    cmd.ExecuteNonQuery();
-                }
-                cn.Close();
-            }
-
-
-
-
-            using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-            {
-                cn.Open();
-
-                string sqlQuery = "SELECT Código, Nome, Descrição FROM MvtBibAutor";
-                using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
-                {
-                    using (DataTable dt = new DataTable())
+                    string sqlQuery = "SELECT Código, Nome, Descrição FROM MvtBibAutor";
+                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
-                        da.Fill(dt);
-                        dataGridView1.DataSource = dt;
+                        using (DataTable dt = new DataTable())
+                        {
+                            da.Fill(dt);
+                            dataGridView1.DataSource = dt;
+                        }
                     }
+                    ClearTextBoxes();
                 }
+
+
             }
 
-
-            MessageBox.Show("Cadastro feito com sucesso!"); //Aviso casa seja feito com exito
-                ClearTextBoxes();
-
-                toolStripStatusLabel1.Text = "Pronto";
-                statusStrip1.Refresh();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha! \n" + ex.Message);
+            }
 
         }
 
@@ -157,7 +148,7 @@ namespace Biblioteca_Estágio
 
 
 
-                    var sqlQuery = "DELETE MvtBibAutor Where Código = '" + CodAutor.Text + "'" + "SELECT Código, Nome, Descrição FROM Cadastro_Autor";  //Deleta o autor pelo código digitado na caixa de código
+                    var sqlQuery = "DELETE MvtBibAutor Where Código = '" + CodAutor.Text + "'" + "SELECT Código, Nome, Descrição FROM MvtBibAutor";  //Deleta o autor pelo código digitado na caixa de código
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -166,6 +157,7 @@ namespace Biblioteca_Estágio
                             dataGridView1.DataSource = dt;
                         }
                     }
+                    ClearTextBoxes();
 
                 }
 
@@ -215,6 +207,7 @@ namespace Biblioteca_Estágio
             
         }
 
+       
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)//Caixa aonde ocorre as atualizações de processos
         {
@@ -261,12 +254,7 @@ namespace Biblioteca_Estágio
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e) //Fazer upload nas caixas de texto quando na tabela for apertado duas vezes
         {
-            indexRow = e.RowIndex;
-            DataGridViewRow row = dataGridView1.Rows[indexRow];
-
-            CodAutor.Text = $"{row.Cells[0].Value}";
-            NomeAutor.Text = $"{row.Cells[1].Value}";
-            InfAutor.Text = $"{row.Cells[2].Value}";        
+                   
         }
 
        
@@ -278,7 +266,6 @@ namespace Biblioteca_Estágio
             {
                 e.Handled = true;
                 e = null;
-
             }
 
         }
@@ -313,17 +300,7 @@ namespace Biblioteca_Estágio
         {           
         }
 
-        private string GeraSequencia(int length)
-        {
-            Random rnd = new Random();
-            string numero = "";
-
-            for (int i = 0; i < length; i++)
-            {
-                numero += rnd.Next(0, 55);
-            }
-            return numero.Substring(0, length);
-        }
+        
 
         private void CodAutor_TextChanged(object sender, EventArgs e) //Caixa de texto código do autor
         {
@@ -346,13 +323,33 @@ namespace Biblioteca_Estágio
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            indexRow = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[indexRow];
+
+            CodAutor.Text = $"{row.Cells[0].Value}";
+            NomeAutor.Text = $"{row.Cells[1].Value}";
+            InfAutor.Text = $"{row.Cells[2].Value}";
         }
 
-        
+        private void formatColumns()
+        {
+            //Cód autor
+            this.dataGridView1.Columns[0]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            //Nome autor
+            this.dataGridView1.Columns[1]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            //Descrição autor
+            this.dataGridView1.Columns[2]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+        }
 
 
-            private void label3_Click(object sender, EventArgs e)
+
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

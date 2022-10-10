@@ -12,17 +12,15 @@ namespace Biblioteca_Estágio
 {
     public class Autor
     {
-        public int Código { get; set; }
+        //public int Código { get; set; }
         public string Nome { get; set; }
         public string Descrição { get; set; }
-        public string CaminhoFoto { get; set; }
-        public byte[] Foto { get; set; }
-        public object dataGridView1 { get; private set; }
+        
 
         public void Salvar(Autor autor)
         {
 
-            var sql = "INSERT INTO MvtBibAutor (Código, Nome, Descrição) VALUES (@Código, @Nome, @Descrição)";
+            var sql = "INSERT INTO MvtBibAutor (Nome, Descrição) VALUES (@Nome, @Descrição)";
             using (SqlConnection cn = new SqlConnection(Conn.Strcon))
             {
 
@@ -31,7 +29,7 @@ namespace Biblioteca_Estágio
                 {
 
 
-                    cmd.Parameters.AddWithValue("@Código", autor.Código);
+                    //cmd.Parameters.AddWithValue("@Código", autor.Código);
                     cmd.Parameters.AddWithValue("@Nome", autor.Nome);
                     cmd.Parameters.AddWithValue("@Descrição", autor.Descrição);
                     

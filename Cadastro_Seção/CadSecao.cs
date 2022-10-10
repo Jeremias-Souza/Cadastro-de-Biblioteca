@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,14 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cadastro_Editora
+namespace Cadastro_Seção
 {
-    
-    public partial class CadEditora : Form
+    public partial class CadSecao : Form
     {
         public int indexRow { get; private set; }
 
-        public CadEditora()
+        public CadSecao()
         {
             InitializeComponent();
 
@@ -27,7 +25,7 @@ namespace Cadastro_Editora
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT CodEditora, Nome FROM MvtBibEditoraa";
+                    string sqlQuery = "SELECT CodSecao, descricaoSecao FROM MvtBibSecao";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -37,29 +35,25 @@ namespace Cadastro_Editora
                         }
                     }
                 }
-                
+
 
             }
             catch (Exception ex)
-            {                
+            {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
 
             this.formatColumns();
         }
 
-        
-
-        private void saveEditora_Click(object sender, EventArgs e)
+        private void saveSecao_Click(object sender, EventArgs e)
         {
-            var editora = new Editora()
+            var secao = new Seção()
             {
-                nome = this.nomeEditora.Text,
-                //codEditora = int.Parse(this.codeEditora.Text)
+                descricaoSecao = this.descricaoSecao.Text,
             };
 
-            editora.Salvar();
-            
+            secao.Salvar();
 
             MessageBox.Show("Cadastro feito com sucesso!");
 
@@ -69,7 +63,7 @@ namespace Cadastro_Editora
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT CodEditora, Nome FROM MvtBibEditoraa";
+                    string sqlQuery = "SELECT codSecao, descricaoSecao FROM MvtBibSecao";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -93,9 +87,9 @@ namespace Cadastro_Editora
             }
         }
 
-        private void deleteEditora_Click(object sender, EventArgs e)
+        private void deleteSecao_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente DELETAR a Editora? ", "Cadastro Editora", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show("Deseja realmente DELETAR a Seção? ", "Cadastro Seção", MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 return;
             }
@@ -108,7 +102,7 @@ namespace Cadastro_Editora
 
 
 
-                    var sqlQuery = "DELETE MvtBibEditoraa Where codEditora = '" + codeEditora.Text + "'" + "SELECT codEditora, nome FROM MvtBibEditoraa";  
+                    var sqlQuery = "DELETE MvtBibSecao Where codSecao = '" + codSecao.Text + "'" + "SELECT codSecao, descricaoSecao FROM MvtBibSecao";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -128,56 +122,21 @@ namespace Cadastro_Editora
             }
             catch (Exception ex) //Mostra mensagem caso haver falha 
             {
-              
+
                 MessageBox.Show("Falha! \n" + ex.Message);
 
             }
         }
 
-        /*public static bool existeEditora(Editora editora)
-        {
-            bool res;
-            SqlDataAdapter da = null;
-            DataTable dt = new DataTable();
-
-            using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-            {
-                cn.Open();
-                string sqlQuery = "Select nome FROM MvtBibEditoraa WHERE nome='" + editora.nome + "'";
-                da = new SqlDataAdapter(sqlQuery, cn);
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    res = true;
-                }
-                else
-                {
-                    res = false;
-                }
-            }
-
-            return res;
-        }*/
-
         private void formatColumns()
         {
-            //Cód editora
-            this.dataGridView1.Columns[0]
-                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //Cód secao
+            this.dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            //Nome editora
-            this.dataGridView1.Columns[1]
-                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-        }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            indexRow = e.RowIndex;
-            DataGridViewRow row = dataGridView1.Rows[indexRow];
+            //Descricao da secao
+            this.dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            codeEditora.Text = $"{row.Cells[0].Value}";
-            nomeEditora.Text = $"{row.Cells[1].Value}";
-            
         }
 
         private void ClearTextBoxes() //Função para limpar formularios depois de salvar
@@ -199,9 +158,13 @@ namespace Cadastro_Editora
             func(Controls);
         }
 
-        private void nomeEditora_TextChanged(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            indexRow = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[indexRow];
+
+            codSecao.Text = $"{row.Cells[0].Value}";
+            descricaoSecao.Text = $"{row.Cells[1].Value}";
         }
     }
 }

@@ -14,27 +14,27 @@ namespace Cadastro_Editora
         public int codEditora { get; set; }
         public string nome { get; set; }
 
-        public void Salvar ()
-        {
-            var sql = "INSERT INTO MvtBibEditoraa (nome) VALUES (@nome)";
-            using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-            {
-                cn.Open();
-                using (var cmd = new SqlCommand(sql, cn))
-                {
-                  
-                    cmd.Parameters.AddWithValue("@nome", this.nome);
+         public void Salvar ()
+         {
+             var sql = "INSERT INTO MvtBibEditoraa (nome) VALUES (@nome)";
+             using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+             {
+                 cn.Open();
+                 using (var cmd = new SqlCommand(sql, cn))
+                 {
 
-                    cmd.ExecuteNonQuery();
-                }
-                cn.Close();
-            }
+                     cmd.Parameters.AddWithValue("@nome", this.nome);
 
-           
-        }
+                     cmd.ExecuteNonQuery();
+                 }
+                 cn.Close();
+             }
 
-        
+
+         }
+
+       
     }
 
-   
+
 }

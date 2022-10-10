@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F4D57849-B9F7-42C3-8237-98266EC324B0}</ProjectGuid>
+    <ProjectGuid>{6A839ED5-4CC8-48E3-8832-9D99A4BD3E39}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Cadastro_Editora</RootNamespace>
-    <AssemblyName>Cadastro_Editora</AssemblyName>
+    <RootNamespace>Cadastro_Item_Acervo</RootNamespace>
+    <AssemblyName>Cadastro_Item_Acervo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,18 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CadEditora.cs">
+    <Compile Include="Acervo.cs" />
+    <Compile Include="CadAcervo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadEditora.Designer.cs">
-      <DependentUpon>CadEditora.cs</DependentUpon>
+    <Compile Include="CadAcervo.Designer.cs">
+      <DependentUpon>CadAcervo.cs</DependentUpon>
     </Compile>
     <Compile Include="Conn.cs" />
-    <Compile Include="Editora.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CadEditora.resx">
-      <DependentUpon>CadEditora.cs</DependentUpon>
+    <EmbeddedResource Include="CadAcervo.resx">
+      <DependentUpon>CadAcervo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

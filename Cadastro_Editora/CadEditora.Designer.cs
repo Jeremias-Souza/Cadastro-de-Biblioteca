@@ -72,6 +72,7 @@
             this.nomeEditora.Name = "nomeEditora";
             this.nomeEditora.Size = new System.Drawing.Size(156, 20);
             this.nomeEditora.TabIndex = 3;
+            this.nomeEditora.TextChanged += new System.EventHandler(this.nomeEditora_TextChanged);
             // 
             // dataGridView1
             // 

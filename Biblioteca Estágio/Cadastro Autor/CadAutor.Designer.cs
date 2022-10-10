@@ -90,6 +90,7 @@
             "2",
             "3"});
             this.CodAutor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.CodAutor.Enabled = false;
             this.CodAutor.Location = new System.Drawing.Point(161, 12);
             this.CodAutor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CodAutor.Name = "CodAutor";
