@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace Biblioteca_Estágio
 {
     public class Autor
-    {       
+    {
         public int Código { get; set; }
         public string Nome { get; set; }
         public string Descrição { get; set; }
@@ -21,89 +21,85 @@ namespace Biblioteca_Estágio
 
         public void Salvar(Autor autor)
         {
-             
 
-            //byte[] foto = GetFoto(autor.CaminhoFoto);
-
-            if (autor.Código != autor.Código)
+            var sql = "INSERT INTO MvtBibAutor (Código, Nome, Descrição) VALUES (@Código, @Nome, @Descrição)";
+            using (SqlConnection cn = new SqlConnection(Conn.Strcon))
             {
-                var sql = "INSERT INTO CADASTRO (Código, Nome, Descrição) VALUES (@Código, @Nome, @Descrição)";
-                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-                {
 
-                    cn.Open();
-                    using (var cmd = new SqlCommand(sql, cn))
-                    {
-                        
-
-                        cmd.Parameters.AddWithValue("@Código", autor.Código);
-                        cmd.Parameters.AddWithValue("@Nome", autor.Nome);
-                        cmd.Parameters.AddWithValue("@Descrição", autor.Descrição);
-                        //cmd.Parameters.Add("@foto", System.Data.SqlDbType.Image, foto.Length).Value = foto;
-
-                        cmd.ExecuteNonQuery();                      
-                    }
-                    cn.Close();
-                }
-            }
-
-            else
-            {
-                var sql = "UPDATE CADASTRO SET Nome = @Nome, Descrição = @Descrição WHERE Código=" + autor.Código;
-                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+                cn.Open();
+                using (var cmd = new SqlCommand(sql, cn))
                 {
 
 
-                    cn.Open();
-                    using (var cmd = new SqlCommand(sql, cn))
-                    {
-                        cmd.Parameters.AddWithValue("@Nome", autor.Nome);
-                        cmd.Parameters.AddWithValue("@Descrição", autor.Descrição);
-                        //cmd.Parameters.Add("@foto", System.Data.SqlDbType.Image, foto.Length).Value = foto;
+                    cmd.Parameters.AddWithValue("@Código", autor.Código);
+                    cmd.Parameters.AddWithValue("@Nome", autor.Nome);
+                    cmd.Parameters.AddWithValue("@Descrição", autor.Descrição);
+                    
 
-                        //autor.CaminhoFoto = caminhoFoto;
-
-
-                        cmd.ExecuteNonQuery();
-                    }
-                    cn.Close();
+                    cmd.ExecuteNonQuery();
                 }
-
+                cn.Close();
             }
+        }
 
-            try
+
+        /*else
+        {
+            var sql = "UPDATE MvtBibAutor SET Nome = @Nome, Descrição = @Descrição WHERE Código=" + autor.Código;
+            using (SqlConnection cn = new SqlConnection(Conn.Strcon))
             {
-                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+
+
+                cn.Open();
+                using (var cmd = new SqlCommand(sql, cn))
                 {
-                    cn.Open();
+                    cmd.Parameters.AddWithValue("@Nome", autor.Nome);
+                    cmd.Parameters.AddWithValue("@Descrição", autor.Descrição);
+                    //cmd.Parameters.Add("@foto", System.Data.SqlDbType.Image, foto.Length).Value = foto;
 
-                    string sqlQuery = "CADASTRO Código, Nome, Descrição FROM CADASTRO";
-                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
-                    {
-                        using (DataTable dt = new DataTable())
-                        {
-                            da.Fill(dt);
-                            //dataGridView1.DataSource = dt;
-                        }
-                    }
+                    //autor.CaminhoFoto = caminhoFoto;
+
+
+                    cmd.ExecuteNonQuery();
                 }
-               // toolStripStatusLabel1.Text = "Finalizado com sucesso";
-               // statusStrip1.Refresh();
-
-            }
-            catch (Exception ex)
-            {
-               // toolStripStatusLabel1.Text = "Falha!";
-               // statusStrip1.Refresh();
-                MessageBox.Show("Falha! \n" + ex.Message);
-
+                cn.Close();
             }
 
         }
 
+        try
+        {
+            using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+            {
+                cn.Open();
+
+                string sqlQuery = "SELECT Código, Nome, Descrição FROM MvtBibAutor";
+                using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
+                {
+                    using (DataTable dt = new DataTable())
+                    {
+                        da.Fill(dt);
+                        //dataGridView1.DataSource = dt;
+                    }
+                }
+            }
+           // toolStripStatusLabel1.Text = "Finalizado com sucesso";
+           // statusStrip1.Refresh();
+
+        }
+        catch (Exception ex)
+        {
+           // toolStripStatusLabel1.Text = "Falha!";
+           // statusStrip1.Refresh();
+            MessageBox.Show("Falha! \n" + ex.Message);
+
+        }
+
+     }*/
 
 
-        public static bool EditAutor(Autor autor)
+
+        /*public static bool EditAutor(Autor autor)
         {
             bool res;
             SqlDataAdapter da = null;
@@ -112,7 +108,7 @@ namespace Biblioteca_Estágio
             using (SqlConnection cn = new SqlConnection(Conn.Strcon))
             {
                 cn.Open();
-                string sqlQuery = "Select Código FROM Cadastro_autor WHERE Código='" + autor.Código + "'";
+                string sqlQuery = "Select Código FROM MvtBibAutor WHERE Código='" + autor.Código + "'";
                 da = new SqlDataAdapter(sqlQuery, cn);
                 da.Fill(dt);
                 if (dt.Rows.Count > 0)
@@ -126,7 +122,7 @@ namespace Biblioteca_Estágio
             }
 
             return res;
-        }
+        }*/
 
 
 
@@ -149,5 +145,5 @@ namespace Biblioteca_Estágio
                 return foto;
             
         }*/
-    }
+    } 
 }

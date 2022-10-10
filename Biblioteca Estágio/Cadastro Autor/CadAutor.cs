@@ -44,13 +44,9 @@ namespace Biblioteca_Estágio
     {
         
         int indexRow;
-        public string caminhoFoto = "";
-        private Autor autor = new Autor();
-        
-
-        
-
-
+        // public string caminhoFoto = "";
+        // private Autor autor = new Autor();
+       
         public CadastroAutor()
         {
             InitializeComponent();
@@ -61,7 +57,7 @@ namespace Biblioteca_Estágio
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT Código, Nome, Descrição FROM CADASTRO";
+                    string sqlQuery = "SELECT Código, Nome, Descrição FROM MvtBibAutor";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -86,72 +82,43 @@ namespace Biblioteca_Estágio
 
         }
 
-        public void Salvar(Autor autor)
-        {
+         
 
-
-            //byte[] foto = GetFoto(autor.CaminhoFoto);
-
-            if (autor.Código != autor.Código)
-            {
-                var sql = "INSERT INTO Cadastro_autor (Código, Nome, Descrição) VALUES (@Código, @Nome, @Descrição)";
-                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-                {
-
-                    cn.Open();
-                    using (var cmd = new SqlCommand(sql, cn))
-                    {
-
-                        cmd.Parameters.AddWithValue("@Código", autor.Código);
-                        cmd.Parameters.AddWithValue("@Nome", autor.Nome);
-                        cmd.Parameters.AddWithValue("@Descrição", autor.Descrição);
-                        //cmd.Parameters.Add("@foto", System.Data.SqlDbType.Image, foto.Length).Value = foto;
-
-                        cmd.ExecuteNonQuery();
-                    }
-                    cn.Close();
-                }
-            }
-
-            else
-            {
-                var sql = "UPDATE Cadastro_autor SET Nome = @Nome, Descrição = @Descrição WHERE Código=" + autor.Código;
-                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-                {
-                    cn.Open();
-                    using (var cmd = new SqlCommand(sql, cn))
-                    {
-                        cmd.Parameters.AddWithValue("@Nome", autor.Nome);
-                        cmd.Parameters.AddWithValue("@Descrição", autor.Descrição);
-                        //cmd.Parameters.Add("@foto", System.Data.SqlDbType.Image, foto.Length).Value = foto;
-
-                        //autor.CaminhoFoto = caminhoFoto;
-
-
-                        cmd.ExecuteNonQuery();
-                    }
-                    cn.Close();
-                }
-
-            }
-        }
-
+       
         private void AddAutor_Click(object sender, EventArgs e) //Botao para adicionar o autor 
         {
-                autor.Salvar(autor);
-                autor.Código = int.Parse(CodAutor.Text); 
-                autor.Nome = NomeAutor.Text;
-                autor.Descrição = InfAutor.Text;
-                //autor.CaminhoFoto = caminhoFoto;                                   
-          
+            
+            autor.Salvar(autor);
+            autor.Código = int.Parse(CodAutor.Text); 
+            autor.Nome = NomeAutor.Text;
+            autor.Descrição = InfAutor.Text;
 
-                
+            var sql = "INSERT INTO MvtBibAutor (Código, Nome, Descrição) VALUES (@Código, @Nome, @Descrição)";
+            using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+            {
+
+                cn.Open();
+                using (var cmd = new SqlCommand(sql, cn))
+                {
+
+                    cmd.Parameters.AddWithValue("@Código", autor.Código);
+                    cmd.Parameters.AddWithValue("@Nome", autor.Nome);
+                    cmd.Parameters.AddWithValue("@Descrição", autor.Descrição);
+                    //cmd.Parameters.Add("@foto", System.Data.SqlDbType.Image, foto.Length).Value = foto;
+
+                    cmd.ExecuteNonQuery();
+                }
+                cn.Close();
+            }
+
+
+
 
             using (SqlConnection cn = new SqlConnection(Conn.Strcon))
             {
                 cn.Open();
 
-                string sqlQuery = "SELECT Código, Nome, Descrição FROM CADASTRO";
+                string sqlQuery = "SELECT Código, Nome, Descrição FROM MvtBibAutor";
                 using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                 {
                     using (DataTable dt = new DataTable())
@@ -190,7 +157,7 @@ namespace Biblioteca_Estágio
 
 
 
-                    var sqlQuery = "DELETE CADASTRO Where Código = '" + CodAutor.Text + "'" + "SELECT Código, Nome, Descrição FROM Cadastro_Autor";  //Deleta o autor pelo código digitado na caixa de código
+                    var sqlQuery = "DELETE MvtBibAutor Where Código = '" + CodAutor.Text + "'" + "SELECT Código, Nome, Descrição FROM Cadastro_Autor";  //Deleta o autor pelo código digitado na caixa de código
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -223,7 +190,7 @@ namespace Biblioteca_Estágio
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT Código, Nome, Descrição FROM CADASTRO";
+                    string sqlQuery = "SELECT Código, Nome, Descrição FROM MvtBibAutor";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
