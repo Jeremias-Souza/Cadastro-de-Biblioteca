@@ -27,7 +27,7 @@ namespace Cadastro_Editora
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT CodEditora, Nome FROM MvtBibEditoraa";
+                    string sqlQuery = "SELECT CodEditora, Nome FROM MvtBibEditora";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -69,7 +69,7 @@ namespace Cadastro_Editora
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT CodEditora, Nome FROM MvtBibEditoraa";
+                    string sqlQuery = "SELECT CodEditora, Nome FROM MvtBibEditora";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -108,7 +108,7 @@ namespace Cadastro_Editora
 
 
 
-                    var sqlQuery = "DELETE MvtBibEditoraa Where codEditora = '" + codeEditora.Text + "'" + "SELECT codEditora, nome FROM MvtBibEditoraa";  
+                    var sqlQuery = "DELETE MvtBibEditora Where codEditora = '" + codeEditora.Text + "'" + "SELECT codEditora, nome FROM MvtBibEditora";  
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -162,12 +162,12 @@ namespace Cadastro_Editora
         private void formatColumns()
         {
             //Cód editora
-            this.dataGridView1.Columns[0]
-                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
 
             //Nome editora
-            this.dataGridView1.Columns[1]
-                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

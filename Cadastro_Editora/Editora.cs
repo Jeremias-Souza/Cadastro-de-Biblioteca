@@ -16,7 +16,7 @@ namespace Cadastro_Editora
 
          public void Salvar ()
          {
-             var sql = "INSERT INTO MvtBibEditoraa (nome) VALUES (@nome)";
+             var sql = "INSERT INTO MvtBibEditora (nome) VALUES (@nome)";
              using (SqlConnection cn = new SqlConnection(Conn.Strcon))
              {
                  cn.Open();

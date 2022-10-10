@@ -43,21 +43,28 @@ namespace Cadastro_Item_Acervo
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
 
+
+
             this.formatColumns();
+            
         }
+
+        
 
         private void saveAcervo_Click(object sender, EventArgs e)
         {
             var acervo = new Acervo()
             {
+                                                                                                           
                 codLocal = this.codLocal.Text,
-                nome = this.nomeAcervo.Text,
-               // codLocal = this.codLocal.Text,
-                nomeLocal = this.nomeLocal.Text,
-                nomeAutor = this.nomeAutor.Text,
-                nomeEditora = this.nomeEditora.Text,
-                // = this.nomeColecao.Text,
                 numExemplar = this.numeroExemplar.Text,
+                nome = this.nomeAcervo.Text,
+                codAutor = this.codAutor.Text,
+                nomeAutor = this.nomeAutor.Text,
+                codEditora = this.codEditora.Text,
+                nomeEditora = this.nomeEditora.Text,
+               // tipoItem = this.tipoItem.Text,
+                nomeLocal = this.nomeLocal.Text,
                 volume = this.volume.Text,
                 anoEdicao = this.anoEdicao.Text,
                 localizacao = this.localizacao.Text, 
@@ -179,6 +186,19 @@ namespace Cadastro_Item_Acervo
 
             codItem.Text = $"{row.Cells[0].Value}";
             codLocal.Text = $"{row.Cells[1].Value}";
+        }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            //itemAcervo = this.comboBox1,
+            
+            
+        }
+
+        private void nomeColecao_MouseClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

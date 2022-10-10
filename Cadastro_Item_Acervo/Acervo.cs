@@ -38,6 +38,7 @@ namespace Cadastro_Item_Acervo
                     cmd.Parameters.AddWithValue("@numExemplar", this.numExemplar);
                     cmd.Parameters.AddWithValue("@nome", this.nome);
                     cmd.Parameters.AddWithValue("@codAutor", this.codAutor);
+                    cmd.Parameters.AddWithValue("@nomeAutor", this.nomeAutor);
                     cmd.Parameters.AddWithValue("@codEditora", this.codEditora);
                     cmd.Parameters.AddWithValue("@nomeEditora", this.nomeEditora);
                     cmd.Parameters.AddWithValue("@tipoItem", this.tipoItem);
@@ -56,5 +57,9 @@ namespace Cadastro_Item_Acervo
 
         }
 
+       /* public static implicit operator Acervo(Acervo v)
+        {
+            throw new NotImplementedException();
+        }*/
     }
 }

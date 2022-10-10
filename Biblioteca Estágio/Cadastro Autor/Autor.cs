@@ -12,15 +12,40 @@ namespace Biblioteca_Estágio
 {
     public class Autor
     {
-        //public int Código { get; set; }
+        public int codAutor { get; set; }
         public string Nome { get; set; }
-        public string Descrição { get; set; }
-        
+        public string descricao { get; set; }
+
+        public static bool existeautor(Autor autor)
+        {
+            bool res;
+            SqlDataAdapter da = null;
+            DataTable dt = new DataTable();
+
+            using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+            {
+                cn.Open();
+                string sqlQuery = "SELECT codAutor FROM MvtBibAutor WHERE codAutor='" + autor.codAutor + "'";
+                da = new SqlDataAdapter(sqlQuery, cn);
+                da.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    res = true;
+                }
+                else
+                {
+                    res = false;
+                }
+            }
+
+            return res;
+        }
+
 
         public void Salvar(Autor autor)
-        {
+        {           
 
-            var sql = "INSERT INTO MvtBibAutor (Nome, Descrição) VALUES (@Nome, @Descrição)";
+            var sql = "INSERT INTO MvtBibAutor (Nome, descricao) VALUES (@Nome, @descricao)";
             using (SqlConnection cn = new SqlConnection(Conn.Strcon))
             {
 
@@ -28,17 +53,17 @@ namespace Biblioteca_Estágio
                 using (var cmd = new SqlCommand(sql, cn))
                 {
 
-
-                    //cmd.Parameters.AddWithValue("@Código", autor.Código);
                     cmd.Parameters.AddWithValue("@Nome", autor.Nome);
-                    cmd.Parameters.AddWithValue("@Descrição", autor.Descrição);
+                    cmd.Parameters.AddWithValue("@descricao", autor.descricao);
                     
-
                     cmd.ExecuteNonQuery();
                 }
                 cn.Close();
             }
+
         }
+
+        
 
 
         /*else

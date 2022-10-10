@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cadastro_Item_Acervo
+namespace Cadastro_Leitor
 {
     internal class Conn
     {
         private static string server = @"DESKTOP-LMGKQ6A\TREINAMENTO"; //Local MovTech
         //private static string server = @"DESKTOP-JTN552H\SQLEXPRESS"; //Local casa
-        private static string dataBase = "CADASTRO_ACERVO";
+        private static string dataBase = "CADASTRO_LEITOR";
         private static string user = "Jeremias Souza"; //Login MovTech 
         private static string password = "MOVTECH2022";
         /* private static string user = "sa";  //Login Casa

@@ -8,10 +8,13 @@ namespace Cadastro_Editora
 {
     internal class Conn
     {
-        private static string server = @"DESKTOP-JTN552H\SQLEXPRESS";
+        private static string server = @"DESKTOP-LMGKQ6A\TREINAMENTO"; //Local MovTech
+        //private static string server = @"DESKTOP-JTN552H\SQLEXPRESS"; //Local casa
         private static string dataBase = "CADASTRO_EDITORA";
-        private static string user = "sa";
-        private static string password = "05092002";
+        private static string user = "Jeremias Souza"; //Login MovTech 
+        private static string password = "MOVTECH2022";
+        /* private static string user = "sa";  //Login Casa
+         private static string password = "05092002";*/
 
 
         public static string Strcon

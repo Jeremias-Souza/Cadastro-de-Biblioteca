@@ -45,7 +45,7 @@ namespace Biblioteca_Estágio
         
         int indexRow;
         // public string caminhoFoto = "";
-        // private Autor autor = new Autor();
+       
        
         public CadastroAutor()
         {
@@ -57,7 +57,7 @@ namespace Biblioteca_Estágio
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT Código, Nome, Descrição FROM MvtBibAutor";
+                    string sqlQuery = "SELECT codAutor, Nome, descricao FROM MvtBibAutor";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -88,11 +88,12 @@ namespace Biblioteca_Estágio
        
         private void AddAutor_Click(object sender, EventArgs e) //Botao para adicionar o autor 
         {
-            var autor = new Autor()
+            
+                var autor = new Autor()
             {
                 //Código = int.Parse(this.CodAutor.Text)
                 Nome = this.NomeAutor.Text,
-                Descrição = this.InfAutor.Text,
+                descricao = this.InfAutor.Text,
                 
             };
 
@@ -107,7 +108,7 @@ namespace Biblioteca_Estágio
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT Código, Nome, Descrição FROM MvtBibAutor";
+                    string sqlQuery = "SELECT codAutor, Nome, descricao FROM MvtBibAutor";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -126,6 +127,9 @@ namespace Biblioteca_Estágio
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
+
+            
+            
 
         }
 
@@ -148,7 +152,7 @@ namespace Biblioteca_Estágio
 
 
 
-                    var sqlQuery = "DELETE MvtBibAutor Where Código = '" + CodAutor.Text + "'" + "SELECT Código, Nome, Descrição FROM MvtBibAutor";  //Deleta o autor pelo código digitado na caixa de código
+                    var sqlQuery = "DELETE MvtBibAutor Where codAutor = '" + CodAutor.Text + "'" + "SELECT codAutor, Nome, descricaoAutor FROM MvtBibAutor";  //Deleta o autor pelo código digitado na caixa de código
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -182,7 +186,7 @@ namespace Biblioteca_Estágio
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT Código, Nome, Descrição FROM MvtBibAutor";
+                    string sqlQuery = "SELECT codAutor, Nome, descricaoAutor FROM MvtBibAutor";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -329,6 +333,11 @@ namespace Biblioteca_Estágio
             CodAutor.Text = $"{row.Cells[0].Value}";
             NomeAutor.Text = $"{row.Cells[1].Value}";
             InfAutor.Text = $"{row.Cells[2].Value}";
+
+            
+
+
+
         }
 
         private void formatColumns()
