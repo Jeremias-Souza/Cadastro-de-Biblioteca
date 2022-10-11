@@ -69,7 +69,7 @@
             this.telefone.Location = new System.Drawing.Point(137, 191);
             this.telefone.Name = "telefone";
             this.telefone.Size = new System.Drawing.Size(132, 20);
-            this.telefone.TabIndex = 73;
+            this.telefone.TabIndex = 8;
             this.telefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefone_KeyPress);
             // 
             // label16
@@ -87,7 +87,7 @@
             this.rg.Location = new System.Drawing.Point(138, 134);
             this.rg.Name = "rg";
             this.rg.Size = new System.Drawing.Size(82, 20);
-            this.rg.TabIndex = 71;
+            this.rg.TabIndex = 6;
             this.rg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rg_KeyPress);
             // 
             // label15
@@ -105,7 +105,8 @@
             this.enderecoUF.Location = new System.Drawing.Point(540, 165);
             this.enderecoUF.Name = "enderecoUF";
             this.enderecoUF.Size = new System.Drawing.Size(36, 20);
-            this.enderecoUF.TabIndex = 68;
+            this.enderecoUF.TabIndex = 15;
+            this.enderecoUF.TextChanged += new System.EventHandler(this.enderecoUF_TextChanged);
             this.enderecoUF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enderecoUF_KeyPress);
             // 
             // enderecoNumero
@@ -113,14 +114,15 @@
             this.enderecoNumero.Location = new System.Drawing.Point(540, 113);
             this.enderecoNumero.Name = "enderecoNumero";
             this.enderecoNumero.Size = new System.Drawing.Size(50, 20);
-            this.enderecoNumero.TabIndex = 67;
+            this.enderecoNumero.TabIndex = 13;
+            this.enderecoNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enderecoNumero_KeyPress);
             // 
             // enderecoCEP
             // 
             this.enderecoCEP.Location = new System.Drawing.Point(540, 139);
             this.enderecoCEP.Name = "enderecoCEP";
             this.enderecoCEP.Size = new System.Drawing.Size(100, 20);
-            this.enderecoCEP.TabIndex = 65;
+            this.enderecoCEP.TabIndex = 14;
             this.enderecoCEP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enderecoCEP_KeyPress);
             // 
             // enderecoNome
@@ -128,21 +130,21 @@
             this.enderecoNome.Location = new System.Drawing.Point(541, 87);
             this.enderecoNome.Name = "enderecoNome";
             this.enderecoNome.Size = new System.Drawing.Size(154, 20);
-            this.enderecoNome.TabIndex = 64;
+            this.enderecoNome.TabIndex = 12;
             // 
             // enderecoBairro
             // 
             this.enderecoBairro.Location = new System.Drawing.Point(541, 61);
             this.enderecoBairro.Name = "enderecoBairro";
             this.enderecoBairro.Size = new System.Drawing.Size(154, 20);
-            this.enderecoBairro.TabIndex = 63;
+            this.enderecoBairro.TabIndex = 11;
             // 
             // telefoneCelular
             // 
             this.telefoneCelular.Location = new System.Drawing.Point(540, 6);
             this.telefoneCelular.Name = "telefoneCelular";
             this.telefoneCelular.Size = new System.Drawing.Size(132, 20);
-            this.telefoneCelular.TabIndex = 62;
+            this.telefoneCelular.TabIndex = 9;
             this.telefoneCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefoneCelular_KeyPress);
             // 
             // email
@@ -150,14 +152,14 @@
             this.email.Location = new System.Drawing.Point(137, 163);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(188, 20);
-            this.email.TabIndex = 61;
+            this.email.TabIndex = 7;
             // 
             // cpf
             // 
             this.cpf.Location = new System.Drawing.Point(137, 107);
             this.cpf.Name = "cpf";
             this.cpf.Size = new System.Drawing.Size(83, 20);
-            this.cpf.TabIndex = 60;
+            this.cpf.TabIndex = 5;
             this.cpf.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cpf_MouseClick);
             this.cpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cpf_KeyPress);
             // 
@@ -167,7 +169,7 @@
             this.dataNascimento.Multiline = true;
             this.dataNascimento.Name = "dataNascimento";
             this.dataNascimento.Size = new System.Drawing.Size(83, 20);
-            this.dataNascimento.TabIndex = 59;
+            this.dataNascimento.TabIndex = 4;
             this.dataNascimento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataNascimento_KeyPress);
             // 
             // nome
@@ -176,7 +178,7 @@
             this.nome.Multiline = true;
             this.nome.Name = "nome";
             this.nome.Size = new System.Drawing.Size(188, 20);
-            this.nome.TabIndex = 58;
+            this.nome.TabIndex = 2;
             this.nome.TextChanged += new System.EventHandler(this.nome_TextChanged);
             this.nome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nome_KeyPress);
             // 
@@ -186,7 +188,7 @@
             this.codLeitor.Location = new System.Drawing.Point(137, 5);
             this.codLeitor.Name = "codLeitor";
             this.codLeitor.Size = new System.Drawing.Size(45, 20);
-            this.codLeitor.TabIndex = 56;
+            this.codLeitor.TabIndex = 1;
             // 
             // label13
             // 
@@ -328,7 +330,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(715, 157);
-            this.dataGridView1.TabIndex = 41;
+            this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // deleteLeitor
@@ -336,7 +338,7 @@
             this.deleteLeitor.Location = new System.Drawing.Point(418, 216);
             this.deleteLeitor.Name = "deleteLeitor";
             this.deleteLeitor.Size = new System.Drawing.Size(75, 23);
-            this.deleteLeitor.TabIndex = 40;
+            this.deleteLeitor.TabIndex = 17;
             this.deleteLeitor.Text = "Excluir";
             this.deleteLeitor.UseVisualStyleBackColor = true;
             this.deleteLeitor.Click += new System.EventHandler(this.deleteLeitor_Click);
@@ -346,7 +348,7 @@
             this.saveLeitor.Location = new System.Drawing.Point(294, 216);
             this.saveLeitor.Name = "saveLeitor";
             this.saveLeitor.Size = new System.Drawing.Size(75, 23);
-            this.saveLeitor.TabIndex = 39;
+            this.saveLeitor.TabIndex = 16;
             this.saveLeitor.Text = "Salvar";
             this.saveLeitor.UseVisualStyleBackColor = true;
             this.saveLeitor.Click += new System.EventHandler(this.saveLeitor_Click);
@@ -360,7 +362,7 @@
             this.sexo.Location = new System.Drawing.Point(137, 56);
             this.sexo.Name = "sexo";
             this.sexo.Size = new System.Drawing.Size(121, 21);
-            this.sexo.TabIndex = 74;
+            this.sexo.TabIndex = 3;
             this.sexo.SelectedIndexChanged += new System.EventHandler(this.sexo_SelectedIndexChanged);
             this.sexo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sexo_KeyPress);
             // 
@@ -369,7 +371,7 @@
             this.enderecoCidade.Location = new System.Drawing.Point(540, 34);
             this.enderecoCidade.Name = "enderecoCidade";
             this.enderecoCidade.Size = new System.Drawing.Size(155, 20);
-            this.enderecoCidade.TabIndex = 75;
+            this.enderecoCidade.TabIndex = 10;
             this.enderecoCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enderecoCidade_KeyPress);
             // 
             // CadLeitor

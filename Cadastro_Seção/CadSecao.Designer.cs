@@ -47,8 +47,8 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 107);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(424, 66);
-            this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.Size = new System.Drawing.Size(296, 66);
+            this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // descricaoSecao
@@ -56,8 +56,8 @@
             this.descricaoSecao.Location = new System.Drawing.Point(132, 30);
             this.descricaoSecao.Multiline = true;
             this.descricaoSecao.Name = "descricaoSecao";
-            this.descricaoSecao.Size = new System.Drawing.Size(156, 45);
-            this.descricaoSecao.TabIndex = 10;
+            this.descricaoSecao.Size = new System.Drawing.Size(167, 45);
+            this.descricaoSecao.TabIndex = 1;
             // 
             // codSecao
             // 
@@ -65,14 +65,14 @@
             this.codSecao.Location = new System.Drawing.Point(132, 6);
             this.codSecao.Name = "codSecao";
             this.codSecao.Size = new System.Drawing.Size(50, 20);
-            this.codSecao.TabIndex = 9;
+            this.codSecao.TabIndex = 0;
             // 
             // deleteSecao
             // 
             this.deleteSecao.Location = new System.Drawing.Point(213, 78);
             this.deleteSecao.Name = "deleteSecao";
             this.deleteSecao.Size = new System.Drawing.Size(75, 23);
-            this.deleteSecao.TabIndex = 8;
+            this.deleteSecao.TabIndex = 3;
             this.deleteSecao.Text = "Excluir";
             this.deleteSecao.UseVisualStyleBackColor = true;
             this.deleteSecao.Click += new System.EventHandler(this.deleteSecao_Click);
@@ -82,7 +82,7 @@
             this.saveSecao.Location = new System.Drawing.Point(132, 78);
             this.saveSecao.Name = "saveSecao";
             this.saveSecao.Size = new System.Drawing.Size(75, 23);
-            this.saveSecao.TabIndex = 7;
+            this.saveSecao.TabIndex = 2;
             this.saveSecao.Text = "Salvar";
             this.saveSecao.UseVisualStyleBackColor = true;
             this.saveSecao.Click += new System.EventHandler(this.saveSecao_Click);
@@ -111,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 177);
+            this.ClientSize = new System.Drawing.Size(307, 177);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.descricaoSecao);
             this.Controls.Add(this.codSecao);

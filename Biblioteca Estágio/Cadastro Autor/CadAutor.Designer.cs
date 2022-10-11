@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -95,7 +95,7 @@
             this.CodAutor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CodAutor.Name = "CodAutor";
             this.CodAutor.Size = new System.Drawing.Size(45, 23);
-            this.CodAutor.TabIndex = 4;
+            this.CodAutor.TabIndex = 1;
             this.CodAutor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.CodAutor.TextChanged += new System.EventHandler(this.CodAutor_TextChanged);
             this.CodAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CodAutor_KeyPress);
@@ -107,7 +107,7 @@
             this.NomeAutor.MaxLength = 50;
             this.NomeAutor.Name = "NomeAutor";
             this.NomeAutor.Size = new System.Drawing.Size(250, 23);
-            this.NomeAutor.TabIndex = 5;
+            this.NomeAutor.TabIndex = 2;
             this.NomeAutor.TextChanged += new System.EventHandler(this.NomeAutor_TextChanged);
             this.NomeAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NomeAutor_KeyPress);
             // 
@@ -119,7 +119,7 @@
             this.InfAutor.Multiline = true;
             this.InfAutor.Name = "InfAutor";
             this.InfAutor.Size = new System.Drawing.Size(425, 35);
-            this.InfAutor.TabIndex = 6;
+            this.InfAutor.TabIndex = 3;
             this.InfAutor.TextChanged += new System.EventHandler(this.InfAutor_TextChanged);
             // 
             // btnDelete
@@ -129,7 +129,7 @@
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 10;
+            this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Excluir";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -139,24 +139,24 @@
             this.dataGridView1.AccessibleDescription = "NOT NULL";
             this.dataGridView1.AllowDrop = true;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.NullValue = null;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeight = 25;
             this.dataGridView1.Location = new System.Drawing.Point(20, 158);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(696, 132);
-            this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             this.dataGridView1.Layout += new System.Windows.Forms.LayoutEventHandler(this.dataGridView1_Layout);
@@ -188,7 +188,7 @@
             this.AddAutor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddAutor.Name = "AddAutor";
             this.AddAutor.Size = new System.Drawing.Size(75, 23);
-            this.AddAutor.TabIndex = 18;
+            this.AddAutor.TabIndex = 4;
             this.AddAutor.Text = "Adicionar";
             this.AddAutor.UseVisualStyleBackColor = true;
             this.AddAutor.Click += new System.EventHandler(this.AddAutor_Click);
@@ -206,7 +206,7 @@
             this.btnLoadImage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLoadImage.Name = "btnLoadImage";
             this.btnLoadImage.Size = new System.Drawing.Size(75, 23);
-            this.btnLoadImage.TabIndex = 20;
+            this.btnLoadImage.TabIndex = 6;
             this.btnLoadImage.Text = "Inserir Foto ";
             this.btnLoadImage.UseVisualStyleBackColor = true;
             this.btnLoadImage.Click += new System.EventHandler(this.btnLoadImage_Click);

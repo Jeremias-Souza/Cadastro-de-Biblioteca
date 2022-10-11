@@ -275,6 +275,8 @@ namespace Cadastro_Leitor
                     i.Text += "-";
                 i.SelectionStart = i.Text.Length + 1;
             }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true;
         }
 
         private void rg_KeyPress(object sender, KeyPressEventArgs e)
@@ -289,6 +291,8 @@ namespace Cadastro_Leitor
                 i.SelectionStart = i.Text.Length + 1;
 
             }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true;
         }
 
         private void enderecoCEP_KeyPress(object sender, KeyPressEventArgs e)
@@ -303,6 +307,8 @@ namespace Cadastro_Leitor
                 i.SelectionStart = i.Text.Length + 1;
 
             }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true;
         }
 
         private void telefone_KeyPress(object sender, KeyPressEventArgs e)
@@ -322,6 +328,8 @@ namespace Cadastro_Leitor
                 i.SelectionStart = i.Text.Length + 1;
 
             }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true;
         }
 
         private void telefoneCelular_KeyPress(object sender, KeyPressEventArgs e)
@@ -341,6 +349,8 @@ namespace Cadastro_Leitor
                 i.SelectionStart = i.Text.Length + 1;
 
             }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true;
         }
 
         private void dataNascimento_KeyPress(object sender, KeyPressEventArgs e)
@@ -354,6 +364,8 @@ namespace Cadastro_Leitor
                     i.Text += "/";              
                 i.SelectionStart = i.Text.Length + 1;
             }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true;
         }
 
         private void sexo_SelectedIndexChanged(object sender, EventArgs e)
@@ -391,6 +403,21 @@ namespace Cadastro_Leitor
                 e.Handled = true;
                 e = null;
             }
+            base.OnKeyPress(e);
+
+            if (char.IsLetter(e.KeyChar))
+                e.KeyChar = Convert.ToChar(e.KeyChar.ToString().ToUpper());
+
+        }
+
+        private void enderecoNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true;
+        }
+
+        private void enderecoUF_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

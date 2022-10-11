@@ -43,7 +43,7 @@
             this.saveLocal.Location = new System.Drawing.Point(125, 82);
             this.saveLocal.Name = "saveLocal";
             this.saveLocal.Size = new System.Drawing.Size(75, 23);
-            this.saveLocal.TabIndex = 0;
+            this.saveLocal.TabIndex = 2;
             this.saveLocal.Text = "Salvar";
             this.saveLocal.UseVisualStyleBackColor = true;
             this.saveLocal.Click += new System.EventHandler(this.saveLocal_Click);
@@ -53,7 +53,7 @@
             this.deleteLocal.Location = new System.Drawing.Point(206, 82);
             this.deleteLocal.Name = "deleteLocal";
             this.deleteLocal.Size = new System.Drawing.Size(75, 23);
-            this.deleteLocal.TabIndex = 1;
+            this.deleteLocal.TabIndex = 3;
             this.deleteLocal.Text = "Excluir";
             this.deleteLocal.UseVisualStyleBackColor = true;
             this.deleteLocal.Click += new System.EventHandler(this.deleteLocal_Click);
@@ -63,8 +63,8 @@
             this.descricaoLocal.Location = new System.Drawing.Point(125, 38);
             this.descricaoLocal.Multiline = true;
             this.descricaoLocal.Name = "descricaoLocal";
-            this.descricaoLocal.Size = new System.Drawing.Size(156, 38);
-            this.descricaoLocal.TabIndex = 2;
+            this.descricaoLocal.Size = new System.Drawing.Size(164, 38);
+            this.descricaoLocal.TabIndex = 1;
             // 
             // codLocal
             // 
@@ -72,7 +72,7 @@
             this.codLocal.Location = new System.Drawing.Point(125, 11);
             this.codLocal.Name = "codLocal";
             this.codLocal.Size = new System.Drawing.Size(50, 20);
-            this.codLocal.TabIndex = 3;
+            this.codLocal.TabIndex = 0;
             // 
             // dataGridView1
             // 
@@ -83,7 +83,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(8, 111);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(420, 95);
+            this.dataGridView1.Size = new System.Drawing.Size(281, 95);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -111,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 210);
+            this.ClientSize = new System.Drawing.Size(297, 210);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.codLocal);
             this.Controls.Add(this.descricaoLocal);

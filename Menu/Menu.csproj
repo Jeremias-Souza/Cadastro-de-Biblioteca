@@ -80,9 +80,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Biblioteca Estágio\Cadastro Autor.csproj">
+    <ProjectReference Include="..\Biblioteca Estágio\Cadastro_Autor.csproj">
       <Project>{9116154b-c122-4a29-ab8a-d9b2690cfac9}</Project>
-      <Name>Cadastro Autor</Name>
+      <Name>Cadastro_Autor</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cadastro_Editora\Cadastro_Editora.csproj">
       <Project>{f4d57849-b9f7-42c3-8237-98266ec324b0}</Project>

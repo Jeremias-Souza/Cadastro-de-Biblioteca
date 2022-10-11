@@ -60,7 +60,8 @@ namespace Cadastro_Leitor
 
             else
             {
-                var sql = "UPDATE MvtBibLeitor SET (nome, sexo, dataNascimento, cpf, rg, email, telefone, telefoneCelular, enderecoNome, enderecoBairro, enderecoCidade, enderecoCEP, enderecoUF, enderecoNumero) VALUES (@nome, @sexo, @dataNascimento, @cpf, @rg, @email, @telefone, @telefoneCelular, @enderecoNome, @enderecoBairro, @enderecoCidade, @enderecoCEP, @enderecoUF, @enderecoNumero)";
+               // var sql = "UPDATE MvtBibLeitor SET (nome, sexo, dataNascimento, cpf, rg, email, telefone, telefoneCelular, enderecoNome, enderecoBairro, enderecoCidade, enderecoCEP, enderecoUF, enderecoNumero) VALUES (@nome, @sexo, @dataNascimento, @cpf, @rg, @email, @telefone, @telefoneCelular, @enderecoNome, @enderecoBairro, @enderecoCidade, @enderecoCEP, @enderecoUF, @enderecoNumero) WHERE codLeitor = @codLeitor";
+                var sql = "UPDATE MvtBibLeitor SET nome = @nome, sexo = @sexo, dataNascimento = @dataNascimento, cpf = @cpf, rg = @rg, email = @email, telefone = @telefone, telefoneCelular = @telefoneCelular, enderecoNome = @enderecoNome, enderecoBairro = @enderecoBairro, enderecoCidade = @enderecoCidade, enderecoCEP = @enderecoCEP, enderecoUF = @enderecoUF, enderecoNumero = @enderecoNumero WHERE codLeitor = @codLeitor";
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
                     cn.Open();
@@ -81,6 +82,7 @@ namespace Cadastro_Leitor
                         cmd.Parameters.AddWithValue("@enderecoCEP", this.enderecoCEP);
                         cmd.Parameters.AddWithValue("@enderecoUF", this.enderecoUF);
                         cmd.Parameters.AddWithValue("@enderecoNumero", this.enderecoNumero);
+                        cmd.Parameters.AddWithValue("@codLeitor", this.codLeitor);
 
                         cmd.ExecuteNonQuery();
                     }

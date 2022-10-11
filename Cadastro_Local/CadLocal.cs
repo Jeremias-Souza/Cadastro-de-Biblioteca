@@ -50,7 +50,7 @@ namespace Cadastro_Local
         {
             var local = new Local()
             {
-                Descricao = this.descricaoLocal.Text,
+                descricaoLocal = this.descricaoLocal.Text,
                 codLocal = string.IsNullOrEmpty(this.codLocal.Text)
                 ? 0
                 : int.Parse(this.codLocal.Text)
@@ -67,7 +67,7 @@ namespace Cadastro_Local
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT CodLocal, Descricao FROM MvtBibLocal";
+                    string sqlQuery = "SELECT CodLocal, descricaoLocal FROM MvtBibLocal";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -106,7 +106,7 @@ namespace Cadastro_Local
 
 
 
-                    var sqlQuery = "DELETE MvtBibLocal Where codLocal = '" + codLocal.Text + "'" + "SELECT codLocal, Descricao FROM MvtBibLocal";
+                    var sqlQuery = "DELETE MvtBibLocal Where codLocal = '" + codLocal.Text + "'" + "SELECT codLocal, descricaoLocal FROM MvtBibLocal";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())

@@ -71,7 +71,7 @@
             this.saveAcervo.Location = new System.Drawing.Point(259, 218);
             this.saveAcervo.Name = "saveAcervo";
             this.saveAcervo.Size = new System.Drawing.Size(75, 23);
-            this.saveAcervo.TabIndex = 0;
+            this.saveAcervo.TabIndex = 17;
             this.saveAcervo.Text = "Salvar";
             this.saveAcervo.UseVisualStyleBackColor = true;
             this.saveAcervo.Click += new System.EventHandler(this.saveAcervo_Click);
@@ -81,20 +81,24 @@
             this.deleteAcervo.Location = new System.Drawing.Point(368, 218);
             this.deleteAcervo.Name = "deleteAcervo";
             this.deleteAcervo.Size = new System.Drawing.Size(75, 23);
-            this.deleteAcervo.TabIndex = 1;
+            this.deleteAcervo.TabIndex = 18;
             this.deleteAcervo.Text = "Excluir";
             this.deleteAcervo.UseVisualStyleBackColor = true;
             this.deleteAcervo.Click += new System.EventHandler(this.deleteAcervo_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(9, 245);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(643, 157);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             // 
             // label2
             // 
@@ -242,14 +246,14 @@
             this.codItem.Location = new System.Drawing.Point(120, 6);
             this.codItem.Name = "codItem";
             this.codItem.Size = new System.Drawing.Size(45, 20);
-            this.codItem.TabIndex = 20;
+            this.codItem.TabIndex = 1;
             // 
             // codLocal
             // 
             this.codLocal.Location = new System.Drawing.Point(120, 57);
             this.codLocal.Name = "codLocal";
             this.codLocal.Size = new System.Drawing.Size(45, 20);
-            this.codLocal.TabIndex = 21;
+            this.codLocal.TabIndex = 3;
             // 
             // nomeAcervo
             // 
@@ -257,7 +261,7 @@
             this.nomeAcervo.Multiline = true;
             this.nomeAcervo.Name = "nomeAcervo";
             this.nomeAcervo.Size = new System.Drawing.Size(188, 20);
-            this.nomeAcervo.TabIndex = 22;
+            this.nomeAcervo.TabIndex = 2;
             this.nomeAcervo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeAcervo_KeyPress);
             // 
             // nomeLocal
@@ -266,7 +270,7 @@
             this.nomeLocal.Multiline = true;
             this.nomeLocal.Name = "nomeLocal";
             this.nomeLocal.Size = new System.Drawing.Size(188, 20);
-            this.nomeLocal.TabIndex = 23;
+            this.nomeLocal.TabIndex = 4;
             this.nomeLocal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeLocal_KeyPress);
             // 
             // nomeAutor
@@ -274,7 +278,7 @@
             this.nomeAutor.Location = new System.Drawing.Point(120, 108);
             this.nomeAutor.Name = "nomeAutor";
             this.nomeAutor.Size = new System.Drawing.Size(188, 20);
-            this.nomeAutor.TabIndex = 24;
+            this.nomeAutor.TabIndex = 5;
             this.nomeAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeAutor_KeyPress);
             // 
             // nomeEditora
@@ -282,7 +286,7 @@
             this.nomeEditora.Location = new System.Drawing.Point(120, 164);
             this.nomeEditora.Name = "nomeEditora";
             this.nomeEditora.Size = new System.Drawing.Size(188, 20);
-            this.nomeEditora.TabIndex = 25;
+            this.nomeEditora.TabIndex = 7;
             this.nomeEditora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeEditora_KeyPress);
             // 
             // nomeColecao
@@ -290,7 +294,7 @@
             this.nomeColecao.Location = new System.Drawing.Point(464, 5);
             this.nomeColecao.Name = "nomeColecao";
             this.nomeColecao.Size = new System.Drawing.Size(188, 20);
-            this.nomeColecao.TabIndex = 26;
+            this.nomeColecao.TabIndex = 9;
             this.nomeColecao.MouseClick += new System.Windows.Forms.MouseEventHandler(this.nomeColecao_MouseClick);
             this.nomeColecao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeColecao_KeyPress);
             // 
@@ -299,28 +303,28 @@
             this.numeroExemplar.Location = new System.Drawing.Point(464, 57);
             this.numeroExemplar.Name = "numeroExemplar";
             this.numeroExemplar.Size = new System.Drawing.Size(100, 20);
-            this.numeroExemplar.TabIndex = 28;
+            this.numeroExemplar.TabIndex = 11;
             // 
             // volume
             // 
             this.volume.Location = new System.Drawing.Point(464, 82);
             this.volume.Name = "volume";
             this.volume.Size = new System.Drawing.Size(100, 20);
-            this.volume.TabIndex = 29;
+            this.volume.TabIndex = 12;
             // 
             // anoEdicao
             // 
             this.anoEdicao.Location = new System.Drawing.Point(464, 107);
             this.anoEdicao.Name = "anoEdicao";
             this.anoEdicao.Size = new System.Drawing.Size(100, 20);
-            this.anoEdicao.TabIndex = 30;
+            this.anoEdicao.TabIndex = 13;
             // 
             // idioma
             // 
             this.idioma.Location = new System.Drawing.Point(464, 188);
             this.idioma.Name = "idioma";
             this.idioma.Size = new System.Drawing.Size(188, 20);
-            this.idioma.TabIndex = 31;
+            this.idioma.TabIndex = 16;
             this.idioma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idioma_KeyPress);
             // 
             // secao
@@ -328,14 +332,14 @@
             this.secao.Location = new System.Drawing.Point(464, 162);
             this.secao.Name = "secao";
             this.secao.Size = new System.Drawing.Size(188, 20);
-            this.secao.TabIndex = 32;
+            this.secao.TabIndex = 15;
             // 
             // localizacao
             // 
             this.localizacao.Location = new System.Drawing.Point(464, 134);
             this.localizacao.Name = "localizacao";
             this.localizacao.Size = new System.Drawing.Size(188, 20);
-            this.localizacao.TabIndex = 33;
+            this.localizacao.TabIndex = 14;
             // 
             // comboBox1
             // 
@@ -351,7 +355,7 @@
             this.comboBox1.Location = new System.Drawing.Point(464, 31);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 34;
+            this.comboBox1.TabIndex = 10;
             this.comboBox1.Text = "Selecione";
             this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
@@ -360,7 +364,7 @@
             this.codAutor.Location = new System.Drawing.Point(121, 135);
             this.codAutor.Name = "codAutor";
             this.codAutor.Size = new System.Drawing.Size(188, 20);
-            this.codAutor.TabIndex = 36;
+            this.codAutor.TabIndex = 6;
             // 
             // label15
             // 
@@ -377,7 +381,7 @@
             this.codEditora.Location = new System.Drawing.Point(120, 192);
             this.codEditora.Name = "codEditora";
             this.codEditora.Size = new System.Drawing.Size(188, 20);
-            this.codEditora.TabIndex = 38;
+            this.codEditora.TabIndex = 8;
             // 
             // label16
             // 

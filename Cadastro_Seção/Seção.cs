@@ -33,7 +33,7 @@ namespace Cadastro_Seção
 
             else
             {
-                var sql = "UPDATE MvtBibSecao SET descricaoSecao = @descricaoSecao";
+                var sql = "UPDATE MvtBibSecao SET descricaoSecao = @descricaoSecao WHERE codSecao = @codSecao";
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
                     cn.Open();

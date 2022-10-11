@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadastro Autor", "Biblioteca Estágio\Cadastro Autor.csproj", "{9116154B-C122-4A29-AB8A-D9B2690CFAC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadastro_Autor", "Biblioteca Estágio\Cadastro_Autor.csproj", "{9116154B-C122-4A29-AB8A-D9B2690CFAC9}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Tabela_Autor", "..\..\..\Desktop\PROJECT1\TabelaAutor\Tabela_Autor.sqlproj", "{97AA201A-5C99-46D0-A522-1283BD71C404}"
 EndProject

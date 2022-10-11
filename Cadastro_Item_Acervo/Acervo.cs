@@ -17,6 +17,7 @@ namespace Cadastro_Item_Acervo
         public string nomeAutor { get; set; }
         public string codEditora { get; set; }
         public string nomeEditora { get; set; }
+        public string nomeColecao { get; set; }
         public string tipoItem { get; set; }
         public string nomeLocal { get; set; }
         public string volume { get; set; }
@@ -29,7 +30,7 @@ namespace Cadastro_Item_Acervo
         {
             if (this.codItem == 0)
             {
-                var sql = "INSERT INTO MvtBibItemAcervo (codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma) VALUES (@codLocal, @numExemplar, @nome, @codAutor, @nomeAutor, @codEditora, @nomeEditora, @tipoItem, @nomeLocal, @Volume, @anoEdicao, @localizacao, @secao, @idioma)";
+                var sql = "INSERT INTO MvtBibItemAcervo (codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, nomeColecao, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma) VALUES (@codLocal, @numExemplar, @nome, @codAutor, @nomeAutor, @codEditora, @nomeEditora, @nomeColecao, @tipoItem, @nomeLocal, @Volume, @anoEdicao, @localizacao, @secao, @idioma)";
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
                     cn.Open();
@@ -43,6 +44,7 @@ namespace Cadastro_Item_Acervo
                         cmd.Parameters.AddWithValue("@nomeAutor", this.nomeAutor);
                         cmd.Parameters.AddWithValue("@codEditora", this.codEditora);
                         cmd.Parameters.AddWithValue("@nomeEditora", this.nomeEditora);
+                        cmd.Parameters.AddWithValue("@nomeColecao", this.nomeColecao);
                         cmd.Parameters.AddWithValue("@tipoItem", this.tipoItem);
                         cmd.Parameters.AddWithValue("@nomeLocal", this.nomeLocal);
                         cmd.Parameters.AddWithValue("@volume", this.volume);
@@ -60,7 +62,7 @@ namespace Cadastro_Item_Acervo
 
             else
             {
-                var sql = "UPDATE MvtBibItemAcervo (codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma) VALUES (@codLocal, @numExemplar, @nome, @codAutor, @nomeAutor, @codEditora, @nomeEditora, @tipoItem, @nomeLocal, @Volume, @anoEdicao, @localizacao, @secao, @idioma)";
+                var sql = "UPDATE MvtBibItemAcervo SET codLocal = @codLocal, numExemplar = @numExemplar, nome = @nome, codAutor = @CodAutor, nomeAutor = @nomeAutor, codEditora = @codEditora, nomeEditora = @nomeEditora, nomeColecao = @nomeColecao, tipoItem = @tipoItem, nomeLocal = @nomeLocal, Volume = @Volume, anoEdicao = @anoEdicao, localizacao = @localizacao, secao = @secao, idioma = @idioma WHERE codItem = @codItem";
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
                     cn.Open();
@@ -74,6 +76,7 @@ namespace Cadastro_Item_Acervo
                         cmd.Parameters.AddWithValue("@nomeAutor", this.nomeAutor);
                         cmd.Parameters.AddWithValue("@codEditora", this.codEditora);
                         cmd.Parameters.AddWithValue("@nomeEditora", this.nomeEditora);
+                        cmd.Parameters.AddWithValue("@nomeColecao", this.nomeColecao);
                         cmd.Parameters.AddWithValue("@tipoItem", this.tipoItem);
                         cmd.Parameters.AddWithValue("@nomeLocal", this.nomeLocal);
                         cmd.Parameters.AddWithValue("@volume", this.volume);
@@ -81,6 +84,7 @@ namespace Cadastro_Item_Acervo
                         cmd.Parameters.AddWithValue("@localizacao", this.localizacao);
                         cmd.Parameters.AddWithValue("@secao", this.secao);
                         cmd.Parameters.AddWithValue("@idioma", this.idioma);
+                        cmd.Parameters.AddWithValue("@codItem", this.tipoItem);
 
                         cmd.ExecuteNonQuery();
                     }

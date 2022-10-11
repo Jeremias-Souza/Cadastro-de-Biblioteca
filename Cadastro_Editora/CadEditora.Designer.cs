@@ -43,7 +43,7 @@
             this.saveEditora.Location = new System.Drawing.Point(127, 58);
             this.saveEditora.Name = "saveEditora";
             this.saveEditora.Size = new System.Drawing.Size(75, 23);
-            this.saveEditora.TabIndex = 0;
+            this.saveEditora.TabIndex = 3;
             this.saveEditora.Text = "Salvar";
             this.saveEditora.UseVisualStyleBackColor = true;
             this.saveEditora.Click += new System.EventHandler(this.saveEditora_Click);
@@ -53,7 +53,7 @@
             this.deleteEditora.Location = new System.Drawing.Point(208, 58);
             this.deleteEditora.Name = "deleteEditora";
             this.deleteEditora.Size = new System.Drawing.Size(75, 23);
-            this.deleteEditora.TabIndex = 1;
+            this.deleteEditora.TabIndex = 4;
             this.deleteEditora.Text = "Excluir";
             this.deleteEditora.UseVisualStyleBackColor = true;
             this.deleteEditora.Click += new System.EventHandler(this.deleteEditora_Click);
@@ -64,14 +64,14 @@
             this.codeEditora.Location = new System.Drawing.Point(127, 6);
             this.codeEditora.Name = "codeEditora";
             this.codeEditora.Size = new System.Drawing.Size(50, 20);
-            this.codeEditora.TabIndex = 2;
+            this.codeEditora.TabIndex = 1;
             // 
             // nomeEditora
             // 
             this.nomeEditora.Location = new System.Drawing.Point(127, 32);
             this.nomeEditora.Name = "nomeEditora";
-            this.nomeEditora.Size = new System.Drawing.Size(156, 20);
-            this.nomeEditora.TabIndex = 3;
+            this.nomeEditora.Size = new System.Drawing.Size(168, 20);
+            this.nomeEditora.TabIndex = 2;
             this.nomeEditora.TextChanged += new System.EventHandler(this.nomeEditora_TextChanged);
             this.nomeEditora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeEditora_KeyPress);
             // 
@@ -84,8 +84,8 @@
             this.dataGridView1.Location = new System.Drawing.Point(6, 87);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(424, 86);
-            this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.Size = new System.Drawing.Size(289, 86);
+            this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label2
@@ -112,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 177);
+            this.ClientSize = new System.Drawing.Size(307, 177);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.nomeEditora);

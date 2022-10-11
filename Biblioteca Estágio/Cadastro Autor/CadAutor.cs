@@ -39,14 +39,11 @@ using NetTopologySuite.Algorithm;
 namespace Biblioteca_Estágio
 {
     
-
     public partial class CadastroAutor : Form
     {
         
         int indexRow;
-        // public string caminhoFoto = "";
-       
-       
+
         public CadastroAutor()
         {
             InitializeComponent();
@@ -114,6 +111,7 @@ namespace Biblioteca_Estágio
                         }
                     }
                     ClearTextBoxes();
+                    
                 }
 
 
@@ -122,10 +120,7 @@ namespace Biblioteca_Estágio
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
-            }
-
-            
-            
+            }  
 
         }
 
@@ -202,9 +197,7 @@ namespace Biblioteca_Estágio
                 statusStrip1.Refresh();
                 MessageBox.Show("Falha! \n" + ex.Message);
 
-            }
-
-            
+            }        
         }
 
         private void formatColumns()
@@ -226,9 +219,6 @@ namespace Biblioteca_Estágio
             this.dataGridView1.Columns[2].HeaderText = "Descrição";
         }
 
-
-
-
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)//Caixa aonde ocorre as atualizações de processos
         {
             toolStripStatusLabel1.Text = "";
@@ -237,15 +227,13 @@ namespace Biblioteca_Estágio
 
         private void btnLoadImage_Click(object sender, EventArgs e) //Botao para carregar imagem 
         {
-           /* var openFile = new OpenFileDialog();
+            /*var openFile = new OpenFileDialog();
             openFile.Filter = "Arquivos de imagens jpg e png e jfif |*.jpg; *.png; *.jfif";
             openFile.Multiselect = false;
 
             if (openFile.ShowDialog() == DialogResult.OK) caminhoFoto = openFile.FileName;
 
             if (caminhoFoto != "") pictureBox1.Load(caminhoFoto);*/
-
-
         }
 
 
@@ -266,18 +254,10 @@ namespace Biblioteca_Estágio
             };
 
             func(Controls);
+
+            
         }
 
-      
-
-
-
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e) //Fazer upload nas caixas de texto quando na tabela for apertado duas vezes
-        {
-                   
-        }
-
-       
 
 
         private void NomeAutor_KeyPress(object sender, KeyPressEventArgs e) //Aceitar apenas letras na caixa de texto do NomeAutor
@@ -290,53 +270,10 @@ namespace Biblioteca_Estágio
 
         }
 
-        private void NomeAutor_TextChanged(object sender, EventArgs e) //Caixa de texto Nome do autor
-        {
-           
-
-        }
-
         private void CodAutor_KeyPress(object sender, KeyPressEventArgs e) //Poder apenas numeros na tabela de texto CodAutor 
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true; 
         }
-
-        private void openFileDialog3_FileOk(object sender, CancelEventArgs e)
-        {
-        }
-
-        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-       
-
-       
-        private void pictureBox1_Click(object sender, EventArgs e) //Caixa de imagem
-        {           
-        }
-
-        
-
-        private void CodAutor_TextChanged(object sender, EventArgs e) //Caixa de texto código do autor
-        {
-           
-          
-
-        }
-      
-
-        private void InfAutor_TextChanged(object sender, EventArgs e) //Caixa de texto Informações do autor
-        {
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {                      
-
-        }
-
-        
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -346,25 +283,52 @@ namespace Biblioteca_Estágio
             CodAutor.Text = $"{row.Cells[0].Value}";
             NomeAutor.Text = $"{row.Cells[1].Value}";
             InfAutor.Text = $"{row.Cells[2].Value}";
+            
          
         }
 
-
         private void label3_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-
         }
 
         private void dataGridView1_Layout(object sender, LayoutEventArgs e)
-        {
-            
+        {  
         }
 
-        
+        private void openFileDialog3_FileOk(object sender, CancelEventArgs e)
+        {
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e) //Caixa de imagem
+        {
+        }
+
+        private void CodAutor_TextChanged(object sender, EventArgs e) //Caixa de texto código do autor
+        {
+        }
+
+        private void InfAutor_TextChanged(object sender, EventArgs e) //Caixa de texto Informações do autor
+        {
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void NomeAutor_TextChanged(object sender, EventArgs e) //Caixa de texto Nome do autor
+        {
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e) //Fazer upload nas caixas de texto quando na tabela for apertado duas vezes
+        {
+        }
     }
 }
