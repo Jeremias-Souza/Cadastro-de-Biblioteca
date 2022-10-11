@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -64,6 +65,9 @@ namespace Cadastro_Leitor
                 enderecoCEP = this.enderecoCEP.Text,
                 enderecoUF = this.enderecoUF.Text,
                 enderecoNumero = this.enderecoNumero.Text,
+                codLeitor = string.IsNullOrEmpty(this.codLeitor.Text)
+                ? 0
+                : int.Parse(this.codLeitor.Text)
 
             };
 
@@ -143,12 +147,65 @@ namespace Cadastro_Leitor
 
         private void formatColumns()
         {
-            //Cód leitor
-            this.dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.Columns[0]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            this.dataGridView1.Columns[1]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            //Nome leitor
-            this.dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView1.Columns[2]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns[3]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns[4]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns[5]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns[6]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns[7]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns[8]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns[9]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns[10]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns[11]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns[12]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns[13]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns[14]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns[0].HeaderText = "Código";
+            this.dataGridView1.Columns[1].HeaderText = "Nome";
+            this.dataGridView1.Columns[2].HeaderText = "Sexo";
+            this.dataGridView1.Columns[3].HeaderText = "Data de nascimento";
+            this.dataGridView1.Columns[4].HeaderText = "CPF";
+            this.dataGridView1.Columns[5].HeaderText = "RG";
+            this.dataGridView1.Columns[6].HeaderText = "E-MAIL";
+            this.dataGridView1.Columns[7].HeaderText = "Telefone";
+            this.dataGridView1.Columns[8].HeaderText = "Telefone Celular";
+            this.dataGridView1.Columns[9].HeaderText = "Nome da rua";
+            this.dataGridView1.Columns[10].HeaderText = "Nome do bairro";
+            this.dataGridView1.Columns[11].HeaderText = "Nome da cidade";
+            this.dataGridView1.Columns[12].HeaderText = "CEP";
+            this.dataGridView1.Columns[13].HeaderText = "UF";
 
         }
 
@@ -302,6 +359,38 @@ namespace Cadastro_Leitor
         private void sexo_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void nome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
+            {
+                e.Handled = true;
+                e = null;
+            }
+        }
+
+        private void enderecoCidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
+            {
+                e.Handled = true;
+                e = null;
+            }
+        }
+
+        private void enderecoUF_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
+            {
+                e.Handled = true;
+                e = null;
+            }
         }
     }
 }

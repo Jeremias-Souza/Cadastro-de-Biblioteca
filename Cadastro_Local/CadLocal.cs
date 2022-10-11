@@ -51,7 +51,9 @@ namespace Cadastro_Local
             var local = new Local()
             {
                 Descricao = this.descricaoLocal.Text,
-                
+                codLocal = string.IsNullOrEmpty(this.codLocal.Text)
+                ? 0
+                : int.Parse(this.codLocal.Text)
             };
 
             local.Salvar();
@@ -65,7 +67,7 @@ namespace Cadastro_Local
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT CodLocal, descricaoLocal FROM MvtBibLocal";
+                    string sqlQuery = "SELECT CodLocal, Descricao FROM MvtBibLocal";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -104,7 +106,7 @@ namespace Cadastro_Local
 
 
 
-                    var sqlQuery = "DELETE MvtBibLocal Where codLocal = '" + codLocal.Text + "'" + "SELECT codLocal, descricaoLocal FROM MvtBibLocal";
+                    var sqlQuery = "DELETE MvtBibLocal Where codLocal = '" + codLocal.Text + "'" + "SELECT codLocal, Descricao FROM MvtBibLocal";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -133,12 +135,15 @@ namespace Cadastro_Local
         private void formatColumns()
         {
             //Cód local
-            this.dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            
+            this.dataGridView1.Columns[0]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //Descricao local
-            this.dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView1.Columns[1]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
+            this.dataGridView1.Columns[0].HeaderText = "Código";
+            this.dataGridView1.Columns[1].HeaderText = "Descrição";
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

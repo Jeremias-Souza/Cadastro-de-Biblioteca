@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,7 @@ namespace Cadastro_Item_Acervo
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma FROM MvtBibItemAcervo";
+                    string sqlQuery = "SELECT codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma FROM MvtBibItemAcervo";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -62,15 +63,18 @@ namespace Cadastro_Item_Acervo
                 codAutor = this.codAutor.Text,
                 nomeAutor = this.nomeAutor.Text,
                 codEditora = this.codEditora.Text,
-                nomeEditora = this.nomeEditora.Text,
-               // tipoItem = this.tipoItem.Text,
+                nomeEditora = this.nomeEditora.Text,              
                 nomeLocal = this.nomeLocal.Text,
                 volume = this.volume.Text,
                 anoEdicao = this.anoEdicao.Text,
                 localizacao = this.localizacao.Text, 
                 secao = this.secao.Text,
                 idioma = this.idioma.Text,
-                
+                tipoItem = this.Text,
+                codItem = string.IsNullOrEmpty(this.codItem.Text)
+                ? 0
+                : int.Parse(this.codItem.Text)
+
             };
 
             acervo.Salvar();
@@ -123,7 +127,7 @@ namespace Cadastro_Item_Acervo
 
 
 
-                    var sqlQuery = "DELETE MvtBibItemAcervo Where codItem = '" + codItem.Text + "'" + "SELECT codItem, codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma";
+                    var sqlQuery = "DELETE MvtBibItemAcervo Where codItem = '" + codItem.Text + "'" + "SELECT codItem, codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -151,13 +155,64 @@ namespace Cadastro_Item_Acervo
 
         private void formatColumns()
         {
-            //Cód editora
+            
             this.dataGridView1.Columns[0]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            //Nome editora
+           
             this.dataGridView1.Columns[1]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns[2]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns[3]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns[4]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns[5]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns[6]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns[7]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns[8]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns[9]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns[10]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns[11]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns[12]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            //this.dataGridView1.Columns[13]
+                //.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+
+            this.dataGridView1.Columns[0].HeaderText = "Código local";
+            this.dataGridView1.Columns[1].HeaderText = "Numero do exemplar";
+            this.dataGridView1.Columns[2].HeaderText = "Nome";
+            this.dataGridView1.Columns[3].HeaderText = "Código do autor";
+            this.dataGridView1.Columns[4].HeaderText = "Nome do autor";
+            this.dataGridView1.Columns[5].HeaderText = "Código da editora";
+            this.dataGridView1.Columns[6].HeaderText = "Nome da editora";
+            this.dataGridView1.Columns[7].HeaderText = "Tipo do item";
+            this.dataGridView1.Columns[8].HeaderText = "Nome do local";
+            this.dataGridView1.Columns[9].HeaderText = "Volume";
+            this.dataGridView1.Columns[10].HeaderText = "Ano da edição";
+            this.dataGridView1.Columns[11].HeaderText = "Localização";
+            this.dataGridView1.Columns[12].HeaderText = "Seção";
+            //this.dataGridView1.Columns[13].HeaderText = "Idioma";
         }
 
         private void ClearTextBoxes() //Função para limpar formularios depois de salvar
@@ -186,19 +241,71 @@ namespace Cadastro_Item_Acervo
 
             codItem.Text = $"{row.Cells[0].Value}";
             codLocal.Text = $"{row.Cells[1].Value}";
+            
         }
 
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = true;
-            //itemAcervo = this.comboBox1,
-            
-            
+            e.Handled = true;                                
         }
 
         private void nomeColecao_MouseClick(object sender, MouseEventArgs e)
         {
 
+        }
+
+        private void nomeAcervo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
+            {
+                e.Handled = true;
+                e = null;
+            }
+        }
+
+        private void nomeLocal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
+            {
+                e.Handled = true;
+                e = null;
+            }
+        }
+
+        private void nomeAutor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
+            {
+                e.Handled = true;
+                e = null;
+            }
+        }
+
+        private void nomeEditora_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
+            {
+                e.Handled = true;
+                e = null;
+            }
+        }
+
+        private void nomeColecao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
+            {
+                e.Handled = true;
+                e = null;
+            }
+        }
+
+        private void idioma_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
+            {
+                e.Handled = true;
+                e = null;
+            }
         }
     }
 }

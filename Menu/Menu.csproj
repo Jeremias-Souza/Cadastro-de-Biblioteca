@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6A839ED5-4CC8-48E3-8832-9D99A4BD3E39}</ProjectGuid>
+    <ProjectGuid>{690981A7-E8E9-4F5C-9E3A-00051C9BEC6F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Cadastro_Item_Acervo</RootNamespace>
-    <AssemblyName>Cadastro_Item_Acervo</AssemblyName>
+    <RootNamespace>Menu</RootNamespace>
+    <AssemblyName>Menu</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,18 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Acervo.cs" />
-    <Compile Include="CadAcervo.cs">
+    <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadAcervo.Designer.cs">
-      <DependentUpon>CadAcervo.cs</DependentUpon>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Conn.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CadAcervo.resx">
-      <DependentUpon>CadAcervo.cs</DependentUpon>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,6 +78,32 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Biblioteca Estágio\Cadastro Autor.csproj">
+      <Project>{9116154b-c122-4a29-ab8a-d9b2690cfac9}</Project>
+      <Name>Cadastro Autor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cadastro_Editora\Cadastro_Editora.csproj">
+      <Project>{f4d57849-b9f7-42c3-8237-98266ec324b0}</Project>
+      <Name>Cadastro_Editora</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cadastro_Item_Acervo\Cadastro_Item_Acervo.csproj">
+      <Project>{6a839ed5-4cc8-48e3-8832-9d99a4bd3e39}</Project>
+      <Name>Cadastro_Item_Acervo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cadastro_Leitor\Cadastro_Leitor.csproj">
+      <Project>{45da4912-1e82-4849-829c-707ad0d053a6}</Project>
+      <Name>Cadastro_Leitor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cadastro_Local\Cadastro_Local.csproj">
+      <Project>{4a1f3e2a-df75-41ce-8011-fd47ffa34b75}</Project>
+      <Name>Cadastro_Local</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cadastro_Seção\Cadastro_Seção.csproj">
+      <Project>{b6eb2df7-0957-4c20-a9ad-b764d60bfdfa}</Project>
+      <Name>Cadastro_Seção</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

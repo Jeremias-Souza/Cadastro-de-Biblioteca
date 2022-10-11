@@ -68,7 +68,7 @@
             // 
             // saveAcervo
             // 
-            this.saveAcervo.Location = new System.Drawing.Point(291, 216);
+            this.saveAcervo.Location = new System.Drawing.Point(259, 218);
             this.saveAcervo.Name = "saveAcervo";
             this.saveAcervo.Size = new System.Drawing.Size(75, 23);
             this.saveAcervo.TabIndex = 0;
@@ -78,7 +78,7 @@
             // 
             // deleteAcervo
             // 
-            this.deleteAcervo.Location = new System.Drawing.Point(415, 216);
+            this.deleteAcervo.Location = new System.Drawing.Point(368, 218);
             this.deleteAcervo.Name = "deleteAcervo";
             this.deleteAcervo.Size = new System.Drawing.Size(75, 23);
             this.deleteAcervo.TabIndex = 1;
@@ -92,7 +92,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(9, 245);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(715, 157);
+            this.dataGridView1.Size = new System.Drawing.Size(643, 157);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -160,7 +160,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(404, 9);
+            this.label7.Location = new System.Drawing.Point(326, 7);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 17);
             this.label7.TabIndex = 12;
@@ -170,7 +170,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(404, 35);
+            this.label8.Location = new System.Drawing.Point(326, 32);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 17);
             this.label8.TabIndex = 13;
@@ -180,7 +180,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(404, 61);
+            this.label9.Location = new System.Drawing.Point(326, 57);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(138, 17);
             this.label9.TabIndex = 14;
@@ -190,7 +190,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(404, 87);
+            this.label10.Location = new System.Drawing.Point(326, 83);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 17);
             this.label10.TabIndex = 15;
@@ -200,7 +200,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(404, 113);
+            this.label11.Location = new System.Drawing.Point(326, 108);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(95, 17);
             this.label11.TabIndex = 16;
@@ -210,7 +210,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(404, 139);
+            this.label12.Location = new System.Drawing.Point(326, 136);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(133, 17);
             this.label12.TabIndex = 17;
@@ -220,7 +220,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(404, 165);
+            this.label13.Location = new System.Drawing.Point(326, 165);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(45, 17);
             this.label13.TabIndex = 18;
@@ -230,7 +230,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(404, 190);
+            this.label14.Location = new System.Drawing.Point(326, 192);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(51, 17);
             this.label14.TabIndex = 19;
@@ -258,6 +258,7 @@
             this.nomeAcervo.Name = "nomeAcervo";
             this.nomeAcervo.Size = new System.Drawing.Size(188, 20);
             this.nomeAcervo.TabIndex = 22;
+            this.nomeAcervo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeAcervo_KeyPress);
             // 
             // nomeLocal
             // 
@@ -266,6 +267,7 @@
             this.nomeLocal.Name = "nomeLocal";
             this.nomeLocal.Size = new System.Drawing.Size(188, 20);
             this.nomeLocal.TabIndex = 23;
+            this.nomeLocal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeLocal_KeyPress);
             // 
             // nomeAutor
             // 
@@ -273,6 +275,7 @@
             this.nomeAutor.Name = "nomeAutor";
             this.nomeAutor.Size = new System.Drawing.Size(188, 20);
             this.nomeAutor.TabIndex = 24;
+            this.nomeAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeAutor_KeyPress);
             // 
             // nomeEditora
             // 
@@ -280,59 +283,63 @@
             this.nomeEditora.Name = "nomeEditora";
             this.nomeEditora.Size = new System.Drawing.Size(188, 20);
             this.nomeEditora.TabIndex = 25;
+            this.nomeEditora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeEditora_KeyPress);
             // 
             // nomeColecao
             // 
-            this.nomeColecao.Location = new System.Drawing.Point(539, 6);
+            this.nomeColecao.Location = new System.Drawing.Point(464, 5);
             this.nomeColecao.Name = "nomeColecao";
             this.nomeColecao.Size = new System.Drawing.Size(188, 20);
             this.nomeColecao.TabIndex = 26;
             this.nomeColecao.MouseClick += new System.Windows.Forms.MouseEventHandler(this.nomeColecao_MouseClick);
+            this.nomeColecao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeColecao_KeyPress);
             // 
             // numeroExemplar
             // 
-            this.numeroExemplar.Location = new System.Drawing.Point(540, 61);
+            this.numeroExemplar.Location = new System.Drawing.Point(464, 57);
             this.numeroExemplar.Name = "numeroExemplar";
             this.numeroExemplar.Size = new System.Drawing.Size(100, 20);
             this.numeroExemplar.TabIndex = 28;
             // 
             // volume
             // 
-            this.volume.Location = new System.Drawing.Point(540, 87);
+            this.volume.Location = new System.Drawing.Point(464, 82);
             this.volume.Name = "volume";
             this.volume.Size = new System.Drawing.Size(100, 20);
             this.volume.TabIndex = 29;
             // 
             // anoEdicao
             // 
-            this.anoEdicao.Location = new System.Drawing.Point(540, 113);
+            this.anoEdicao.Location = new System.Drawing.Point(464, 107);
             this.anoEdicao.Name = "anoEdicao";
             this.anoEdicao.Size = new System.Drawing.Size(100, 20);
             this.anoEdicao.TabIndex = 30;
             // 
             // idioma
             // 
-            this.idioma.Location = new System.Drawing.Point(540, 190);
+            this.idioma.Location = new System.Drawing.Point(464, 188);
             this.idioma.Name = "idioma";
             this.idioma.Size = new System.Drawing.Size(188, 20);
             this.idioma.TabIndex = 31;
+            this.idioma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idioma_KeyPress);
             // 
             // secao
             // 
-            this.secao.Location = new System.Drawing.Point(540, 164);
+            this.secao.Location = new System.Drawing.Point(464, 162);
             this.secao.Name = "secao";
             this.secao.Size = new System.Drawing.Size(188, 20);
             this.secao.TabIndex = 32;
             // 
             // localizacao
             // 
-            this.localizacao.Location = new System.Drawing.Point(540, 139);
+            this.localizacao.Location = new System.Drawing.Point(464, 134);
             this.localizacao.Name = "localizacao";
             this.localizacao.Size = new System.Drawing.Size(188, 20);
             this.localizacao.TabIndex = 33;
             // 
             // comboBox1
             // 
+            this.comboBox1.DisplayMember = "text";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Livro",
@@ -341,7 +348,7 @@
             "DVD/CD",
             "Folheto",
             "Artigo"});
-            this.comboBox1.Location = new System.Drawing.Point(540, 33);
+            this.comboBox1.Location = new System.Drawing.Point(464, 31);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 34;
@@ -386,7 +393,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 408);
+            this.ClientSize = new System.Drawing.Size(662, 408);
             this.Controls.Add(this.codEditora);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.codAutor);
@@ -423,7 +430,7 @@
             this.Controls.Add(this.deleteAcervo);
             this.Controls.Add(this.saveAcervo);
             this.Name = "CadAcervo";
-            this.Text = "CadAcervo";
+            this.Text = "Cadastro do Acervo";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -57,7 +57,7 @@ namespace Biblioteca_Estágio
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codAutor, Nome, descricao FROM MvtBibAutor";
+                    string sqlQuery = "SELECT codAutor, nomeAutor, descricaoAutor FROM MvtBibAutor";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -80,24 +80,20 @@ namespace Biblioteca_Estágio
             }
             this.formatColumns();
 
-
         }
-
-         
-
+       
        
         private void AddAutor_Click(object sender, EventArgs e) //Botao para adicionar o autor 
         {
-            
-                var autor = new Autor()
+            var autor = new Autor()
             {
-                //Código = int.Parse(this.CodAutor.Text)
-                Nome = this.NomeAutor.Text,
-                descricao = this.InfAutor.Text,
-                
-            };
-
-            autor.Salvar(autor);
+                nomeAutor = this.NomeAutor.Text,
+                descricaoAutor = this.InfAutor.Text,
+                codAutor = string.IsNullOrEmpty(this.CodAutor.Text)
+                ? 0
+                : int.Parse(this.CodAutor.Text)
+            };           
+            autor.Salvar();
 
 
             MessageBox.Show("Cadastro feito com sucesso!");
@@ -108,7 +104,7 @@ namespace Biblioteca_Estágio
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codAutor, Nome, descricao FROM MvtBibAutor";
+                    string sqlQuery = "SELECT codAutor, nomeAutor, descricaoAutor FROM MvtBibAutor";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -152,7 +148,7 @@ namespace Biblioteca_Estágio
 
 
 
-                    var sqlQuery = "DELETE MvtBibAutor Where codAutor = '" + CodAutor.Text + "'" + "SELECT codAutor, Nome, descricaoAutor FROM MvtBibAutor";  //Deleta o autor pelo código digitado na caixa de código
+                    var sqlQuery = "DELETE MvtBibAutor Where codAutor = '" + CodAutor.Text + "'" + "SELECT codAutor, nomeAutor, descricaoAutor FROM MvtBibAutor";  //Deleta o autor pelo código digitado na caixa de código
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -186,7 +182,7 @@ namespace Biblioteca_Estágio
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codAutor, Nome, descricaoAutor FROM MvtBibAutor";
+                    string sqlQuery = "SELECT codAutor, nomeAutor, descricaoAutor FROM MvtBibAutor";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -211,7 +207,27 @@ namespace Biblioteca_Estágio
             
         }
 
-       
+        private void formatColumns()
+        {
+            //Cód autor
+            this.dataGridView1.Columns[0]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            //Nome autor
+            this.dataGridView1.Columns[1]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            //Descrição autor
+            this.dataGridView1.Columns[2]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns[0].HeaderText = "Código";
+            this.dataGridView1.Columns[1].HeaderText = "Nome";
+            this.dataGridView1.Columns[2].HeaderText = "Descrição";
+        }
+
+
+
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)//Caixa aonde ocorre as atualizações de processos
         {
@@ -276,10 +292,7 @@ namespace Biblioteca_Estágio
 
         private void NomeAutor_TextChanged(object sender, EventArgs e) //Caixa de texto Nome do autor
         {
-            if (NomeAutor.Text.ToString().Length > 0)
-            {
-                NomeAutor.Text = char.ToUpper(NomeAutor.Text[0]) + NomeAutor.Text.ToString().Substring(1); //Transformar a primeira letra maiuscula da escrita na tabela 
-            }
+           
 
         }
 
@@ -333,29 +346,8 @@ namespace Biblioteca_Estágio
             CodAutor.Text = $"{row.Cells[0].Value}";
             NomeAutor.Text = $"{row.Cells[1].Value}";
             InfAutor.Text = $"{row.Cells[2].Value}";
-
-            
-
-
-
+         
         }
-
-        private void formatColumns()
-        {
-            //Cód autor
-            this.dataGridView1.Columns[0]
-                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            //Nome autor
-            this.dataGridView1.Columns[1]
-                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            //Descrição autor
-            this.dataGridView1.Columns[2]
-                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-        }
-
-
 
 
         private void label3_Click(object sender, EventArgs e)

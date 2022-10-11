@@ -14,20 +14,40 @@ namespace Cadastro_Seção
 
         public void Salvar()
         {
-            var sql = "INSERT INTO MvtBibSecao (descricaoSecao) VALUES (@descricaoSecao)";
-            using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+            if (this.codSecao == 0)
             {
-                cn.Open();
-                using (var cmd = new SqlCommand(sql, cn))
+                var sql = "INSERT INTO MvtBibSecao (descricaoSecao) VALUES (@descricaoSecao)";
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
+                    cn.Open();
+                    using (var cmd = new SqlCommand(sql, cn))
+                    {
 
-                    cmd.Parameters.AddWithValue("@descricaoSecao", this.descricaoSecao);
+                        cmd.Parameters.AddWithValue("@descricaoSecao", this.descricaoSecao);
 
-                    cmd.ExecuteNonQuery();
-                }
-                cn.Close();
+                        cmd.ExecuteNonQuery();
+                    }
+                    cn.Close();
+                } return;
             }
 
+            else
+            {
+                var sql = "UPDATE MvtBibSecao SET descricaoSecao = @descricaoSecao";
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand(sql, cn))
+                    {
+
+                        cmd.Parameters.AddWithValue("@descricaoSecao", this.descricaoSecao);
+                        cmd.Parameters.AddWithValue("@codSecao", this.codSecao);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    cn.Close();
+                }
+            }
 
         }
     }

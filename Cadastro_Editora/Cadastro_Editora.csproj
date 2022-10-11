@@ -82,5 +82,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cadastro_Item_Acervo\Cadastro_Item_Acervo.csproj">
+      <Project>{6a839ed5-4cc8-48e3-8832-9d99a4bd3e39}</Project>
+      <Name>Cadastro_Item_Acervo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -51,6 +51,9 @@ namespace Cadastro_Seção
             var secao = new Seção()
             {
                 descricaoSecao = this.descricaoSecao.Text,
+                codSecao = string.IsNullOrEmpty(this.codSecao.Text)
+                ? 0
+                : int.Parse(this.codSecao.Text)
             };
 
             secao.Salvar();
@@ -136,6 +139,9 @@ namespace Cadastro_Seção
 
             //Descricao da secao
             this.dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns[0].HeaderText = "Código";
+            this.dataGridView1.Columns[1].HeaderText = "Descrição";
 
         }
 

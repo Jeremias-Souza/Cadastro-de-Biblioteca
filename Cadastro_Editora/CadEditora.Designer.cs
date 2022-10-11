@@ -73,6 +73,7 @@
             this.nomeEditora.Size = new System.Drawing.Size(156, 20);
             this.nomeEditora.TabIndex = 3;
             this.nomeEditora.TextChanged += new System.EventHandler(this.nomeEditora_TextChanged);
+            this.nomeEditora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeEditora_KeyPress);
             // 
             // dataGridView1
             // 
@@ -120,7 +121,8 @@
             this.Controls.Add(this.saveEditora);
             this.Controls.Add(this.label2);
             this.Name = "CadEditora";
-            this.Text = "CadEditora";
+            this.Text = "Cadastro da Editora";
+            this.Load += new System.EventHandler(this.CadEditora_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

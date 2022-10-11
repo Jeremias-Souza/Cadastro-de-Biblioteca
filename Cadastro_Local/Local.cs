@@ -14,20 +14,39 @@ namespace Cadastro_Local
 
         public void Salvar()
         {
-            var sql = "INSERT INTO MvtBibLocal (descricaoLocal) VALUES (@descricaoLocal)";
-            using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+            if (this.codLocal == 0)
             {
-                cn.Open();
-                using (var cmd = new SqlCommand(sql, cn))
+                var sql = "INSERT INTO MvtBibLocal (Descricao) VALUES (@Descricao)";
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
+                    cn.Open();
+                    using (var cmd = new SqlCommand(sql, cn))
+                    {
 
-                    cmd.Parameters.AddWithValue("@descricaoLocal", this.Descricao);
+                        cmd.Parameters.AddWithValue("@Descricao", this.Descricao);
 
-                    cmd.ExecuteNonQuery();
-                }
-                cn.Close();
+                        cmd.ExecuteNonQuery();
+                    }
+                    cn.Close();
+                } return;
             }
+            else
+            {
+                var sql = "UPDATE MvtBibLocal SET Descricao = @Descricao WHERE codLocal = @codLocal";
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand(sql, cn))
+                    {
 
+                        cmd.Parameters.AddWithValue("@Descricao", this.Descricao);
+                        cmd.Parameters.AddWithValue("@codLocal", this.codLocal);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    cn.Close();
+                }
+            }
 
         }
     }

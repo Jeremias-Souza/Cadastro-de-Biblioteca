@@ -106,6 +106,7 @@
             this.enderecoUF.Name = "enderecoUF";
             this.enderecoUF.Size = new System.Drawing.Size(36, 20);
             this.enderecoUF.TabIndex = 68;
+            this.enderecoUF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enderecoUF_KeyPress);
             // 
             // enderecoNumero
             // 
@@ -176,6 +177,8 @@
             this.nome.Name = "nome";
             this.nome.Size = new System.Drawing.Size(188, 20);
             this.nome.TabIndex = 58;
+            this.nome.TextChanged += new System.EventHandler(this.nome_TextChanged);
+            this.nome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nome_KeyPress);
             // 
             // codLeitor
             // 
@@ -367,6 +370,7 @@
             this.enderecoCidade.Name = "enderecoCidade";
             this.enderecoCidade.Size = new System.Drawing.Size(155, 20);
             this.enderecoCidade.TabIndex = 75;
+            this.enderecoCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enderecoCidade_KeyPress);
             // 
             // CadLeitor
             // 
@@ -407,7 +411,7 @@
             this.Controls.Add(this.deleteLeitor);
             this.Controls.Add(this.saveLeitor);
             this.Name = "CadLeitor";
-            this.Text = "CadLeitor";
+            this.Text = "Cadastro do Leitor";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

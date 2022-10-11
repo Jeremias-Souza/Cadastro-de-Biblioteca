@@ -27,39 +27,67 @@ namespace Cadastro_Item_Acervo
 
         public void Salvar()
         {
-            var sql = "INSERT INTO MvtBibItemAcervo (codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma) VALUES (@codLocal, @numExemplar, @nome, @codAutor, @nomeAutor, @codEditora, @nomeEditora, @tipoItem, @nomeLocal, @Volume, @anoEdicao, @localizacao, @secao, @idioma)";
-            using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+            if (this.codItem == 0)
             {
-                cn.Open();
-                using (var cmd = new SqlCommand(sql, cn))
+                var sql = "INSERT INTO MvtBibItemAcervo (codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma) VALUES (@codLocal, @numExemplar, @nome, @codAutor, @nomeAutor, @codEditora, @nomeEditora, @tipoItem, @nomeLocal, @Volume, @anoEdicao, @localizacao, @secao, @idioma)";
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
+                    cn.Open();
+                    using (var cmd = new SqlCommand(sql, cn))
+                    {
 
-                    cmd.Parameters.AddWithValue("@codLocal", this.codLocal);
-                    cmd.Parameters.AddWithValue("@numExemplar", this.numExemplar);
-                    cmd.Parameters.AddWithValue("@nome", this.nome);
-                    cmd.Parameters.AddWithValue("@codAutor", this.codAutor);
-                    cmd.Parameters.AddWithValue("@nomeAutor", this.nomeAutor);
-                    cmd.Parameters.AddWithValue("@codEditora", this.codEditora);
-                    cmd.Parameters.AddWithValue("@nomeEditora", this.nomeEditora);
-                    cmd.Parameters.AddWithValue("@tipoItem", this.tipoItem);
-                    cmd.Parameters.AddWithValue("@nomeLocal", this.nomeLocal);
-                    cmd.Parameters.AddWithValue("@volume", this.volume);
-                    cmd.Parameters.AddWithValue("@anoEdicao", this.anoEdicao);
-                    cmd.Parameters.AddWithValue("@localizacao", this.localizacao);
-                    cmd.Parameters.AddWithValue("@secao", this.secao);
-                    cmd.Parameters.AddWithValue("@idioma", this.idioma);
+                        cmd.Parameters.AddWithValue("@codLocal", this.codLocal);
+                        cmd.Parameters.AddWithValue("@numExemplar", this.numExemplar);
+                        cmd.Parameters.AddWithValue("@nome", this.nome);
+                        cmd.Parameters.AddWithValue("@codAutor", this.codAutor);
+                        cmd.Parameters.AddWithValue("@nomeAutor", this.nomeAutor);
+                        cmd.Parameters.AddWithValue("@codEditora", this.codEditora);
+                        cmd.Parameters.AddWithValue("@nomeEditora", this.nomeEditora);
+                        cmd.Parameters.AddWithValue("@tipoItem", this.tipoItem);
+                        cmd.Parameters.AddWithValue("@nomeLocal", this.nomeLocal);
+                        cmd.Parameters.AddWithValue("@volume", this.volume);
+                        cmd.Parameters.AddWithValue("@anoEdicao", this.anoEdicao);
+                        cmd.Parameters.AddWithValue("@localizacao", this.localizacao);
+                        cmd.Parameters.AddWithValue("@secao", this.secao);
+                        cmd.Parameters.AddWithValue("@idioma", this.idioma);
 
-                    cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
+                    }
+                    cn.Close();
                 }
-                cn.Close();
+                return;
             }
 
+            else
+            {
+                var sql = "UPDATE MvtBibItemAcervo (codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma) VALUES (@codLocal, @numExemplar, @nome, @codAutor, @nomeAutor, @codEditora, @nomeEditora, @tipoItem, @nomeLocal, @Volume, @anoEdicao, @localizacao, @secao, @idioma)";
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand(sql, cn))
+                    {
 
+                        cmd.Parameters.AddWithValue("@codLocal", this.codLocal);
+                        cmd.Parameters.AddWithValue("@numExemplar", this.numExemplar);
+                        cmd.Parameters.AddWithValue("@nome", this.nome);
+                        cmd.Parameters.AddWithValue("@codAutor", this.codAutor);
+                        cmd.Parameters.AddWithValue("@nomeAutor", this.nomeAutor);
+                        cmd.Parameters.AddWithValue("@codEditora", this.codEditora);
+                        cmd.Parameters.AddWithValue("@nomeEditora", this.nomeEditora);
+                        cmd.Parameters.AddWithValue("@tipoItem", this.tipoItem);
+                        cmd.Parameters.AddWithValue("@nomeLocal", this.nomeLocal);
+                        cmd.Parameters.AddWithValue("@volume", this.volume);
+                        cmd.Parameters.AddWithValue("@anoEdicao", this.anoEdicao);
+                        cmd.Parameters.AddWithValue("@localizacao", this.localizacao);
+                        cmd.Parameters.AddWithValue("@secao", this.secao);
+                        cmd.Parameters.AddWithValue("@idioma", this.idioma);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    cn.Close();
+                }
+            }
         }
-
-       /* public static implicit operator Acervo(Acervo v)
-        {
-            throw new NotImplementedException();
-        }*/
+       
     }
 }

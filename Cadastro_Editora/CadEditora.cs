@@ -55,7 +55,9 @@ namespace Cadastro_Editora
             var editora = new Editora()
             {
                 nome = this.nomeEditora.Text,
-                //codEditora = int.Parse(this.codeEditora.Text)
+                codEditora = string.IsNullOrEmpty(this.codeEditora.Text)
+                ? 0
+                : int.Parse(this.codeEditora.Text)
             };
 
             editora.Salvar();
@@ -133,41 +135,19 @@ namespace Cadastro_Editora
 
             }
         }
-
-        /*public static bool existeEditora(Editora editora)
-        {
-            bool res;
-            SqlDataAdapter da = null;
-            DataTable dt = new DataTable();
-
-            using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-            {
-                cn.Open();
-                string sqlQuery = "Select nome FROM MvtBibEditoraa WHERE nome='" + editora.nome + "'";
-                da = new SqlDataAdapter(sqlQuery, cn);
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    res = true;
-                }
-                else
-                {
-                    res = false;
-                }
-            }
-
-            return res;
-        }*/
-
+       
         private void formatColumns()
         {
             //Cód editora
-            this.dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+            this.dataGridView1.Columns[0]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;            
 
             //Nome editora
-            this.dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView1.Columns[1]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
+            this.dataGridView1.Columns[0].HeaderText = "Código";
+            this.dataGridView1.Columns[1].HeaderText = "Nome";
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -202,6 +182,20 @@ namespace Cadastro_Editora
         private void nomeEditora_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void nomeEditora_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
+            {
+                e.Handled = true;
+                e = null;
+            }
+        }
+
+        private void CadEditora_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
