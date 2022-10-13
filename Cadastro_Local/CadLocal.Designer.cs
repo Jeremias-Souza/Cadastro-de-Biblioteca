@@ -40,7 +40,7 @@
             // 
             // saveLocal
             // 
-            this.saveLocal.Location = new System.Drawing.Point(125, 82);
+            this.saveLocal.Location = new System.Drawing.Point(54, 100);
             this.saveLocal.Name = "saveLocal";
             this.saveLocal.Size = new System.Drawing.Size(75, 23);
             this.saveLocal.TabIndex = 2;
@@ -50,7 +50,7 @@
             // 
             // deleteLocal
             // 
-            this.deleteLocal.Location = new System.Drawing.Point(206, 82);
+            this.deleteLocal.Location = new System.Drawing.Point(135, 100);
             this.deleteLocal.Name = "deleteLocal";
             this.deleteLocal.Size = new System.Drawing.Size(75, 23);
             this.deleteLocal.TabIndex = 3;
@@ -60,16 +60,16 @@
             // 
             // descricaoLocal
             // 
-            this.descricaoLocal.Location = new System.Drawing.Point(125, 38);
+            this.descricaoLocal.Location = new System.Drawing.Point(8, 58);
             this.descricaoLocal.Multiline = true;
             this.descricaoLocal.Name = "descricaoLocal";
-            this.descricaoLocal.Size = new System.Drawing.Size(164, 38);
+            this.descricaoLocal.Size = new System.Drawing.Size(239, 38);
             this.descricaoLocal.TabIndex = 1;
             // 
             // codLocal
             // 
             this.codLocal.Enabled = false;
-            this.codLocal.Location = new System.Drawing.Point(125, 11);
+            this.codLocal.Location = new System.Drawing.Point(116, 10);
             this.codLocal.Name = "codLocal";
             this.codLocal.Size = new System.Drawing.Size(50, 20);
             this.codLocal.TabIndex = 0;
@@ -80,10 +80,10 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 111);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 129);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(281, 95);
+            this.dataGridView1.Size = new System.Drawing.Size(243, 89);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -91,27 +91,27 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(5, 12);
+            this.label2.Location = new System.Drawing.Point(8, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 17);
+            this.label2.Size = new System.Drawing.Size(108, 17);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Código do local";
+            this.label2.Text = "Código do local:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(5, 38);
+            this.label1.Location = new System.Drawing.Point(6, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 17);
+            this.label1.Size = new System.Drawing.Size(124, 17);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Descrição do local";
+            this.label1.Text = "Descrição do local:";
             // 
             // CadLocal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 210);
+            this.ClientSize = new System.Drawing.Size(252, 225);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.codLocal);
             this.Controls.Add(this.descricaoLocal);
@@ -119,6 +119,7 @@
             this.Controls.Add(this.saveLocal);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
+            this.MinimumSize = new System.Drawing.Size(268, 264);
             this.Name = "CadLocal";
             this.Text = "Cadastro do Local";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

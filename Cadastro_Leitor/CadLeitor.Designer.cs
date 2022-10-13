@@ -324,6 +324,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 245);
@@ -412,6 +413,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.deleteLeitor);
             this.Controls.Add(this.saveLeitor);
+            this.MinimumSize = new System.Drawing.Size(748, 447);
             this.Name = "CadLeitor";
             this.Text = "Cadastro do Leitor";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

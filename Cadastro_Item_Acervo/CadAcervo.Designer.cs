@@ -90,6 +90,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(9, 245);
@@ -124,7 +125,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(6, 57);
+            this.label3.Location = new System.Drawing.Point(4, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 17);
             this.label3.TabIndex = 8;
@@ -134,7 +135,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(6, 83);
+            this.label4.Location = new System.Drawing.Point(4, 83);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 17);
             this.label4.TabIndex = 9;
@@ -144,7 +145,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(6, 109);
+            this.label5.Location = new System.Drawing.Point(4, 136);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 17);
             this.label5.TabIndex = 10;
@@ -154,7 +155,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(6, 165);
+            this.label6.Location = new System.Drawing.Point(6, 192);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 17);
             this.label6.TabIndex = 11;
@@ -243,21 +244,21 @@
             // codItem
             // 
             this.codItem.Enabled = false;
-            this.codItem.Location = new System.Drawing.Point(120, 6);
+            this.codItem.Location = new System.Drawing.Point(122, 6);
             this.codItem.Name = "codItem";
             this.codItem.Size = new System.Drawing.Size(45, 20);
             this.codItem.TabIndex = 1;
             // 
             // codLocal
             // 
-            this.codLocal.Location = new System.Drawing.Point(120, 57);
+            this.codLocal.Location = new System.Drawing.Point(122, 57);
             this.codLocal.Name = "codLocal";
             this.codLocal.Size = new System.Drawing.Size(45, 20);
             this.codLocal.TabIndex = 3;
             // 
             // nomeAcervo
             // 
-            this.nomeAcervo.Location = new System.Drawing.Point(120, 32);
+            this.nomeAcervo.Location = new System.Drawing.Point(122, 32);
             this.nomeAcervo.Multiline = true;
             this.nomeAcervo.Name = "nomeAcervo";
             this.nomeAcervo.Size = new System.Drawing.Size(188, 20);
@@ -266,7 +267,7 @@
             // 
             // nomeLocal
             // 
-            this.nomeLocal.Location = new System.Drawing.Point(120, 82);
+            this.nomeLocal.Location = new System.Drawing.Point(122, 82);
             this.nomeLocal.Multiline = true;
             this.nomeLocal.Name = "nomeLocal";
             this.nomeLocal.Size = new System.Drawing.Size(188, 20);
@@ -275,15 +276,15 @@
             // 
             // nomeAutor
             // 
-            this.nomeAutor.Location = new System.Drawing.Point(120, 108);
+            this.nomeAutor.Location = new System.Drawing.Point(122, 135);
             this.nomeAutor.Name = "nomeAutor";
             this.nomeAutor.Size = new System.Drawing.Size(188, 20);
-            this.nomeAutor.TabIndex = 5;
+            this.nomeAutor.TabIndex = 6;
             this.nomeAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeAutor_KeyPress);
             // 
             // nomeEditora
             // 
-            this.nomeEditora.Location = new System.Drawing.Point(120, 164);
+            this.nomeEditora.Location = new System.Drawing.Point(122, 193);
             this.nomeEditora.Name = "nomeEditora";
             this.nomeEditora.Size = new System.Drawing.Size(188, 20);
             this.nomeEditora.TabIndex = 7;
@@ -302,28 +303,28 @@
             // 
             this.numeroExemplar.Location = new System.Drawing.Point(464, 57);
             this.numeroExemplar.Name = "numeroExemplar";
-            this.numeroExemplar.Size = new System.Drawing.Size(100, 20);
+            this.numeroExemplar.Size = new System.Drawing.Size(59, 20);
             this.numeroExemplar.TabIndex = 11;
             // 
             // volume
             // 
             this.volume.Location = new System.Drawing.Point(464, 82);
             this.volume.Name = "volume";
-            this.volume.Size = new System.Drawing.Size(100, 20);
+            this.volume.Size = new System.Drawing.Size(59, 20);
             this.volume.TabIndex = 12;
             // 
             // anoEdicao
             // 
             this.anoEdicao.Location = new System.Drawing.Point(464, 107);
             this.anoEdicao.Name = "anoEdicao";
-            this.anoEdicao.Size = new System.Drawing.Size(100, 20);
+            this.anoEdicao.Size = new System.Drawing.Size(59, 20);
             this.anoEdicao.TabIndex = 13;
             // 
             // idioma
             // 
             this.idioma.Location = new System.Drawing.Point(464, 188);
             this.idioma.Name = "idioma";
-            this.idioma.Size = new System.Drawing.Size(188, 20);
+            this.idioma.Size = new System.Drawing.Size(121, 20);
             this.idioma.TabIndex = 16;
             this.idioma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idioma_KeyPress);
             // 
@@ -331,14 +332,14 @@
             // 
             this.secao.Location = new System.Drawing.Point(464, 162);
             this.secao.Name = "secao";
-            this.secao.Size = new System.Drawing.Size(188, 20);
+            this.secao.Size = new System.Drawing.Size(121, 20);
             this.secao.TabIndex = 15;
             // 
             // localizacao
             // 
             this.localizacao.Location = new System.Drawing.Point(464, 134);
             this.localizacao.Name = "localizacao";
-            this.localizacao.Size = new System.Drawing.Size(188, 20);
+            this.localizacao.Size = new System.Drawing.Size(59, 20);
             this.localizacao.TabIndex = 14;
             // 
             // comboBox1
@@ -361,10 +362,10 @@
             // 
             // codAutor
             // 
-            this.codAutor.Location = new System.Drawing.Point(121, 135);
+            this.codAutor.Location = new System.Drawing.Point(123, 108);
             this.codAutor.Name = "codAutor";
-            this.codAutor.Size = new System.Drawing.Size(188, 20);
-            this.codAutor.TabIndex = 6;
+            this.codAutor.Size = new System.Drawing.Size(44, 20);
+            this.codAutor.TabIndex = 5;
             this.codAutor.TextChanged += new System.EventHandler(this.codAutor_TextChanged);
             this.codAutor.Leave += new System.EventHandler(this.codAutor_Leave);
             // 
@@ -372,7 +373,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(7, 136);
+            this.label15.Location = new System.Drawing.Point(4, 108);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(110, 17);
             this.label15.TabIndex = 35;
@@ -380,16 +381,17 @@
             // 
             // codEditora
             // 
-            this.codEditora.Location = new System.Drawing.Point(120, 192);
+            this.codEditora.Location = new System.Drawing.Point(122, 164);
             this.codEditora.Name = "codEditora";
-            this.codEditora.Size = new System.Drawing.Size(188, 20);
+            this.codEditora.Size = new System.Drawing.Size(45, 20);
             this.codEditora.TabIndex = 8;
+            this.codEditora.Leave += new System.EventHandler(this.codEditora_Leave);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(6, 193);
+            this.label16.Location = new System.Drawing.Point(4, 164);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(118, 17);
             this.label16.TabIndex = 37;
@@ -401,7 +403,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 408);
             this.Controls.Add(this.codEditora);
-            this.Controls.Add(this.label16);
             this.Controls.Add(this.codAutor);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.comboBox1);
@@ -435,6 +436,8 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.deleteAcervo);
             this.Controls.Add(this.saveAcervo);
+            this.Controls.Add(this.label16);
+            this.MinimumSize = new System.Drawing.Size(678, 447);
             this.Name = "CadAcervo";
             this.Text = "Cadastro do Acervo";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

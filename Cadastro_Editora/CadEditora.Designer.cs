@@ -40,7 +40,7 @@
             // 
             // saveEditora
             // 
-            this.saveEditora.Location = new System.Drawing.Point(127, 58);
+            this.saveEditora.Location = new System.Drawing.Point(28, 64);
             this.saveEditora.Name = "saveEditora";
             this.saveEditora.Size = new System.Drawing.Size(75, 23);
             this.saveEditora.TabIndex = 3;
@@ -50,7 +50,7 @@
             // 
             // deleteEditora
             // 
-            this.deleteEditora.Location = new System.Drawing.Point(208, 58);
+            this.deleteEditora.Location = new System.Drawing.Point(110, 64);
             this.deleteEditora.Name = "deleteEditora";
             this.deleteEditora.Size = new System.Drawing.Size(75, 23);
             this.deleteEditora.TabIndex = 4;
@@ -70,7 +70,7 @@
             // 
             this.nomeEditora.Location = new System.Drawing.Point(127, 32);
             this.nomeEditora.Name = "nomeEditora";
-            this.nomeEditora.Size = new System.Drawing.Size(168, 20);
+            this.nomeEditora.Size = new System.Drawing.Size(72, 20);
             this.nomeEditora.TabIndex = 2;
             this.nomeEditora.TextChanged += new System.EventHandler(this.nomeEditora_TextChanged);
             this.nomeEditora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeEditora_KeyPress);
@@ -79,12 +79,13 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 87);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 93);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(289, 86);
+            this.dataGridView1.Size = new System.Drawing.Size(186, 86);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -94,9 +95,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(10, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 17);
+            this.label2.Size = new System.Drawing.Size(121, 17);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Código da editora";
+            this.label2.Text = "Código da editora:";
             // 
             // label1
             // 
@@ -104,22 +105,23 @@
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(10, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 17);
+            this.label1.Size = new System.Drawing.Size(114, 17);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Nome da editora";
+            this.label1.Text = "Nome da editora:";
             // 
             // CadEditora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 177);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(212, 191);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.nomeEditora);
             this.Controls.Add(this.codeEditora);
             this.Controls.Add(this.deleteEditora);
             this.Controls.Add(this.saveEditora);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(228, 230);
             this.Name = "CadEditora";
             this.Text = "Cadastro da Editora";
             this.Load += new System.EventHandler(this.CadEditora_Load);

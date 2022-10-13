@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,9 +57,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(17, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 17);
+            this.label2.Size = new System.Drawing.Size(111, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Código do autor";
+            this.label2.Text = "Código do autor:";
             // 
             // label3
             // 
@@ -67,9 +67,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(17, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 17);
+            this.label3.Size = new System.Drawing.Size(114, 17);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Nome completo ";
+            this.label3.Text = "Nome completo :";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
@@ -78,9 +78,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(17, 76);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(142, 17);
+            this.label4.Size = new System.Drawing.Size(145, 17);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Informações do Autor";
+            this.label4.Text = "Informações do Autor:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // CodAutor
@@ -106,10 +106,11 @@
             this.NomeAutor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NomeAutor.MaxLength = 50;
             this.NomeAutor.Name = "NomeAutor";
-            this.NomeAutor.Size = new System.Drawing.Size(250, 23);
+            this.NomeAutor.Size = new System.Drawing.Size(153, 23);
             this.NomeAutor.TabIndex = 2;
             this.NomeAutor.TextChanged += new System.EventHandler(this.NomeAutor_TextChanged);
             this.NomeAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NomeAutor_KeyPress);
+            this.NomeAutor.Leave += new System.EventHandler(this.NomeAutor_Leave);
             // 
             // InfAutor
             // 
@@ -118,14 +119,14 @@
             this.InfAutor.MaxLength = 1000;
             this.InfAutor.Multiline = true;
             this.InfAutor.Name = "InfAutor";
-            this.InfAutor.Size = new System.Drawing.Size(425, 35);
+            this.InfAutor.Size = new System.Drawing.Size(266, 35);
             this.InfAutor.TabIndex = 3;
             this.InfAutor.TextChanged += new System.EventHandler(this.InfAutor_TextChanged);
             // 
             // btnDelete
             // 
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnDelete.Location = new System.Drawing.Point(320, 118);
+            this.btnDelete.Location = new System.Drawing.Point(291, 117);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
@@ -139,23 +140,23 @@
             this.dataGridView1.AccessibleDescription = "NOT NULL";
             this.dataGridView1.AllowDrop = true;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeight = 25;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 158);
+            this.dataGridView1.Location = new System.Drawing.Point(20, 148);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(696, 132);
+            this.dataGridView1.Size = new System.Drawing.Size(407, 132);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
@@ -166,10 +167,10 @@
             this.statusStrip1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 309);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 293);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 16, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(732, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(445, 22);
             this.statusStrip1.TabIndex = 15;
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
@@ -184,7 +185,7 @@
             // AddAutor
             // 
             this.AddAutor.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.AddAutor.Location = new System.Drawing.Point(239, 118);
+            this.AddAutor.Location = new System.Drawing.Point(195, 117);
             this.AddAutor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddAutor.Name = "AddAutor";
             this.AddAutor.Size = new System.Drawing.Size(75, 23);
@@ -202,7 +203,7 @@
             // btnLoadImage
             // 
             this.btnLoadImage.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnLoadImage.Location = new System.Drawing.Point(620, 118);
+            this.btnLoadImage.Location = new System.Drawing.Point(336, 45);
             this.btnLoadImage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLoadImage.Name = "btnLoadImage";
             this.btnLoadImage.Size = new System.Drawing.Size(75, 23);
@@ -220,10 +221,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureBox1.Image = global::Biblioteca_Estágio.Properties.Resources._11;
-            this.pictureBox1.Location = new System.Drawing.Point(599, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(336, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 98);
+            this.pictureBox1.Size = new System.Drawing.Size(75, 43);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
@@ -231,10 +232,10 @@
             // 
             // CadastroAutor
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(732, 331);
+            this.ClientSize = new System.Drawing.Size(445, 315);
             this.Controls.Add(this.btnLoadImage);
             this.Controls.Add(this.AddAutor);
             this.Controls.Add(this.statusStrip1);
@@ -250,7 +251,6 @@
             this.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MinimumSize = new System.Drawing.Size(748, 370);
             this.Name = "CadastroAutor";
             this.Text = "Cadastro do Autor";
             this.Load += new System.EventHandler(this.Form1_Load);

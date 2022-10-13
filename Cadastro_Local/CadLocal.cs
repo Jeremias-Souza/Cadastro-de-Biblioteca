@@ -48,6 +48,13 @@ namespace Cadastro_Local
 
         private void saveLocal_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(descricaoLocal.Text))
+            {
+                MessageBox.Show("É necessario adicionar uma descrição para o local. ");
+                return;
+            }
+
+
             var local = new Local()
             {
                 descricaoLocal = this.descricaoLocal.Text,
@@ -56,10 +63,10 @@ namespace Cadastro_Local
                 : int.Parse(this.codLocal.Text)
             };
 
-            local.Salvar();
-
-
+            local.Salvar(); 
+            
             MessageBox.Show("Cadastro feito com sucesso!");
+            
 
             try
             {

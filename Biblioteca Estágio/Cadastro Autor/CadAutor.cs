@@ -82,18 +82,26 @@ namespace Biblioteca_Estágio
        
         private void AddAutor_Click(object sender, EventArgs e) //Botao para adicionar o autor 
         {
+            if (string.IsNullOrWhiteSpace(NomeAutor.Text))
+            {
+                MessageBox.Show("Nome do autor é obrigatorio. ");
+                return;
+            }
+
+
             var autor = new Autor()
             {
-                nomeAutor = this.NomeAutor.Text,
+                nomeAutor = this.NomeAutor.Text,              
                 descricaoAutor = this.InfAutor.Text,
                 codAutor = string.IsNullOrEmpty(this.CodAutor.Text)
                 ? 0
                 : int.Parse(this.CodAutor.Text)
+              
             };           
             autor.Salvar();
-
-
-            MessageBox.Show("Cadastro feito com sucesso!");
+                                 
+                MessageBox.Show("Cadastro feito com sucesso!");
+            
 
             try
             {
@@ -267,6 +275,7 @@ namespace Biblioteca_Estágio
                 e.Handled = true;
                 e = null;
             }
+          
 
         }
 
@@ -325,10 +334,16 @@ namespace Biblioteca_Estágio
 
         private void NomeAutor_TextChanged(object sender, EventArgs e) //Caixa de texto Nome do autor
         {
+            
         }
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e) //Fazer upload nas caixas de texto quando na tabela for apertado duas vezes
         {
+        }
+
+        private void NomeAutor_Leave(object sender, EventArgs e)
+        {
+            
         }
     }
 }

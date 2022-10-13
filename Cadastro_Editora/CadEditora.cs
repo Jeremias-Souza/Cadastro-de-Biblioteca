@@ -52,6 +52,12 @@ namespace Cadastro_Editora
 
         private void saveEditora_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(nomeEditora.Text))
+            {
+                MessageBox.Show("Nome da editora é obrigatorio. ");
+                return;
+            }
+
             var editora = new Editora()
             {
                 nome = this.nomeEditora.Text,
@@ -62,9 +68,8 @@ namespace Cadastro_Editora
 
             editora.Salvar();
             
-
             MessageBox.Show("Cadastro feito com sucesso!");
-
+            
             try
             {
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))

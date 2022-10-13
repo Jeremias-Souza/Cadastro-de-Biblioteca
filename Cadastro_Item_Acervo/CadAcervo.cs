@@ -55,6 +55,55 @@ namespace Cadastro_Item_Acervo
 
         private void saveAcervo_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(codLocal.Text))
+            {
+                MessageBox.Show("Código do local é obrigatorio. ");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(numeroExemplar.Text))
+            {
+                MessageBox.Show("Numero do exemplar é obrigatorio. ");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(codAutor.Text))
+            {
+                MessageBox.Show("Código do autor é obrigatorio. ");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(nomeAutor.Text))
+            {
+                MessageBox.Show("Nome do autor é obrigatorio. ");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(codEditora.Text))
+            {
+                MessageBox.Show("Código da editora é obrigatorio. ");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(nomeEditora.Text))
+            {
+                MessageBox.Show("Nome da editora é obrigatorio. ");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(comboBox1.Text))
+            {
+                MessageBox.Show("Tipo de item é obrigatorio. ");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(nomeLocal.Text))
+            {
+                MessageBox.Show("Nome do local é obrigatorio. ");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(localizacao.Text))
+            {
+                MessageBox.Show("Código da prateleira é obrigatorio. ");
+                return;
+            }
+
+
+
+
             var acervo = new Acervo()
             {
                                                                                                            
@@ -79,10 +128,9 @@ namespace Cadastro_Item_Acervo
 
             };
 
-            acervo.Salvar();
-
-
+            acervo.Salvar();                       
             MessageBox.Show("Cadastro feito com sucesso!");
+            
 
             try
             {
@@ -99,13 +147,13 @@ namespace Cadastro_Item_Acervo
                             dataGridView1.DataSource = dt;
                         }
 
-                        int i = -1;
+                        /*int i = -1;
                         for (i = -1; i <= 19; i++)
                         {
                             comboBox1.SelectedIndex = i;
                             items[i] = comboBox1.SelectedItem.ToString();
                         }
-                        comboBox1.Items.Clear();
+                        comboBox1.Items.Clear();*/
 
                     }
                     ClearTextBoxes();
@@ -358,7 +406,7 @@ namespace Cadastro_Item_Acervo
 
         private void codAutor_Leave(object sender, EventArgs e)
         {
-           /* 
+           
                 //var select = $"SELECT nomeAutor FROM AUTOR WHERE codAutor = {int.Parse(this.codAutor.Text)}";
                // this.nomeAutor.Text = select;
              try
@@ -367,7 +415,7 @@ namespace Cadastro_Item_Acervo
                 {
                     cn.Open();
 
-                    var sqlQuery = $"SELECT nomeAutor FROM MvtBibAutor WHERE codAutor = {int.Parse(this.codAutor.Text)}";
+                    var sqlQuery = $"SELECT NomeAutor FROM dbo.MvtBibAutor WHERE codAutor = {int.Parse(this.codAutor.Text)}";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -391,9 +439,40 @@ namespace Cadastro_Item_Acervo
             }
 
 
-            */
+            
 
         }
 
+        private void codEditora_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+                {
+                    cn.Open();
+
+                    var sqlQuery = $"SELECT nomeEditora FROM MvtBibAutor WHERE codEditora = {int.Parse(this.codEditora.Text)}";
+                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            this.codEditora.Text = dt.Rows[0].Field<int>("nomeEditora").ToString();
+                        }
+                    }
+                }
+
+                MessageBox.Show("Autor Carregado com sucesso!");
+                ClearTextBoxes();
+
+
+
+            }
+            catch (Exception ex) //Mostra mensagem caso haver falha 
+            {
+
+                MessageBox.Show("Falha! \n" + ex.Message);
+
+            }
+        }
     }
 }

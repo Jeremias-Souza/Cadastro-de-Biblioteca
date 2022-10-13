@@ -42,36 +42,37 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 107);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 131);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(296, 66);
+            this.dataGridView1.Size = new System.Drawing.Size(215, 66);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // descricaoSecao
             // 
-            this.descricaoSecao.Location = new System.Drawing.Point(132, 30);
+            this.descricaoSecao.Location = new System.Drawing.Point(10, 51);
             this.descricaoSecao.Multiline = true;
             this.descricaoSecao.Name = "descricaoSecao";
-            this.descricaoSecao.Size = new System.Drawing.Size(167, 45);
+            this.descricaoSecao.Size = new System.Drawing.Size(215, 45);
             this.descricaoSecao.TabIndex = 1;
             // 
             // codSecao
             // 
             this.codSecao.Enabled = false;
-            this.codSecao.Location = new System.Drawing.Point(132, 6);
+            this.codSecao.Location = new System.Drawing.Point(119, 6);
             this.codSecao.Name = "codSecao";
-            this.codSecao.Size = new System.Drawing.Size(50, 20);
+            this.codSecao.Size = new System.Drawing.Size(40, 20);
             this.codSecao.TabIndex = 0;
             // 
             // deleteSecao
             // 
-            this.deleteSecao.Location = new System.Drawing.Point(213, 78);
+            this.deleteSecao.Location = new System.Drawing.Point(116, 102);
             this.deleteSecao.Name = "deleteSecao";
-            this.deleteSecao.Size = new System.Drawing.Size(75, 23);
+            this.deleteSecao.Size = new System.Drawing.Size(80, 23);
             this.deleteSecao.TabIndex = 3;
             this.deleteSecao.Text = "Excluir";
             this.deleteSecao.UseVisualStyleBackColor = true;
@@ -79,7 +80,7 @@
             // 
             // saveSecao
             // 
-            this.saveSecao.Location = new System.Drawing.Point(132, 78);
+            this.saveSecao.Location = new System.Drawing.Point(33, 102);
             this.saveSecao.Name = "saveSecao";
             this.saveSecao.Size = new System.Drawing.Size(75, 23);
             this.saveSecao.TabIndex = 2;
@@ -93,9 +94,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(7, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 17);
+            this.label2.Size = new System.Drawing.Size(114, 17);
             this.label2.TabIndex = 12;
-            this.label2.Text = "Código da Seção";
+            this.label2.Text = "Código da Seção:";
             // 
             // label3
             // 
@@ -103,15 +104,15 @@
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(7, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 17);
+            this.label3.Size = new System.Drawing.Size(130, 17);
             this.label3.TabIndex = 14;
-            this.label3.Text = "Descrição da Seção";
+            this.label3.Text = "Descrição da Seção:";
             // 
             // CadSecao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 177);
+            this.ClientSize = new System.Drawing.Size(237, 204);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.descricaoSecao);
             this.Controls.Add(this.codSecao);

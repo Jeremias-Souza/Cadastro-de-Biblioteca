@@ -62,7 +62,7 @@ namespace Cadastro_Item_Acervo
 
             else
             {
-                var sql = "UPDATE MvtBibItemAcervo SET codLocal = @codLocal, numExemplar = @numExemplar, nome = @nome, codAutor = @CodAutor, nomeAutor = @nomeAutor, codEditora = @codEditora, nomeEditora = @nomeEditora, nomeColecao = @nomeColecao, tipoItem = @tipoItem, nomeLocal = @nomeLocal, Volume = @Volume, anoEdicao = @anoEdicao, localizacao = @localizacao, secao = @secao, idioma = @idioma WHERE codItem = @codItem";
+                var sql = "UPDATE MvtBibItemAcervo SET codLocal = @codLocal, numExemplar = @numExemplar, nome = @nome, codAutor = @CodAutor, nomeAutor = @nomeAutor, codEditora = @codEditora, nomeEditora = @nomeEditora, tipoItem = @tipoItem, nomeColecao = @nomeColecao, nomeLocal = @nomeLocal, Volume = @Volume, anoEdicao = @anoEdicao, localizacao = @localizacao, secao = @secao, idioma = @idioma WHERE codItem = @codItem";
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
                     cn.Open();
@@ -84,7 +84,7 @@ namespace Cadastro_Item_Acervo
                         cmd.Parameters.AddWithValue("@localizacao", this.localizacao);
                         cmd.Parameters.AddWithValue("@secao", this.secao);
                         cmd.Parameters.AddWithValue("@idioma", this.idioma);
-                        cmd.Parameters.AddWithValue("@codItem", this.tipoItem);
+                        cmd.Parameters.AddWithValue("@codItem", this.codItem);
 
                         cmd.ExecuteNonQuery();
                     }

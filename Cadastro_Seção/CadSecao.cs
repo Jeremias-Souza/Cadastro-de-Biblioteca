@@ -48,6 +48,12 @@ namespace Cadastro_Seção
 
         private void saveSecao_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(descricaoSecao.Text))
+            {
+                MessageBox.Show("É necessario adicionar uma descrição para a Seção. ");
+                return;
+            }
+
             var secao = new Seção()
             {
                 descricaoSecao = this.descricaoSecao.Text,
@@ -57,7 +63,7 @@ namespace Cadastro_Seção
             };
 
             secao.Salvar();
-
+                    
             MessageBox.Show("Cadastro feito com sucesso!");
 
             try

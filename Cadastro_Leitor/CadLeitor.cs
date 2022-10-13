@@ -48,6 +48,42 @@ namespace Cadastro_Leitor
 
         private void saveLeitor_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(nome.Text))
+            {
+                MessageBox.Show("É necessario adicionar o nome do autor. ");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(sexo.Text))
+            {
+                MessageBox.Show("É necessario informar o sexo do Leitor. ");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(dataNascimento.Text))
+            {
+                MessageBox.Show("É necessario informar a data de nascimento do autor. ");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(enderecoNome.Text))
+            {
+                MessageBox.Show("É necessario informar a rua do autor. ");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(enderecoBairro.Text))
+            {
+                MessageBox.Show("É necessario informar o bairro do autor. ");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(enderecoCidade.Text))
+            {
+                MessageBox.Show("É necessario informar a cidade do autor. ");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(enderecoUF.Text))
+            {
+                MessageBox.Show("É necessario informar o estado do autor. ");
+                return;
+            }
+
             var leitor = new Leitor()
             {
 
