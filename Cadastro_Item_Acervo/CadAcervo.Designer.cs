@@ -365,6 +365,8 @@
             this.codAutor.Name = "codAutor";
             this.codAutor.Size = new System.Drawing.Size(188, 20);
             this.codAutor.TabIndex = 6;
+            this.codAutor.TextChanged += new System.EventHandler(this.codAutor_TextChanged);
+            this.codAutor.Leave += new System.EventHandler(this.codAutor_Leave);
             // 
             // label15
             // 

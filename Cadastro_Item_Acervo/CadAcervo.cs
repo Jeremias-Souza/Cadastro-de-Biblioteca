@@ -350,5 +350,50 @@ namespace Cadastro_Item_Acervo
         {
             
         }
+
+        private void codAutor_TextChanged(object sender, EventArgs e)
+        {
+    
+        }
+
+        private void codAutor_Leave(object sender, EventArgs e)
+        {
+           /* 
+                //var select = $"SELECT nomeAutor FROM AUTOR WHERE codAutor = {int.Parse(this.codAutor.Text)}";
+               // this.nomeAutor.Text = select;
+             try
+            {
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+                {
+                    cn.Open();
+
+                    var sqlQuery = $"SELECT nomeAutor FROM MvtBibAutor WHERE codAutor = {int.Parse(this.codAutor.Text)}";
+                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            this.codAutor.Text = dt.Rows[0].Field<int>("nomeAutor").ToString();
+                        }
+                    }
+                }
+
+                MessageBox.Show("Autor Carregado com sucesso!");
+                ClearTextBoxes();
+
+
+
+            }
+            catch (Exception ex) //Mostra mensagem caso haver falha 
+            {
+
+                MessageBox.Show("Falha! \n" + ex.Message);
+
+            }
+
+
+            */
+
+        }
+
     }
 }
