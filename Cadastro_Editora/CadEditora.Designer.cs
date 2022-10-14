@@ -40,7 +40,9 @@
             // 
             // saveEditora
             // 
+            this.saveEditora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.saveEditora.Location = new System.Drawing.Point(28, 64);
+            this.saveEditora.MaximumSize = new System.Drawing.Size(75, 23);
             this.saveEditora.Name = "saveEditora";
             this.saveEditora.Size = new System.Drawing.Size(75, 23);
             this.saveEditora.TabIndex = 3;
@@ -50,7 +52,9 @@
             // 
             // deleteEditora
             // 
+            this.deleteEditora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.deleteEditora.Location = new System.Drawing.Point(110, 64);
+            this.deleteEditora.MaximumSize = new System.Drawing.Size(75, 23);
             this.deleteEditora.Name = "deleteEditora";
             this.deleteEditora.Size = new System.Drawing.Size(75, 23);
             this.deleteEditora.TabIndex = 4;
@@ -60,15 +64,19 @@
             // 
             // codeEditora
             // 
+            this.codeEditora.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.codeEditora.Enabled = false;
             this.codeEditora.Location = new System.Drawing.Point(127, 6);
+            this.codeEditora.MaximumSize = new System.Drawing.Size(82, 20);
             this.codeEditora.Name = "codeEditora";
             this.codeEditora.Size = new System.Drawing.Size(50, 20);
             this.codeEditora.TabIndex = 1;
             // 
             // nomeEditora
             // 
+            this.nomeEditora.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nomeEditora.Location = new System.Drawing.Point(127, 32);
+            this.nomeEditora.MaximumSize = new System.Drawing.Size(120, 20);
             this.nomeEditora.Name = "nomeEditora";
             this.nomeEditora.Size = new System.Drawing.Size(72, 20);
             this.nomeEditora.TabIndex = 2;
@@ -79,10 +87,13 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(13, 93);
+            this.dataGridView1.MaximumSize = new System.Drawing.Size(186, 186);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(186, 86);
@@ -91,9 +102,11 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(10, 9);
+            this.label2.MaximumSize = new System.Drawing.Size(121, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 17);
             this.label2.TabIndex = 5;
@@ -101,9 +114,11 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(10, 33);
+            this.label1.MaximumSize = new System.Drawing.Size(114, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 17);
             this.label1.TabIndex = 6;

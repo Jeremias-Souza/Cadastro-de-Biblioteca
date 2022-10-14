@@ -40,7 +40,9 @@
             // 
             // saveLocal
             // 
+            this.saveLocal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.saveLocal.Location = new System.Drawing.Point(54, 100);
+            this.saveLocal.MaximumSize = new System.Drawing.Size(75, 23);
             this.saveLocal.Name = "saveLocal";
             this.saveLocal.Size = new System.Drawing.Size(75, 23);
             this.saveLocal.TabIndex = 2;
@@ -50,7 +52,9 @@
             // 
             // deleteLocal
             // 
+            this.deleteLocal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.deleteLocal.Location = new System.Drawing.Point(135, 100);
+            this.deleteLocal.MaximumSize = new System.Drawing.Size(75, 23);
             this.deleteLocal.Name = "deleteLocal";
             this.deleteLocal.Size = new System.Drawing.Size(75, 23);
             this.deleteLocal.TabIndex = 3;
@@ -60,7 +64,9 @@
             // 
             // descricaoLocal
             // 
+            this.descricaoLocal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.descricaoLocal.Location = new System.Drawing.Point(8, 58);
+            this.descricaoLocal.MaximumSize = new System.Drawing.Size(239, 38);
             this.descricaoLocal.Multiline = true;
             this.descricaoLocal.Name = "descricaoLocal";
             this.descricaoLocal.Size = new System.Drawing.Size(239, 38);
@@ -68,6 +74,7 @@
             // 
             // codLocal
             // 
+            this.codLocal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.codLocal.Enabled = false;
             this.codLocal.Location = new System.Drawing.Point(116, 10);
             this.codLocal.Name = "codLocal";
@@ -78,9 +85,13 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(4, 129);
+            this.dataGridView1.MaximumSize = new System.Drawing.Size(243, 189);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(243, 89);
@@ -89,6 +100,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(8, 12);
@@ -99,6 +111,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(6, 38);
@@ -122,6 +135,7 @@
             this.MinimumSize = new System.Drawing.Size(268, 264);
             this.Name = "CadLocal";
             this.Text = "Cadastro do Local";
+            this.Load += new System.EventHandler(this.CadLocal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

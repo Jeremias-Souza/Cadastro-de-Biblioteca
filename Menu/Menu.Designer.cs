@@ -46,7 +46,9 @@
             // 
             // cadastroAutor
             // 
-            this.cadastroAutor.Location = new System.Drawing.Point(138, 18);
+            this.cadastroAutor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cadastroAutor.Location = new System.Drawing.Point(138, 9);
+            this.cadastroAutor.MaximumSize = new System.Drawing.Size(75, 23);
             this.cadastroAutor.Name = "cadastroAutor";
             this.cadastroAutor.Size = new System.Drawing.Size(75, 23);
             this.cadastroAutor.TabIndex = 1;
@@ -56,7 +58,9 @@
             // 
             // cadastroEditora
             // 
-            this.cadastroEditora.Location = new System.Drawing.Point(138, 44);
+            this.cadastroEditora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cadastroEditora.Location = new System.Drawing.Point(138, 35);
+            this.cadastroEditora.MaximumSize = new System.Drawing.Size(75, 23);
             this.cadastroEditora.Name = "cadastroEditora";
             this.cadastroEditora.Size = new System.Drawing.Size(75, 23);
             this.cadastroEditora.TabIndex = 2;
@@ -66,7 +70,9 @@
             // 
             // cadastroLeitor
             // 
-            this.cadastroLeitor.Location = new System.Drawing.Point(138, 69);
+            this.cadastroLeitor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cadastroLeitor.Location = new System.Drawing.Point(138, 60);
+            this.cadastroLeitor.MaximumSize = new System.Drawing.Size(75, 23);
             this.cadastroLeitor.Name = "cadastroLeitor";
             this.cadastroLeitor.Size = new System.Drawing.Size(75, 23);
             this.cadastroLeitor.TabIndex = 3;
@@ -76,7 +82,9 @@
             // 
             // cadastroLocal
             // 
-            this.cadastroLocal.Location = new System.Drawing.Point(138, 95);
+            this.cadastroLocal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cadastroLocal.Location = new System.Drawing.Point(138, 86);
+            this.cadastroLocal.MaximumSize = new System.Drawing.Size(75, 23);
             this.cadastroLocal.Name = "cadastroLocal";
             this.cadastroLocal.Size = new System.Drawing.Size(75, 23);
             this.cadastroLocal.TabIndex = 4;
@@ -86,7 +94,9 @@
             // 
             // cadastroSecao
             // 
-            this.cadastroSecao.Location = new System.Drawing.Point(138, 121);
+            this.cadastroSecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cadastroSecao.Location = new System.Drawing.Point(138, 112);
+            this.cadastroSecao.MaximumSize = new System.Drawing.Size(75, 23);
             this.cadastroSecao.Name = "cadastroSecao";
             this.cadastroSecao.Size = new System.Drawing.Size(75, 23);
             this.cadastroSecao.TabIndex = 5;
@@ -96,7 +106,9 @@
             // 
             // cadastroAcervo
             // 
-            this.cadastroAcervo.Location = new System.Drawing.Point(138, 148);
+            this.cadastroAcervo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cadastroAcervo.Location = new System.Drawing.Point(138, 139);
+            this.cadastroAcervo.MaximumSize = new System.Drawing.Size(75, 23);
             this.cadastroAcervo.Name = "cadastroAcervo";
             this.cadastroAcervo.Size = new System.Drawing.Size(75, 23);
             this.cadastroAcervo.TabIndex = 6;
@@ -106,9 +118,9 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(12, 21);
+            this.label2.Location = new System.Drawing.Point(12, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 17);
             this.label2.TabIndex = 13;
@@ -116,9 +128,9 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(12, 47);
+            this.label1.Location = new System.Drawing.Point(12, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 17);
             this.label1.TabIndex = 14;
@@ -126,9 +138,9 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(12, 72);
+            this.label3.Location = new System.Drawing.Point(12, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 17);
             this.label3.TabIndex = 15;
@@ -136,9 +148,9 @@
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(12, 98);
+            this.label4.Location = new System.Drawing.Point(12, 89);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 17);
             this.label4.TabIndex = 16;
@@ -146,9 +158,9 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label5.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(12, 124);
+            this.label5.Location = new System.Drawing.Point(12, 115);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 17);
             this.label5.TabIndex = 17;
@@ -156,9 +168,9 @@
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label6.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(12, 151);
+            this.label6.Location = new System.Drawing.Point(12, 142);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(128, 17);
             this.label6.TabIndex = 18;
@@ -166,7 +178,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(138, 175);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.button1.Location = new System.Drawing.Point(138, 166);
+            this.button1.MaximumSize = new System.Drawing.Size(75, 23);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 19;
@@ -176,9 +190,9 @@
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label7.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(12, 178);
+            this.label7.Location = new System.Drawing.Point(12, 169);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(111, 17);
             this.label7.TabIndex = 20;
@@ -207,7 +221,6 @@
             this.Name = "Menu";
             this.Text = "Menu";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

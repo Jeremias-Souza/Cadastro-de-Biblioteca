@@ -180,5 +180,10 @@ namespace Cadastro_Local
 
             func(Controls);
         }
+
+        private void CadLocal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

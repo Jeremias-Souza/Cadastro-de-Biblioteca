@@ -66,6 +66,7 @@
             // 
             // telefone
             // 
+            this.telefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.telefone.Location = new System.Drawing.Point(137, 191);
             this.telefone.Name = "telefone";
             this.telefone.Size = new System.Drawing.Size(132, 20);
@@ -74,6 +75,7 @@
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label16.Location = new System.Drawing.Point(9, 193);
@@ -84,6 +86,7 @@
             // 
             // rg
             // 
+            this.rg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.rg.Location = new System.Drawing.Point(138, 134);
             this.rg.Name = "rg";
             this.rg.Size = new System.Drawing.Size(82, 20);
@@ -92,6 +95,7 @@
             // 
             // label15
             // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label15.Location = new System.Drawing.Point(10, 136);
@@ -102,6 +106,7 @@
             // 
             // enderecoUF
             // 
+            this.enderecoUF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.enderecoUF.Location = new System.Drawing.Point(540, 165);
             this.enderecoUF.Name = "enderecoUF";
             this.enderecoUF.Size = new System.Drawing.Size(36, 20);
@@ -111,6 +116,7 @@
             // 
             // enderecoNumero
             // 
+            this.enderecoNumero.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.enderecoNumero.Location = new System.Drawing.Point(540, 113);
             this.enderecoNumero.Name = "enderecoNumero";
             this.enderecoNumero.Size = new System.Drawing.Size(50, 20);
@@ -119,6 +125,7 @@
             // 
             // enderecoCEP
             // 
+            this.enderecoCEP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.enderecoCEP.Location = new System.Drawing.Point(540, 139);
             this.enderecoCEP.Name = "enderecoCEP";
             this.enderecoCEP.Size = new System.Drawing.Size(100, 20);
@@ -127,6 +134,7 @@
             // 
             // enderecoNome
             // 
+            this.enderecoNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.enderecoNome.Location = new System.Drawing.Point(541, 87);
             this.enderecoNome.Name = "enderecoNome";
             this.enderecoNome.Size = new System.Drawing.Size(154, 20);
@@ -134,6 +142,7 @@
             // 
             // enderecoBairro
             // 
+            this.enderecoBairro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.enderecoBairro.Location = new System.Drawing.Point(541, 61);
             this.enderecoBairro.Name = "enderecoBairro";
             this.enderecoBairro.Size = new System.Drawing.Size(154, 20);
@@ -141,6 +150,7 @@
             // 
             // telefoneCelular
             // 
+            this.telefoneCelular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.telefoneCelular.Location = new System.Drawing.Point(540, 6);
             this.telefoneCelular.Name = "telefoneCelular";
             this.telefoneCelular.Size = new System.Drawing.Size(132, 20);
@@ -149,6 +159,7 @@
             // 
             // email
             // 
+            this.email.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.email.Location = new System.Drawing.Point(137, 163);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(188, 20);
@@ -156,6 +167,7 @@
             // 
             // cpf
             // 
+            this.cpf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cpf.Location = new System.Drawing.Point(137, 107);
             this.cpf.Name = "cpf";
             this.cpf.Size = new System.Drawing.Size(83, 20);
@@ -165,8 +177,8 @@
             // 
             // dataNascimento
             // 
+            this.dataNascimento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataNascimento.Location = new System.Drawing.Point(137, 81);
-            this.dataNascimento.Multiline = true;
             this.dataNascimento.Name = "dataNascimento";
             this.dataNascimento.Size = new System.Drawing.Size(83, 20);
             this.dataNascimento.TabIndex = 4;
@@ -174,8 +186,8 @@
             // 
             // nome
             // 
+            this.nome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.nome.Location = new System.Drawing.Point(137, 31);
-            this.nome.Multiline = true;
             this.nome.Name = "nome";
             this.nome.Size = new System.Drawing.Size(188, 20);
             this.nome.TabIndex = 2;
@@ -184,6 +196,7 @@
             // 
             // codLeitor
             // 
+            this.codLeitor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.codLeitor.Enabled = false;
             this.codLeitor.Location = new System.Drawing.Point(137, 5);
             this.codLeitor.Name = "codLeitor";
@@ -192,6 +205,7 @@
             // 
             // label13
             // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label13.Location = new System.Drawing.Point(426, 114);
@@ -202,6 +216,7 @@
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label12.Location = new System.Drawing.Point(425, 165);
@@ -212,6 +227,7 @@
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label11.Location = new System.Drawing.Point(425, 139);
@@ -222,6 +238,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label10.Location = new System.Drawing.Point(425, 87);
@@ -232,6 +249,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label9.Location = new System.Drawing.Point(425, 61);
@@ -242,6 +260,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label8.Location = new System.Drawing.Point(425, 35);
@@ -252,6 +271,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label7.Location = new System.Drawing.Point(425, 9);
@@ -262,6 +282,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(9, 165);
@@ -272,6 +293,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(9, 109);
@@ -282,6 +304,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(9, 83);
@@ -292,6 +315,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(9, 57);
@@ -302,6 +326,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(9, 32);
@@ -312,6 +337,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(9, 6);
@@ -324,10 +350,13 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 245);
+            this.dataGridView1.MaximumSize = new System.Drawing.Size(715, 157);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(715, 157);
@@ -336,7 +365,9 @@
             // 
             // deleteLeitor
             // 
+            this.deleteLeitor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.deleteLeitor.Location = new System.Drawing.Point(418, 216);
+            this.deleteLeitor.MaximumSize = new System.Drawing.Size(75, 23);
             this.deleteLeitor.Name = "deleteLeitor";
             this.deleteLeitor.Size = new System.Drawing.Size(75, 23);
             this.deleteLeitor.TabIndex = 17;
@@ -346,7 +377,9 @@
             // 
             // saveLeitor
             // 
+            this.saveLeitor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.saveLeitor.Location = new System.Drawing.Point(294, 216);
+            this.saveLeitor.MaximumSize = new System.Drawing.Size(75, 23);
             this.saveLeitor.Name = "saveLeitor";
             this.saveLeitor.Size = new System.Drawing.Size(75, 23);
             this.saveLeitor.TabIndex = 16;
@@ -356,6 +389,7 @@
             // 
             // sexo
             // 
+            this.sexo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.sexo.FormattingEnabled = true;
             this.sexo.Items.AddRange(new object[] {
             "Masculino",
@@ -369,6 +403,7 @@
             // 
             // enderecoCidade
             // 
+            this.enderecoCidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.enderecoCidade.Location = new System.Drawing.Point(540, 34);
             this.enderecoCidade.Name = "enderecoCidade";
             this.enderecoCidade.Size = new System.Drawing.Size(155, 20);

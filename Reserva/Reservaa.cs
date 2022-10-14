@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Reserva
 {
@@ -21,17 +22,19 @@ namespace Reserva
         public string prazoReserva { get; set; }
         public string encerrar { get; set; }
 
-    public void Salvar()
+        
+
+        public void Salvar()
         {
-            if (this.codItem == 0)
-            {
-                var sql = "INSERT INTO MvtBibReserva (situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar) VALUES (@situacao, @nomeItem, @numExemplar, @tipoItem, @localizacao, @codLeitor, @nomeLeitor, @dataReserva, @prazoReserva, @encerrar)";
+            //if (this.codItem == 0)
+            //{
+                var sql = "INSERT INTO MvtBibReserva (codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar) VALUES (@codItem, @situacao, @nomeItem, @numExemplar, @tipoItem, @localizacao, @codLeitor, @nomeLeitor, @dataReserva, @prazoReserva, @encerrar)";
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
                     cn.Open();
                     using (var cmd = new SqlCommand(sql, cn))
                     {
-
+                        cmd.Parameters.AddWithValue("@codItem", this.codItem);
                         cmd.Parameters.AddWithValue("@situacao", this.situacao);
                         cmd.Parameters.AddWithValue("@nomeItem", this.nomeItem);
                         cmd.Parameters.AddWithValue("@numExemplar", this.numExemplar);
@@ -42,23 +45,25 @@ namespace Reserva
                         cmd.Parameters.AddWithValue("@dataReserva", this.dataReserva);
                         cmd.Parameters.AddWithValue("@prazoReserva", this.prazoReserva);
                         cmd.Parameters.AddWithValue("@encerrar", this.encerrar);
-                        cmd.Parameters.AddWithValue("@codItem", this.codItem);
-
+                    
                         cmd.ExecuteNonQuery();
                     }
-                    cn.Close();
+                    
                 }
-                return;
-            }
-            else
+               // return;
+            //}
+
+           
+
+            /*else
             {
-                var sql = "UPDATE MvtBibReserva SET situacao = @situacao, nomeItem = @nomeItem, numExemplar = @numExemplar, tipoItem = @tipoItem, localizacao = @localizacao, codLeitor = @codLeitor, nomeLeitor = @nomeLeitor, dataReserva = @dataReserva, prazoReserva = @prazoReserva, encerrar = @encerrar  WHERE codItem = @codItem";
+                var sql = "UPDATE MvtBibReserva SET codItem = @codItem, situacao = @situacao, nomeItem = @nomeItem, numExemplar = @numExemplar, tipoItem = @tipoItem, localizacao = @localizacao, codLeitor = @codLeitor, nomeLeitor = @nomeLeitor, dataReserva = @dataReserva, prazoReserva = @prazoReserva, encerrar = @encerrar  WHERE codItem = @codItem";
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
                     cn.Open();
                     using (var cmd = new SqlCommand(sql, cn))
                     {
-
+                        cmd.Parameters.AddWithValue("@codItem", this.codItem);
                         cmd.Parameters.AddWithValue("@situacao", this.situacao);
                         cmd.Parameters.AddWithValue("@nomeItem", this.nomeItem);
                         cmd.Parameters.AddWithValue("@numExemplar", this.numExemplar);
@@ -69,13 +74,14 @@ namespace Reserva
                         cmd.Parameters.AddWithValue("@dataReserva", this.dataReserva);
                         cmd.Parameters.AddWithValue("@prazoReserva", this.prazoReserva);
                         cmd.Parameters.AddWithValue("@encerrar", this.encerrar);
-                        cmd.Parameters.AddWithValue("@codItem", this.codItem);
+                        
+                        
 
                         cmd.ExecuteNonQuery();
                     }
                     cn.Close();
                 }
-            }
+            }*/
 
         }
     }

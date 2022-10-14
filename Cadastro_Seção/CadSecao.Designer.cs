@@ -42,10 +42,13 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(10, 131);
+            this.dataGridView1.MaximumSize = new System.Drawing.Size(215, 166);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(215, 66);
@@ -54,7 +57,9 @@
             // 
             // descricaoSecao
             // 
+            this.descricaoSecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.descricaoSecao.Location = new System.Drawing.Point(10, 51);
+            this.descricaoSecao.MaximumSize = new System.Drawing.Size(215, 45);
             this.descricaoSecao.Multiline = true;
             this.descricaoSecao.Name = "descricaoSecao";
             this.descricaoSecao.Size = new System.Drawing.Size(215, 45);
@@ -62,6 +67,7 @@
             // 
             // codSecao
             // 
+            this.codSecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.codSecao.Enabled = false;
             this.codSecao.Location = new System.Drawing.Point(119, 6);
             this.codSecao.Name = "codSecao";
@@ -70,9 +76,11 @@
             // 
             // deleteSecao
             // 
+            this.deleteSecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.deleteSecao.Location = new System.Drawing.Point(116, 102);
+            this.deleteSecao.MaximumSize = new System.Drawing.Size(75, 23);
             this.deleteSecao.Name = "deleteSecao";
-            this.deleteSecao.Size = new System.Drawing.Size(80, 23);
+            this.deleteSecao.Size = new System.Drawing.Size(75, 23);
             this.deleteSecao.TabIndex = 3;
             this.deleteSecao.Text = "Excluir";
             this.deleteSecao.UseVisualStyleBackColor = true;
@@ -80,7 +88,9 @@
             // 
             // saveSecao
             // 
+            this.saveSecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.saveSecao.Location = new System.Drawing.Point(33, 102);
+            this.saveSecao.MaximumSize = new System.Drawing.Size(75, 23);
             this.saveSecao.Name = "saveSecao";
             this.saveSecao.Size = new System.Drawing.Size(75, 23);
             this.saveSecao.TabIndex = 2;
@@ -90,6 +100,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(7, 9);
@@ -100,6 +111,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(7, 31);

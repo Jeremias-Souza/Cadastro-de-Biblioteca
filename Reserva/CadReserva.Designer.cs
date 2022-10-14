@@ -58,21 +58,25 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.button1.Location = new System.Drawing.Point(382, 162);
+            this.button1.MaximumSize = new System.Drawing.Size(75, 23);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 81;
-            this.button1.Text = "Excluir ";
+            this.button1.Text = "Devolver";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // save
             // 
+            this.save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.save.Location = new System.Drawing.Point(289, 162);
+            this.save.MaximumSize = new System.Drawing.Size(75, 23);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(75, 23);
             this.save.TabIndex = 80;
-            this.save.Text = "Reservar";
+            this.save.Text = "Salvar";
             this.save.UseVisualStyleBackColor = true;
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
@@ -80,9 +84,11 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 191);
+            this.dataGridView1.MaximumSize = new System.Drawing.Size(543, 316);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(543, 116);
@@ -92,6 +98,7 @@
             // 
             // prazoReserva
             // 
+            this.prazoReserva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.prazoReserva.Location = new System.Drawing.Point(422, 91);
             this.prazoReserva.Name = "prazoReserva";
             this.prazoReserva.Size = new System.Drawing.Size(68, 20);
@@ -100,6 +107,7 @@
             // 
             // dataReserva
             // 
+            this.dataReserva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataReserva.Location = new System.Drawing.Point(422, 65);
             this.dataReserva.Name = "dataReserva";
             this.dataReserva.Size = new System.Drawing.Size(68, 20);
@@ -108,6 +116,7 @@
             // 
             // nomeLeitor
             // 
+            this.nomeLeitor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.nomeLeitor.Enabled = false;
             this.nomeLeitor.Location = new System.Drawing.Point(422, 39);
             this.nomeLeitor.Name = "nomeLeitor";
@@ -116,6 +125,7 @@
             // 
             // codLeitor
             // 
+            this.codLeitor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.codLeitor.Location = new System.Drawing.Point(422, 13);
             this.codLeitor.Name = "codLeitor";
             this.codLeitor.Size = new System.Drawing.Size(35, 20);
@@ -124,6 +134,7 @@
             // 
             // localizacao
             // 
+            this.localizacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.localizacao.Enabled = false;
             this.localizacao.Location = new System.Drawing.Point(149, 144);
             this.localizacao.Name = "localizacao";
@@ -132,6 +143,7 @@
             // 
             // tipoItem
             // 
+            this.tipoItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.tipoItem.Enabled = false;
             this.tipoItem.Location = new System.Drawing.Point(149, 118);
             this.tipoItem.Name = "tipoItem";
@@ -140,6 +152,7 @@
             // 
             // numExemplar
             // 
+            this.numExemplar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.numExemplar.Enabled = false;
             this.numExemplar.Location = new System.Drawing.Point(149, 92);
             this.numExemplar.Name = "numExemplar";
@@ -148,6 +161,7 @@
             // 
             // nomeItem
             // 
+            this.nomeItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.nomeItem.Enabled = false;
             this.nomeItem.Location = new System.Drawing.Point(149, 66);
             this.nomeItem.Name = "nomeItem";
@@ -156,14 +170,17 @@
             // 
             // codItem
             // 
+            this.codItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.codItem.Location = new System.Drawing.Point(149, 40);
             this.codItem.Name = "codItem";
             this.codItem.Size = new System.Drawing.Size(33, 20);
             this.codItem.TabIndex = 59;
+            this.codItem.Text = " ";
             this.codItem.Leave += new System.EventHandler(this.codItem_Leave);
             // 
             // intencao
             // 
+            this.intencao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.intencao.FormattingEnabled = true;
             this.intencao.Items.AddRange(new object[] {
             "Reservar",
@@ -176,7 +193,10 @@
             // 
             // situacao
             // 
+            this.situacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.situacao.FormattingEnabled = true;
+            this.situacao.Items.AddRange(new object[] {
+            "Reservado "});
             this.situacao.Location = new System.Drawing.Point(422, 117);
             this.situacao.Name = "situacao";
             this.situacao.Size = new System.Drawing.Size(133, 21);
@@ -184,6 +204,7 @@
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label11.Location = new System.Drawing.Point(286, 117);
@@ -194,6 +215,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label10.Location = new System.Drawing.Point(285, 91);
@@ -204,6 +226,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label9.Location = new System.Drawing.Point(285, 65);
@@ -214,6 +237,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label8.Location = new System.Drawing.Point(285, 39);
@@ -224,6 +248,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label7.Location = new System.Drawing.Point(285, 13);
@@ -234,6 +259,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(12, 144);
@@ -244,6 +270,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(12, 118);
@@ -254,6 +281,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(12, 92);
@@ -264,6 +292,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(12, 66);
@@ -274,16 +303,18 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(13, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 17);
             this.label1.TabIndex = 69;
-            this.label1.Text = "Código do Item:";
+            this.label1.Text = "Código do item:";
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(12, 14);
