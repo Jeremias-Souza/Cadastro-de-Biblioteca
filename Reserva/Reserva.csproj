@@ -46,16 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CadReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadReserva.Designer.cs">
+      <DependentUpon>CadReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conn.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reserva.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reserva.Designer.cs">
-      <DependentUpon>Reserva.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reservaa.cs" />
+    <EmbeddedResource Include="CadReserva.resx">
+      <DependentUpon>CadReserva.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -65,9 +68,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Reserva.resx">
-      <DependentUpon>Reserva.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

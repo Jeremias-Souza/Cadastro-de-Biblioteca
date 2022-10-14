@@ -48,10 +48,10 @@ namespace Cadastro_Item_Acervo
 
 
             this.formatColumns();
-            
+
         }
 
-        
+
 
         private void saveAcervo_Click(object sender, EventArgs e)
         {
@@ -106,7 +106,7 @@ namespace Cadastro_Item_Acervo
 
             var acervo = new Acervo()
             {
-                                                                                                           
+
                 codLocal = this.codLocal.Text,
                 nome = this.nomeAcervo.Text,
                 nomeLocal = this.nomeLocal.Text,
@@ -128,9 +128,9 @@ namespace Cadastro_Item_Acervo
 
             };
 
-            acervo.Salvar();                       
+            acervo.Salvar();
             MessageBox.Show("Cadastro feito com sucesso!");
-            
+
 
             try
             {
@@ -159,7 +159,7 @@ namespace Cadastro_Item_Acervo
                     ClearTextBoxes();
                 }
 
-                
+
 
 
             }
@@ -216,10 +216,10 @@ namespace Cadastro_Item_Acervo
 
         private void formatColumns()
         {
-            
+
             this.dataGridView1.Columns[0]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-           
+
             this.dataGridView1.Columns[1]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
@@ -277,12 +277,12 @@ namespace Cadastro_Item_Acervo
             this.dataGridView1.Columns[8].HeaderText = "Nome da coleção";
             this.dataGridView1.Columns[9].HeaderText = "Tipo do item";
             this.dataGridView1.Columns[10].HeaderText = "Nome do local";
-            this.dataGridView1.Columns[11].HeaderText = "Volume";           
+            this.dataGridView1.Columns[11].HeaderText = "Volume";
             this.dataGridView1.Columns[12].HeaderText = "Ano da edição";
             this.dataGridView1.Columns[13].HeaderText = "Código Prateleira";
             this.dataGridView1.Columns[14].HeaderText = "Seção";
             this.dataGridView1.Columns[15].HeaderText = "Idioma";
-            
+
 
         }
 
@@ -295,7 +295,7 @@ namespace Cadastro_Item_Acervo
                 foreach (Control control in controls)
                     if (control is TextBox)
                         (control as TextBox).Clear();
-                         
+
 
                     else
                         func(control.Controls);
@@ -332,7 +332,7 @@ namespace Cadastro_Item_Acervo
 
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = true;                                
+            e.Handled = true;
         }
 
         private void nomeColecao_MouseClick(object sender, MouseEventArgs e)
@@ -396,20 +396,17 @@ namespace Cadastro_Item_Acervo
 
         private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
         private void codAutor_TextChanged(object sender, EventArgs e)
         {
-    
+
         }
 
         private void codAutor_Leave(object sender, EventArgs e)
         {
-           
-                //var select = $"SELECT nomeAutor FROM AUTOR WHERE codAutor = {int.Parse(this.codAutor.Text)}";
-               // this.nomeAutor.Text = select;
-             try
+            try
             {
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
@@ -420,27 +417,19 @@ namespace Cadastro_Item_Acervo
                     {
                         using (DataTable dt = new DataTable())
                         {
-                            this.codAutor.Text = dt.Rows[0].Field<int>("nomeAutor").ToString();
+                            da.Fill(dt);
+                            this.nomeAutor.Text = dt.Rows[0].Field<string>("nomeAutor");
                         }
                     }
                 }
 
-                MessageBox.Show("Autor Carregado com sucesso!");
-                ClearTextBoxes();
-
-
-
+                //MessageBox.Show("Autor Carregado com sucesso!");
             }
             catch (Exception ex) //Mostra mensagem caso haver falha 
             {
-
-                MessageBox.Show("Falha! \n" + ex.Message);
-
+                MessageBox.Show("Autor inexistente!");
+                Console.WriteLine(ex.Message);
             }
-
-
-            
-
         }
 
         private void codEditora_Leave(object sender, EventArgs e)
@@ -451,28 +440,57 @@ namespace Cadastro_Item_Acervo
                 {
                     cn.Open();
 
-                    var sqlQuery = $"SELECT nomeEditora FROM MvtBibAutor WHERE codEditora = {int.Parse(this.codEditora.Text)}";
+                    var sqlQuery = $"SELECT nome FROM MvtBibEditora WHERE codEditora = {int.Parse(this.codEditora.Text)}";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
                         {
-                            this.codEditora.Text = dt.Rows[0].Field<int>("nomeEditora").ToString();
+                            da.Fill(dt);
+                            this.nomeEditora.Text = dt.Rows[0].Field<string>("nome");
                         }
                     }
                 }
 
-                MessageBox.Show("Autor Carregado com sucesso!");
-                ClearTextBoxes();
-
-
-
+                //MessageBox.Show("Editora Carregado com sucesso!");
             }
             catch (Exception ex) //Mostra mensagem caso haver falha 
             {
-
-                MessageBox.Show("Falha! \n" + ex.Message);
-
+                MessageBox.Show("Editora inexistente!");
+                Console.WriteLine(ex.Message);
             }
+        }
+
+        private void codLocal_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+                {
+                    cn.Open();
+
+                    var sqlQuery = $"SELECT descricaoLocal FROM MvtbibLocal WHERE codLocal = {int.Parse(this.codLocal.Text)}";
+                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            da.Fill(dt);
+                            this.nomeLocal.Text = dt.Rows[0].Field<string>("descricaoLocal");
+                        }
+                    }
+                }
+
+               // MessageBox.Show("Local Carregado com sucesso!");
+            }
+            catch (Exception ex) //Mostra mensagem caso haver falha 
+            {
+                MessageBox.Show("Editora inexistente!");
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void anoEdicao_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

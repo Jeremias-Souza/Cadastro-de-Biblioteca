@@ -4,6 +4,7 @@ using Cadastro_Item_Acervo;
 using Cadastro_Leitor;
 using Cadastro_Local;
 using Cadastro_Seção;
+using Reserva;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,6 +57,12 @@ namespace Menu
         private void cadastroSecao_Click(object sender, EventArgs e)
         {
             CadSecao tela = new CadSecao();
+            tela.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CadReserva tela = new CadReserva();
             tela.Show();
         }
     }

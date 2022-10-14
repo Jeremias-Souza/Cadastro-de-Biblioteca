@@ -104,6 +104,13 @@
       <Project>{b6eb2df7-0957-4c20-a9ad-b764d60bfdfa}</Project>
       <Name>Cadastro_Seção</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Reserva\Reserva.csproj">
+      <Project>{76cc176e-c584-4cbb-8666-f7fd102003f7}</Project>
+      <Name>Reserva</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

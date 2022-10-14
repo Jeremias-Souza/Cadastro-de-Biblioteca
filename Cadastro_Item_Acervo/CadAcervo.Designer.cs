@@ -255,6 +255,7 @@
             this.codLocal.Name = "codLocal";
             this.codLocal.Size = new System.Drawing.Size(45, 20);
             this.codLocal.TabIndex = 3;
+            this.codLocal.Leave += new System.EventHandler(this.codLocal_Leave);
             // 
             // nomeAcervo
             // 
@@ -267,6 +268,7 @@
             // 
             // nomeLocal
             // 
+            this.nomeLocal.Enabled = false;
             this.nomeLocal.Location = new System.Drawing.Point(122, 82);
             this.nomeLocal.Multiline = true;
             this.nomeLocal.Name = "nomeLocal";
@@ -276,6 +278,7 @@
             // 
             // nomeAutor
             // 
+            this.nomeAutor.Enabled = false;
             this.nomeAutor.Location = new System.Drawing.Point(122, 135);
             this.nomeAutor.Name = "nomeAutor";
             this.nomeAutor.Size = new System.Drawing.Size(188, 20);
@@ -284,6 +287,7 @@
             // 
             // nomeEditora
             // 
+            this.nomeEditora.Enabled = false;
             this.nomeEditora.Location = new System.Drawing.Point(122, 193);
             this.nomeEditora.Name = "nomeEditora";
             this.nomeEditora.Size = new System.Drawing.Size(188, 20);
@@ -319,6 +323,7 @@
             this.anoEdicao.Name = "anoEdicao";
             this.anoEdicao.Size = new System.Drawing.Size(59, 20);
             this.anoEdicao.TabIndex = 13;
+            this.anoEdicao.TextChanged += new System.EventHandler(this.anoEdicao_TextChanged);
             // 
             // idioma
             // 
