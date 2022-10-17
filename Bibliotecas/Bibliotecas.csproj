@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F4D57849-B9F7-42C3-8237-98266EC324B0}</ProjectGuid>
+    <ProjectGuid>{353DD673-F202-4947-A263-F95024E758E4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Cadastro_Editora</RootNamespace>
-    <AssemblyName>Cadastro_Editora</AssemblyName>
+    <RootNamespace>Bibliotecas</RootNamespace>
+    <AssemblyName>Bibliotecas</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,18 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CadEditora.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CadEditora.Designer.cs">
-      <DependentUpon>CadEditora.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Editora.cs" />
+    <Compile Include="Conn.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CadEditora.resx">
-      <DependentUpon>CadEditora.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -82,10 +72,48 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Desktop\PROJECT1\TabelaAutor\Tabela_Autor.sqlproj">
+      <Project>{97aa201a-5c99-46d0-a522-1283bd71c404}</Project>
+      <Name>Tabela_Autor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Biblioteca Estágio\Cadastro_Autor.csproj">
+      <Project>{9116154b-c122-4a29-ab8a-d9b2690cfac9}</Project>
+      <Name>Cadastro_Autor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cadastro_Editora\Cadastro_Editora.csproj">
+      <Project>{f4d57849-b9f7-42c3-8237-98266ec324b0}</Project>
+      <Name>Cadastro_Editora</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cadastro_Item_Acervo\Cadastro_Item_Acervo.csproj">
       <Project>{6a839ed5-4cc8-48e3-8832-9d99a4bd3e39}</Project>
       <Name>Cadastro_Item_Acervo</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cadastro_Leitor\Cadastro_Leitor.csproj">
+      <Project>{45da4912-1e82-4849-829c-707ad0d053a6}</Project>
+      <Name>Cadastro_Leitor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cadastro_Local\Cadastro_Local.csproj">
+      <Project>{4a1f3e2a-df75-41ce-8011-fd47ffa34b75}</Project>
+      <Name>Cadastro_Local</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cadastro_Seção\Cadastro_Seção.csproj">
+      <Project>{b6eb2df7-0957-4c20-a9ad-b764d60bfdfa}</Project>
+      <Name>Cadastro_Seção</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Menu\Menu.csproj">
+      <Project>{690981a7-e8e9-4f5c-9e3a-00051c9bec6f}</Project>
+      <Name>Menu</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reserva\Reserva.csproj">
+      <Project>{76cc176e-c584-4cbb-8666-f7fd102003f7}</Project>
+      <Name>Reserva</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Conexão\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

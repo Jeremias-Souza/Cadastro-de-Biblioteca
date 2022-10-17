@@ -333,6 +333,7 @@
             this.situacao.Name = "situacao";
             this.situacao.Size = new System.Drawing.Size(77, 21);
             this.situacao.TabIndex = 83;
+            this.situacao.SelectedIndexChanged += new System.EventHandler(this.situacao_SelectedIndexChanged);
             // 
             // CadReserva
             // 

@@ -90,7 +90,7 @@ namespace Cadastro_Leitor
                 nome = this.nome.Text,
                 sexo = this.sexo.Text,
                 dataNascimento = this.dataNascimento.Text,
-                cpf = this.rg.Text,
+                cpf = this.cpf.Text,
                 rg = this.rg.Text,
                 email = this.email.Text,
                 telefone = this.telefone.Text,                

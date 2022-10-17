@@ -30,7 +30,7 @@ namespace Reserva
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar FROM MvtBibReservaa";
+                    string sqlQuery = "SELECT codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar FROM MvtBibReserva";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -104,6 +104,8 @@ namespace Reserva
                 return;
             }
 
+            //public static byte ToByte(string? value);
+
             var reserva = new Reservaa()
             {
 
@@ -146,7 +148,7 @@ namespace Reserva
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar FROM MvtBibReservaa";
+                    string sqlQuery = "SELECT codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar FROM MvtBibReserva";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -234,7 +236,7 @@ namespace Reserva
 
 
 
-                var sqlQuery = "DELETE MvtBibReservaa Where codItem = '" + codItem.Text + "'" + "SELECT nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva FROM MvtBibReservaa";
+                var sqlQuery = "DELETE MvtBibReserva Where codItem = '" + codItem.Text + "'" + "SELECT nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva FROM MvtBibReserva";
                 using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                 {
                     using (DataTable dt = new DataTable())
@@ -285,8 +287,8 @@ namespace Reserva
             this.dataGridView1.Columns[10]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[0].HeaderText = "Movimento";
-            this.dataGridView1.Columns[1].HeaderText = "Código do Item";
+            this.dataGridView1.Columns[0].HeaderText = "Código do Item";
+            this.dataGridView1.Columns[1].HeaderText = "Movimento";           
             this.dataGridView1.Columns[2].HeaderText = "Nome do Item";
             this.dataGridView1.Columns[3].HeaderText = "Número do exemplar";
             this.dataGridView1.Columns[4].HeaderText = "Tipo do item";
@@ -320,8 +322,6 @@ namespace Reserva
 
                     else
                         func(control.Controls);
-
-
             };
 
             func(Controls);
@@ -447,6 +447,11 @@ namespace Reserva
         private void intencao_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void situacao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                     
         }
     }
 }

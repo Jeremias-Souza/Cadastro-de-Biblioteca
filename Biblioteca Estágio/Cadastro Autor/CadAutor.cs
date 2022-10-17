@@ -160,7 +160,7 @@ namespace Biblioteca_Estágio
                             dataGridView1.DataSource = dt;
                         }
                     }
-                    ClearTextBoxes();
+                    //ClearTextBoxes();
 
                 }
 
@@ -253,17 +253,17 @@ namespace Biblioteca_Estágio
             {
                 foreach (Control control in controls)
                     if (control is TextBox)
-                         (control as TextBox).Clear();
-                
+                        (control as TextBox).Clear();
+
                     else
                         func(control.Controls);
-               
+
 
             };
 
             func(Controls);
 
-            
+
         }
 
 
@@ -289,16 +289,14 @@ namespace Biblioteca_Estágio
             indexRow = e.RowIndex;
             DataGridViewRow row = dataGridView1.Rows[indexRow];
 
-            CodAutor.Text = $"{row.Cells[0].Value}";
+            CodAutor.Text = $"{row.Cells["codAutor"].Value}";
             NomeAutor.Text = $"{row.Cells[1].Value}";
             InfAutor.Text = $"{row.Cells[2].Value}";
             
          
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-        }
+       
 
         private void label4_Click(object sender, EventArgs e)
         {

@@ -28,7 +28,7 @@ namespace Reserva
         {
             //if (this.codItem == 0)
             //{
-                var sql = "INSERT INTO MvtBibReservaa (codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar) VALUES (@codItem, @situacao, @nomeItem, @numExemplar, @tipoItem, @localizacao, @codLeitor, @nomeLeitor, @dataReserva, @prazoReserva, @encerrar)";
+                var sql = "INSERT INTO MvtBibReserva (codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar) VALUES (@codItem, @situacao, @nomeItem, @numExemplar, @tipoItem, @localizacao, @codLeitor, @nomeLeitor, @dataReserva, @prazoReserva, @encerrar)";
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
                     cn.Open();
