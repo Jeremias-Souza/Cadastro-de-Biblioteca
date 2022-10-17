@@ -41,7 +41,6 @@
             this.nomeItem = new System.Windows.Forms.TextBox();
             this.codItem = new System.Windows.Forms.TextBox();
             this.intencao = new System.Windows.Forms.ComboBox();
-            this.situacao = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -53,6 +52,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblSituacao = new System.Windows.Forms.Label();
+            this.situacao = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 81;
-            this.button1.Text = "Devolver";
+            this.button1.Text = "Excluir";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -190,17 +191,7 @@
             this.intencao.Size = new System.Drawing.Size(133, 21);
             this.intencao.TabIndex = 58;
             this.intencao.Text = "Selecione";
-            // 
-            // situacao
-            // 
-            this.situacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.situacao.FormattingEnabled = true;
-            this.situacao.Items.AddRange(new object[] {
-            "Reservado "});
-            this.situacao.Location = new System.Drawing.Point(422, 117);
-            this.situacao.Name = "situacao";
-            this.situacao.Size = new System.Drawing.Size(133, 21);
-            this.situacao.TabIndex = 57;
+            this.intencao.SelectedIndexChanged += new System.EventHandler(this.intencao_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -323,11 +314,33 @@
             this.label2.TabIndex = 68;
             this.label2.Text = "Tipo de Movimento:";
             // 
+            // lblSituacao
+            // 
+            this.lblSituacao.AutoSize = true;
+            this.lblSituacao.Location = new System.Drawing.Point(422, 117);
+            this.lblSituacao.Name = "lblSituacao";
+            this.lblSituacao.Size = new System.Drawing.Size(0, 13);
+            this.lblSituacao.TabIndex = 82;
+            // 
+            // situacao
+            // 
+            this.situacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.situacao.FormattingEnabled = true;
+            this.situacao.Items.AddRange(new object[] {
+            "Disponivel ",
+            "Reservado "});
+            this.situacao.Location = new System.Drawing.Point(422, 116);
+            this.situacao.Name = "situacao";
+            this.situacao.Size = new System.Drawing.Size(77, 21);
+            this.situacao.TabIndex = 83;
+            // 
             // CadReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 321);
+            this.Controls.Add(this.situacao);
+            this.Controls.Add(this.lblSituacao);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.save);
             this.Controls.Add(this.dataGridView1);
@@ -341,7 +354,6 @@
             this.Controls.Add(this.nomeItem);
             this.Controls.Add(this.codItem);
             this.Controls.Add(this.intencao);
-            this.Controls.Add(this.situacao);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -376,7 +388,6 @@
         private System.Windows.Forms.TextBox nomeItem;
         private System.Windows.Forms.TextBox codItem;
         private System.Windows.Forms.ComboBox intencao;
-        private System.Windows.Forms.ComboBox situacao;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -388,5 +399,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblSituacao;
+        private System.Windows.Forms.ComboBox situacao;
     }
 }

@@ -30,7 +30,7 @@ namespace Reserva
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar FROM MvtBibReserva";
+                    string sqlQuery = "SELECT codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar FROM MvtBibReservaa";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -98,10 +98,11 @@ namespace Reserva
                 return;
             }
 
-            
-            
-
-            
+            if (codItem == null)
+            {
+                MessageBox.Show("Livro já reservado. ");
+                return;
+            }
 
             var reserva = new Reservaa()
             {
@@ -115,7 +116,7 @@ namespace Reserva
                 nomeLeitor = this.nomeLeitor.Text,
                 dataReserva = this.dataReserva.Text,
                 prazoReserva = this.prazoReserva.Text,                
-                encerrar = this.situacao.Text = Boolean.TrueString,               
+                encerrar = this.situacao.Text = Boolean.TrueString,
                 codItem = string.IsNullOrEmpty(this.codItem.Text)
                 ? 0
                 : int.Parse(this.codItem.Text)
@@ -145,7 +146,7 @@ namespace Reserva
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar FROM MvtBibReserva";
+                    string sqlQuery = "SELECT codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar FROM MvtBibReservaa";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -185,7 +186,7 @@ namespace Reserva
         
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        {/*
             if (MessageBox.Show("Deseja confirmar a devolução? ", "Reserva de livros", MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 return;
@@ -199,7 +200,7 @@ namespace Reserva
 
 
 
-                    var sqlQuery = "DELETE MvtBibReserva Where codItem = '" + codItem.Text + "'" + "SELECT nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva FROM MvtBibReserva";
+                    var sqlQuery = "DELETE MvtBibReservaa Where codItem = '" + codItem.Text + "'" + "SELECT nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva FROM MvtBibReservaa";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -211,7 +212,7 @@ namespace Reserva
 
                 }
 
-                MessageBox.Show("Reserva apagada com sucesso!");
+                MessageBox.Show("Livro devolvido com sucesso com sucesso!");
                 ClearTextBoxes();
 
 
@@ -222,7 +223,7 @@ namespace Reserva
 
                 MessageBox.Show("Falha! \n" + ex.Message);
 
-            }
+            }*/
         }
 
         private void devolver()
@@ -233,7 +234,7 @@ namespace Reserva
 
 
 
-                var sqlQuery = "DELETE MvtBibReserva Where codItem = '" + codItem.Text + "'" + "SELECT nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva FROM MvtBibReserva";
+                var sqlQuery = "DELETE MvtBibReservaa Where codItem = '" + codItem.Text + "'" + "SELECT nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva FROM MvtBibReservaa";
                 using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                 {
                     using (DataTable dt = new DataTable())
@@ -280,6 +281,7 @@ namespace Reserva
 
             this.dataGridView1.Columns[9]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
             this.dataGridView1.Columns[10]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
@@ -440,6 +442,11 @@ namespace Reserva
                 MessageBox.Show("Leitor inexistente!");
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void intencao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

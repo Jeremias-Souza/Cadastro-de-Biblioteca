@@ -146,6 +146,7 @@ namespace Cadastro_Seção
             //Descricao da secao
             this.dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
+
             this.dataGridView1.Columns[0].HeaderText = "Código";
             this.dataGridView1.Columns[1].HeaderText = "Descrição";
 
