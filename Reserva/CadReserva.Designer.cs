@@ -94,6 +94,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(543, 116);
             this.dataGridView1.TabIndex = 79;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             // 
@@ -191,7 +192,6 @@
             this.intencao.Size = new System.Drawing.Size(133, 21);
             this.intencao.TabIndex = 58;
             this.intencao.Text = "Selecione";
-            this.intencao.SelectedIndexChanged += new System.EventHandler(this.intencao_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -325,6 +325,7 @@
             // situacao
             // 
             this.situacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.situacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.situacao.FormattingEnabled = true;
             this.situacao.Items.AddRange(new object[] {
             "Disponivel ",
@@ -333,7 +334,6 @@
             this.situacao.Name = "situacao";
             this.situacao.Size = new System.Drawing.Size(77, 21);
             this.situacao.TabIndex = 83;
-            this.situacao.SelectedIndexChanged += new System.EventHandler(this.situacao_SelectedIndexChanged);
             // 
             // CadReserva
             // 

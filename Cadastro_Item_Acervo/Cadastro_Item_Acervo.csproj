@@ -62,17 +62,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -82,5 +83,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Biblioteca Estágio\Cadastro_Autor.csproj">
+      <Project>{9116154b-c122-4a29-ab8a-d9b2690cfac9}</Project>
+      <Name>Cadastro_Autor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cadastro_Editora\Cadastro_Editora.csproj">
+      <Project>{f4d57849-b9f7-42c3-8237-98266ec324b0}</Project>
+      <Name>Cadastro_Editora</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cadastro_Local\Cadastro_Local.csproj">
+      <Project>{4A1F3E2A-DF75-41CE-8011-FD47FFA34B75}</Project>
+      <Name>Cadastro_Local</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

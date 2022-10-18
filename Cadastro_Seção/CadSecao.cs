@@ -140,15 +140,15 @@ namespace Cadastro_Seção
         private void formatColumns()
         {
             //Cód secao
-            this.dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.Columns["codSecao"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
             //Descricao da secao
-            this.dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView1.Columns["descricaoSecao"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
 
-            this.dataGridView1.Columns[0].HeaderText = "Código";
-            this.dataGridView1.Columns[1].HeaderText = "Descrição";
+            this.dataGridView1.Columns["codSecao"].HeaderText = "Código";
+            this.dataGridView1.Columns["descricaoSecao"].HeaderText = "Descrição";
 
         }
 
@@ -171,13 +171,13 @@ namespace Cadastro_Seção
             func(Controls);
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indexRow = e.RowIndex;
             DataGridViewRow row = dataGridView1.Rows[indexRow];
 
-            codSecao.Text = $"{row.Cells[0].Value}";
-            descricaoSecao.Text = $"{row.Cells[1].Value}";
+            codSecao.Text = $"{row.Cells["codSecao"].Value}";
+            descricaoSecao.Text = $"{row.Cells["descricaoSecao"].Value}";
         }
     }
 }

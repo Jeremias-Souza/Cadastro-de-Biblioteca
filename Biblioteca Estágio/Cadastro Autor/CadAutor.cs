@@ -211,20 +211,23 @@ namespace Biblioteca_Estágio
         private void formatColumns()
         {
             //Cód autor
-            this.dataGridView1.Columns[0]
+            this.dataGridView1.Columns["CodAutor"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //Nome autor
-            this.dataGridView1.Columns[1]
+            this.dataGridView1.Columns["nomeAutor"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             //Descrição autor
-            this.dataGridView1.Columns[2]
+            this.dataGridView1.Columns["descricaoAutor"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[0].HeaderText = "Código";
-            this.dataGridView1.Columns[1].HeaderText = "Nome";
-            this.dataGridView1.Columns[2].HeaderText = "Descrição";
+            this.dataGridView1.Columns["CodAutor"].HeaderText = "Código";
+            this.dataGridView1.Columns["nomeAutor"].HeaderText = "Nome";
+            this.dataGridView1.Columns["descricaoAutor"].HeaderText = "Descrição";
+
+            
+
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)//Caixa aonde ocorre as atualizações de processos
@@ -284,64 +287,36 @@ namespace Biblioteca_Estágio
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true; 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            indexRow = e.RowIndex;
+            /*indexRow = e.RowIndex;
             DataGridViewRow row = dataGridView1.Rows[indexRow];
 
             CodAutor.Text = $"{row.Cells["codAutor"].Value}";
-            NomeAutor.Text = $"{row.Cells[1].Value}";
-            InfAutor.Text = $"{row.Cells[2].Value}";
-            
-         
+            NomeAutor.Text = $"{row.Cells["nomeAutor"].Value}";
+            InfAutor.Text = $"{row.Cells["descricaoAutor"].Value}";*/
         }
+
+
+
+        
+
+        
+
+        
+
+        
 
        
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-        }
+        
 
-        private void dataGridView1_Layout(object sender, LayoutEventArgs e)
-        {  
-        }
+        
 
-        private void openFileDialog3_FileOk(object sender, CancelEventArgs e)
-        {
-        }
+       
 
-        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e) //Caixa de imagem
-        {
-        }
-
-        private void CodAutor_TextChanged(object sender, EventArgs e) //Caixa de texto código do autor
-        {
-        }
-
-        private void InfAutor_TextChanged(object sender, EventArgs e) //Caixa de texto Informações do autor
-        {
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void NomeAutor_TextChanged(object sender, EventArgs e) //Caixa de texto Nome do autor
-        {
-            
-        }
-
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e) //Fazer upload nas caixas de texto quando na tabela for apertado duas vezes
-        {
-        }
-
-        private void NomeAutor_Leave(object sender, EventArgs e)
-        {
-            
-        }
+        
     }
 }

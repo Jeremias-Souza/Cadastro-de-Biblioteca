@@ -142,24 +142,20 @@ namespace Cadastro_Local
         private void formatColumns()
         {
             //Cód local
-            this.dataGridView1.Columns[0]
+            this.dataGridView1.Columns["codLocal"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //Descricao local
-            this.dataGridView1.Columns[1]
+            this.dataGridView1.Columns["descricaoLocal"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[0].HeaderText = "Código";
-            this.dataGridView1.Columns[1].HeaderText = "Descrição";
+            this.dataGridView1.Columns["codLocal"].HeaderText = "Código";
+            this.dataGridView1.Columns["descricaoLocal"].HeaderText = "Descrição";
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            indexRow = e.RowIndex;
-            DataGridViewRow row = dataGridView1.Rows[indexRow];
-
-            codLocal.Text = $"{row.Cells[0].Value}";
-            descricaoLocal.Text = $"{row.Cells[1].Value}";
+            
         }
 
         private void ClearTextBoxes() //Função para limpar formularios depois de salvar
@@ -181,9 +177,13 @@ namespace Cadastro_Local
             func(Controls);
         }
 
-        private void CadLocal_Load(object sender, EventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            indexRow = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[indexRow];
 
+            codLocal.Text = $"{row.Cells["codLocal"].Value}";
+            descricaoLocal.Text = $"{row.Cells["descricaoLocal"].Value}";
         }
     }
 }

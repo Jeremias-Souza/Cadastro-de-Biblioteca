@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using Reserva;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -144,24 +145,22 @@ namespace Cadastro_Editora
         private void formatColumns()
         {
             //Cód editora
-            this.dataGridView1.Columns[0]
+            this.dataGridView1.Columns["CodEditora"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;            
 
             //Nome editora
-            this.dataGridView1.Columns[1]
+            this.dataGridView1.Columns["Nome"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[0].HeaderText = "Código";
-            this.dataGridView1.Columns[1].HeaderText = "Nome";
+            this.dataGridView1.Columns["CodEditora"].HeaderText = "Código";
+            this.dataGridView1.Columns["Nome"].HeaderText = "Nome";
+
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            indexRow = e.RowIndex;
-            DataGridViewRow row = dataGridView1.Rows[indexRow];
-
-            codeEditora.Text = $"{row.Cells[0].Value}";
-            nomeEditora.Text = $"{row.Cells[1].Value}";
+            
             
         }
 
@@ -201,6 +200,15 @@ namespace Cadastro_Editora
         private void CadEditora_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            indexRow = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[indexRow];
+
+            codeEditora.Text = $"{row.Cells["CodEditora"].Value}";
+            nomeEditora.Text = $"{row.Cells["Nome"].Value}";
         }
     }
 }

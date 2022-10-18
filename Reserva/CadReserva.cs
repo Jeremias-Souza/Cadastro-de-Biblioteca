@@ -254,50 +254,50 @@ namespace Reserva
 
         private void formatColumns()
         {
-            this.dataGridView1.Columns[0]
+            this.dataGridView1.Columns["codItem"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[1]
+            this.dataGridView1.Columns["situacao"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[2]
+            this.dataGridView1.Columns["nomeItem"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[3]
+            this.dataGridView1.Columns["numExemplar"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[4]
+            this.dataGridView1.Columns["tipoItem"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[5]
+            this.dataGridView1.Columns["localizacao"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[6]
+            this.dataGridView1.Columns["codLeitor"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[7]
+            this.dataGridView1.Columns["nomeLeitor"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[8]
+            this.dataGridView1.Columns["dataReserva"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[9]
+            this.dataGridView1.Columns["prazoReserva"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[10]
+            this.dataGridView1.Columns["encerrar"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[0].HeaderText = "Código do Item";
-            this.dataGridView1.Columns[1].HeaderText = "Movimento";           
-            this.dataGridView1.Columns[2].HeaderText = "Nome do Item";
-            this.dataGridView1.Columns[3].HeaderText = "Número do exemplar";
-            this.dataGridView1.Columns[4].HeaderText = "Tipo do item";
-            this.dataGridView1.Columns[5].HeaderText = "Localização";
-            this.dataGridView1.Columns[6].HeaderText = "Código do leitor";
-            this.dataGridView1.Columns[7].HeaderText = "Nome do leitor";
-            this.dataGridView1.Columns[8].HeaderText = "Data da reserva";
-            this.dataGridView1.Columns[9].HeaderText = "Data para devolução";
-            this.dataGridView1.Columns[10].HeaderText = "Reserva";
+            this.dataGridView1.Columns["codItem"].HeaderText = "Código do Item";
+            this.dataGridView1.Columns["situacao"].HeaderText = "Movimento";           
+            this.dataGridView1.Columns["nomeItem"].HeaderText = "Nome do Item";
+            this.dataGridView1.Columns["numExemplar"].HeaderText = "Número do exemplar";
+            this.dataGridView1.Columns["tipoItem"].HeaderText = "Tipo do item";
+            this.dataGridView1.Columns["localizacao"].HeaderText = "Localização";
+            this.dataGridView1.Columns["codLeitor"].HeaderText = "Código do leitor";
+            this.dataGridView1.Columns["nomeLeitor"].HeaderText = "Nome do leitor";
+            this.dataGridView1.Columns["dataReserva"].HeaderText = "Data da reserva";
+            this.dataGridView1.Columns["prazoReserva"].HeaderText = "Data para devolução";
+            this.dataGridView1.Columns["encerrar"].HeaderText = "Reserva";
 
         }
 
@@ -305,8 +305,7 @@ namespace Reserva
         {
             //encerrar = Boolean.TrueString,
             // intencao.Text == Re 
-            
-            
+                  
         }
 
         private void ClearTextBoxes() //Função para limpar formularios depois de salvar
@@ -329,21 +328,8 @@ namespace Reserva
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            indexRow = e.RowIndex;
-            DataGridViewRow row = dataGridView1.Rows[indexRow];
-
-            codItem.Text = $"{row.Cells[0].Value}";
-            situacao.Text = $"{row.Cells[1].Value}";
-            nomeItem.Text = $"{row.Cells[2].Value}";
-            numExemplar.Text = $"{row.Cells[3].Value}";
-            tipoItem.Text = $"{row.Cells[4].Value}";
-            localizacao.Text = $"{row.Cells[5].Value}";
-            codLeitor.Text = $"{row.Cells[6].Value}";
-            nomeLeitor.Text = $"{row.Cells[7].Value}";
-            dataReserva.Text = $"{row.Cells[8].Value}";
-            prazoReserva.Text = $"{row.Cells[9].Value}";
-            situacao.Text = $"{row.Cells[10].Value}";
-
+            
+           
         }
 
         private void dataReserva_KeyPress(object sender, KeyPressEventArgs e)
@@ -444,14 +430,22 @@ namespace Reserva
             }
         }
 
-        private void intencao_SelectedIndexChanged(object sender, EventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            indexRow = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[indexRow];
 
-        }
-
-        private void situacao_SelectedIndexChanged(object sender, EventArgs e)
-        {
-                     
+            codItem.Text = $"{row.Cells["codItem"].Value}";
+            situacao.Text = $"{row.Cells["situacao"].Value}";
+            nomeItem.Text = $"{row.Cells["nomeItem"].Value}";
+            numExemplar.Text = $"{row.Cells["numExemplar"].Value}";
+            tipoItem.Text = $"{row.Cells["tipoItem"].Value}";
+            localizacao.Text = $"{row.Cells["localizacao"].Value}";
+            codLeitor.Text = $"{row.Cells["codLeitor"].Value}";
+            nomeLeitor.Text = $"{row.Cells["nomeLeitor"].Value}";
+            dataReserva.Text = $"{row.Cells["dataReserva"].Value}";
+            prazoReserva.Text = $"{row.Cells["prazoReserva"].Value}";
+            situacao.Text = $"{row.Cells["encerrar"].Value}";
         }
     }
 }

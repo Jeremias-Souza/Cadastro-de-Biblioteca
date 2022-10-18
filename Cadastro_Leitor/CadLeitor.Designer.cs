@@ -32,7 +32,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.rg = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.enderecoUF = new System.Windows.Forms.TextBox();
+            this.enderecoUF1 = new System.Windows.Forms.TextBox();
             this.enderecoNumero = new System.Windows.Forms.TextBox();
             this.enderecoCEP = new System.Windows.Forms.TextBox();
             this.enderecoNome = new System.Windows.Forms.TextBox();
@@ -61,6 +61,7 @@
             this.saveLeitor = new System.Windows.Forms.Button();
             this.sexo = new System.Windows.Forms.ComboBox();
             this.enderecoCidade = new System.Windows.Forms.TextBox();
+            this.enderecoUF = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,15 +105,14 @@
             this.label15.TabIndex = 70;
             this.label15.Text = "RG";
             // 
-            // enderecoUF
+            // enderecoUF1
             // 
-            this.enderecoUF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.enderecoUF.Location = new System.Drawing.Point(540, 165);
-            this.enderecoUF.Name = "enderecoUF";
-            this.enderecoUF.Size = new System.Drawing.Size(36, 20);
-            this.enderecoUF.TabIndex = 15;
-            this.enderecoUF.TextChanged += new System.EventHandler(this.enderecoUF_TextChanged);
-            this.enderecoUF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enderecoUF_KeyPress);
+            this.enderecoUF1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.enderecoUF1.Location = new System.Drawing.Point(540, 165);
+            this.enderecoUF1.Name = "enderecoUF1";
+            this.enderecoUF1.Size = new System.Drawing.Size(36, 20);
+            this.enderecoUF1.TabIndex = 15;
+            this.enderecoUF1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enderecoUF_KeyPress);
             // 
             // enderecoNumero
             // 
@@ -172,7 +172,6 @@
             this.cpf.Name = "cpf";
             this.cpf.Size = new System.Drawing.Size(83, 20);
             this.cpf.TabIndex = 5;
-            this.cpf.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cpf_MouseClick);
             this.cpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cpf_KeyPress);
             // 
             // dataNascimento
@@ -191,7 +190,6 @@
             this.nome.Name = "nome";
             this.nome.Size = new System.Drawing.Size(188, 20);
             this.nome.TabIndex = 2;
-            this.nome.TextChanged += new System.EventHandler(this.nome_TextChanged);
             this.nome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nome_KeyPress);
             // 
             // codLeitor
@@ -361,6 +359,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(715, 157);
             this.dataGridView1.TabIndex = 18;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // deleteLeitor
@@ -390,6 +389,7 @@
             // sexo
             // 
             this.sexo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.sexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sexo.FormattingEnabled = true;
             this.sexo.Items.AddRange(new object[] {
             "Masculino",
@@ -398,7 +398,6 @@
             this.sexo.Name = "sexo";
             this.sexo.Size = new System.Drawing.Size(121, 21);
             this.sexo.TabIndex = 3;
-            this.sexo.SelectedIndexChanged += new System.EventHandler(this.sexo_SelectedIndexChanged);
             this.sexo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sexo_KeyPress);
             // 
             // enderecoCidade
@@ -410,18 +409,56 @@
             this.enderecoCidade.TabIndex = 10;
             this.enderecoCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enderecoCidade_KeyPress);
             // 
+            // enderecoUF
+            // 
+            this.enderecoUF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.enderecoUF.FormattingEnabled = true;
+            this.enderecoUF.Items.AddRange(new object[] {
+            "AC\t",
+            "AL\t",
+            "AM\t",
+            "AP\t",
+            "BA\t",
+            "CE\t",
+            "DF\t",
+            "ES\t",
+            "GO\t",
+            "MA\t",
+            "MG\t",
+            "MS\t",
+            "MT\t",
+            "PA\t",
+            "PB\t",
+            "PE\t",
+            "PI\t",
+            "PR\t",
+            "RJ\t",
+            "RN\t",
+            "RO\t",
+            "RR\t",
+            "RS\t",
+            "SC\t",
+            "SE\t",
+            "SP\t",
+            "TO"});
+            this.enderecoUF.Location = new System.Drawing.Point(540, 189);
+            this.enderecoUF.Name = "enderecoUF";
+            this.enderecoUF.Size = new System.Drawing.Size(36, 21);
+            this.enderecoUF.TabIndex = 73;
+            // 
             // CadLeitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 408);
+            this.Controls.Add(this.enderecoUF);
             this.Controls.Add(this.enderecoCidade);
             this.Controls.Add(this.sexo);
             this.Controls.Add(this.telefone);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.rg);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.enderecoUF);
+            this.Controls.Add(this.enderecoUF1);
             this.Controls.Add(this.enderecoNumero);
             this.Controls.Add(this.enderecoCEP);
             this.Controls.Add(this.enderecoNome);
@@ -463,7 +500,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox rg;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox enderecoUF;
+        private System.Windows.Forms.TextBox enderecoUF1;
         private System.Windows.Forms.TextBox enderecoNumero;
         private System.Windows.Forms.TextBox enderecoCEP;
         private System.Windows.Forms.TextBox enderecoNome;
@@ -492,5 +529,6 @@
         private System.Windows.Forms.Button saveLeitor;
         private System.Windows.Forms.ComboBox sexo;
         private System.Windows.Forms.TextBox enderecoCidade;
+        private System.Windows.Forms.ComboBox enderecoUF;
     }
 }

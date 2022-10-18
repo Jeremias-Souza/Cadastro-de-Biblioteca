@@ -34,9 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -48,9 +45,6 @@
             this.codItem = new System.Windows.Forms.TextBox();
             this.codLocal = new System.Windows.Forms.TextBox();
             this.nomeAcervo = new System.Windows.Forms.TextBox();
-            this.nomeLocal = new System.Windows.Forms.TextBox();
-            this.nomeAutor = new System.Windows.Forms.TextBox();
-            this.nomeEditora = new System.Windows.Forms.TextBox();
             this.nomeColecao = new System.Windows.Forms.TextBox();
             this.numeroExemplar = new System.Windows.Forms.TextBox();
             this.volume = new System.Windows.Forms.TextBox();
@@ -63,13 +57,19 @@
             this.label15 = new System.Windows.Forms.Label();
             this.codEditora = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.labelNomeAutor = new System.Windows.Forms.Label();
+            this.btnPesquisaEditora = new System.Windows.Forms.Label();
+            this.btnPesquisaLocal = new System.Windows.Forms.Button();
+            this.btnPesquisaAutor = new System.Windows.Forms.Button();
+            this.labelCodLocal = new System.Windows.Forms.Label();
+            this.btnPesquisaEditor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // saveAcervo
             // 
             this.saveAcervo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.saveAcervo.Location = new System.Drawing.Point(259, 218);
+            this.saveAcervo.Location = new System.Drawing.Point(259, 187);
             this.saveAcervo.MaximumSize = new System.Drawing.Size(75, 23);
             this.saveAcervo.Name = "saveAcervo";
             this.saveAcervo.Size = new System.Drawing.Size(75, 23);
@@ -81,7 +81,7 @@
             // deleteAcervo
             // 
             this.deleteAcervo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.deleteAcervo.Location = new System.Drawing.Point(368, 218);
+            this.deleteAcervo.Location = new System.Drawing.Point(368, 187);
             this.deleteAcervo.MaximumSize = new System.Drawing.Size(75, 23);
             this.deleteAcervo.Name = "deleteAcervo";
             this.deleteAcervo.Size = new System.Drawing.Size(75, 23);
@@ -94,19 +94,17 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 245);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 216);
             this.dataGridView1.MaximumSize = new System.Drawing.Size(643, 757);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(643, 157);
+            this.dataGridView1.Size = new System.Drawing.Size(643, 186);
             this.dataGridView1.TabIndex = 19;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label2
             // 
@@ -141,45 +139,12 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Código do Local";
             // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(4, 83);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 17);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Nome do Local";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(4, 136);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 17);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Nome do Autor";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(6, 192);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 17);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Nome da Editora";
-            // 
             // label7
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(326, 7);
+            this.label7.Location = new System.Drawing.Point(6, 134);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 17);
             this.label7.TabIndex = 12;
@@ -190,7 +155,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(326, 32);
+            this.label8.Location = new System.Drawing.Point(6, 162);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 17);
             this.label8.TabIndex = 13;
@@ -201,7 +166,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(326, 57);
+            this.label9.Location = new System.Drawing.Point(323, 6);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(138, 17);
             this.label9.TabIndex = 14;
@@ -212,7 +177,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(326, 83);
+            this.label10.Location = new System.Drawing.Point(323, 32);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 17);
             this.label10.TabIndex = 15;
@@ -223,7 +188,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(326, 108);
+            this.label11.Location = new System.Drawing.Point(323, 57);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(95, 17);
             this.label11.TabIndex = 16;
@@ -234,7 +199,7 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(326, 136);
+            this.label12.Location = new System.Drawing.Point(323, 85);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(133, 17);
             this.label12.TabIndex = 17;
@@ -245,7 +210,7 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(326, 165);
+            this.label13.Location = new System.Drawing.Point(323, 114);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(45, 17);
             this.label13.TabIndex = 18;
@@ -256,7 +221,7 @@
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(326, 192);
+            this.label14.Location = new System.Drawing.Point(323, 141);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(51, 17);
             this.label14.TabIndex = 19;
@@ -289,50 +254,20 @@
             this.nomeAcervo.TabIndex = 2;
             this.nomeAcervo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeAcervo_KeyPress);
             // 
-            // nomeLocal
-            // 
-            this.nomeLocal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.nomeLocal.Enabled = false;
-            this.nomeLocal.Location = new System.Drawing.Point(122, 82);
-            this.nomeLocal.Name = "nomeLocal";
-            this.nomeLocal.Size = new System.Drawing.Size(188, 20);
-            this.nomeLocal.TabIndex = 4;
-            this.nomeLocal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeLocal_KeyPress);
-            // 
-            // nomeAutor
-            // 
-            this.nomeAutor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.nomeAutor.Enabled = false;
-            this.nomeAutor.Location = new System.Drawing.Point(122, 135);
-            this.nomeAutor.Name = "nomeAutor";
-            this.nomeAutor.Size = new System.Drawing.Size(188, 20);
-            this.nomeAutor.TabIndex = 6;
-            this.nomeAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeAutor_KeyPress);
-            // 
-            // nomeEditora
-            // 
-            this.nomeEditora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.nomeEditora.Enabled = false;
-            this.nomeEditora.Location = new System.Drawing.Point(122, 193);
-            this.nomeEditora.Name = "nomeEditora";
-            this.nomeEditora.Size = new System.Drawing.Size(188, 20);
-            this.nomeEditora.TabIndex = 7;
-            this.nomeEditora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeEditora_KeyPress);
-            // 
             // nomeColecao
             // 
             this.nomeColecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.nomeColecao.Location = new System.Drawing.Point(464, 5);
+            this.nomeColecao.Location = new System.Drawing.Point(122, 133);
             this.nomeColecao.Name = "nomeColecao";
             this.nomeColecao.Size = new System.Drawing.Size(188, 20);
             this.nomeColecao.TabIndex = 9;
-            this.nomeColecao.MouseClick += new System.Windows.Forms.MouseEventHandler(this.nomeColecao_MouseClick);
+            this.nomeColecao.TextChanged += new System.EventHandler(this.nomeColecao_TextChanged);
             this.nomeColecao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeColecao_KeyPress);
             // 
             // numeroExemplar
             // 
             this.numeroExemplar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.numeroExemplar.Location = new System.Drawing.Point(464, 57);
+            this.numeroExemplar.Location = new System.Drawing.Point(461, 6);
             this.numeroExemplar.Name = "numeroExemplar";
             this.numeroExemplar.Size = new System.Drawing.Size(59, 20);
             this.numeroExemplar.TabIndex = 11;
@@ -340,7 +275,7 @@
             // volume
             // 
             this.volume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.volume.Location = new System.Drawing.Point(464, 82);
+            this.volume.Location = new System.Drawing.Point(461, 31);
             this.volume.Name = "volume";
             this.volume.Size = new System.Drawing.Size(59, 20);
             this.volume.TabIndex = 12;
@@ -348,16 +283,15 @@
             // anoEdicao
             // 
             this.anoEdicao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.anoEdicao.Location = new System.Drawing.Point(464, 107);
+            this.anoEdicao.Location = new System.Drawing.Point(461, 56);
             this.anoEdicao.Name = "anoEdicao";
             this.anoEdicao.Size = new System.Drawing.Size(59, 20);
             this.anoEdicao.TabIndex = 13;
-            this.anoEdicao.TextChanged += new System.EventHandler(this.anoEdicao_TextChanged);
             // 
             // idioma
             // 
             this.idioma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.idioma.Location = new System.Drawing.Point(464, 188);
+            this.idioma.Location = new System.Drawing.Point(461, 137);
             this.idioma.Name = "idioma";
             this.idioma.Size = new System.Drawing.Size(121, 20);
             this.idioma.TabIndex = 16;
@@ -366,7 +300,7 @@
             // secao
             // 
             this.secao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.secao.Location = new System.Drawing.Point(464, 162);
+            this.secao.Location = new System.Drawing.Point(461, 111);
             this.secao.Name = "secao";
             this.secao.Size = new System.Drawing.Size(121, 20);
             this.secao.TabIndex = 15;
@@ -374,7 +308,7 @@
             // localizacao
             // 
             this.localizacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.localizacao.Location = new System.Drawing.Point(464, 134);
+            this.localizacao.Location = new System.Drawing.Point(461, 83);
             this.localizacao.Name = "localizacao";
             this.localizacao.Size = new System.Drawing.Size(59, 20);
             this.localizacao.TabIndex = 14;
@@ -383,6 +317,7 @@
             // 
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.comboBox1.DisplayMember = "text";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Livro",
@@ -391,21 +326,19 @@
             "DVD/CD",
             "Folheto",
             "Artigo"});
-            this.comboBox1.Location = new System.Drawing.Point(464, 31);
+            this.comboBox1.Location = new System.Drawing.Point(122, 158);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 10;
-            this.comboBox1.Text = "Selecione";
             this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // codAutor
             // 
             this.codAutor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.codAutor.Location = new System.Drawing.Point(123, 108);
+            this.codAutor.Location = new System.Drawing.Point(122, 83);
             this.codAutor.Name = "codAutor";
-            this.codAutor.Size = new System.Drawing.Size(44, 20);
+            this.codAutor.Size = new System.Drawing.Size(45, 20);
             this.codAutor.TabIndex = 5;
-            this.codAutor.TextChanged += new System.EventHandler(this.codAutor_TextChanged);
             this.codAutor.Leave += new System.EventHandler(this.codAutor_Leave);
             // 
             // label15
@@ -413,7 +346,7 @@
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(4, 108);
+            this.label15.Location = new System.Drawing.Point(4, 83);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(110, 17);
             this.label15.TabIndex = 35;
@@ -422,10 +355,10 @@
             // codEditora
             // 
             this.codEditora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.codEditora.Location = new System.Drawing.Point(122, 164);
+            this.codEditora.Location = new System.Drawing.Point(122, 108);
             this.codEditora.Name = "codEditora";
             this.codEditora.Size = new System.Drawing.Size(45, 20);
-            this.codEditora.TabIndex = 8;
+            this.codEditora.TabIndex = 7;
             this.codEditora.Leave += new System.EventHandler(this.codEditora_Leave);
             // 
             // label16
@@ -433,17 +366,90 @@
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(4, 164);
+            this.label16.Location = new System.Drawing.Point(4, 108);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(118, 17);
             this.label16.TabIndex = 37;
             this.label16.Text = "Código da Editora";
+            // 
+            // labelNomeAutor
+            // 
+            this.labelNomeAutor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelNomeAutor.AutoSize = true;
+            this.labelNomeAutor.Location = new System.Drawing.Point(189, 85);
+            this.labelNomeAutor.Name = "labelNomeAutor";
+            this.labelNomeAutor.Size = new System.Drawing.Size(78, 13);
+            this.labelNomeAutor.TabIndex = 39;
+            this.labelNomeAutor.Text = "Nome do Autor";
+            // 
+            // btnPesquisaEditora
+            // 
+            this.btnPesquisaEditora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnPesquisaEditora.AutoSize = true;
+            this.btnPesquisaEditora.Location = new System.Drawing.Point(189, 111);
+            this.btnPesquisaEditora.Name = "btnPesquisaEditora";
+            this.btnPesquisaEditora.Size = new System.Drawing.Size(86, 13);
+            this.btnPesquisaEditora.TabIndex = 40;
+            this.btnPesquisaEditora.Text = "Nome da Editora";
+            // 
+            // btnPesquisaLocal
+            // 
+            this.btnPesquisaLocal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnPesquisaLocal.Location = new System.Drawing.Point(170, 57);
+            this.btnPesquisaLocal.MaximumSize = new System.Drawing.Size(19, 20);
+            this.btnPesquisaLocal.Name = "btnPesquisaLocal";
+            this.btnPesquisaLocal.Size = new System.Drawing.Size(19, 20);
+            this.btnPesquisaLocal.TabIndex = 4;
+            this.btnPesquisaLocal.Text = "🔎";
+            this.btnPesquisaLocal.UseVisualStyleBackColor = true;
+            this.btnPesquisaLocal.Click += new System.EventHandler(this.btnPesquisaLocal_Click);
+            // 
+            // btnPesquisaAutor
+            // 
+            this.btnPesquisaAutor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnPesquisaAutor.Location = new System.Drawing.Point(170, 83);
+            this.btnPesquisaAutor.MaximumSize = new System.Drawing.Size(19, 20);
+            this.btnPesquisaAutor.Name = "btnPesquisaAutor";
+            this.btnPesquisaAutor.Size = new System.Drawing.Size(19, 20);
+            this.btnPesquisaAutor.TabIndex = 6;
+            this.btnPesquisaAutor.Text = "🔎";
+            this.btnPesquisaAutor.UseVisualStyleBackColor = true;
+            this.btnPesquisaAutor.Click += new System.EventHandler(this.btnPesquisaAutor_Click);
+            // 
+            // labelCodLocal
+            // 
+            this.labelCodLocal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCodLocal.AutoSize = true;
+            this.labelCodLocal.Location = new System.Drawing.Point(189, 61);
+            this.labelCodLocal.Name = "labelCodLocal";
+            this.labelCodLocal.Size = new System.Drawing.Size(79, 13);
+            this.labelCodLocal.TabIndex = 38;
+            this.labelCodLocal.Text = "Nome do Local";
+            this.labelCodLocal.Click += new System.EventHandler(this.labelCodLocal_Click);
+            // 
+            // btnPesquisaEditor
+            // 
+            this.btnPesquisaEditor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnPesquisaEditor.Location = new System.Drawing.Point(170, 108);
+            this.btnPesquisaEditor.MaximumSize = new System.Drawing.Size(19, 20);
+            this.btnPesquisaEditor.Name = "btnPesquisaEditor";
+            this.btnPesquisaEditor.Size = new System.Drawing.Size(19, 20);
+            this.btnPesquisaEditor.TabIndex = 8;
+            this.btnPesquisaEditor.Text = "🔎";
+            this.btnPesquisaEditor.UseVisualStyleBackColor = true;
+            this.btnPesquisaEditor.Click += new System.EventHandler(this.btnPesquisaEditor_Click);
             // 
             // CadAcervo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 408);
+            this.Controls.Add(this.btnPesquisaEditor);
+            this.Controls.Add(this.btnPesquisaAutor);
+            this.Controls.Add(this.btnPesquisaLocal);
+            this.Controls.Add(this.btnPesquisaEditora);
+            this.Controls.Add(this.labelNomeAutor);
+            this.Controls.Add(this.labelCodLocal);
             this.Controls.Add(this.codEditora);
             this.Controls.Add(this.codAutor);
             this.Controls.Add(this.label15);
@@ -455,9 +461,6 @@
             this.Controls.Add(this.volume);
             this.Controls.Add(this.numeroExemplar);
             this.Controls.Add(this.nomeColecao);
-            this.Controls.Add(this.nomeEditora);
-            this.Controls.Add(this.nomeAutor);
-            this.Controls.Add(this.nomeLocal);
             this.Controls.Add(this.nomeAcervo);
             this.Controls.Add(this.codLocal);
             this.Controls.Add(this.codItem);
@@ -469,9 +472,6 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -482,6 +482,7 @@
             this.MinimumSize = new System.Drawing.Size(678, 447);
             this.Name = "CadAcervo";
             this.Text = "Cadastro do Acervo";
+            this.Load += new System.EventHandler(this.CadAcervo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -496,9 +497,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -510,9 +508,6 @@
         private System.Windows.Forms.TextBox codItem;
         private System.Windows.Forms.TextBox codLocal;
         private System.Windows.Forms.TextBox nomeAcervo;
-        private System.Windows.Forms.TextBox nomeLocal;
-        private System.Windows.Forms.TextBox nomeAutor;
-        private System.Windows.Forms.TextBox nomeEditora;
         private System.Windows.Forms.TextBox nomeColecao;
         private System.Windows.Forms.TextBox numeroExemplar;
         private System.Windows.Forms.TextBox volume;
@@ -525,5 +520,11 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox codEditora;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label labelNomeAutor;
+        private System.Windows.Forms.Label btnPesquisaEditora;
+        private System.Windows.Forms.Button btnPesquisaLocal;
+        private System.Windows.Forms.Button btnPesquisaAutor;
+        private System.Windows.Forms.Label labelCodLocal;
+        private System.Windows.Forms.Button btnPesquisaEditor;
     }
 }

@@ -1,4 +1,7 @@
-﻿using Microsoft.VisualBasic;
+﻿using Biblioteca_Estágio;
+using Cadastro_Editora;
+using Cadastro_Local;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,32 +72,18 @@ namespace Cadastro_Item_Acervo
             {
                 MessageBox.Show("Código do autor é obrigatorio. ");
                 return;
-            }
-            if (string.IsNullOrWhiteSpace(nomeAutor.Text))
-            {
-                MessageBox.Show("Nome do autor é obrigatorio. ");
-                return;
-            }
+            }           
             if (string.IsNullOrWhiteSpace(codEditora.Text))
             {
                 MessageBox.Show("Código da editora é obrigatorio. ");
                 return;
-            }
-            if (string.IsNullOrWhiteSpace(nomeEditora.Text))
-            {
-                MessageBox.Show("Nome da editora é obrigatorio. ");
-                return;
-            }
+            }            
             if (string.IsNullOrWhiteSpace(comboBox1.Text))
             {
                 MessageBox.Show("Tipo de item é obrigatorio. ");
                 return;
             }
-            if (string.IsNullOrWhiteSpace(nomeLocal.Text))
-            {
-                MessageBox.Show("Nome do local é obrigatorio. ");
-                return;
-            }
+            
             if (string.IsNullOrWhiteSpace(localizacao.Text))
             {
                 MessageBox.Show("Código da prateleira é obrigatorio. ");
@@ -109,10 +98,10 @@ namespace Cadastro_Item_Acervo
 
                 codLocal = this.codLocal.Text,
                 nome = this.nomeAcervo.Text,
-                nomeLocal = this.nomeLocal.Text,
-                nomeAutor = this.nomeAutor.Text,
+                nomeLocal = this.labelCodLocal.Text,
+                nomeAutor = this.labelNomeAutor.Text,
                 codAutor = this.codAutor.Text,
-                nomeEditora = this.nomeEditora.Text,
+                nomeEditora = this.btnPesquisaEditora.Text,
                 codEditora = this.codEditora.Text,
                 nomeColecao = this.nomeColecao.Text,
                 tipoItem = this.comboBox1.Text,
@@ -217,71 +206,75 @@ namespace Cadastro_Item_Acervo
         private void formatColumns()
         {
 
-            this.dataGridView1.Columns[0]
+            this.dataGridView1.Columns["codItem"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[1]
+            this.dataGridView1.Columns["codLocal"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[2]
+            this.dataGridView1.Columns["numExemplar"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[3]
+            this.dataGridView1.Columns["nome"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[4]
+            this.dataGridView1.Columns["codAutor"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[5]
+            this.dataGridView1.Columns["nomeAutor"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[6]
+            this.dataGridView1.Columns["codEditora"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[7]
+            this.dataGridView1.Columns["nomeEditora"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[8]
+            this.dataGridView1.Columns["nomeColecao"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[9]
+            this.dataGridView1.Columns["tipoItem"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[10]
+            this.dataGridView1.Columns["nomeLocal"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[11]
+            this.dataGridView1.Columns["Volume"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[12]
+            this.dataGridView1.Columns["anoEdicao"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[13]
+            this.dataGridView1.Columns["localizacao"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[14]
+            this.dataGridView1.Columns["secao"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[15]
+            this.dataGridView1.Columns["idioma"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
+             
 
-            this.dataGridView1.Columns[0].HeaderText = "Código Acervo";
-            this.dataGridView1.Columns[1].HeaderText = "Código Local";
-            this.dataGridView1.Columns[2].HeaderText = "Numero do exemplar";
-            this.dataGridView1.Columns[3].HeaderText = "Nome do Local";
-            this.dataGridView1.Columns[4].HeaderText = "Código do Autor";
-            this.dataGridView1.Columns[5].HeaderText = "Nome do Autor";
-            this.dataGridView1.Columns[6].HeaderText = "Código da Editora";
-            this.dataGridView1.Columns[7].HeaderText = "Nome da editora";
-            this.dataGridView1.Columns[8].HeaderText = "Nome da coleção";
-            this.dataGridView1.Columns[9].HeaderText = "Tipo do item";
-            this.dataGridView1.Columns[10].HeaderText = "Nome do local";
-            this.dataGridView1.Columns[11].HeaderText = "Volume";
-            this.dataGridView1.Columns[12].HeaderText = "Ano da edição";
-            this.dataGridView1.Columns[13].HeaderText = "Código Prateleira";
-            this.dataGridView1.Columns[14].HeaderText = "Seção";
-            this.dataGridView1.Columns[15].HeaderText = "Idioma";
+            this.dataGridView1.Columns["codItem"].HeaderText = "Código Acervo";
+            this.dataGridView1.Columns["codLocal"].HeaderText = "Código Local";
+            this.dataGridView1.Columns["numExemplar"].HeaderText = "Numero do exemplar";
+            this.dataGridView1.Columns["nome"].HeaderText = "Nome";
+            this.dataGridView1.Columns["codAutor"].HeaderText = "Código do Autor";
+            this.dataGridView1.Columns["nomeAutor"].HeaderText = "Nome do Autor";
+            this.dataGridView1.Columns["codEditora"].HeaderText = "Código da Editora";
+            this.dataGridView1.Columns["nomeEditora"].HeaderText = "Nome da editora";
+            this.dataGridView1.Columns["nomeColecao"].HeaderText = "Nome da coleção";
+            this.dataGridView1.Columns["tipoItem"].HeaderText = "Tipo do item";
+            this.dataGridView1.Columns["nomeLocal"].HeaderText = "Nome do local";
+            this.dataGridView1.Columns["Volume"].HeaderText = "Volume";
+            this.dataGridView1.Columns["anoEdicao"].HeaderText = "Ano da edição";
+            this.dataGridView1.Columns["localizacao"].HeaderText = "Código Prateleira";
+            this.dataGridView1.Columns["secao"].HeaderText = "Seção";
+            this.dataGridView1.Columns["idioma"].HeaderText = "Idioma";
+
+                      
+
 
 
         }
@@ -306,39 +299,14 @@ namespace Cadastro_Item_Acervo
             func(Controls);
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            indexRow = e.RowIndex;
-            DataGridViewRow row = dataGridView1.Rows[indexRow];
-
-            codItem.Text = $"{row.Cells[0].Value}";
-            codLocal.Text = $"{row.Cells[1].Value}";
-            numeroExemplar.Text = $"{row.Cells[2].Value}";
-            nomeLocal.Text = $"{row.Cells[3].Value}";
-            codAutor.Text = $"{row.Cells[4].Value}";
-            nomeAutor.Text = $"{row.Cells[5].Value}";
-            codEditora.Text = $"{row.Cells[6].Value}";
-            nomeEditora.Text = $"{row.Cells[7].Value}";
-            nomeColecao.Text = $"{row.Cells[8].Value}";
-            comboBox1.Text = $"{row.Cells[9].Value}";
-            nomeAcervo.Text = $"{row.Cells[10].Value}";
-            volume.Text = $"{row.Cells[11].Value}";
-            anoEdicao.Text = $"{row.Cells[12].Value}";
-            localizacao.Text = $"{row.Cells[13].Value}";
-            secao.Text = $"{row.Cells[14].Value}";
-            idioma.Text = $"{row.Cells[15].Value}";
-
-        }
+        
 
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
 
-        private void nomeColecao_MouseClick(object sender, MouseEventArgs e)
-        {
-
-        }
+        
 
         private void nomeAcervo_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -394,15 +362,7 @@ namespace Cadastro_Item_Acervo
             }
         }
 
-        private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void codAutor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void codAutor_Leave(object sender, EventArgs e)
         {
@@ -418,12 +378,12 @@ namespace Cadastro_Item_Acervo
                         using (DataTable dt = new DataTable())
                         {
                             da.Fill(dt);
-                            this.nomeAutor.Text = dt.Rows[0].Field<string>("nomeAutor");
+                            this.labelNomeAutor.Text = dt.Rows[0].Field<string>("nomeAutor");
                         }
                     }
                 }
 
-                //MessageBox.Show("Autor Carregado com sucesso!");
+               
             }
             catch (Exception ex) //Mostra mensagem caso haver falha 
             {
@@ -446,12 +406,12 @@ namespace Cadastro_Item_Acervo
                         using (DataTable dt = new DataTable())
                         {
                             da.Fill(dt);
-                            this.nomeEditora.Text = dt.Rows[0].Field<string>("nome");
+                            this.btnPesquisaEditora.Text = dt.Rows[0].Field<string>("nome");
                         }
                     }
                 }
 
-                //MessageBox.Show("Editora Carregado com sucesso!");
+                
             }
             catch (Exception ex) //Mostra mensagem caso haver falha 
             {
@@ -474,7 +434,7 @@ namespace Cadastro_Item_Acervo
                         using (DataTable dt = new DataTable())
                         {
                             da.Fill(dt);
-                            this.nomeLocal.Text = dt.Rows[0].Field<string>("descricaoLocal");
+                            this.labelCodLocal.Text = dt.Rows[0].Field<string>("descricaoLocal");
                         }
                     }
                 }
@@ -488,9 +448,62 @@ namespace Cadastro_Item_Acervo
             }
         }
 
-        private void anoEdicao_TextChanged(object sender, EventArgs e)
+       
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            indexRow = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[indexRow];
+
+            codItem.Text = $"{row.Cells["codItem"].Value}";
+            codLocal.Text = $"{row.Cells["codLocal"].Value}";
+            numeroExemplar.Text = $"{row.Cells["numExemplar"].Value}";
+            labelCodLocal.Text = $"{row.Cells["nome"].Value}";
+            codAutor.Text = $"{row.Cells["codAutor"].Value}";
+            labelNomeAutor.Text = $"{row.Cells["nomeAutor"].Value}";
+            codEditora.Text = $"{row.Cells["codEditora"].Value}";
+            btnPesquisaEditora.Text = $"{row.Cells["nomeEditora"].Value}";
+            nomeColecao.Text = $"{row.Cells["tipoItem"].Value}";
+            comboBox1.Text = $"{row.Cells["nomeLocal"].Value}";
+            nomeAcervo.Text = $"{row.Cells["volume"].Value}";
+            volume.Text = $"{row.Cells["anoEdicao"].Value}";
+            anoEdicao.Text = $"{row.Cells["localizacao"].Value}";
+            localizacao.Text = $"{row.Cells["secao"].Value}";
+            secao.Text = $"{row.Cells["idioma"].Value}";
+            idioma.Text = $"{row.Cells["nomeColecao"].Value}";
+        }
+
+        private void CadAcervo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nomeColecao_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelCodLocal_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnPesquisaLocal_Click(object sender, EventArgs e)
+        {
+            CadLocal tela = new CadLocal();
+            tela.Show();
+        }
+
+        private void btnPesquisaAutor_Click(object sender, EventArgs e)
+        {
+            CadastroAutor tela = new CadastroAutor();
+            tela.Show();
+        }
+
+        private void btnPesquisaEditor_Click(object sender, EventArgs e)
+        {
+            CadEditora tela = new CadEditora();
+            tela.Show();
         }
     }
 }

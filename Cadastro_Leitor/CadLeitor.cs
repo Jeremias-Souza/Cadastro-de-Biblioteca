@@ -183,65 +183,66 @@ namespace Cadastro_Leitor
 
         private void formatColumns()
         {
-            this.dataGridView1.Columns[0]
+            this.dataGridView1.Columns["codLeitor"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[1]
+            this.dataGridView1.Columns["nome"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[2]
+            this.dataGridView1.Columns["sexo"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[3]
+            this.dataGridView1.Columns["dataNascimento"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[4]
+            this.dataGridView1.Columns["cpf"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[5]
+            this.dataGridView1.Columns["rg"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[6]
+            this.dataGridView1.Columns["email"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[7]
+            this.dataGridView1.Columns["telefone"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[8]
+            this.dataGridView1.Columns["telefoneCelular"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[9]
+            this.dataGridView1.Columns["enderecoNome"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[10]
+            this.dataGridView1.Columns["enderecoBairro"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[11]
+            this.dataGridView1.Columns["enderecoCidade"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[12]
+            this.dataGridView1.Columns["enderecoCEP"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[13]
+            this.dataGridView1.Columns["enderecoUF"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns[14]
+            this.dataGridView1.Columns["enderecoNumero"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns[0].HeaderText = "Código";
-            this.dataGridView1.Columns[1].HeaderText = "Nome";
-            this.dataGridView1.Columns[2].HeaderText = "Sexo";
-            this.dataGridView1.Columns[3].HeaderText = "Data de nascimento";
-            this.dataGridView1.Columns[4].HeaderText = "CPF";
-            this.dataGridView1.Columns[5].HeaderText = "RG";
-            this.dataGridView1.Columns[6].HeaderText = "E-MAIL";
-            this.dataGridView1.Columns[7].HeaderText = "Telefone";
-            this.dataGridView1.Columns[8].HeaderText = "Telefone Celular";
-            this.dataGridView1.Columns[9].HeaderText = "Nome da rua";
-            this.dataGridView1.Columns[10].HeaderText = "Nome do bairro";
-            this.dataGridView1.Columns[11].HeaderText = "Nome da cidade";
-            this.dataGridView1.Columns[12].HeaderText = "CEP";
-            this.dataGridView1.Columns[13].HeaderText = "UF";
+            this.dataGridView1.Columns["codLeitor"].HeaderText = "Código";
+            this.dataGridView1.Columns["nome"].HeaderText = "Nome";
+            this.dataGridView1.Columns["sexo"].HeaderText = "Sexo";
+            this.dataGridView1.Columns["dataNascimento"].HeaderText = "Data de nascimento";
+            this.dataGridView1.Columns["cpf"].HeaderText = "CPF";
+            this.dataGridView1.Columns["rg"].HeaderText = "RG";
+            this.dataGridView1.Columns["email"].HeaderText = "E-MAIL";
+            this.dataGridView1.Columns["telefone"].HeaderText = "Telefone";
+            this.dataGridView1.Columns["telefoneCelular"].HeaderText = "Telefone Celular";
+            this.dataGridView1.Columns["enderecoNome"].HeaderText = "Nome da rua";
+            this.dataGridView1.Columns["enderecoBairro"].HeaderText = "Nome do bairro";
+            this.dataGridView1.Columns["enderecoCidade"].HeaderText = "Nome da cidade";
+            this.dataGridView1.Columns["enderecoCEP"].HeaderText = "CEP";
+            this.dataGridView1.Columns["enderecoUF"].HeaderText = "UF";
+            this.dataGridView1.Columns["enderecoNumero"].HeaderText = "enderecoNumero";            
 
         }
 
@@ -263,28 +264,33 @@ namespace Cadastro_Leitor
 
             func(Controls);
         }
-       
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {                      
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
             indexRow = e.RowIndex;
             DataGridViewRow row = dataGridView1.Rows[indexRow];
 
-            codLeitor.Text = $"{row.Cells[0].Value}";
-            nome.Text = $"{row.Cells[1].Value}";
-            sexo.Text = $"{row.Cells[2].Value}";
-            dataNascimento.Text = $"{row.Cells[3].Value}";
-            cpf.Text = $"{row.Cells[4].Value}";
-            rg.Text = $"{row.Cells[5].Value}";
-            email.Text = $"{row.Cells[6].Value}";
-            telefone.Text = $"{row.Cells[7].Value}";
-            telefoneCelular.Text = $"{row.Cells[8].Value}";
-            enderecoNome.Text = $"{row.Cells[9].Value}";
-            enderecoBairro.Text = $"{row.Cells[10].Value}";
-            enderecoCidade.Text = $"{row.Cells[11].Value}";
-            enderecoCEP.Text = $"{row.Cells[12].Value}";
-            enderecoUF.Text = $"{row.Cells[13].Value}";
-            enderecoNumero.Text = $"{row.Cells[14].Value}";
+            codLeitor.Text = $"{row.Cells["codLeitor"].Value}";
+            nome.Text = $"{row.Cells["nome"].Value}";
+            sexo.Text = $"{row.Cells["sexo"].Value}";
+            dataNascimento.Text = $"{row.Cells["dataNascimento"].Value}";
+            cpf.Text = $"{row.Cells["cpf"].Value}";
+            rg.Text = $"{row.Cells["rg"].Value}";
+            email.Text = $"{row.Cells["email"].Value}";
+            telefone.Text = $"{row.Cells["telefone"].Value}";
+            telefoneCelular.Text = $"{row.Cells["telefoneCelular"].Value}";
+            enderecoNome.Text = $"{row.Cells["enderecoNome"].Value}";
+            enderecoBairro.Text = $"{row.Cells["enderecoBairro"].Value}";
+            enderecoCidade.Text = $"{row.Cells["enderecoCidade"].Value}";
+            enderecoCEP.Text = $"{row.Cells["enderecoCEP"].Value}";
+            enderecoUF.Text = $"{row.Cells["enderecoUF"].Value}";
+            enderecoNumero.Text = $"{row.Cells["enderecoNumero"].Value}";
+        }
+
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {                      
+            
 
         }
 
@@ -292,11 +298,6 @@ namespace Cadastro_Leitor
         {
             e.Handled = true;                      
         }       
-
-        private void cpf_MouseClick(object sender, MouseEventArgs e)
-        {
-           
-        }
 
         private void cpf_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -402,17 +403,7 @@ namespace Cadastro_Leitor
             }
 
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true;
-        }
-
-        private void sexo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void nome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        }       
 
         private void nome_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -451,9 +442,6 @@ namespace Cadastro_Leitor
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true;
         }
 
-        private void enderecoUF_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+       
     }
 }
