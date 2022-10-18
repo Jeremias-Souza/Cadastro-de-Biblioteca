@@ -243,6 +243,7 @@
             this.codLocal.Name = "codLocal";
             this.codLocal.Size = new System.Drawing.Size(45, 20);
             this.codLocal.TabIndex = 3;
+            this.codLocal.TextChanged += new System.EventHandler(this.codLocal_TextChanged);
             this.codLocal.Leave += new System.EventHandler(this.codLocal_Leave);
             // 
             // nomeAcervo
@@ -378,9 +379,8 @@
             this.labelNomeAutor.AutoSize = true;
             this.labelNomeAutor.Location = new System.Drawing.Point(189, 85);
             this.labelNomeAutor.Name = "labelNomeAutor";
-            this.labelNomeAutor.Size = new System.Drawing.Size(78, 13);
+            this.labelNomeAutor.Size = new System.Drawing.Size(0, 13);
             this.labelNomeAutor.TabIndex = 39;
-            this.labelNomeAutor.Text = "Nome do Autor";
             // 
             // btnPesquisaEditora
             // 
@@ -388,9 +388,8 @@
             this.btnPesquisaEditora.AutoSize = true;
             this.btnPesquisaEditora.Location = new System.Drawing.Point(189, 111);
             this.btnPesquisaEditora.Name = "btnPesquisaEditora";
-            this.btnPesquisaEditora.Size = new System.Drawing.Size(86, 13);
+            this.btnPesquisaEditora.Size = new System.Drawing.Size(0, 13);
             this.btnPesquisaEditora.TabIndex = 40;
-            this.btnPesquisaEditora.Text = "Nome da Editora";
             // 
             // btnPesquisaLocal
             // 
@@ -422,9 +421,8 @@
             this.labelCodLocal.AutoSize = true;
             this.labelCodLocal.Location = new System.Drawing.Point(189, 61);
             this.labelCodLocal.Name = "labelCodLocal";
-            this.labelCodLocal.Size = new System.Drawing.Size(79, 13);
+            this.labelCodLocal.Size = new System.Drawing.Size(0, 13);
             this.labelCodLocal.TabIndex = 38;
-            this.labelCodLocal.Text = "Nome do Local";
             this.labelCodLocal.Click += new System.EventHandler(this.labelCodLocal_Click);
             // 
             // btnPesquisaEditor

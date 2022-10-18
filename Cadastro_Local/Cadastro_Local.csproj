@@ -81,5 +81,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Consulta_Emprestimo\Consulta_Emprestimo.csproj">
+      <Project>{1ba466cf-e390-44e2-aa34-e4286859d2c3}</Project>
+      <Name>Consulta_Emprestimo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

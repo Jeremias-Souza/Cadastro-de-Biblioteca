@@ -183,6 +183,7 @@
             // intencao
             // 
             this.intencao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.intencao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.intencao.FormattingEnabled = true;
             this.intencao.Items.AddRange(new object[] {
             "Reservar",
@@ -191,7 +192,6 @@
             this.intencao.Name = "intencao";
             this.intencao.Size = new System.Drawing.Size(133, 21);
             this.intencao.TabIndex = 58;
-            this.intencao.Text = "Selecione";
             // 
             // label11
             // 

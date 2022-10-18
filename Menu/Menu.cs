@@ -65,5 +65,16 @@ namespace Menu
             CadReserva tela = new CadReserva();
             tela.Show();
         }
+
+        private void consultaEmprest_Click(object sender, EventArgs e)
+        {
+            /*Consulta tela = new ConsultaAcervo();
+            tela.Show();*/
+        }
+
+        private void consultaAcervo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

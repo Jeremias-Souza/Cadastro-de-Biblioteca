@@ -505,5 +505,10 @@ namespace Cadastro_Item_Acervo
             CadEditora tela = new CadEditora();
             tela.Show();
         }
+
+        private void codLocal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

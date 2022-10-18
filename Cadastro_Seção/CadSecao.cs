@@ -141,8 +141,6 @@ namespace Cadastro_Seção
         {
             //Cód secao
             this.dataGridView1.Columns["codSecao"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-
             //Descricao da secao
             this.dataGridView1.Columns["descricaoSecao"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 

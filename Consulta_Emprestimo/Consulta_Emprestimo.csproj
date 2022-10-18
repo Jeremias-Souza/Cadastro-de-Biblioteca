@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{353DD673-F202-4947-A263-F95024E758E4}</ProjectGuid>
+    <ProjectGuid>{1BA466CF-E390-44E2-AA34-E4286859D2C3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Bibliotecas</RootNamespace>
-    <AssemblyName>Bibliotecas</AssemblyName>
+    <RootNamespace>Consulta_Emprestimo</RootNamespace>
+    <AssemblyName>Consulta_Emprestimo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,9 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conn.cs" />
+    <Compile Include="ConsultaEmprestimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaEmprestimo.Designer.cs">
+      <DependentUpon>ConsultaEmprestimo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConsultaEmprestimo.resx">
+      <DependentUpon>ConsultaEmprestimo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -70,50 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Desktop\PROJECT1\TabelaAutor\Tabela_Autor.sqlproj">
-      <Project>{97aa201a-5c99-46d0-a522-1283bd71c404}</Project>
-      <Name>Tabela_Autor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Biblioteca Estágio\Cadastro_Autor.csproj">
-      <Project>{9116154b-c122-4a29-ab8a-d9b2690cfac9}</Project>
-      <Name>Cadastro_Autor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cadastro_Item_Acervo\Cadastro_Item_Acervo.csproj">
-      <Project>{6a839ed5-4cc8-48e3-8832-9d99a4bd3e39}</Project>
-      <Name>Cadastro_Item_Acervo</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cadastro_Leitor\Cadastro_Leitor.csproj">
-      <Project>{45da4912-1e82-4849-829c-707ad0d053a6}</Project>
-      <Name>Cadastro_Leitor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cadastro_Local\Cadastro_Local.csproj">
-      <Project>{4a1f3e2a-df75-41ce-8011-fd47ffa34b75}</Project>
-      <Name>Cadastro_Local</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cadastro_Seção\Cadastro_Seção.csproj">
-      <Project>{b6eb2df7-0957-4c20-a9ad-b764d60bfdfa}</Project>
-      <Name>Cadastro_Seção</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Consulta_Emprestimo\Consulta_Emprestimo.csproj">
-      <Project>{1ba466cf-e390-44e2-aa34-e4286859d2c3}</Project>
-      <Name>Consulta_Emprestimo</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Menu\Menu.csproj">
-      <Project>{690981a7-e8e9-4f5c-9e3a-00051c9bec6f}</Project>
-      <Name>Menu</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Reserva\Reserva.csproj">
-      <Project>{76cc176e-c584-4cbb-8666-f7fd102003f7}</Project>
-      <Name>Reserva</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Conexão\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

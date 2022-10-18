@@ -297,7 +297,7 @@ namespace Reserva
             this.dataGridView1.Columns["nomeLeitor"].HeaderText = "Nome do leitor";
             this.dataGridView1.Columns["dataReserva"].HeaderText = "Data da reserva";
             this.dataGridView1.Columns["prazoReserva"].HeaderText = "Data para devolução";
-            this.dataGridView1.Columns["encerrar"].HeaderText = "Reserva";
+            this.dataGridView1.Columns["encerrar"].HeaderText = "Reserva em aberto?";
 
         }
 
@@ -436,7 +436,7 @@ namespace Reserva
             DataGridViewRow row = dataGridView1.Rows[indexRow];
 
             codItem.Text = $"{row.Cells["codItem"].Value}";
-            situacao.Text = $"{row.Cells["situacao"].Value}";
+            intencao.Text = $"{row.Cells["situacao"].Value}";
             nomeItem.Text = $"{row.Cells["nomeItem"].Value}";
             numExemplar.Text = $"{row.Cells["numExemplar"].Value}";
             tipoItem.Text = $"{row.Cells["tipoItem"].Value}";

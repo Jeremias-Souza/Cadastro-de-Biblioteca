@@ -83,6 +83,11 @@ namespace Cadastro_Leitor
                 MessageBox.Show("É necessario informar o estado do autor. ");
                 return;
             }
+            if (enderecoUF.Text != ("AC") && enderecoUF.Text != ("AL") && enderecoUF.Text != ("AP") && enderecoUF.Text != ("AM") && enderecoUF.Text != ("BA") && enderecoUF.Text != ("CE") && enderecoUF.Text != ("DF") && enderecoUF.Text != ("ES") && enderecoUF.Text != ("GO") && enderecoUF.Text != ("MA") && enderecoUF.Text != ("MT") && enderecoUF.Text != ("MS") && enderecoUF.Text != ("MG") && enderecoUF.Text != ("PA") && enderecoUF.Text != ("PB") && enderecoUF.Text != ("PR") && enderecoUF.Text != ("PE") && enderecoUF.Text != ("PI") && enderecoUF.Text != ("RJ") && enderecoUF.Text != ("RN") && enderecoUF.Text != ("RS") && enderecoUF.Text != ("RO") && enderecoUF.Text != ("RR") && enderecoUF.Text != ("SC") && enderecoUF.Text != ("SP") && enderecoUF.Text != ("SE") && enderecoUF.Text != ("TO"))
+            {
+                MessageBox.Show("UF inválida");
+                return;
+            }
 
             var leitor = new Leitor()
             {
@@ -105,7 +110,7 @@ namespace Cadastro_Leitor
                 ? 0
                 : int.Parse(this.codLeitor.Text)
 
-            };
+        };
 
             leitor.Salvar();
 
@@ -128,6 +133,7 @@ namespace Cadastro_Leitor
                         }
                     }
                     ClearTextBoxes();
+                    
                 }
 
 
@@ -169,6 +175,8 @@ namespace Cadastro_Leitor
 
                 MessageBox.Show("Cadastro apagado com sucesso!");
                 ClearTextBoxes();
+
+                
 
 
 
@@ -255,9 +263,11 @@ namespace Cadastro_Leitor
                 foreach (Control control in controls)
                     if (control is TextBox)
                         (control as TextBox).Clear();
+                
 
-                    else
+                else
                         func(control.Controls);
+
 
 
             };
@@ -265,6 +275,8 @@ namespace Cadastro_Leitor
             func(Controls);
         }
 
+        
+       
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indexRow = e.RowIndex;
@@ -423,8 +435,22 @@ namespace Cadastro_Leitor
             }
         }
 
-        private void enderecoUF_KeyPress(object sender, KeyPressEventArgs e)
+        private void enderecoNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true;
+        }
+      
+
+        private void enderecoUF_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+                e.KeyChar = Convert.ToChar(e.KeyChar.ToString().ToUpper());
+
+            string strTexto;
+            strTexto = e.KeyChar.ToString();
+            strTexto = strTexto.ToUpper();
+            e.KeyChar = Convert.ToChar(strTexto);
+
             if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
             {
                 e.Handled = true;
@@ -432,16 +458,13 @@ namespace Cadastro_Leitor
             }
             base.OnKeyPress(e);
 
-            if (char.IsLetter(e.KeyChar))
-                e.KeyChar = Convert.ToChar(e.KeyChar.ToString().ToUpper());
+            /*if (enderecoUF.Text.Length == 2 )
+            {
+                e.Handled = true;
+            }*/
 
+            
         }
 
-        private void enderecoNumero_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true;
-        }
-
-       
     }
 }

@@ -291,12 +291,12 @@ namespace Biblioteca_Estágio
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*indexRow = e.RowIndex;
+            indexRow = e.RowIndex;
             DataGridViewRow row = dataGridView1.Rows[indexRow];
 
             CodAutor.Text = $"{row.Cells["codAutor"].Value}";
             NomeAutor.Text = $"{row.Cells["nomeAutor"].Value}";
-            InfAutor.Text = $"{row.Cells["descricaoAutor"].Value}";*/
+            InfAutor.Text = $"{row.Cells["descricaoAutor"].Value}";
         }
 
 
