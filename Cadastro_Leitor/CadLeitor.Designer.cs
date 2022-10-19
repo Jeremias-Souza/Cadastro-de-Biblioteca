@@ -68,7 +68,7 @@
             // telefone
             // 
             this.telefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.telefone.Location = new System.Drawing.Point(137, 191);
+            this.telefone.Location = new System.Drawing.Point(591, 89);
             this.telefone.Name = "telefone";
             this.telefone.Size = new System.Drawing.Size(132, 20);
             this.telefone.TabIndex = 8;
@@ -79,7 +79,7 @@
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(9, 193);
+            this.label16.Location = new System.Drawing.Point(463, 91);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(91, 17);
             this.label16.TabIndex = 72;
@@ -88,7 +88,7 @@
             // rg
             // 
             this.rg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.rg.Location = new System.Drawing.Point(138, 134);
+            this.rg.Location = new System.Drawing.Point(591, 32);
             this.rg.Name = "rg";
             this.rg.Size = new System.Drawing.Size(82, 20);
             this.rg.TabIndex = 6;
@@ -99,7 +99,7 @@
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(10, 136);
+            this.label15.Location = new System.Drawing.Point(464, 34);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(27, 17);
             this.label15.TabIndex = 70;
@@ -108,7 +108,7 @@
             // enderecoNumero
             // 
             this.enderecoNumero.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.enderecoNumero.Location = new System.Drawing.Point(540, 113);
+            this.enderecoNumero.Location = new System.Drawing.Point(1388, 6);
             this.enderecoNumero.Name = "enderecoNumero";
             this.enderecoNumero.Size = new System.Drawing.Size(50, 20);
             this.enderecoNumero.TabIndex = 13;
@@ -117,7 +117,7 @@
             // enderecoCEP
             // 
             this.enderecoCEP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.enderecoCEP.Location = new System.Drawing.Point(540, 139);
+            this.enderecoCEP.Location = new System.Drawing.Point(1388, 32);
             this.enderecoCEP.Name = "enderecoCEP";
             this.enderecoCEP.Size = new System.Drawing.Size(100, 20);
             this.enderecoCEP.TabIndex = 14;
@@ -126,7 +126,7 @@
             // enderecoNome
             // 
             this.enderecoNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.enderecoNome.Location = new System.Drawing.Point(541, 87);
+            this.enderecoNome.Location = new System.Drawing.Point(1019, 85);
             this.enderecoNome.Name = "enderecoNome";
             this.enderecoNome.Size = new System.Drawing.Size(154, 20);
             this.enderecoNome.TabIndex = 12;
@@ -134,7 +134,7 @@
             // enderecoBairro
             // 
             this.enderecoBairro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.enderecoBairro.Location = new System.Drawing.Point(541, 61);
+            this.enderecoBairro.Location = new System.Drawing.Point(1019, 59);
             this.enderecoBairro.Name = "enderecoBairro";
             this.enderecoBairro.Size = new System.Drawing.Size(154, 20);
             this.enderecoBairro.TabIndex = 11;
@@ -142,7 +142,7 @@
             // telefoneCelular
             // 
             this.telefoneCelular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.telefoneCelular.Location = new System.Drawing.Point(540, 6);
+            this.telefoneCelular.Location = new System.Drawing.Point(1018, 4);
             this.telefoneCelular.Name = "telefoneCelular";
             this.telefoneCelular.Size = new System.Drawing.Size(132, 20);
             this.telefoneCelular.TabIndex = 9;
@@ -151,7 +151,7 @@
             // email
             // 
             this.email.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.email.Location = new System.Drawing.Point(137, 163);
+            this.email.Location = new System.Drawing.Point(591, 61);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(188, 20);
             this.email.TabIndex = 7;
@@ -159,7 +159,7 @@
             // cpf
             // 
             this.cpf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.cpf.Location = new System.Drawing.Point(137, 107);
+            this.cpf.Location = new System.Drawing.Point(591, 5);
             this.cpf.Name = "cpf";
             this.cpf.Size = new System.Drawing.Size(83, 20);
             this.cpf.TabIndex = 5;
@@ -168,7 +168,7 @@
             // dataNascimento
             // 
             this.dataNascimento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dataNascimento.Location = new System.Drawing.Point(137, 81);
+            this.dataNascimento.Location = new System.Drawing.Point(186, 80);
             this.dataNascimento.Name = "dataNascimento";
             this.dataNascimento.Size = new System.Drawing.Size(83, 20);
             this.dataNascimento.TabIndex = 4;
@@ -177,7 +177,7 @@
             // nome
             // 
             this.nome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.nome.Location = new System.Drawing.Point(137, 31);
+            this.nome.Location = new System.Drawing.Point(186, 30);
             this.nome.Name = "nome";
             this.nome.Size = new System.Drawing.Size(188, 20);
             this.nome.TabIndex = 2;
@@ -187,7 +187,7 @@
             // 
             this.codLeitor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.codLeitor.Enabled = false;
-            this.codLeitor.Location = new System.Drawing.Point(137, 5);
+            this.codLeitor.Location = new System.Drawing.Point(186, 4);
             this.codLeitor.Name = "codLeitor";
             this.codLeitor.Size = new System.Drawing.Size(45, 20);
             this.codLeitor.TabIndex = 1;
@@ -197,7 +197,7 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(426, 114);
+            this.label13.Location = new System.Drawing.Point(1274, 7);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(59, 17);
             this.label13.TabIndex = 54;
@@ -208,7 +208,7 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(425, 165);
+            this.label12.Location = new System.Drawing.Point(1273, 58);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(79, 17);
             this.label12.TabIndex = 53;
@@ -219,7 +219,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(425, 139);
+            this.label11.Location = new System.Drawing.Point(1273, 32);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(32, 17);
             this.label11.TabIndex = 52;
@@ -230,7 +230,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(425, 87);
+            this.label10.Location = new System.Drawing.Point(903, 85);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(32, 17);
             this.label10.TabIndex = 51;
@@ -241,7 +241,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(425, 61);
+            this.label9.Location = new System.Drawing.Point(903, 59);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 17);
             this.label9.TabIndex = 50;
@@ -252,7 +252,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(425, 35);
+            this.label8.Location = new System.Drawing.Point(903, 33);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 17);
             this.label8.TabIndex = 49;
@@ -263,7 +263,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(425, 9);
+            this.label7.Location = new System.Drawing.Point(903, 7);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 17);
             this.label7.TabIndex = 48;
@@ -274,7 +274,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(9, 165);
+            this.label6.Location = new System.Drawing.Point(463, 63);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 17);
             this.label6.TabIndex = 47;
@@ -285,7 +285,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(9, 109);
+            this.label5.Location = new System.Drawing.Point(463, 7);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 17);
             this.label5.TabIndex = 46;
@@ -296,7 +296,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(9, 83);
+            this.label4.Location = new System.Drawing.Point(58, 82);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 17);
             this.label4.TabIndex = 45;
@@ -307,7 +307,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(9, 57);
+            this.label3.Location = new System.Drawing.Point(58, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 17);
             this.label3.TabIndex = 44;
@@ -318,7 +318,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(9, 32);
+            this.label1.Location = new System.Drawing.Point(58, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 43;
@@ -329,7 +329,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(9, 6);
+            this.label2.Location = new System.Drawing.Point(58, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 17);
             this.label2.TabIndex = 42;
@@ -344,11 +344,10 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 245);
-            this.dataGridView1.MaximumSize = new System.Drawing.Size(715, 157);
+            this.dataGridView1.Location = new System.Drawing.Point(60, 153);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(715, 157);
+            this.dataGridView1.Size = new System.Drawing.Size(1428, 243);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -356,7 +355,7 @@
             // deleteLeitor
             // 
             this.deleteLeitor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.deleteLeitor.Location = new System.Drawing.Point(418, 216);
+            this.deleteLeitor.Location = new System.Drawing.Point(826, 124);
             this.deleteLeitor.MaximumSize = new System.Drawing.Size(75, 23);
             this.deleteLeitor.Name = "deleteLeitor";
             this.deleteLeitor.Size = new System.Drawing.Size(75, 23);
@@ -368,7 +367,7 @@
             // saveLeitor
             // 
             this.saveLeitor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.saveLeitor.Location = new System.Drawing.Point(294, 216);
+            this.saveLeitor.Location = new System.Drawing.Point(745, 124);
             this.saveLeitor.MaximumSize = new System.Drawing.Size(75, 23);
             this.saveLeitor.Name = "saveLeitor";
             this.saveLeitor.Size = new System.Drawing.Size(75, 23);
@@ -385,7 +384,7 @@
             this.sexo.Items.AddRange(new object[] {
             "Masculino",
             "Feminino"});
-            this.sexo.Location = new System.Drawing.Point(137, 56);
+            this.sexo.Location = new System.Drawing.Point(186, 55);
             this.sexo.Name = "sexo";
             this.sexo.Size = new System.Drawing.Size(121, 21);
             this.sexo.TabIndex = 3;
@@ -394,7 +393,7 @@
             // enderecoCidade
             // 
             this.enderecoCidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.enderecoCidade.Location = new System.Drawing.Point(540, 34);
+            this.enderecoCidade.Location = new System.Drawing.Point(1018, 32);
             this.enderecoCidade.Name = "enderecoCidade";
             this.enderecoCidade.Size = new System.Drawing.Size(155, 20);
             this.enderecoCidade.TabIndex = 10;
@@ -411,20 +410,18 @@
             // enderecoUF
             // 
             this.enderecoUF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.enderecoUF.Location = new System.Drawing.Point(540, 164);
+            this.enderecoUF.Location = new System.Drawing.Point(1388, 57);
             this.enderecoUF.MaximumSize = new System.Drawing.Size(27, 20);
             this.enderecoUF.Name = "enderecoUF";
             this.enderecoUF.Size = new System.Drawing.Size(27, 20);
             this.enderecoUF.TabIndex = 15;
-            //this.enderecoUF.TextChanged += new System.EventHandler(this.enderecoUF_TextChanged);
             this.enderecoUF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enderecoUF_KeyPress_1);
-            //this.enderecoUF.KeyUp += new System.Windows.Forms.KeyEventHandler(this.enderecoUF_KeyUp);
             // 
             // CadLeitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 408);
+            this.ClientSize = new System.Drawing.Size(1550, 408);
             this.Controls.Add(this.enderecoUF);
             this.Controls.Add(this.enderecoCidade);
             this.Controls.Add(this.sexo);
@@ -458,9 +455,10 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.deleteLeitor);
             this.Controls.Add(this.saveLeitor);
-            this.MinimumSize = new System.Drawing.Size(748, 447);
+            this.MinimumSize = new System.Drawing.Size(1566, 447);
             this.Name = "CadLeitor";
             this.Text = "Cadastro do Leitor";
+            this.Load += new System.EventHandler(this.CadLeitor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

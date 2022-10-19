@@ -96,17 +96,9 @@
       <Project>{b6eb2df7-0957-4c20-a9ad-b764d60bfdfa}</Project>
       <Name>Cadastro_Seção</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Consulta_Emprestimo\Consulta_Emprestimo.csproj">
-      <Project>{1ba466cf-e390-44e2-aa34-e4286859d2c3}</Project>
-      <Name>Consulta_Emprestimo</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Menu\Menu.csproj">
       <Project>{690981a7-e8e9-4f5c-9e3a-00051c9bec6f}</Project>
       <Name>Menu</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Reserva\Reserva.csproj">
-      <Project>{76cc176e-c584-4cbb-8666-f7fd102003f7}</Project>
-      <Name>Reserva</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

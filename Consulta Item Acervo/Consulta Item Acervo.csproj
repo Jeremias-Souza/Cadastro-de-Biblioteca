@@ -4,14 +4,29 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{690981A7-E8E9-4F5C-9E3A-00051C9BEC6F}</ProjectGuid>
+    <ProjectGuid>{7899BE27-E6D8-4389-927A-933F0EFB5891}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Menu</RootNamespace>
-    <AssemblyName>Menu</AssemblyName>
+    <RootNamespace>Consulta_Item_Acervo</RootNamespace>
+    <AssemblyName>Consulta Item Acervo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +47,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,16 +65,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menu.cs">
+    <Compile Include="Conn.cs" />
+    <Compile Include="ConsultaAcervo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="ConsultaAcervo.Designer.cs">
+      <DependentUpon>ConsultaAcervo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="ConsultaAcervo.resx">
+      <DependentUpon>ConsultaAcervo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,9 +100,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Desktop\PROJECT1\TabelaAutor\Tabela_Autor.sqlproj">
+      <Project>{97aa201a-5c99-46d0-a522-1283bd71c404}</Project>
+      <Name>Tabela_Autor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Biblioteca Estágio\Cadastro_Autor.csproj">
       <Project>{9116154b-c122-4a29-ab8a-d9b2690cfac9}</Project>
       <Name>Cadastro_Autor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bibliotecas\Bibliotecas.csproj">
+      <Project>{353dd673-f202-4947-a263-f95024e758e4}</Project>
+      <Name>Bibliotecas</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cadastro_Editora\Cadastro_Editora.csproj">
       <Project>{f4d57849-b9f7-42c3-8237-98266ec324b0}</Project>
@@ -104,9 +132,9 @@
       <Project>{b6eb2df7-0957-4c20-a9ad-b764d60bfdfa}</Project>
       <Name>Cadastro_Seção</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Consulta_Acervo_Item\Consulta_Acervo_Item.csproj">
-      <Project>{db1a97b1-22ab-45c4-926a-6999f2b64760}</Project>
-      <Name>Consulta_Acervo_Item</Name>
+    <ProjectReference Include="..\Menu\Menu.csproj">
+      <Project>{690981a7-e8e9-4f5c-9e3a-00051c9bec6f}</Project>
+      <Name>Menu</Name>
     </ProjectReference>
     <ProjectReference Include="..\Reserva\Reserva.csproj">
       <Project>{76cc176e-c584-4cbb-8666-f7fd102003f7}</Project>
@@ -114,7 +142,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

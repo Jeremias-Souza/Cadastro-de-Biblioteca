@@ -185,5 +185,10 @@ namespace Cadastro_Local
             codLocal.Text = $"{row.Cells["codLocal"].Value}";
             descricaoLocal.Text = $"{row.Cells["descricaoLocal"].Value}";
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -17,9 +17,6 @@ namespace Reserva
     {
         public int indexRow { get; private set; }
         
-
-        
-
         public CadReserva()
         {
             InitializeComponent();
@@ -395,11 +392,7 @@ namespace Reserva
                 MessageBox.Show("Item inexistente!");
                 Console.WriteLine(ex.Message);
             }
-
-            
-
-
-
+          
         }
 
         private void codLeitor_Leave(object sender, EventArgs e)
@@ -446,6 +439,21 @@ namespace Reserva
             dataReserva.Text = $"{row.Cells["dataReserva"].Value}";
             prazoReserva.Text = $"{row.Cells["prazoReserva"].Value}";
             situacao.Text = $"{row.Cells["encerrar"].Value}";
+        }
+
+        private void CadReserva_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void codItem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nomeItem_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -47,18 +47,17 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 131);
-            this.dataGridView1.MaximumSize = new System.Drawing.Size(305, 94);
+            this.dataGridView1.Location = new System.Drawing.Point(623, 131);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(305, 94);
+            this.dataGridView1.Size = new System.Drawing.Size(305, 265);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // descricaoSecao
             // 
             this.descricaoSecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.descricaoSecao.Location = new System.Drawing.Point(12, 51);
+            this.descricaoSecao.Location = new System.Drawing.Point(623, 51);
             this.descricaoSecao.MaximumSize = new System.Drawing.Size(305, 45);
             this.descricaoSecao.Multiline = true;
             this.descricaoSecao.Name = "descricaoSecao";
@@ -69,7 +68,7 @@
             // 
             this.codSecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.codSecao.Enabled = false;
-            this.codSecao.Location = new System.Drawing.Point(127, 6);
+            this.codSecao.Location = new System.Drawing.Point(738, 6);
             this.codSecao.Name = "codSecao";
             this.codSecao.Size = new System.Drawing.Size(40, 20);
             this.codSecao.TabIndex = 0;
@@ -77,7 +76,7 @@
             // deleteSecao
             // 
             this.deleteSecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.deleteSecao.Location = new System.Drawing.Point(162, 102);
+            this.deleteSecao.Location = new System.Drawing.Point(773, 102);
             this.deleteSecao.MaximumSize = new System.Drawing.Size(75, 23);
             this.deleteSecao.Name = "deleteSecao";
             this.deleteSecao.Size = new System.Drawing.Size(75, 23);
@@ -89,7 +88,7 @@
             // saveSecao
             // 
             this.saveSecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.saveSecao.Location = new System.Drawing.Point(79, 102);
+            this.saveSecao.Location = new System.Drawing.Point(690, 102);
             this.saveSecao.MaximumSize = new System.Drawing.Size(75, 23);
             this.saveSecao.Name = "saveSecao";
             this.saveSecao.Size = new System.Drawing.Size(75, 23);
@@ -103,7 +102,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Location = new System.Drawing.Point(623, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 17);
             this.label2.TabIndex = 12;
@@ -114,7 +113,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(12, 31);
+            this.label3.Location = new System.Drawing.Point(623, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 17);
             this.label3.TabIndex = 14;
@@ -124,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 232);
+            this.ClientSize = new System.Drawing.Size(1550, 408);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.descricaoSecao);
             this.Controls.Add(this.codSecao);
@@ -132,8 +131,9 @@
             this.Controls.Add(this.saveSecao);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
+            this.MinimumSize = new System.Drawing.Size(345, 271);
             this.Name = "CadSecao";
-            this.Text = "CadSecao";
+            this.Text = "Cadastro da Seção";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

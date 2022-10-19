@@ -4,6 +4,7 @@ using Cadastro_Item_Acervo;
 using Cadastro_Leitor;
 using Cadastro_Local;
 using Cadastro_Seção;
+using Consulta_Acervo_Item;
 using Reserva;
 using System;
 using System.Collections.Generic;
@@ -74,7 +75,8 @@ namespace Menu
 
         private void consultaAcervo_Click(object sender, EventArgs e)
         {
-
+            ConsultaAcervo tela = new ConsultaAcervo();
+            tela.Show();
         }
     }
 }

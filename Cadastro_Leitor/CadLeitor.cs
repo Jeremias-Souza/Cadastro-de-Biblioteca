@@ -466,5 +466,9 @@ namespace Cadastro_Leitor
             
         }
 
+        private void CadLeitor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
