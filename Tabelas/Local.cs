@@ -1,16 +1,19 @@
 ﻿using System;
-using System.Collections.ObjectModel;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
-using System.Data.Common;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Tabelas
 {
-    public partial class Autor : Form
+    public partial class Local : Form
     {
-        public Autor()
+        public Local()
         {
             InitializeComponent();
 
@@ -20,7 +23,7 @@ namespace Tabelas
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codAutor, nomeAutor FROM MvtBibAutor";
+                    string sqlQuery = "SELECT codLocal, descricaoLocal FROM MvtBibLocal";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -28,19 +31,17 @@ namespace Tabelas
                             da.Fill(dt);
                             dataGridView1.DataSource = dt;
                         }
-                    }
+                    }                    
                 }
-
-
             }
 
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
-        }       
+        }
 
-        private void txtPesquisaAutor_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtPesquisaLocal_KeyPress(object sender, KeyPressEventArgs e)
         {
             try
             {
@@ -48,7 +49,7 @@ namespace Tabelas
                 {
                     cn.Open();
 
-                    var sqlQuery = "SELECT codAutor, nomeAutor FROM MvtBibAutor WHERE nomeAutor LIKE " + " '" + txtPesquisaAutor.Text + "%'";
+                    var sqlQuery = "SELECT codLocal, descricaoLocal FROM MvtBibLocal WHERE descricaoLocal LIKE " + " '" + txtPesquisaLocal.Text + "%'";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -63,11 +64,6 @@ namespace Tabelas
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
-        }
-
-        private void Autor_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tabelas;
 
 namespace Consulta_Acervo_Item
 {
@@ -112,6 +113,83 @@ namespace Consulta_Acervo_Item
             
         }
 
+        private void btnLocal_Click(object sender, EventArgs e)
+        {
+            Local tela = new Local();
+            tela.Show();
+        }
 
+        private void btnAutor_Click(object sender, EventArgs e)
+        {
+            Autor tela = new Autor();
+            tela.Show();
+        }
+
+        private void btnColecao_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSecao_Click(object sender, EventArgs e)
+        {
+            Secao tela = new Secao();
+            tela.Show();
+        }       
+
+        private void txtAutor_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+                {
+                    cn.Open();
+
+                    var sqlQuery = $"SELECT nomeAutor FROM dbo.MvtBibAutor WHERE codAutor = {int.Parse(this.txtAutor.Text)}";
+                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            da.Fill(dt);
+                            this.labelAutor.Text = dt.Rows[0].Field<string>("nomeAutor");
+                        }
+                    }
+                }
+
+                MessageBox.Show("Autor Carregado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Autor inexistente!");
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void txtSecao_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+                {
+                    cn.Open();
+
+                    var sqlQuery = $"SELECT descricaoSecao FROM dbo.MvtBibSecao WHERE codSecao = {int.Parse(this.txtSecao.Text)}";
+                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            da.Fill(dt);
+                            this.labelSecao.Text = dt.Rows[0].Field<string>("descricaoSecao");
+                        }
+                    }
+                }
+
+                MessageBox.Show("Seção Carregado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Seção inexistente!");
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

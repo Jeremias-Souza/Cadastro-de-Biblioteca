@@ -81,9 +81,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Biblioteca Estágio\Cadastro_Autor.csproj">
+      <Project>{9116154b-c122-4a29-ab8a-d9b2690cfac9}</Project>
+      <Name>Cadastro_Autor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cadastro_Item_Acervo\Cadastro_Item_Acervo.csproj">
       <Project>{6a839ed5-4cc8-48e3-8832-9d99a4bd3e39}</Project>
       <Name>Cadastro_Item_Acervo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tabelas\Tabelas.csproj">
+      <Project>{cf7dd697-3e17-4b09-8afc-33978eb1d22b}</Project>
+      <Name>Tabelas</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

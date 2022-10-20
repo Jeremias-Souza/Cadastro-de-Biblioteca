@@ -1,4 +1,4 @@
-﻿using Biblioteca_Estágio;
+﻿//using Biblioteca_Estágio;
 using Cadastro_Editora;
 using Cadastro_Local;
 using Microsoft.VisualBasic;
@@ -12,6 +12,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tabelas;
+using Editora = Tabelas.Editora;
+using Local = Tabelas.Local;
 
 namespace Cadastro_Item_Acervo
 {
@@ -378,7 +381,7 @@ namespace Cadastro_Item_Acervo
                         using (DataTable dt = new DataTable())
                         {
                             da.Fill(dt);
-                            this.labelNomeAutor.Text = dt.Rows[0].Field<string>("nomeAutor");
+                            this.labelNomeAutor.Text = dt.Rows[0].Field<string>("NomeAutor");
                         }
                     }
                 }
@@ -490,19 +493,19 @@ namespace Cadastro_Item_Acervo
 
         private void btnPesquisaLocal_Click(object sender, EventArgs e)
         {
-            CadLocal tela = new CadLocal();
+            Local tela = new Local();
             tela.Show();
         }
 
         private void btnPesquisaAutor_Click(object sender, EventArgs e)
         {
-            CadastroAutor tela = new CadastroAutor();
+            Autor tela = new Autor();
             tela.Show();
         }
 
         private void btnPesquisaEditor_Click(object sender, EventArgs e)
         {
-            CadEditora tela = new CadEditora();
+            Editora tela = new Editora();
             tela.Show();
         }
 

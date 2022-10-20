@@ -27,7 +27,7 @@ namespace Reserva
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar FROM MvtBibReserva";
+                    string sqlQuery = "SELECT codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar, numReserva FROM MvtBibReserva";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -95,17 +95,18 @@ namespace Reserva
                 return;
             }
 
-            if (codItem == null)
+            /*if (codItem == (encerrar.true))
             {
-                MessageBox.Show("Livro já reservado. ");
+                MessageBox.Show("Livro não pode ser reservado, pois já existe uma reserva em aberto. ");
                 return;
-            }
+            }*/
 
+            
             //public static byte ToByte(string? value);
 
             var reserva = new Reservaa()
             {
-
+                codItem = this.codItem.Text,
                 situacao = this.intencao.Text,
                 nomeItem = this.nomeItem.Text,
                 numExemplar = this.numExemplar.Text,
@@ -115,14 +116,14 @@ namespace Reserva
                 nomeLeitor = this.nomeLeitor.Text,
                 dataReserva = this.dataReserva.Text,
                 prazoReserva = this.prazoReserva.Text,                
-                encerrar = this.situacao.Text = Boolean.TrueString,
-                codItem = string.IsNullOrEmpty(this.codItem.Text)
+                encerrar = this.situacao.Text = Boolean.TrueString,                
+                numReserva = string.IsNullOrEmpty(this.txtNumReserva.Text)
                 ? 0
-                : int.Parse(this.codItem.Text)
+                : int.Parse(this.txtNumReserva.Text)
 
-            
 
-        };
+
+            };
             if (intencao.Text == "Devolver")
             {
                 devolver();
@@ -145,7 +146,7 @@ namespace Reserva
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar FROM MvtBibReserva";
+                    string sqlQuery = "SELECT codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar, numReserva FROM MvtBibReserva";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -161,68 +162,41 @@ namespace Reserva
 
             } 
 
-
-
-
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
-        }
-
-        
-
-        
-
+        }        
        
         private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }
 
-        
-
-        
-
         private void button1_Click(object sender, EventArgs e)
-        {/*
-            if (MessageBox.Show("Deseja confirmar a devolução? ", "Reserva de livros", MessageBoxButtons.YesNo) == DialogResult.No)
-            {
-                return;
-            }
-
+        {
             try
             {
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
                     cn.Open();
 
-
-
-                    var sqlQuery = "DELETE MvtBibReservaa Where codItem = '" + codItem.Text + "'" + "SELECT nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva FROM MvtBibReservaa";
+                    var sqlQuery = "DELETE MvtBibReserva Where numReserva = '" + txtNumReserva.Text + "'" + "SELECT codItem, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva FROM MvtBibReserva";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
                         {
                             da.Fill(dt);
+
                             dataGridView1.DataSource = dt;
                         }
                     }
-
                 }
-
-                MessageBox.Show("Livro devolvido com sucesso com sucesso!");
-                ClearTextBoxes();
-
-
-
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
-
                 MessageBox.Show("Falha! \n" + ex.Message);
-
-            }*/
+            }
         }
 
         private void devolver()
@@ -233,7 +207,7 @@ namespace Reserva
 
 
 
-                var sqlQuery = "DELETE MvtBibReserva Where codItem = '" + codItem.Text + "'" + "SELECT nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva FROM MvtBibReserva";
+                var sqlQuery = "DELETE MvtBibReserva Where numReserva = '" + txtNumReserva.Text + "'" + "SELECT codItem, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva FROM MvtBibReserva";
                 using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                 {
                     using (DataTable dt = new DataTable())
@@ -284,6 +258,9 @@ namespace Reserva
             this.dataGridView1.Columns["encerrar"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            this.dataGridView1.Columns["numReserva"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             this.dataGridView1.Columns["codItem"].HeaderText = "Código do Item";
             this.dataGridView1.Columns["situacao"].HeaderText = "Movimento";           
             this.dataGridView1.Columns["nomeItem"].HeaderText = "Nome do Item";
@@ -295,6 +272,7 @@ namespace Reserva
             this.dataGridView1.Columns["dataReserva"].HeaderText = "Data da reserva";
             this.dataGridView1.Columns["prazoReserva"].HeaderText = "Data para devolução";
             this.dataGridView1.Columns["encerrar"].HeaderText = "Reserva em aberto?";
+            this.dataGridView1.Columns["numReserva"].HeaderText = "Número da reserva";
 
         }
 
@@ -385,10 +363,7 @@ namespace Reserva
             }
             catch (Exception ex) //Mostra mensagem caso haver falha 
             {
-                if (ex.Message.Contains("Violation of PRIMARY KEY"))
-                MessageBox.Show("Livro indisponivel para reserva!");
-
-
+                
                 MessageBox.Show("Item inexistente!");
                 Console.WriteLine(ex.Message);
             }
@@ -439,6 +414,7 @@ namespace Reserva
             dataReserva.Text = $"{row.Cells["dataReserva"].Value}";
             prazoReserva.Text = $"{row.Cells["prazoReserva"].Value}";
             situacao.Text = $"{row.Cells["encerrar"].Value}";
+            txtNumReserva.Text = $"{row.Cells["numReserva"].Value}";
         }
 
         private void CadReserva_Load(object sender, EventArgs e)

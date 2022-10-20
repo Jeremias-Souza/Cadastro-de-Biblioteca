@@ -544,6 +544,12 @@
   <ItemGroup>
     <Content Include="Updates.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tabelas\Tabelas.csproj">
+      <Project>{cf7dd697-3e17-4b09-8afc-33978eb1d22b}</Project>
+      <Name>Tabelas</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

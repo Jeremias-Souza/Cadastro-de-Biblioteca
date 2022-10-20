@@ -10,7 +10,7 @@ namespace Reserva
 {
     public class Reservaa
     {
-        public int codItem { get; set; }
+        public string codItem { get; set; }
         public string situacao { get; set; }
         public string nomeItem { get; set; }
         public string numExemplar { get; set; }
@@ -21,13 +21,14 @@ namespace Reserva
         public string dataReserva { get; set; }
         public string prazoReserva { get; set; }
         public string encerrar { get; set; }
+        public int numReserva { get; set; }
 
         
 
         public void Salvar()
         {
-            //if (this.codItem == 0)
-            //{
+            if (this.numReserva == 0)
+            {
                 var sql = "INSERT INTO MvtBibReserva (codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar) VALUES (@codItem, @situacao, @nomeItem, @numExemplar, @tipoItem, @localizacao, @codLeitor, @nomeLeitor, @dataReserva, @prazoReserva, @encerrar)";
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
@@ -46,20 +47,20 @@ namespace Reserva
                         cmd.Parameters.AddWithValue("@prazoReserva", this.prazoReserva);
                         cmd.Parameters.AddWithValue("@encerrar", this.encerrar);
 
-                        
-
-                    cmd.ExecuteNonQuery();
+                    
+                        cmd.ExecuteNonQuery();
                     }
                     
                 }
-               // return;
-            //}
+                return;
+
+            }
 
            
 
-            /*else
+            else
             {
-                var sql = "UPDATE MvtBibReserva SET codItem = @codItem, situacao = @situacao, nomeItem = @nomeItem, numExemplar = @numExemplar, tipoItem = @tipoItem, localizacao = @localizacao, codLeitor = @codLeitor, nomeLeitor = @nomeLeitor, dataReserva = @dataReserva, prazoReserva = @prazoReserva, encerrar = @encerrar  WHERE codItem = @codItem";
+                var sql = "UPDATE MvtBibReserva SET codItem = @codItem, situacao = @situacao, nomeItem = @nomeItem, numExemplar = @numExemplar, tipoItem = @tipoItem, localizacao = @localizacao, codLeitor = @codLeitor, nomeLeitor = @nomeLeitor, dataReserva = @dataReserva, prazoReserva = @prazoReserva, encerrar = @encerrar  WHERE numReserva = @numReserva";
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
                     cn.Open();
@@ -76,6 +77,7 @@ namespace Reserva
                         cmd.Parameters.AddWithValue("@dataReserva", this.dataReserva);
                         cmd.Parameters.AddWithValue("@prazoReserva", this.prazoReserva);
                         cmd.Parameters.AddWithValue("@encerrar", this.encerrar);
+                        cmd.Parameters.AddWithValue("@numReserva", this.numReserva);
                         
                         
 
@@ -83,7 +85,7 @@ namespace Reserva
                     }
                     cn.Close();
                 }
-            }*/
+            }
 
         }
     }

@@ -4,6 +4,7 @@ using Cadastro_Item_Acervo;
 using Cadastro_Leitor;
 using Cadastro_Local;
 using Cadastro_Seção;
+using cons_emprestimo;
 using Consulta_Acervo_Item;
 using Reserva;
 using System;
@@ -69,8 +70,8 @@ namespace Menu
 
         private void consultaEmprest_Click(object sender, EventArgs e)
         {
-            /*Consulta tela = new ConsultaAcervo();
-            tela.Show();*/
+            Consulta_emprestimo tela = new Consulta_emprestimo();
+            tela.Show();
         }
 
         private void consultaAcervo_Click(object sender, EventArgs e)

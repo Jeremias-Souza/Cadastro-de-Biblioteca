@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consulta_Acervo_Item", "Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tabelas", "Tabelas\Tabelas.csproj", "{CF7DD697-3E17-4B09-8AFC-33978EB1D22B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cons_emprestimo", "cons_emprestimo\cons_emprestimo.csproj", "{70C17D44-2CC5-4153-AE97-7ECB1947AC72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{CF7DD697-3E17-4B09-8AFC-33978EB1D22B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF7DD697-3E17-4B09-8AFC-33978EB1D22B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF7DD697-3E17-4B09-8AFC-33978EB1D22B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70C17D44-2CC5-4153-AE97-7ECB1947AC72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70C17D44-2CC5-4153-AE97-7ECB1947AC72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70C17D44-2CC5-4153-AE97-7ECB1947AC72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70C17D44-2CC5-4153-AE97-7ECB1947AC72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

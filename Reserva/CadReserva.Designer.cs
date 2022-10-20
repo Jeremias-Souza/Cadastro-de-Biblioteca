@@ -54,6 +54,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblSituacao = new System.Windows.Forms.Label();
             this.situacao = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtNumReserva = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -336,11 +338,33 @@
             this.situacao.Size = new System.Drawing.Size(77, 21);
             this.situacao.TabIndex = 83;
             // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label12.Location = new System.Drawing.Point(1100, 63);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(127, 17);
+            this.label12.TabIndex = 84;
+            this.label12.Text = "Número da reserva:";
+            // 
+            // txtNumReserva
+            // 
+            this.txtNumReserva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtNumReserva.Enabled = false;
+            this.txtNumReserva.Location = new System.Drawing.Point(1236, 63);
+            this.txtNumReserva.Name = "txtNumReserva";
+            this.txtNumReserva.Size = new System.Drawing.Size(56, 20);
+            this.txtNumReserva.TabIndex = 85;
+            // 
             // CadReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1550, 408);
+            this.Controls.Add(this.txtNumReserva);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.situacao);
             this.Controls.Add(this.lblSituacao);
             this.Controls.Add(this.button1);
@@ -405,5 +429,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblSituacao;
         private System.Windows.Forms.ComboBox situacao;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtNumReserva;
     }
 }

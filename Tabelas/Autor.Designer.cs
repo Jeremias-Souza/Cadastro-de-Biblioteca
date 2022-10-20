@@ -31,7 +31,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtPesquisaAutor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnPesquisaAutor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +52,7 @@
             this.txtPesquisaAutor.Name = "txtPesquisaAutor";
             this.txtPesquisaAutor.Size = new System.Drawing.Size(119, 20);
             this.txtPesquisaAutor.TabIndex = 1;
+            this.txtPesquisaAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisaAutor_KeyPress);
             // 
             // label2
             // 
@@ -65,27 +65,17 @@
             this.label2.TabIndex = 151;
             this.label2.Text = "Nome do Autor:";
             // 
-            // btnPesquisaAutor
-            // 
-            this.btnPesquisaAutor.Location = new System.Drawing.Point(249, 7);
-            this.btnPesquisaAutor.Name = "btnPesquisaAutor";
-            this.btnPesquisaAutor.Size = new System.Drawing.Size(75, 23);
-            this.btnPesquisaAutor.TabIndex = 152;
-            this.btnPesquisaAutor.Text = "Pesquisar";
-            this.btnPesquisaAutor.UseVisualStyleBackColor = true;
-            this.btnPesquisaAutor.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Autor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnPesquisaAutor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPesquisaAutor);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Autor";
             this.Text = "Pesquisa do autor";
+            this.Load += new System.EventHandler(this.Autor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -97,7 +87,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtPesquisaAutor;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnPesquisaAutor;
     }
 }
 
