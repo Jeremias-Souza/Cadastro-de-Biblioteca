@@ -156,9 +156,6 @@ namespace Cadastro_Item_Acervo
 
             }
 
-
-
-
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);

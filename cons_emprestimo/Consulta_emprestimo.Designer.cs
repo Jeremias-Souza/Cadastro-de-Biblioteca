@@ -37,14 +37,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.labelAutor = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.txtItem = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,22 +47,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboTipoItem = new System.Windows.Forms.ComboBox();
-            this.txtSecao = new System.Windows.Forms.TextBox();
+            this.txtDataReserva = new System.Windows.Forms.TextBox();
             this.txtColecao = new System.Windows.Forms.TextBox();
             this.txtAutor = new System.Windows.Forms.TextBox();
             this.txtLocal = new System.Windows.Forms.TextBox();
-            this.txtNomeItem = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtNomeLeitor = new System.Windows.Forms.TextBox();
+            this.comboSituacao = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDataFinal = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtNumReserva = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnItem
             // 
             this.btnItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnItem.Location = new System.Drawing.Point(583, 8);
+            this.btnItem.Location = new System.Drawing.Point(570, 8);
             this.btnItem.MaximumSize = new System.Drawing.Size(19, 20);
             this.btnItem.MinimumSize = new System.Drawing.Size(19, 20);
             this.btnItem.Name = "btnItem";
@@ -78,20 +73,22 @@
             this.btnItem.TabIndex = 157;
             this.btnItem.Text = "🔎";
             this.btnItem.UseVisualStyleBackColor = true;
+            this.btnItem.Click += new System.EventHandler(this.btnItem_Click);
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(748, 139);
+            this.btnConsultar.Location = new System.Drawing.Point(714, 139);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(75, 23);
             this.btnConsultar.TabIndex = 168;
-            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.Text = "Reservados";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnSecao
             // 
             this.btnSecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnSecao.Location = new System.Drawing.Point(583, 61);
+            this.btnSecao.Location = new System.Drawing.Point(570, 61);
             this.btnSecao.MaximumSize = new System.Drawing.Size(19, 20);
             this.btnSecao.MinimumSize = new System.Drawing.Size(19, 20);
             this.btnSecao.Name = "btnSecao";
@@ -99,6 +96,7 @@
             this.btnSecao.TabIndex = 166;
             this.btnSecao.Text = "🔎";
             this.btnSecao.UseVisualStyleBackColor = true;
+            this.btnSecao.Click += new System.EventHandler(this.btnSecao_Click);
             // 
             // btnColecao
             // 
@@ -115,7 +113,7 @@
             // btnAutor
             // 
             this.btnAutor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnAutor.Location = new System.Drawing.Point(582, 87);
+            this.btnAutor.Location = new System.Drawing.Point(569, 87);
             this.btnAutor.MaximumSize = new System.Drawing.Size(19, 20);
             this.btnAutor.MinimumSize = new System.Drawing.Size(19, 20);
             this.btnAutor.Name = "btnAutor";
@@ -149,7 +147,7 @@
             this.labelAutor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.labelAutor.AutoSize = true;
             this.labelAutor.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelAutor.Location = new System.Drawing.Point(609, 89);
+            this.labelAutor.Location = new System.Drawing.Point(596, 89);
             this.labelAutor.Name = "labelAutor";
             this.labelAutor.Size = new System.Drawing.Size(0, 17);
             this.labelAutor.TabIndex = 178;
@@ -160,68 +158,12 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Item,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8});
             this.dataGridView1.Location = new System.Drawing.Point(362, 168);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(826, 233);
             this.dataGridView1.TabIndex = 177;
-            // 
-            // Item
-            // 
-            this.Item.HeaderText = "Item";
-            this.Item.Name = "Item";
-            this.Item.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nome do Item";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Tipo do Item";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Local";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Nome do Autor";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Coleção";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Seção";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Status";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label2
             // 
@@ -237,7 +179,7 @@
             // txtItem
             // 
             this.txtItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtItem.Location = new System.Drawing.Point(530, 9);
+            this.txtItem.Location = new System.Drawing.Point(517, 9);
             this.txtItem.Name = "txtItem";
             this.txtItem.Size = new System.Drawing.Size(47, 20);
             this.txtItem.TabIndex = 156;
@@ -323,18 +265,18 @@
             // 
             this.comboTipoItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.comboTipoItem.FormattingEnabled = true;
-            this.comboTipoItem.Location = new System.Drawing.Point(530, 34);
+            this.comboTipoItem.Location = new System.Drawing.Point(517, 34);
             this.comboTipoItem.Name = "comboTipoItem";
             this.comboTipoItem.Size = new System.Drawing.Size(100, 21);
             this.comboTipoItem.TabIndex = 159;
             // 
-            // txtSecao
+            // txtDataReserva
             // 
-            this.txtSecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtSecao.Location = new System.Drawing.Point(1032, 36);
-            this.txtSecao.Name = "txtSecao";
-            this.txtSecao.Size = new System.Drawing.Size(83, 20);
-            this.txtSecao.TabIndex = 165;
+            this.txtDataReserva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtDataReserva.Location = new System.Drawing.Point(1032, 36);
+            this.txtDataReserva.Name = "txtDataReserva";
+            this.txtDataReserva.Size = new System.Drawing.Size(83, 20);
+            this.txtDataReserva.TabIndex = 165;
             // 
             // txtColecao
             // 
@@ -347,7 +289,7 @@
             // txtAutor
             // 
             this.txtAutor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtAutor.Location = new System.Drawing.Point(530, 88);
+            this.txtAutor.Location = new System.Drawing.Point(517, 88);
             this.txtAutor.Name = "txtAutor";
             this.txtAutor.Size = new System.Drawing.Size(45, 20);
             this.txtAutor.TabIndex = 161;
@@ -355,32 +297,31 @@
             // txtLocal
             // 
             this.txtLocal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtLocal.Location = new System.Drawing.Point(530, 61);
+            this.txtLocal.Location = new System.Drawing.Point(517, 61);
             this.txtLocal.Name = "txtLocal";
             this.txtLocal.Size = new System.Drawing.Size(45, 20);
             this.txtLocal.TabIndex = 160;
             // 
-            // txtNomeItem
+            // txtNomeLeitor
             // 
-            this.txtNomeItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtNomeItem.Location = new System.Drawing.Point(530, 115);
-            this.txtNomeItem.Name = "txtNomeItem";
-            this.txtNomeItem.Size = new System.Drawing.Size(100, 20);
-            this.txtNomeItem.TabIndex = 158;
-            this.txtNomeItem.TextChanged += new System.EventHandler(this.txtNomeItem_TextChanged);
+            this.txtNomeLeitor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtNomeLeitor.Location = new System.Drawing.Point(517, 115);
+            this.txtNomeLeitor.Name = "txtNomeLeitor";
+            this.txtNomeLeitor.Size = new System.Drawing.Size(100, 20);
+            this.txtNomeLeitor.TabIndex = 158;
+            this.txtNomeLeitor.TextChanged += new System.EventHandler(this.txtNomeItem_TextChanged);
             // 
-            // comboBox1
+            // comboSituacao
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboSituacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.comboSituacao.FormattingEnabled = true;
+            this.comboSituacao.Items.AddRange(new object[] {
             "Reservado ",
-            "Emprestado ",
             "Disponivel "});
-            this.comboBox1.Location = new System.Drawing.Point(1032, 91);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 181;
+            this.comboSituacao.Location = new System.Drawing.Point(1032, 91);
+            this.comboSituacao.Name = "comboSituacao";
+            this.comboSituacao.Size = new System.Drawing.Size(100, 21);
+            this.comboSituacao.TabIndex = 181;
             // 
             // label8
             // 
@@ -393,18 +334,18 @@
             this.label8.TabIndex = 182;
             this.label8.Text = "Situação:";
             // 
-            // textBox1
+            // txtDataFinal
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.textBox1.Location = new System.Drawing.Point(1032, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(83, 20);
-            this.textBox1.TabIndex = 183;
+            this.txtDataFinal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtDataFinal.Location = new System.Drawing.Point(1032, 64);
+            this.txtDataFinal.Name = "txtDataFinal";
+            this.txtDataFinal.Size = new System.Drawing.Size(83, 20);
+            this.txtDataFinal.TabIndex = 183;
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.button1.Location = new System.Drawing.Point(636, 116);
+            this.button1.Location = new System.Drawing.Point(623, 116);
             this.button1.MaximumSize = new System.Drawing.Size(19, 20);
             this.button1.MinimumSize = new System.Drawing.Size(19, 20);
             this.button1.Name = "button1";
@@ -413,14 +354,46 @@
             this.button1.Text = "🔎";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(1088, 119);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(0, 17);
+            this.label10.TabIndex = 187;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(909, 121);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(127, 17);
+            this.label11.TabIndex = 186;
+            this.label11.Text = "Número da reserva:";
+            // 
+            // txtNumReserva
+            // 
+            this.txtNumReserva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtNumReserva.Enabled = false;
+            this.txtNumReserva.Location = new System.Drawing.Point(1032, 119);
+            this.txtNumReserva.Name = "txtNumReserva";
+            this.txtNumReserva.Size = new System.Drawing.Size(83, 20);
+            this.txtNumReserva.TabIndex = 185;
+            // 
             // Consulta_emprestimo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1550, 408);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtNumReserva);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtDataFinal);
+            this.Controls.Add(this.comboSituacao);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnItem);
             this.Controls.Add(this.btnConsultar);
@@ -441,11 +414,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboTipoItem);
-            this.Controls.Add(this.txtSecao);
+            this.Controls.Add(this.txtDataReserva);
             this.Controls.Add(this.txtColecao);
             this.Controls.Add(this.txtAutor);
             this.Controls.Add(this.txtLocal);
-            this.Controls.Add(this.txtNomeItem);
+            this.Controls.Add(this.txtNomeLeitor);
+            this.Controls.Add(this.label11);
             this.Name = "Consulta_emprestimo";
             this.Text = "Consulta Emprestimo";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -465,14 +439,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label labelAutor;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtItem;
         private System.Windows.Forms.Label label9;
@@ -483,15 +449,18 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboTipoItem;
-        private System.Windows.Forms.TextBox txtSecao;
+        private System.Windows.Forms.TextBox txtDataReserva;
         private System.Windows.Forms.TextBox txtColecao;
         private System.Windows.Forms.TextBox txtAutor;
         private System.Windows.Forms.TextBox txtLocal;
-        private System.Windows.Forms.TextBox txtNomeItem;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtNomeLeitor;
+        private System.Windows.Forms.ComboBox comboSituacao;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDataFinal;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtNumReserva;
     }
 }
 

@@ -94,14 +94,7 @@ namespace Reserva
                 MessageBox.Show("Nome do leitor é obrigatorio. ");
                 return;
             }
-
-            /*if (codItem == (encerrar.true))
-            {
-                MessageBox.Show("Livro não pode ser reservado, pois já existe uma reserva em aberto. ");
-                return;
-            }*/
-
-            
+           
             //public static byte ToByte(string? value);
 
             var reserva = new Reservaa()
@@ -116,7 +109,7 @@ namespace Reserva
                 nomeLeitor = this.nomeLeitor.Text,
                 dataReserva = this.dataReserva.Text,
                 prazoReserva = this.prazoReserva.Text,                
-                encerrar = this.situacao.Text = Boolean.TrueString,                
+                encerrar = this.situacao.Text,               
                 numReserva = string.IsNullOrEmpty(this.txtNumReserva.Text)
                 ? 0
                 : int.Parse(this.txtNumReserva.Text)
@@ -124,6 +117,7 @@ namespace Reserva
 
 
             };
+
             if (intencao.Text == "Devolver")
             {
                 devolver();
@@ -131,13 +125,12 @@ namespace Reserva
                 ClearTextBoxes();
                 return;
             }
-            
+        
             else
             {
-                
-                reserva.Salvar();
+                reserva.Salvar(reserva);
                 this.formatColumns();
-                MessageBox.Show("Cadastro feito com sucesso!");
+                //MessageBox.Show("Cadastro feito com sucesso!");
             }
 
             try
@@ -166,7 +159,7 @@ namespace Reserva
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
-        }        
+        }
        
         private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -175,7 +168,7 @@ namespace Reserva
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
@@ -196,7 +189,7 @@ namespace Reserva
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
-            }
+            }*/
         }
 
         private void devolver()
@@ -207,7 +200,7 @@ namespace Reserva
 
 
 
-                var sqlQuery = "DELETE MvtBibReserva Where numReserva = '" + txtNumReserva.Text + "'" + "SELECT codItem, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva FROM MvtBibReserva";
+                var sqlQuery = "DELETE MvtBibReserva Where numReserva = '" + txtNumReserva.Text + "'" + "SELECT codItem, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar, numReserva FROM MvtBibReserva";
                 using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                 {
                     using (DataTable dt = new DataTable())
@@ -226,7 +219,7 @@ namespace Reserva
         private void formatColumns()
         {
             this.dataGridView1.Columns["codItem"]
-                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             this.dataGridView1.Columns["situacao"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -428,6 +421,11 @@ namespace Reserva
         }
 
         private void nomeItem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void situacao_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

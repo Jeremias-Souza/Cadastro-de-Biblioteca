@@ -33,9 +33,6 @@ namespace Consulta_Acervo_Item
 
             }
 
-
-
-
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
@@ -58,8 +55,8 @@ namespace Consulta_Acervo_Item
                         {
                             da.Fill(dt);
 
-                            if(MessageBox.Show("Foram achados registros que correspondem o Código do Item.\r\n\r\nDeseja preenchelos automaticamente?", "Consulta ITens do Acervo", MessageBoxButtons.YesNo) == DialogResult.No)
-                            {
+                            if(MessageBox.Show("Foram achados registros que correspondem o Código do Item.\r\n\r\nDeseja preenchelos automaticamente?", "Consulta Itens do Acervo", MessageBoxButtons.YesNo) == DialogResult.No)
+                            {             
                                 return;
                             }
 
@@ -74,33 +71,21 @@ namespace Consulta_Acervo_Item
                 MessageBox.Show("Item Carregado com sucesso!");
             }
             catch (Exception ex) //Mostra mensagem caso haver falha 
-            {
-                if (ex.Message.Contains("Violation of PRIMARY KEY"))
-                    MessageBox.Show("Livro indisponivel para reserva!");
-
-
+            {               
                 MessageBox.Show("Item inexistente!");
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Message);              
             }
         }
 
         private void btnItem_Click(object sender, EventArgs e)
         {
-            CadAcervo tela = new CadAcervo();
+            Item tela = new Item();
             tela.Show();
         }
-
-        
-
+      
         private void txtNomeItem_Leave(object sender, EventArgs e)
         {
          
-        }
-
-        private void btnPesquisaLocal_Click(object sender, EventArgs e)
-        {
-            CadAcervo tela = new CadAcervo();
-            tela.Show();
         }
 
         private void txtLocal_Leave(object sender, EventArgs e)
@@ -110,15 +95,9 @@ namespace Consulta_Acervo_Item
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            
+           
         }
-
-        private void btnLocal_Click(object sender, EventArgs e)
-        {
-            Local tela = new Local();
-            tela.Show();
-        }
-
+      
         private void btnAutor_Click(object sender, EventArgs e)
         {
             Autor tela = new Autor();
