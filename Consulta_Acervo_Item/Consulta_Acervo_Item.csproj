@@ -89,6 +89,10 @@
       <Project>{6a839ed5-4cc8-48e3-8832-9d99a4bd3e39}</Project>
       <Name>Cadastro_Item_Acervo</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cadastro_Seção\Cadastro_Seção.csproj">
+      <Project>{b6eb2df7-0957-4c20-a9ad-b764d60bfdfa}</Project>
+      <Name>Cadastro_Seção</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tabelas\Tabelas.csproj">
       <Project>{cf7dd697-3e17-4b09-8afc-33978eb1d22b}</Project>
       <Name>Tabelas</Name>

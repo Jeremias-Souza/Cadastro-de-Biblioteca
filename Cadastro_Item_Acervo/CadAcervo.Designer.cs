@@ -387,7 +387,7 @@
             // 
             this.btnPesquisaEditora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnPesquisaEditora.AutoSize = true;
-            this.btnPesquisaEditora.Location = new System.Drawing.Point(578, 21);
+            this.btnPesquisaEditora.Location = new System.Drawing.Point(578, 17);
             this.btnPesquisaEditora.Name = "btnPesquisaEditora";
             this.btnPesquisaEditora.Size = new System.Drawing.Size(0, 13);
             this.btnPesquisaEditora.TabIndex = 40;
@@ -429,7 +429,7 @@
             // btnPesquisaEditor
             // 
             this.btnPesquisaEditor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnPesquisaEditor.Location = new System.Drawing.Point(562, 15);
+            this.btnPesquisaEditor.Location = new System.Drawing.Point(559, 14);
             this.btnPesquisaEditor.MaximumSize = new System.Drawing.Size(19, 20);
             this.btnPesquisaEditor.Name = "btnPesquisaEditor";
             this.btnPesquisaEditor.Size = new System.Drawing.Size(19, 20);

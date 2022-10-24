@@ -27,7 +27,7 @@ namespace Reserva
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar, numReserva FROM MvtBibReserva";
+                    string sqlQuery = "SELECT codItem, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar, numReserva FROM MvtBibReserva";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -139,7 +139,7 @@ namespace Reserva
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar, numReserva FROM MvtBibReserva";
+                    string sqlQuery = "SELECT codItem, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar, numReserva FROM MvtBibReserva";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -168,13 +168,13 @@ namespace Reserva
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*try
+            try
             {
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
                     cn.Open();
 
-                    var sqlQuery = "DELETE MvtBibReserva Where numReserva = '" + txtNumReserva.Text + "'" + "SELECT codItem, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva FROM MvtBibReserva";
+                    var sqlQuery = "DELETE MvtBibReserva Where numReserva = '" + txtNumReserva.Text + "'" + "SELECT codItem, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar, numReserva FROM MvtBibReserva";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -183,13 +183,15 @@ namespace Reserva
 
                             dataGridView1.DataSource = dt;
                         }
+                        ClearTextBoxes();
+                        this.formatColumns();
                     }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
-            }*/
+            }
         }
 
         private void devolver()
@@ -211,17 +213,12 @@ namespace Reserva
                     }
                 }
 
-            }
-
-            
+            }    
         }
 
         private void formatColumns()
         {
             this.dataGridView1.Columns["codItem"]
-                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            this.dataGridView1.Columns["situacao"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             this.dataGridView1.Columns["nomeItem"]
@@ -249,13 +246,12 @@ namespace Reserva
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.dataGridView1.Columns["encerrar"]
-                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.dataGridView1.Columns["numReserva"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns["codItem"].HeaderText = "Código do Item";
-            this.dataGridView1.Columns["situacao"].HeaderText = "Movimento";           
+            this.dataGridView1.Columns["codItem"].HeaderText = "Código do Item";         
             this.dataGridView1.Columns["nomeItem"].HeaderText = "Nome do Item";
             this.dataGridView1.Columns["numExemplar"].HeaderText = "Número do exemplar";
             this.dataGridView1.Columns["tipoItem"].HeaderText = "Tipo do item";
@@ -264,16 +260,9 @@ namespace Reserva
             this.dataGridView1.Columns["nomeLeitor"].HeaderText = "Nome do leitor";
             this.dataGridView1.Columns["dataReserva"].HeaderText = "Data da reserva";
             this.dataGridView1.Columns["prazoReserva"].HeaderText = "Data para devolução";
-            this.dataGridView1.Columns["encerrar"].HeaderText = "Reserva em aberto?";
+            this.dataGridView1.Columns["encerrar"].HeaderText = "Situação";
             this.dataGridView1.Columns["numReserva"].HeaderText = "Número da reserva";
 
-        }
-
-        private void Reserva()
-        {
-            //encerrar = Boolean.TrueString,
-            // intencao.Text == Re 
-                  
         }
 
         private void ClearTextBoxes() //Função para limpar formularios depois de salvar

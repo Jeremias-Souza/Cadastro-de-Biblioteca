@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tabelas;
 
 namespace cons_emprestimo
 {
@@ -25,7 +26,7 @@ namespace cons_emprestimo
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar, numReserva FROM MvtBibReserva WHERE encerrar = 'Reservado'";
+                    string sqlQuery = "SELECT codItem, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, dataReserva, prazoReserva, encerrar, numReserva FROM MvtBibReserva WHERE encerrar = 'Reservado'";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -59,9 +60,6 @@ namespace cons_emprestimo
             this.dataGridView1.Columns["codItem"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns["situacao"]
-                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
             this.dataGridView1.Columns["nomeItem"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
@@ -77,9 +75,6 @@ namespace cons_emprestimo
             this.dataGridView1.Columns["codLeitor"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns["nomeLeitor"]
-                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
             this.dataGridView1.Columns["dataReserva"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
@@ -93,13 +88,11 @@ namespace cons_emprestimo
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             this.dataGridView1.Columns["codItem"].HeaderText = "Código do Item";
-            this.dataGridView1.Columns["situacao"].HeaderText = "Movimento";
             this.dataGridView1.Columns["nomeItem"].HeaderText = "Nome do Item";
             this.dataGridView1.Columns["numExemplar"].HeaderText = "Número do exemplar";
             this.dataGridView1.Columns["tipoItem"].HeaderText = "Tipo do item";
             this.dataGridView1.Columns["localizacao"].HeaderText = "Localização";
             this.dataGridView1.Columns["codLeitor"].HeaderText = "Código do leitor";
-            this.dataGridView1.Columns["nomeLeitor"].HeaderText = "Nome do leitor";
             this.dataGridView1.Columns["dataReserva"].HeaderText = "Data da reserva";
             this.dataGridView1.Columns["prazoReserva"].HeaderText = "Data para devolução";
             this.dataGridView1.Columns["numReserva"].HeaderText = "Número da reserva";
@@ -115,8 +108,8 @@ namespace cons_emprestimo
             txtItem.Text = $"{row.Cells["codItem"].Value}";
             comboTipoItem.Text = $"{row.Cells["tipoItem"].Value}";
             txtLocal.Text = $"{row.Cells["localizacao"].Value}";
-            txtAutor.Text = $"{row.Cells["codLeitor"].Value}";                       
-            txtNomeLeitor.Text = $"{row.Cells["nomeItem"].Value}";
+            txtNomeLeitor.Text = $"{row.Cells["codLeitor"].Value}";
+            //labelNomeLeitor.Text = $"{row.Cells["nomeLeitor"].Value}";
             txtDataReserva.Text = $"{row.Cells["dataReserva"].Value}";
             txtDataFinal.Text = $"{row.Cells["prazoReserva"].Value}";
             comboSituacao.Text = $"{row.Cells["encerrar"].Value}";
@@ -124,19 +117,107 @@ namespace cons_emprestimo
 
         }
 
-        private void btnSecao_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnItem_Click(object sender, EventArgs e)
         {
+            Item tela = new Item();
+            tela.Show();
+        }
+
+        private void btnLocal_Click(object sender, EventArgs e)
+        {
+            Local tela = new Local();
+            tela.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Leitor tela = new Leitor();
+            tela.Show();
+        }
+
+        private void btnSecao_Click(object sender, EventArgs e)
+        {
+            Secao tela = new Secao();
+            tela.Show();
+        }
+
+        private void txtNomeLeitor_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+                {
+                    cn.Open();
+
+                    var sqlQuery = $"SELECT nome FROM dbo.MvtBibLeitor WHERE codLeitor = {int.Parse(this.txtNomeLeitor.Text)}";
+                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            da.Fill(dt);
+                            this.labelNomeLeitor.Text = dt.Rows[0].Field<string>("nome");
+                        }
+                    }
+                }
+
+                MessageBox.Show("Leitor Carregado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Leitor inexistente!");
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void txtNumReserva_KeyUp(object sender, KeyEventArgs e)
+        {
 
         }
 
-        private void btnConsultar_Click(object sender, EventArgs e)
+        private void txtNumReserva_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
+        }
 
+        private void txtNumReserva_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+                {
+                    cn.Open();
+
+                    var sqlQuery = $"SELECT codItem, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar, numReserva FROM dbo.MvtBibReserva WHERE numReserva = {int.Parse(this.txtNumReserva.Text)}";
+                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            da.Fill(dt);
+
+                            if (MessageBox.Show("Deseja preenchelos automaticamente?", "Consulta de Reservas", MessageBoxButtons.YesNo) == DialogResult.No)
+                            {
+                                return;
+                            }
+
+                            this.txtItem.Text = dt.Rows[0].Field<string>("codItem");
+                            this.comboTipoItem.Text = dt.Rows[0].Field<string>("tipoItem");
+                            this.txtLocal.Text = dt.Rows[0].Field<string>("localizacao");
+                            this.txtNomeLeitor.Text = dt.Rows[0].Field<string>("codLeitor");
+                            this.txtDataReserva.Text = dt.Rows[0].Field<string>("dataReserva");
+                            this.txtDataFinal.Text = dt.Rows[0].Field<string>("prazoReserva");
+                            this.comboSituacao.Text = dt.Rows[0].Field<string>("encerrar");
+
+                        }
+                    }
+                }
+
+                MessageBox.Show("Item Carregado com sucesso!");
+            }
+            catch (Exception ex) //Mostra mensagem caso haver falha 
+            {
+                MessageBox.Show("Item inexistente!");
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Tabelas
 {
-    public partial class Secao : Form
+    public partial class Leitor : Form
     {
-        public Secao()
+        public Leitor()
         {
             InitializeComponent();
 
@@ -23,7 +23,7 @@ namespace Tabelas
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codSecao, descricaoSecao FROM MvtBibSecao";
+                    string sqlQuery = "SELECT codLeitor, nome FROM MvtBibLeitor";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -31,10 +31,9 @@ namespace Tabelas
                             da.Fill(dt);
                             dataGridView1.DataSource = dt;
                         }
-                    }formatColumns();
+                    }
+                    formatColumns();
                 }
-
-
             }
 
             catch (Exception ex)
@@ -43,7 +42,7 @@ namespace Tabelas
             }
         }
 
-        private void txtPesquisaSecao_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtPesquisaLeitor_KeyPress(object sender, KeyPressEventArgs e)
         {
             try
             {
@@ -51,7 +50,7 @@ namespace Tabelas
                 {
                     cn.Open();
 
-                    var sqlQuery = "SELECT codSecao, descricaoSecao FROM MvtBibSecao WHERE descricaoSecao LIKE " + " '" + txtPesquisaSecao.Text + "%'";
+                    string sqlQuery = "SELECT codLeitor, nome FROM MvtBibLeitor";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -59,9 +58,11 @@ namespace Tabelas
                             da.Fill(dt);
                             dataGridView1.DataSource = dt;
                         }
-                    }formatColumns();
+                    }
+                    formatColumns();
                 }
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
@@ -70,17 +71,14 @@ namespace Tabelas
 
         private void formatColumns()
         {
+            this.dataGridView1.Columns["codLeitor"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.dataGridView1.Columns["codSecao"].DefaultCellStyle
-                .Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.Columns["nome"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.dataGridView1.Columns["descricaoSecao"].DefaultCellStyle
-                .Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-
-            this.dataGridView1.Columns["codSecao"].HeaderText = "Código";
-            this.dataGridView1.Columns["descricaoSecao"].HeaderText = "Descrição";
-
+            this.dataGridView1.Columns["codLeitor"].HeaderText = "Código";
+            this.dataGridView1.Columns["nome"].HeaderText = "Nome";
         }
     }
 }

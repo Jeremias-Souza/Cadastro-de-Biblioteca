@@ -33,18 +33,8 @@
             this.btnSecao = new System.Windows.Forms.Button();
             this.btnColecao = new System.Windows.Forms.Button();
             this.btnAutor = new System.Windows.Forms.Button();
-            this.labelSecao = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.labelAutor = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.txtItem = new System.Windows.Forms.TextBox();
             this.comboStatus = new System.Windows.Forms.ComboBox();
@@ -61,6 +51,7 @@
             this.txtAutor = new System.Windows.Forms.TextBox();
             this.txtLocal = new System.Windows.Forms.TextBox();
             this.txtNomeItem = new System.Windows.Forms.TextBox();
+            this.labelSecao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +81,7 @@
             // btnSecao
             // 
             this.btnSecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnSecao.Location = new System.Drawing.Point(1090, 59);
+            this.btnSecao.Location = new System.Drawing.Point(1089, 59);
             this.btnSecao.MaximumSize = new System.Drawing.Size(19, 20);
             this.btnSecao.MinimumSize = new System.Drawing.Size(19, 20);
             this.btnSecao.Name = "btnSecao";
@@ -103,7 +94,7 @@
             // btnColecao
             // 
             this.btnColecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnColecao.Location = new System.Drawing.Point(1090, 33);
+            this.btnColecao.Location = new System.Drawing.Point(1144, 33);
             this.btnColecao.MaximumSize = new System.Drawing.Size(19, 20);
             this.btnColecao.MinimumSize = new System.Drawing.Size(19, 20);
             this.btnColecao.Name = "btnColecao";
@@ -116,7 +107,7 @@
             // btnAutor
             // 
             this.btnAutor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnAutor.Location = new System.Drawing.Point(1090, 7);
+            this.btnAutor.Location = new System.Drawing.Point(1089, 7);
             this.btnAutor.MaximumSize = new System.Drawing.Size(19, 20);
             this.btnAutor.MinimumSize = new System.Drawing.Size(19, 20);
             this.btnAutor.Name = "btnAutor";
@@ -125,26 +116,6 @@
             this.btnAutor.Text = "🔎";
             this.btnAutor.UseVisualStyleBackColor = true;
             this.btnAutor.Click += new System.EventHandler(this.btnAutor_Click);
-            // 
-            // labelSecao
-            // 
-            this.labelSecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.labelSecao.AutoSize = true;
-            this.labelSecao.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelSecao.Location = new System.Drawing.Point(1115, 61);
-            this.labelSecao.Name = "labelSecao";
-            this.labelSecao.Size = new System.Drawing.Size(0, 17);
-            this.labelSecao.TabIndex = 155;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(1115, 35);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(0, 17);
-            this.label13.TabIndex = 154;
             // 
             // labelAutor
             // 
@@ -162,68 +133,12 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Item,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8});
             this.dataGridView1.Location = new System.Drawing.Point(389, 167);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(826, 233);
             this.dataGridView1.TabIndex = 151;
-            // 
-            // Item
-            // 
-            this.Item.HeaderText = "Item";
-            this.Item.Name = "Item";
-            this.Item.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nome do Item";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Tipo do Item";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Local";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Nome do Autor";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Coleção";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Seção";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Status";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label2
             // 
@@ -358,7 +273,7 @@
             this.txtColecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtColecao.Location = new System.Drawing.Point(1038, 34);
             this.txtColecao.Name = "txtColecao";
-            this.txtColecao.Size = new System.Drawing.Size(45, 20);
+            this.txtColecao.Size = new System.Drawing.Size(100, 20);
             this.txtColecao.TabIndex = 10;
             // 
             // txtAutor
@@ -368,7 +283,6 @@
             this.txtAutor.Name = "txtAutor";
             this.txtAutor.Size = new System.Drawing.Size(45, 20);
             this.txtAutor.TabIndex = 8;
-            //this.txtAutor.TextChanged += new System.EventHandler(this.txtAutor_TextChanged);
             this.txtAutor.Leave += new System.EventHandler(this.txtAutor_Leave);
             // 
             // txtLocal
@@ -389,6 +303,16 @@
             this.txtNomeItem.TabIndex = 3;
             this.txtNomeItem.Leave += new System.EventHandler(this.txtNomeItem_Leave);
             // 
+            // labelSecao
+            // 
+            this.labelSecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelSecao.AutoSize = true;
+            this.labelSecao.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelSecao.Location = new System.Drawing.Point(1115, 61);
+            this.labelSecao.Name = "labelSecao";
+            this.labelSecao.Size = new System.Drawing.Size(0, 17);
+            this.labelSecao.TabIndex = 155;
+            // 
             // ConsultaAcervo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,7 +324,6 @@
             this.Controls.Add(this.btnColecao);
             this.Controls.Add(this.btnAutor);
             this.Controls.Add(this.labelSecao);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.labelAutor);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
@@ -421,6 +344,7 @@
             this.Controls.Add(this.txtNomeItem);
             this.Name = "ConsultaAcervo";
             this.Text = "Consulta do Acervo";
+            this.Load += new System.EventHandler(this.ConsultaAcervo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -434,8 +358,6 @@
         private System.Windows.Forms.Button btnSecao;
         private System.Windows.Forms.Button btnColecao;
         private System.Windows.Forms.Button btnAutor;
-        private System.Windows.Forms.Label labelSecao;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label labelAutor;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
@@ -454,14 +376,7 @@
         private System.Windows.Forms.TextBox txtAutor;
         private System.Windows.Forms.TextBox txtLocal;
         private System.Windows.Forms.TextBox txtNomeItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.Label labelSecao;
     }
 }
 

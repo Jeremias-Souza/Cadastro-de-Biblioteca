@@ -394,7 +394,7 @@
             this.Controls.Add(this.label2);
             this.MinimumSize = new System.Drawing.Size(1566, 447);
             this.Name = "CadReserva";
-            this.Text = "CadReserva";
+            this.Text = "Cadastro de Reservas";
             this.Load += new System.EventHandler(this.CadReserva_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

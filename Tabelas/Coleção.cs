@@ -17,13 +17,13 @@ namespace Tabelas
         {
             InitializeComponent();
 
-            /*try
+            try
             {
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codAutor, nomeAutor FROM MvtBibAutor";
+                    string sqlQuery = "SELECT tipoItem, nomeColecao FROM MvtBibItemAcervo";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -31,7 +31,7 @@ namespace Tabelas
                             da.Fill(dt);
                             dataGridView1.DataSource = dt;
                         }
-                    }
+                    }formatColumns();
                 }
 
 
@@ -40,11 +40,46 @@ namespace Tabelas
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
-            }*/
+            }
         }
 
         private void txtPesquisaAutor_KeyPress(object sender, KeyPressEventArgs e)
         {
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+                {
+                    cn.Open();
+
+                    var sqlQuery = "SELECT tipoItem, nomeColecao FROM MvtBibItemAcervo WHERE nomeColecao LIKE " + " '" + txtPesquisaAutor.Text + "%'";
+                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            da.Fill(dt);
+                            dataGridView1.DataSource = dt;
+                        }
+                    }
+                    formatColumns();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha! \n" + ex.Message);
+            }
+        }
+
+        private void formatColumns()
+        {
+
+            this.dataGridView1.Columns["tipoItem"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns["nomeColecao"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns["tipoItem"].HeaderText = "Tipo do item";
+            this.dataGridView1.Columns["nomeColecao"].HeaderText = "Nome da Coleção";
 
         }
     }

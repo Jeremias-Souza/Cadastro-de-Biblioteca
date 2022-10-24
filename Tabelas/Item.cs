@@ -30,7 +30,7 @@ namespace Tabelas
                             da.Fill(dt);
                             dataGridView1.DataSource = dt;
                         }
-                    }
+                    }formatColumns();
                 }
 
 
@@ -58,7 +58,7 @@ namespace Tabelas
                             da.Fill(dt);
                             dataGridView1.DataSource = dt;
                         }
-                    }
+                    }formatColumns();
                 }
             }
             catch (Exception ex)
@@ -67,7 +67,23 @@ namespace Tabelas
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void formatColumns()
+        {
+            this.dataGridView1.Columns["codItem"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns["nome"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns["nomeColecao"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns["codItem"].HeaderText = "Código Acervo";
+            this.dataGridView1.Columns["nome"].HeaderText = "Nome";
+            this.dataGridView1.Columns["nomeColecao"].HeaderText = "Nome da coleção";
+        }
+
+            private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
         }

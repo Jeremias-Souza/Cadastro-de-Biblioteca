@@ -85,6 +85,10 @@
       <Project>{76cc176e-c584-4cbb-8666-f7fd102003f7}</Project>
       <Name>Reserva</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tabelas\Tabelas.csproj">
+      <Project>{cf7dd697-3e17-4b09-8afc-33978eb1d22b}</Project>
+      <Name>Tabelas</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

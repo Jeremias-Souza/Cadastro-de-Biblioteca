@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tabelas;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Consulta_Acervo_Item
 {
@@ -26,18 +27,23 @@ namespace Consulta_Acervo_Item
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
                     cn.Open();
-                    
-                    //ClearTextBoxes();
-                }
-                
 
+                    string sqlQuery = "SELECT codItem, tipoItem, nome, localizacao, codAutor, nomeAutor, nomeColecao, Secao FROM MvtBibItemAcervo";
+                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            da.Fill(dt);
+                            dataGridView1.DataSource = dt;
+                        }
+                    }
+                }             
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
-           
+
         }       
 
         private void txtItem_Leave(object sender, EventArgs e)
@@ -74,7 +80,8 @@ namespace Consulta_Acervo_Item
             {               
                 MessageBox.Show("Item inexistente!");
                 Console.WriteLine(ex.Message);              
-            }
+            }          
+            
         }
 
         private void btnItem_Click(object sender, EventArgs e)
@@ -106,7 +113,8 @@ namespace Consulta_Acervo_Item
 
         private void btnColecao_Click(object sender, EventArgs e)
         {
-
+            Coleção tela = new Coleção();
+            tela.Show();
         }
 
         private void btnSecao_Click(object sender, EventArgs e)
@@ -169,6 +177,27 @@ namespace Consulta_Acervo_Item
                 MessageBox.Show("Seção inexistente!");
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            indexRow = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[indexRow];
+
+            txtItem.Text = $"{row.Cells["codItem"].Value}";
+            txtNomeItem.Text = $"{row.Cells["nome"].Value}";
+            comboTipoItem.Text = $"{row.Cells["tipoItem"].Value}";
+            txtLocal.Text = $"{row.Cells["localizacao"].Value}";
+            txtAutor.Text = $"{row.Cells["codAutor"].Value}";
+            labelAutor.Text = $"{row.Cells["nomeAutor"].Value}";
+            txtColecao.Text = $"{row.Cells["nomeColecao"].Value}";
+            txtSecao.Text = $"{row.Cells["Secao"].Value}";
+
+        }
+
+        private void ConsultaAcervo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

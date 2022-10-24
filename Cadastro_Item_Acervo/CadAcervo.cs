@@ -33,7 +33,7 @@ namespace Cadastro_Item_Acervo
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codItem, codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, nomeColecao, tipoITem, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma FROM MvtBibItemAcervo";
+                    string sqlQuery = "SELECT codItem, codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, nomeColecao, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma FROM MvtBibItemAcervo";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -50,8 +50,6 @@ namespace Cadastro_Item_Acervo
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
-
-
 
             this.formatColumns();
 
@@ -458,19 +456,19 @@ namespace Cadastro_Item_Acervo
             codItem.Text = $"{row.Cells["codItem"].Value}";
             codLocal.Text = $"{row.Cells["codLocal"].Value}";
             numeroExemplar.Text = $"{row.Cells["numExemplar"].Value}";
-            labelCodLocal.Text = $"{row.Cells["nome"].Value}";
+            labelCodLocal.Text = $"{row.Cells["nomeLocal"].Value}";
             codAutor.Text = $"{row.Cells["codAutor"].Value}";
             labelNomeAutor.Text = $"{row.Cells["nomeAutor"].Value}";
             codEditora.Text = $"{row.Cells["codEditora"].Value}";
             btnPesquisaEditora.Text = $"{row.Cells["nomeEditora"].Value}";
-            nomeColecao.Text = $"{row.Cells["tipoItem"].Value}";
-            comboBox1.Text = $"{row.Cells["nomeLocal"].Value}";
-            nomeAcervo.Text = $"{row.Cells["volume"].Value}";
-            volume.Text = $"{row.Cells["anoEdicao"].Value}";
-            anoEdicao.Text = $"{row.Cells["localizacao"].Value}";
-            localizacao.Text = $"{row.Cells["secao"].Value}";
-            secao.Text = $"{row.Cells["idioma"].Value}";
-            idioma.Text = $"{row.Cells["nomeColecao"].Value}";
+            nomeColecao.Text = $"{row.Cells["nomeColecao"].Value}";
+            comboBox1.Text = $"{row.Cells["tipoItem"].Value}";
+            nomeAcervo.Text = $"{row.Cells["nome"].Value}";
+            volume.Text = $"{row.Cells["volume"].Value}";
+            anoEdicao.Text = $"{row.Cells["anoEdicao"].Value}";
+            localizacao.Text = $"{row.Cells["localizacao"].Value}";
+            secao.Text = $"{row.Cells["secao"].Value}";           
+            idioma.Text = $"{row.Cells["idioma"].Value}";
         }
 
         private void CadAcervo_Load(object sender, EventArgs e)

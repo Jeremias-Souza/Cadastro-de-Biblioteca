@@ -29,6 +29,7 @@ namespace Tabelas
                             dataGridView1.DataSource = dt;
                         }
                     }
+                    formatColumns();
                 }
 
 
@@ -57,12 +58,26 @@ namespace Tabelas
                             dataGridView1.DataSource = dt;
                         }
                     }
+                    formatColumns();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
+        }
+        private void formatColumns()
+        {
+
+            this.dataGridView1.Columns["CodAutor"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns["nomeAutor"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns["CodAutor"].HeaderText = "Código";
+            this.dataGridView1.Columns["nomeAutor"].HeaderText = "Nome";
+
         }
 
         private void Autor_Load(object sender, EventArgs e)

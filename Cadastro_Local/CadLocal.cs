@@ -141,11 +141,10 @@ namespace Cadastro_Local
 
         private void formatColumns()
         {
-            //Cód local
+
             this.dataGridView1.Columns["codLocal"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            //Descricao local
             this.dataGridView1.Columns["descricaoLocal"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 

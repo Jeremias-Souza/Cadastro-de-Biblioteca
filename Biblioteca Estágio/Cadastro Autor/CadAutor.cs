@@ -210,24 +210,19 @@ namespace Biblioteca_Estágio
 
         private void formatColumns()
         {
-            //Cód autor
+
             this.dataGridView1.Columns["CodAutor"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            //Nome autor
             this.dataGridView1.Columns["nomeAutor"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            //Descrição autor
             this.dataGridView1.Columns["descricaoAutor"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.dataGridView1.Columns["CodAutor"].HeaderText = "Código";
             this.dataGridView1.Columns["nomeAutor"].HeaderText = "Nome";
-            this.dataGridView1.Columns["descricaoAutor"].HeaderText = "Descrição";
-
-            
-
+            this.dataGridView1.Columns["descricaoAutor"].HeaderText = "Descrição";            
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)//Caixa aonde ocorre as atualizações de processos

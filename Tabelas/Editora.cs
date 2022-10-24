@@ -31,7 +31,7 @@ namespace Tabelas
                             da.Fill(dt);
                             dataGridView1.DataSource = dt;
                         }
-                    }
+                    }formatColumns();
                 }
 
 
@@ -59,13 +59,27 @@ namespace Tabelas
                             da.Fill(dt);
                             dataGridView1.DataSource = dt;
                         }
-                    }
+                    }formatColumns();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
+        }
+
+        private void formatColumns()
+        {
+
+            this.dataGridView1.Columns["codEditora"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns["nome"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns["codEditora"].HeaderText = "Código";
+            this.dataGridView1.Columns["nome"].HeaderText = "Nome";
+
         }
     }
 }

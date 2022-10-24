@@ -54,8 +54,7 @@ namespace Reserva
         {
             if (existeReserva(reserva))
             {
-                MessageBox.Show("Esse item não se encontra disponivel para reserva.");
-                return;
+                MessageBox.Show("Esse item não se encontra disponivel para reserva.", "Cadastro Item do Acervo");                
             }
 
             else
@@ -82,68 +81,7 @@ namespace Reserva
                     }
                     cn.Close();
                 }
-
-            }
-
-            /*  public void Salvar()
-              {
-                  if (this.numReserva == 0)
-                  {
-
-                      var sql = "INSERT INTO MvtBibReserva (codItem, situacao, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar) VALUES (@codItem, @situacao, @nomeItem, @numExemplar, @tipoItem, @localizacao, @codLeitor, @nomeLeitor, @dataReserva, @prazoReserva, @encerrar)";
-                      using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-                      {
-                          cn.Open();
-                          using (var cmd = new SqlCommand(sql, cn))
-                          {
-                              cmd.Parameters.AddWithValue("@codItem", this.codItem);
-                              cmd.Parameters.AddWithValue("@situacao", this.situacao);
-                              cmd.Parameters.AddWithValue("@nomeItem", this.nomeItem);
-                              cmd.Parameters.AddWithValue("@numExemplar", this.numExemplar);
-                              cmd.Parameters.AddWithValue("@tipoItem", this.tipoItem);
-                              cmd.Parameters.AddWithValue("@localizacao", this.localizacao);
-                              cmd.Parameters.AddWithValue("@codLeitor", this.codLeitor);
-                              cmd.Parameters.AddWithValue("@nomeLeitor", this.nomeLeitor);
-                              cmd.Parameters.AddWithValue("@dataReserva", this.dataReserva);
-                              cmd.Parameters.AddWithValue("@prazoReserva", this.prazoReserva);
-                              cmd.Parameters.AddWithValue("@encerrar", this.encerrar);
-                              cmd.ExecuteNonQuery();
-
-                          }
-                      }
-                      return;                            
-                  }
-
-                  else
-                  {
-                      var sql = "UPDATE MvtBibReserva SET codItem = @codItem, situacao = @situacao, nomeItem = @nomeItem, numExemplar = @numExemplar, tipoItem = @tipoItem, localizacao = @localizacao, codLeitor = @codLeitor, nomeLeitor = @nomeLeitor, dataReserva = @dataReserva, prazoReserva = @prazoReserva, encerrar = @encerrar  WHERE numReserva = @numReserva";
-                      using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-                      {
-                          cn.Open();
-                          using (var cmd = new SqlCommand(sql, cn))
-                          {
-                              cmd.Parameters.AddWithValue("@codItem", this.codItem);
-                              cmd.Parameters.AddWithValue("@situacao", this.situacao);
-                              cmd.Parameters.AddWithValue("@nomeItem", this.nomeItem);
-                              cmd.Parameters.AddWithValue("@numExemplar", this.numExemplar);
-                              cmd.Parameters.AddWithValue("@tipoItem", this.tipoItem);
-                              cmd.Parameters.AddWithValue("@localizacao", this.localizacao);
-                              cmd.Parameters.AddWithValue("@codLeitor", this.codLeitor);
-                              cmd.Parameters.AddWithValue("@nomeLeitor", this.nomeLeitor);
-                              cmd.Parameters.AddWithValue("@dataReserva", this.dataReserva);
-                              cmd.Parameters.AddWithValue("@prazoReserva", this.prazoReserva);
-                              cmd.Parameters.AddWithValue("@encerrar", this.encerrar);
-                              cmd.Parameters.AddWithValue("@numReserva", this.numReserva);
-
-
-
-                              cmd.ExecuteNonQuery();
-                          }
-                          cn.Close();
-                      }
-                  }
-
-              }*/
+            }                                   
         }
     }
 }
