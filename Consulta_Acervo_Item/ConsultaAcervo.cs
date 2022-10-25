@@ -23,7 +23,7 @@ namespace Consulta_Acervo_Item
         {
             InitializeComponent();
 
-            try
+           try
             {
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
@@ -38,62 +38,60 @@ namespace Consulta_Acervo_Item
                             dataGridView1.DataSource = dt;
                         }
                     }formatColumns();
+                    
                 }             
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
-            }          
+            }         
 
         }       
 
         private void txtItem_Leave(object sender, EventArgs e)
         {
-            try
-            {
-                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+            if (txtItem.Text != ""){
+                try
                 {
-                    cn.Open();
-
-                    var sqlQuery = $"SELECT nome, numExemplar, tipoItem, localizacao FROM dbo.MvtBibItemAcervo WHERE codItem = {int.Parse(this.txtItem.Text)}";
-                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
+                    using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                     {
-                        using (DataTable dt = new DataTable())
+                        cn.Open();
+
+                        var sqlQuery = $"SELECT nome, numExemplar, tipoItem, localizacao FROM dbo.MvtBibItemAcervo WHERE codItem = {int.Parse(this.txtItem.Text)}";
+                        using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                         {
-                            da.Fill(dt);
+                            using (DataTable dt = new DataTable())
+                            {
+                                da.Fill(dt);
 
-                            if(MessageBox.Show("Foram achados registros que correspondem o Código do Item.\r\n\r\nDeseja preenchelos automaticamente?", "Consulta Itens do Acervo", MessageBoxButtons.YesNo) == DialogResult.No)
-                            {             
-                                return;
+                                if (MessageBox.Show("Foram achados registros que correspondem o Código do Item.\r\n\r\nDeseja preenchelos automaticamente?", "Consulta Itens do Acervo", MessageBoxButtons.YesNo) == DialogResult.No)
+                                {
+                                    return;
+                                }
+
+                                this.txtNomeItem.Text = dt.Rows[0].Field<string>("nome");
+                                //this.numExemplar.Text = dt.Rows[0].Field<int>("numExemplar").ToString();
+                                this.comboTipoItem.Text = dt.Rows[0].Field<string>("tipoItem");
+                                this.txtLocal.Text = dt.Rows[0].Field<string>("localizacao");
                             }
-
-                            this.txtNomeItem.Text = dt.Rows[0].Field<string>("nome");
-                            //this.numExemplar.Text = dt.Rows[0].Field<int>("numExemplar").ToString();
-                            this.comboTipoItem.Text = dt.Rows[0].Field<string>("tipoItem");
-                            this.txtLocal.Text = dt.Rows[0].Field<string>("localizacao");
                         }
                     }
+
+                    MessageBox.Show("Item Carregado com sucesso!");
                 }
 
-                MessageBox.Show("Item Carregado com sucesso!");
-            }
-            catch (Exception ex) //Mostra mensagem caso haver falha 
-            {               
-                MessageBox.Show("Item inexistente!");
-                Console.WriteLine(ex.Message);              
-            }          
-            
+                catch (Exception ex) //Mostra mensagem caso haver falha 
+                {
+                    MessageBox.Show("Item inexistente!");
+                    Console.WriteLine(ex.Message);
+                }
+            }       
         }
 
         private void btnItem_Click(object sender, EventArgs e)
         {
             Item tela = new Item();
             tela.Show();
-        }
-      
-        private void txtNomeItem_Leave(object sender, EventArgs e)
-        {
-         
         }
 
         private void txtLocal_Leave(object sender, EventArgs e)
@@ -191,11 +189,6 @@ namespace Consulta_Acervo_Item
 
         }
 
-        private void ConsultaAcervo_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void formatColumns()
         {
             this.dataGridView1.Columns["codItem"]
@@ -234,7 +227,37 @@ namespace Consulta_Acervo_Item
 
         }
 
-        private void btnConsultar_Click(object sender, EventArgs e)
+
+        private void txtItem_TextChanged(object sender, EventArgs e)
+        {
+            if (txtItem.Text != "")
+            {
+                try
+                {
+                    using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+                    {
+                        cn.Open();
+
+                        var sqlQuery = $"SELECT encerrar FROM dbo.MvtBibReserva WHERE codItem = {int.Parse(this.txtItem.Text)}";
+                        using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
+                        {
+                            using (DataTable dt = new DataTable())
+                            {
+                                da.Fill(dt);
+                                this.txtstatus.Text = dt.Rows[0].Field<string>("encerrar");
+                            }
+                        }
+                        formatColumns();
+                    }
+                }
+                catch (Exception)
+                {
+                    txtstatus.Text = "Disponivel";
+                }
+            }
+        }
+
+        private void txtSecao_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -242,22 +265,29 @@ namespace Consulta_Acervo_Item
                 {
                     cn.Open();
 
-                    var sqlQuery = $"SELECT encerrar FROM dbo.MvtBibReserva WHERE encerrar = {int.Parse(this.txtItem.Text)}";
+                    var sqlQuery = $"SELECT descricaoSecao FROM dbo.MvtBibSecao WHERE codSecao = {int.Parse(this.txtSecao.Text)}";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
                         {
                             da.Fill(dt);
-                            this.comboStatus.Text = dt.Rows[0].Field<string>("encerrar");
+                            this.labelSecao.Text = dt.Rows[0].Field<string>("descricaoSecao");
                         }
                     }
-                    formatColumns();
                 }
+
+               
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Falha ao consultar o status! \n" + ex.Message);
+                MessageBox.Show("Seção inexistente!");
+                Console.WriteLine(ex.Message);
             }
+        }
+
+        private void ConsultaAcervo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

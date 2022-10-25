@@ -250,7 +250,7 @@ namespace Cadastro_Leitor
             this.dataGridView1.Columns["enderecoCidade"].HeaderText = "Nome da cidade";
             this.dataGridView1.Columns["enderecoCEP"].HeaderText = "CEP";
             this.dataGridView1.Columns["enderecoUF"].HeaderText = "UF";
-            this.dataGridView1.Columns["enderecoNumero"].HeaderText = "enderecoNumero";            
+            this.dataGridView1.Columns["enderecoNumero"].HeaderText = "Número";            
 
         }
 
@@ -262,16 +262,12 @@ namespace Cadastro_Leitor
             {
                 foreach (Control control in controls)
                     if (control is TextBox)
-                        (control as TextBox).Clear();
-                
-
-                else
+                        (control as TextBox).Clear();              
+                    else
                         func(control.Controls);
 
-
-
             };
-
+            sexo.Text = " ";
             func(Controls);
         }
 
@@ -467,6 +463,11 @@ namespace Cadastro_Leitor
         }
 
         private void CadLeitor_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

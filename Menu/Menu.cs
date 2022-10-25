@@ -79,5 +79,10 @@ namespace Menu
             ConsultaAcervo tela = new ConsultaAcervo();
             tela.Show();
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

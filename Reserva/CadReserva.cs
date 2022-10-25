@@ -279,7 +279,8 @@ namespace Reserva
                     else
                         func(control.Controls);
             };
-
+            intencao.Text = " ";
+            situacao.Text = " ";
             func(Controls);
         }
 

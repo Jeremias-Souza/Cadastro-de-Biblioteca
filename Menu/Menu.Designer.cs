@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.cadastroAutor = new System.Windows.Forms.Button();
             this.cadastroEditora = new System.Windows.Forms.Button();
             this.cadastroLeitor = new System.Windows.Forms.Button();
@@ -50,17 +51,17 @@
             // 
             // cadastroAutor
             // 
-            this.cadastroAutor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cadastroAutor.AutoSize = true;
             this.cadastroAutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cadastroAutor.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cadastroAutor.FlatAppearance.BorderSize = 0;
             this.cadastroAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroAutor.ForeColor = System.Drawing.Color.Black;
-            this.cadastroAutor.Location = new System.Drawing.Point(-133, -1);
+            this.cadastroAutor.Location = new System.Drawing.Point(1, -1);
             this.cadastroAutor.Margin = new System.Windows.Forms.Padding(0);
             this.cadastroAutor.Name = "cadastroAutor";
             this.cadastroAutor.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.cadastroAutor.Size = new System.Drawing.Size(573, 141);
+            this.cadastroAutor.Size = new System.Drawing.Size(457, 141);
             this.cadastroAutor.TabIndex = 0;
             this.cadastroAutor.TabStop = false;
             this.cadastroAutor.Text = "Cadastro do Autor";
@@ -70,17 +71,17 @@
             // 
             // cadastroEditora
             // 
-            this.cadastroEditora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cadastroEditora.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cadastroEditora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cadastroEditora.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cadastroEditora.FlatAppearance.BorderSize = 0;
             this.cadastroEditora.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroEditora.ForeColor = System.Drawing.Color.Black;
-            this.cadastroEditora.Location = new System.Drawing.Point(-133, 137);
+            this.cadastroEditora.Location = new System.Drawing.Point(1, 137);
             this.cadastroEditora.Margin = new System.Windows.Forms.Padding(0);
             this.cadastroEditora.Name = "cadastroEditora";
             this.cadastroEditora.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.cadastroEditora.Size = new System.Drawing.Size(573, 138);
+            this.cadastroEditora.Size = new System.Drawing.Size(457, 140);
             this.cadastroEditora.TabIndex = 0;
             this.cadastroEditora.TabStop = false;
             this.cadastroEditora.Text = "Cadastro da Editora";
@@ -90,17 +91,17 @@
             // 
             // cadastroLeitor
             // 
-            this.cadastroLeitor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cadastroLeitor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cadastroLeitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cadastroLeitor.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cadastroLeitor.FlatAppearance.BorderSize = 0;
             this.cadastroLeitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroLeitor.ForeColor = System.Drawing.Color.Black;
-            this.cadastroLeitor.Location = new System.Drawing.Point(-133, 273);
+            this.cadastroLeitor.Location = new System.Drawing.Point(1, 275);
             this.cadastroLeitor.Margin = new System.Windows.Forms.Padding(0);
             this.cadastroLeitor.Name = "cadastroLeitor";
             this.cadastroLeitor.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.cadastroLeitor.Size = new System.Drawing.Size(573, 135);
+            this.cadastroLeitor.Size = new System.Drawing.Size(457, 133);
             this.cadastroLeitor.TabIndex = 0;
             this.cadastroLeitor.TabStop = false;
             this.cadastroLeitor.Text = "Cadastro do Leitor";
@@ -110,17 +111,17 @@
             // 
             // cadastroLocal
             // 
-            this.cadastroLocal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cadastroLocal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cadastroLocal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cadastroLocal.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cadastroLocal.FlatAppearance.BorderSize = 0;
             this.cadastroLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroLocal.ForeColor = System.Drawing.Color.Black;
-            this.cadastroLocal.Location = new System.Drawing.Point(439, 138);
+            this.cadastroLocal.Location = new System.Drawing.Point(456, 137);
             this.cadastroLocal.Margin = new System.Windows.Forms.Padding(0);
             this.cadastroLocal.Name = "cadastroLocal";
             this.cadastroLocal.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.cadastroLocal.Size = new System.Drawing.Size(502, 137);
+            this.cadastroLocal.Size = new System.Drawing.Size(466, 140);
             this.cadastroLocal.TabIndex = 0;
             this.cadastroLocal.TabStop = false;
             this.cadastroLocal.Text = "Cadastro do Local";
@@ -130,17 +131,17 @@
             // 
             // cadastroSecao
             // 
-            this.cadastroSecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cadastroSecao.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cadastroSecao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cadastroSecao.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cadastroSecao.FlatAppearance.BorderSize = 0;
             this.cadastroSecao.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroSecao.ForeColor = System.Drawing.Color.Black;
-            this.cadastroSecao.Location = new System.Drawing.Point(439, -1);
+            this.cadastroSecao.Location = new System.Drawing.Point(456, -1);
             this.cadastroSecao.Margin = new System.Windows.Forms.Padding(0);
             this.cadastroSecao.Name = "cadastroSecao";
             this.cadastroSecao.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.cadastroSecao.Size = new System.Drawing.Size(502, 141);
+            this.cadastroSecao.Size = new System.Drawing.Size(466, 141);
             this.cadastroSecao.TabIndex = 0;
             this.cadastroSecao.TabStop = false;
             this.cadastroSecao.Text = "Cadastro da Seção";
@@ -150,17 +151,17 @@
             // 
             // cadastroAcervo
             // 
-            this.cadastroAcervo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cadastroAcervo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.cadastroAcervo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cadastroAcervo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cadastroAcervo.FlatAppearance.BorderSize = 0;
             this.cadastroAcervo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroAcervo.ForeColor = System.Drawing.Color.Black;
-            this.cadastroAcervo.Location = new System.Drawing.Point(439, 273);
+            this.cadastroAcervo.Location = new System.Drawing.Point(456, 275);
             this.cadastroAcervo.Margin = new System.Windows.Forms.Padding(0);
             this.cadastroAcervo.Name = "cadastroAcervo";
             this.cadastroAcervo.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.cadastroAcervo.Size = new System.Drawing.Size(502, 136);
+            this.cadastroAcervo.Size = new System.Drawing.Size(466, 133);
             this.cadastroAcervo.TabIndex = 0;
             this.cadastroAcervo.TabStop = false;
             this.cadastroAcervo.Text = "Cadastro do Acervo ";
@@ -170,17 +171,17 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(939, -1);
+            this.button1.Location = new System.Drawing.Point(915, -1);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.button1.Size = new System.Drawing.Size(479, 141);
+            this.button1.Size = new System.Drawing.Size(455, 141);
             this.button1.TabIndex = 0;
             this.button1.TabStop = false;
             this.button1.Text = "Reserva de livros";
@@ -190,17 +191,17 @@
             // 
             // consultaEmprest
             // 
-            this.consultaEmprest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.consultaEmprest.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.consultaEmprest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.consultaEmprest.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.consultaEmprest.FlatAppearance.BorderSize = 0;
             this.consultaEmprest.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultaEmprest.ForeColor = System.Drawing.Color.Black;
-            this.consultaEmprest.Location = new System.Drawing.Point(939, 137);
+            this.consultaEmprest.Location = new System.Drawing.Point(915, 137);
             this.consultaEmprest.Margin = new System.Windows.Forms.Padding(0);
             this.consultaEmprest.Name = "consultaEmprest";
             this.consultaEmprest.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.consultaEmprest.Size = new System.Drawing.Size(479, 138);
+            this.consultaEmprest.Size = new System.Drawing.Size(455, 140);
             this.consultaEmprest.TabIndex = 0;
             this.consultaEmprest.TabStop = false;
             this.consultaEmprest.Text = "Consulta de empréstimos";
@@ -210,17 +211,17 @@
             // 
             // consultaAcervo
             // 
-            this.consultaAcervo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.consultaAcervo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.consultaAcervo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.consultaAcervo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.consultaAcervo.FlatAppearance.BorderSize = 0;
             this.consultaAcervo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultaAcervo.ForeColor = System.Drawing.Color.Black;
-            this.consultaAcervo.Location = new System.Drawing.Point(939, 273);
+            this.consultaAcervo.Location = new System.Drawing.Point(915, 275);
             this.consultaAcervo.Margin = new System.Windows.Forms.Padding(0);
             this.consultaAcervo.Name = "consultaAcervo";
             this.consultaAcervo.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.consultaAcervo.Size = new System.Drawing.Size(479, 135);
+            this.consultaAcervo.Size = new System.Drawing.Size(455, 133);
             this.consultaAcervo.TabIndex = 0;
             this.consultaAcervo.TabStop = false;
             this.consultaAcervo.Text = "Consulta Itens do Acervo";
@@ -234,7 +235,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(113, 82);
+            this.label1.Location = new System.Drawing.Point(60, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(345, 17);
             this.label1.TabIndex = 25;
@@ -242,11 +243,12 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(673, 82);
+            this.label2.Location = new System.Drawing.Point(536, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(302, 17);
             this.label2.TabIndex = 26;
@@ -254,11 +256,12 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(1186, 82);
+            this.label3.Location = new System.Drawing.Point(1015, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(251, 17);
             this.label3.TabIndex = 34;
@@ -266,11 +269,12 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(125, 232);
+            this.label4.Location = new System.Drawing.Point(60, 232);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(333, 17);
             this.label4.TabIndex = 35;
@@ -278,11 +282,12 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(621, 234);
+            this.label5.Location = new System.Drawing.Point(483, 232);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(418, 17);
             this.label5.TabIndex = 36;
@@ -290,11 +295,12 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(1206, 232);
+            this.label6.Location = new System.Drawing.Point(1024, 232);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(231, 17);
             this.label6.TabIndex = 37;
@@ -302,23 +308,26 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(115, 362);
+            this.label7.Location = new System.Drawing.Point(50, 362);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(343, 17);
             this.label7.TabIndex = 38;
             this.label7.Text = "Cadastre, Atualize ou Delete os leitores nos registros";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(621, 364);
+            this.label8.Location = new System.Drawing.Point(469, 362);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(432, 17);
             this.label8.TabIndex = 39;
@@ -326,11 +335,12 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(1149, 362);
+            this.label9.Location = new System.Drawing.Point(967, 362);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(328, 17);
             this.label9.TabIndex = 40;
@@ -340,7 +350,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 408);
+            this.ClientSize = new System.Drawing.Size(1370, 408);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -359,9 +369,12 @@
             this.Controls.Add(this.cadastroLeitor);
             this.Controls.Add(this.cadastroEditora);
             this.Controls.Add(this.cadastroAutor);
-            this.MinimumSize = new System.Drawing.Size(239, 220);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1364, 447);
             this.Name = "Menu";
             this.Text = "Menu";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -188,5 +188,10 @@ namespace cons_emprestimo
         {
             
         }
+
+        private void Consulta_emprestimo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

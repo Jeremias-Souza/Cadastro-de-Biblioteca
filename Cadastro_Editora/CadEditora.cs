@@ -48,9 +48,7 @@ namespace Cadastro_Editora
 
             this.formatColumns();
         }
-
-        
-
+       
         private void saveEditora_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(nomeEditora.Text))
@@ -131,14 +129,10 @@ namespace Cadastro_Editora
                 MessageBox.Show("Cadastro apagado com sucesso!");
                 ClearTextBoxes();
 
-
-
             }
             catch (Exception ex) //Mostra mensagem caso haver falha 
-            {
-              
+            {            
                 MessageBox.Show("Falha! \n" + ex.Message);
-
             }
         }
        
@@ -155,12 +149,6 @@ namespace Cadastro_Editora
             this.dataGridView1.Columns["CodEditora"].HeaderText = "Código";
             this.dataGridView1.Columns["Nome"].HeaderText = "Nome";
 
-            
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
             
         }
 
@@ -195,11 +183,6 @@ namespace Cadastro_Editora
                 e.Handled = true;
                 e = null;
             }
-        }
-
-        private void CadEditora_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

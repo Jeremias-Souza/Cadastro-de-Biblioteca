@@ -229,20 +229,7 @@ namespace Biblioteca_Estágio
         {
             toolStripStatusLabel1.Text = "";
         }
-
-
-        private void btnLoadImage_Click(object sender, EventArgs e) //Botao para carregar imagem 
-        {
-            /*var openFile = new OpenFileDialog();
-            openFile.Filter = "Arquivos de imagens jpg e png e jfif |*.jpg; *.png; *.jfif";
-            openFile.Multiselect = false;
-
-            if (openFile.ShowDialog() == DialogResult.OK) caminhoFoto = openFile.FileName;
-
-            if (caminhoFoto != "") pictureBox1.Load(caminhoFoto);*/
-        }
-
-
+      
         private void ClearTextBoxes() //Função para limpar formularios depois de salvar
         {
             Action<Control.ControlCollection> func = null;
@@ -258,13 +245,8 @@ namespace Biblioteca_Estágio
 
 
             };
-
             func(Controls);
-
-
         }
-
-
 
         private void NomeAutor_KeyPress(object sender, KeyPressEventArgs e) //Aceitar apenas letras na caixa de texto do NomeAutor
         {
@@ -272,17 +254,13 @@ namespace Biblioteca_Estágio
             {
                 e.Handled = true;
                 e = null;
-            }
-          
-
+            }       
         }
 
         private void CodAutor_KeyPress(object sender, KeyPressEventArgs e) //Poder apenas numeros na tabela de texto CodAutor 
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true; 
-        }
-
-        
+        }      
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -293,25 +271,6 @@ namespace Biblioteca_Estágio
             NomeAutor.Text = $"{row.Cells["nomeAutor"].Value}";
             InfAutor.Text = $"{row.Cells["descricaoAutor"].Value}";
         }
-
-
-
-        
-
-        
-
-        
-
-        
-
-       
-
-        
-
-        
-
-       
-
         
     }
 }

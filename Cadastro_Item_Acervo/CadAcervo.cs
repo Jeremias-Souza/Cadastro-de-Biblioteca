@@ -102,7 +102,7 @@ namespace Cadastro_Item_Acervo
                 nomeLocal = this.labelCodLocal.Text,
                 nomeAutor = this.labelNomeAutor.Text,
                 codAutor = this.codAutor.Text,
-                nomeEditora = this.btnPesquisaEditora.Text,
+                nomeEditora = this.labelEditora.Text,
                 codEditora = this.codEditora.Text,
                 nomeColecao = this.nomeColecao.Text,
                 tipoItem = this.comboBox1.Text,
@@ -285,15 +285,19 @@ namespace Cadastro_Item_Acervo
             {
                 foreach (Control control in controls)
                     if (control is TextBox)
-                        (control as TextBox).Clear();
-
-
-                    else
-                        func(control.Controls);
-
+                    {
+                        ((TextBox)control).Text = String.Empty;
+                    }
+                    else if (control is ComboBox)
+                    {
+                        ((ComboBox)control).Text= String.Empty;
+                    }
 
             };
-
+            labelEditora.Text = " ";
+            labelCodLocal.Text = " ";
+            labelNomeAutor.Text = " ";
+            comboBox1.Text = " ";
             func(Controls);
         }
 
@@ -404,7 +408,7 @@ namespace Cadastro_Item_Acervo
                         using (DataTable dt = new DataTable())
                         {
                             da.Fill(dt);
-                            this.btnPesquisaEditora.Text = dt.Rows[0].Field<string>("nome");
+                            this.labelEditora.Text = dt.Rows[0].Field<string>("nome");
                         }
                     }
                 }
@@ -460,7 +464,7 @@ namespace Cadastro_Item_Acervo
             codAutor.Text = $"{row.Cells["codAutor"].Value}";
             labelNomeAutor.Text = $"{row.Cells["nomeAutor"].Value}";
             codEditora.Text = $"{row.Cells["codEditora"].Value}";
-            btnPesquisaEditora.Text = $"{row.Cells["nomeEditora"].Value}";
+            labelEditora.Text = $"{row.Cells["nomeEditora"].Value}";
             nomeColecao.Text = $"{row.Cells["nomeColecao"].Value}";
             comboBox1.Text = $"{row.Cells["tipoItem"].Value}";
             nomeAcervo.Text = $"{row.Cells["nome"].Value}";
