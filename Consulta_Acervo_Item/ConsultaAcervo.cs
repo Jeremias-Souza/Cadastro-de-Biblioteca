@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tabelas;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Reserva;
 
 namespace Consulta_Acervo_Item
 {
@@ -36,13 +37,13 @@ namespace Consulta_Acervo_Item
                             da.Fill(dt);
                             dataGridView1.DataSource = dt;
                         }
-                    }
+                    }formatColumns();
                 }             
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
-            }
+            }          
 
         }       
 
@@ -96,11 +97,6 @@ namespace Consulta_Acervo_Item
         }
 
         private void txtLocal_Leave(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnConsultar_Click(object sender, EventArgs e)
         {
            
         }
@@ -198,6 +194,70 @@ namespace Consulta_Acervo_Item
         private void ConsultaAcervo_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void formatColumns()
+        {
+            this.dataGridView1.Columns["codItem"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns["nome"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns["tipoItem"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns["localizacao"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns["codAutor"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dataGridView1.Columns["nomeAutor"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns["nomeColecao"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.dataGridView1.Columns["Secao"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+
+            this.dataGridView1.Columns["codItem"].HeaderText = "Código do Item";
+            this.dataGridView1.Columns["nome"].HeaderText = "Nome do Item";
+            this.dataGridView1.Columns["tipoItem"].HeaderText = "tipo de item";
+            this.dataGridView1.Columns["localizacao"].HeaderText = "Localização";
+            this.dataGridView1.Columns["codAutor"].HeaderText = "Código do autor";
+            this.dataGridView1.Columns["nomeAutor"].HeaderText = "Nome do autor";
+            this.dataGridView1.Columns["nomeColecao"].HeaderText = "Nome da Coleção";
+            this.dataGridView1.Columns["Secao"].HeaderText = "Seção";
+
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+                {
+                    cn.Open();
+
+                    var sqlQuery = $"SELECT encerrar FROM dbo.MvtBibReserva WHERE encerrar = {int.Parse(this.txtItem.Text)}";
+                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            da.Fill(dt);
+                            this.comboStatus.Text = dt.Rows[0].Field<string>("encerrar");
+                        }
+                    }
+                    formatColumns();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha ao consultar o status! \n" + ex.Message);
+            }
         }
     }
 }

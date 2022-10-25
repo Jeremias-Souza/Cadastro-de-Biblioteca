@@ -56,7 +56,7 @@
             this.cadastroAutor.FlatAppearance.BorderSize = 0;
             this.cadastroAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroAutor.ForeColor = System.Drawing.Color.Black;
-            this.cadastroAutor.Location = new System.Drawing.Point(0, -1);
+            this.cadastroAutor.Location = new System.Drawing.Point(-133, -1);
             this.cadastroAutor.Margin = new System.Windows.Forms.Padding(0);
             this.cadastroAutor.Name = "cadastroAutor";
             this.cadastroAutor.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
@@ -76,7 +76,7 @@
             this.cadastroEditora.FlatAppearance.BorderSize = 0;
             this.cadastroEditora.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroEditora.ForeColor = System.Drawing.Color.Black;
-            this.cadastroEditora.Location = new System.Drawing.Point(0, 137);
+            this.cadastroEditora.Location = new System.Drawing.Point(-133, 137);
             this.cadastroEditora.Margin = new System.Windows.Forms.Padding(0);
             this.cadastroEditora.Name = "cadastroEditora";
             this.cadastroEditora.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
@@ -96,7 +96,7 @@
             this.cadastroLeitor.FlatAppearance.BorderSize = 0;
             this.cadastroLeitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroLeitor.ForeColor = System.Drawing.Color.Black;
-            this.cadastroLeitor.Location = new System.Drawing.Point(0, 273);
+            this.cadastroLeitor.Location = new System.Drawing.Point(-133, 273);
             this.cadastroLeitor.Margin = new System.Windows.Forms.Padding(0);
             this.cadastroLeitor.Name = "cadastroLeitor";
             this.cadastroLeitor.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
@@ -116,7 +116,7 @@
             this.cadastroLocal.FlatAppearance.BorderSize = 0;
             this.cadastroLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroLocal.ForeColor = System.Drawing.Color.Black;
-            this.cadastroLocal.Location = new System.Drawing.Point(572, 138);
+            this.cadastroLocal.Location = new System.Drawing.Point(439, 138);
             this.cadastroLocal.Margin = new System.Windows.Forms.Padding(0);
             this.cadastroLocal.Name = "cadastroLocal";
             this.cadastroLocal.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
@@ -136,7 +136,7 @@
             this.cadastroSecao.FlatAppearance.BorderSize = 0;
             this.cadastroSecao.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroSecao.ForeColor = System.Drawing.Color.Black;
-            this.cadastroSecao.Location = new System.Drawing.Point(572, -1);
+            this.cadastroSecao.Location = new System.Drawing.Point(439, -1);
             this.cadastroSecao.Margin = new System.Windows.Forms.Padding(0);
             this.cadastroSecao.Name = "cadastroSecao";
             this.cadastroSecao.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
@@ -156,7 +156,7 @@
             this.cadastroAcervo.FlatAppearance.BorderSize = 0;
             this.cadastroAcervo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroAcervo.ForeColor = System.Drawing.Color.Black;
-            this.cadastroAcervo.Location = new System.Drawing.Point(572, 273);
+            this.cadastroAcervo.Location = new System.Drawing.Point(439, 273);
             this.cadastroAcervo.Margin = new System.Windows.Forms.Padding(0);
             this.cadastroAcervo.Name = "cadastroAcervo";
             this.cadastroAcervo.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
@@ -176,7 +176,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(1072, -1);
+            this.button1.Location = new System.Drawing.Point(939, -1);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
@@ -196,7 +196,7 @@
             this.consultaEmprest.FlatAppearance.BorderSize = 0;
             this.consultaEmprest.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultaEmprest.ForeColor = System.Drawing.Color.Black;
-            this.consultaEmprest.Location = new System.Drawing.Point(1072, 137);
+            this.consultaEmprest.Location = new System.Drawing.Point(939, 137);
             this.consultaEmprest.Margin = new System.Windows.Forms.Padding(0);
             this.consultaEmprest.Name = "consultaEmprest";
             this.consultaEmprest.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
@@ -216,7 +216,7 @@
             this.consultaAcervo.FlatAppearance.BorderSize = 0;
             this.consultaAcervo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultaAcervo.ForeColor = System.Drawing.Color.Black;
-            this.consultaAcervo.Location = new System.Drawing.Point(1072, 273);
+            this.consultaAcervo.Location = new System.Drawing.Point(939, 273);
             this.consultaAcervo.Margin = new System.Windows.Forms.Padding(0);
             this.consultaAcervo.Name = "consultaAcervo";
             this.consultaAcervo.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
@@ -340,7 +340,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1550, 408);
+            this.ClientSize = new System.Drawing.Size(1284, 408);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);

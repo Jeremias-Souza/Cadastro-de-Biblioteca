@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tabelas;
+using cons_emprestimo;
 
 namespace cons_emprestimo
 {
@@ -26,7 +27,7 @@ namespace cons_emprestimo
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codItem, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, dataReserva, prazoReserva, encerrar, numReserva FROM MvtBibReserva WHERE encerrar = 'Reservado'";
+                    string sqlQuery = "SELECT codItem, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar, numReserva FROM MvtBibReserva WHERE encerrar = 'Reservado'";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -75,6 +76,9 @@ namespace cons_emprestimo
             this.dataGridView1.Columns["codLeitor"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            this.dataGridView1.Columns["nomeLeitor"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
             this.dataGridView1.Columns["dataReserva"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
@@ -93,6 +97,7 @@ namespace cons_emprestimo
             this.dataGridView1.Columns["tipoItem"].HeaderText = "Tipo do item";
             this.dataGridView1.Columns["localizacao"].HeaderText = "Localização";
             this.dataGridView1.Columns["codLeitor"].HeaderText = "Código do leitor";
+            this.dataGridView1.Columns["nomeLeitor"].HeaderText = "Nome do leitor";
             this.dataGridView1.Columns["dataReserva"].HeaderText = "Data da reserva";
             this.dataGridView1.Columns["prazoReserva"].HeaderText = "Data para devolução";
             this.dataGridView1.Columns["numReserva"].HeaderText = "Número da reserva";
@@ -109,7 +114,7 @@ namespace cons_emprestimo
             comboTipoItem.Text = $"{row.Cells["tipoItem"].Value}";
             txtLocal.Text = $"{row.Cells["localizacao"].Value}";
             txtNomeLeitor.Text = $"{row.Cells["codLeitor"].Value}";
-            //labelNomeLeitor.Text = $"{row.Cells["nomeLeitor"].Value}";
+            labelLeitor.Text = $"{row.Cells["nomeLeitor"].Value}";
             txtDataReserva.Text = $"{row.Cells["dataReserva"].Value}";
             txtDataFinal.Text = $"{row.Cells["prazoReserva"].Value}";
             comboSituacao.Text = $"{row.Cells["encerrar"].Value}";
@@ -181,43 +186,7 @@ namespace cons_emprestimo
 
         private void txtNumReserva_Leave(object sender, EventArgs e)
         {
-            try
-            {
-                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-                {
-                    cn.Open();
-
-                    var sqlQuery = $"SELECT codItem, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar, numReserva FROM dbo.MvtBibReserva WHERE numReserva = {int.Parse(this.txtNumReserva.Text)}";
-                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
-                    {
-                        using (DataTable dt = new DataTable())
-                        {
-                            da.Fill(dt);
-
-                            if (MessageBox.Show("Deseja preenchelos automaticamente?", "Consulta de Reservas", MessageBoxButtons.YesNo) == DialogResult.No)
-                            {
-                                return;
-                            }
-
-                            this.txtItem.Text = dt.Rows[0].Field<string>("codItem");
-                            this.comboTipoItem.Text = dt.Rows[0].Field<string>("tipoItem");
-                            this.txtLocal.Text = dt.Rows[0].Field<string>("localizacao");
-                            this.txtNomeLeitor.Text = dt.Rows[0].Field<string>("codLeitor");
-                            this.txtDataReserva.Text = dt.Rows[0].Field<string>("dataReserva");
-                            this.txtDataFinal.Text = dt.Rows[0].Field<string>("prazoReserva");
-                            this.comboSituacao.Text = dt.Rows[0].Field<string>("encerrar");
-
-                        }
-                    }
-                }
-
-                MessageBox.Show("Item Carregado com sucesso!");
-            }
-            catch (Exception ex) //Mostra mensagem caso haver falha 
-            {
-                MessageBox.Show("Item inexistente!");
-                Console.WriteLine(ex.Message);
-            }
+            
         }
     }
 }

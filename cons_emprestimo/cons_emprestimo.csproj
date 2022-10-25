@@ -81,6 +81,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cadastro_Leitor\Cadastro_Leitor.csproj">
+      <Project>{45da4912-1e82-4849-829c-707ad0d053a6}</Project>
+      <Name>Cadastro_Leitor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Reserva\Reserva.csproj">
       <Project>{76cc176e-c584-4cbb-8666-f7fd102003f7}</Project>
       <Name>Reserva</Name>
