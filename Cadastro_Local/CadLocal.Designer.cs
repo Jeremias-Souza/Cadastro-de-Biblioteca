@@ -97,7 +97,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(305, 267);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            //this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label2
             // 
@@ -120,7 +120,7 @@
             this.label1.Size = new System.Drawing.Size(124, 17);
             this.label1.TabIndex = 7;
             this.label1.Text = "Descrição do local:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // CadLocal
             // 

@@ -13,7 +13,6 @@ using System.Windows.Forms;
 
 namespace Cadastro_Editora
 {
-    
     public partial class CadEditora : Form
     {
         public int indexRow { get; private set; }
@@ -21,7 +20,11 @@ namespace Cadastro_Editora
         public CadEditora()
         {
             InitializeComponent();
-
+            SelectTable();           
+        }
+        
+        private void SelectTable()
+        {
             try
             {
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
@@ -38,17 +41,15 @@ namespace Cadastro_Editora
                         }
                     }
                 }
-                
-
             }
             catch (Exception ex)
-            {                
+            {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
 
             this.formatColumns();
         }
-       
+
         private void saveEditora_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(nomeEditora.Text))
@@ -66,37 +67,8 @@ namespace Cadastro_Editora
             };
 
             editora.Salvar();
-            
+            SelectTable();
             MessageBox.Show("Cadastro feito com sucesso!");
-            
-            try
-            {
-                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-                {
-                    cn.Open();
-
-                    string sqlQuery = "SELECT CodEditora, Nome FROM MvtBibEditora";
-                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
-                    {
-                        using (DataTable dt = new DataTable())
-                        {
-                            da.Fill(dt);
-                            dataGridView1.DataSource = dt;
-                        }
-                    }
-                    ClearTextBoxes();
-                }
-
-
-            }
-
-
-
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Falha! \n" + ex.Message);
-            }
         }
 
         private void deleteEditora_Click(object sender, EventArgs e)
@@ -112,8 +84,6 @@ namespace Cadastro_Editora
                 {
                     cn.Open();
 
-
-
                     var sqlQuery = "DELETE MvtBibEditora Where codEditora = '" + codeEditora.Text + "'" + "SELECT codEditora, nome FROM MvtBibEditora";  
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
@@ -123,7 +93,6 @@ namespace Cadastro_Editora
                             dataGridView1.DataSource = dt;
                         }
                     }
-
                 }
 
                 MessageBox.Show("Cadastro apagado com sucesso!");
@@ -165,15 +134,9 @@ namespace Cadastro_Editora
                     else
                         func(control.Controls);
 
-
             };
 
             func(Controls);
-        }
-
-        private void nomeEditora_TextChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void nomeEditora_KeyPress(object sender, KeyPressEventArgs e)

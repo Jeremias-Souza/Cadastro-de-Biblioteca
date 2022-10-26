@@ -21,7 +21,11 @@ namespace Reserva
         public CadReserva()
         {
             InitializeComponent();
+            SelectTable();          
+        }
 
+        private void SelectTable()
+        {
             try
             {
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
@@ -40,11 +44,7 @@ namespace Reserva
                     ClearTextBoxes();
                 }
                 this.formatColumns();
-
             }
-
-
-
 
             catch (Exception ex)
             {
@@ -114,9 +114,6 @@ namespace Reserva
                 numReserva = string.IsNullOrEmpty(this.txtNumReserva.Text)
                 ? 0
                 : int.Parse(this.txtNumReserva.Text)
-
-
-
             };
 
             if (intencao.Text == "Devolver")
@@ -134,37 +131,7 @@ namespace Reserva
                 //MessageBox.Show("Cadastro feito com sucesso!");
             }
 
-            try
-            {
-                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-                {
-                    cn.Open();
-
-                    string sqlQuery = "SELECT codItem, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar, numReserva FROM MvtBibReserva";
-                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
-                    {
-                        using (DataTable dt = new DataTable())
-                        {
-                            da.Fill(dt);
-                            dataGridView1.DataSource = dt;
-                        }
-                    }
-                    ClearTextBoxes();
-                    this.formatColumns();
-                }
-
-
-            } 
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Falha! \n" + ex.Message);
-            }
-        }
-       
-        private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
+            SelectTable();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -201,8 +168,6 @@ namespace Reserva
             {
                 cn.Open();
 
-
-
                 var sqlQuery = "DELETE MvtBibReserva Where numReserva = '" + txtNumReserva.Text + "'" + "SELECT codItem, nomeItem, numExemplar, tipoItem, localizacao, codLeitor, nomeLeitor, dataReserva, prazoReserva, encerrar, numReserva FROM MvtBibReserva";
                 using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                 {
@@ -213,7 +178,6 @@ namespace Reserva
                         dataGridView1.DataSource = dt;
                     }
                 }
-
             }    
         }
 
@@ -263,7 +227,6 @@ namespace Reserva
             this.dataGridView1.Columns["prazoReserva"].HeaderText = "Data para devolução";
             this.dataGridView1.Columns["encerrar"].HeaderText = "Situação";
             this.dataGridView1.Columns["numReserva"].HeaderText = "Número da reserva";
-
         }
 
         private void ClearTextBoxes() //Função para limpar formularios depois de salvar
@@ -275,20 +238,12 @@ namespace Reserva
                 foreach (Control control in controls)
                     if (control is TextBox)
                         (control as TextBox).Clear();
-
-
                     else
                         func(control.Controls);
             };
             intencao.Text = " ";
             situacao.Text = " ";
             func(Controls);
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-           
         }
 
         private void dataReserva_KeyPress(object sender, KeyPressEventArgs e)

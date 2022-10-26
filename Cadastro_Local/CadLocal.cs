@@ -18,7 +18,11 @@ namespace Cadastro_Local
         public CadLocal()
         {
             InitializeComponent();
+            SelectTable();
+        }
 
+        private void SelectTable()
+        {
             try
             {
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
@@ -35,15 +39,13 @@ namespace Cadastro_Local
                         }
                     }
                 }
-
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
-
             this.formatColumns();
+            ClearTextBoxes();
         }
 
         private void saveLocal_Click(object sender, EventArgs e)
@@ -54,7 +56,6 @@ namespace Cadastro_Local
                 return;
             }
 
-
             var local = new Local()
             {
                 descricaoLocal = this.descricaoLocal.Text,
@@ -63,39 +64,11 @@ namespace Cadastro_Local
                 : int.Parse(this.codLocal.Text)
             };
 
-            local.Salvar(); 
+            local.Salvar();
+            SelectTable();
             
             MessageBox.Show("Cadastro feito com sucesso!");
-            
 
-            try
-            {
-                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-                {
-                    cn.Open();
-
-                    string sqlQuery = "SELECT CodLocal, descricaoLocal FROM MvtBibLocal";
-                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
-                    {
-                        using (DataTable dt = new DataTable())
-                        {
-                            da.Fill(dt);
-                            dataGridView1.DataSource = dt;
-                        }
-                    }
-                    ClearTextBoxes();
-                }
-
-
-            }
-
-
-
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Falha! \n" + ex.Message);
-            }
         }
 
         private void deleteLocal_Click(object sender, EventArgs e)
@@ -111,8 +84,6 @@ namespace Cadastro_Local
                 {
                     cn.Open();
 
-
-
                     var sqlQuery = "DELETE MvtBibLocal Where codLocal = '" + codLocal.Text + "'" + "SELECT codLocal, descricaoLocal FROM MvtBibLocal";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
@@ -122,20 +93,15 @@ namespace Cadastro_Local
                             dataGridView1.DataSource = dt;
                         }
                     }
-
                 }
 
                 MessageBox.Show("Cadastro apagado com sucesso!");
                 ClearTextBoxes();
 
-
-
             }
             catch (Exception ex) //Mostra mensagem caso haver falha 
             {
-
                 MessageBox.Show("Falha! \n" + ex.Message);
-
             }
         }
 
@@ -152,11 +118,6 @@ namespace Cadastro_Local
             this.dataGridView1.Columns["descricaoLocal"].HeaderText = "Descrição";
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         private void ClearTextBoxes() //Função para limpar formularios depois de salvar
         {
             Action<Control.ControlCollection> func = null;
@@ -169,7 +130,6 @@ namespace Cadastro_Local
 
                     else
                         func(control.Controls);
-
 
             };
 
@@ -185,9 +145,5 @@ namespace Cadastro_Local
             descricaoLocal.Text = $"{row.Cells["descricaoLocal"].Value}";
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

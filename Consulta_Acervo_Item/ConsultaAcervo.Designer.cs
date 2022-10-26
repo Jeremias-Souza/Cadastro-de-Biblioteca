@@ -150,6 +150,7 @@
             this.txtItem.Size = new System.Drawing.Size(47, 20);
             this.txtItem.TabIndex = 1;
             this.txtItem.TextChanged += new System.EventHandler(this.txtItem_TextChanged);
+            this.txtItem.Leave += new System.EventHandler(this.txtItem_Leave_1);
             // 
             // label7
             // 
@@ -260,7 +261,6 @@
             this.txtLocal.Name = "txtLocal";
             this.txtLocal.Size = new System.Drawing.Size(45, 20);
             this.txtLocal.TabIndex = 7;
-            this.txtLocal.Leave += new System.EventHandler(this.txtLocal_Leave);
             // 
             // txtNomeItem
             // 
@@ -332,7 +332,6 @@
             this.MinimumSize = new System.Drawing.Size(1364, 447);
             this.Name = "ConsultaAcervo";
             this.Text = "Consulta do Acervo";
-            this.Load += new System.EventHandler(this.ConsultaAcervo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

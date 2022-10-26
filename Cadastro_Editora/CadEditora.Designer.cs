@@ -83,7 +83,7 @@
             this.nomeEditora.Name = "nomeEditora";
             this.nomeEditora.Size = new System.Drawing.Size(120, 20);
             this.nomeEditora.TabIndex = 2;
-            this.nomeEditora.TextChanged += new System.EventHandler(this.nomeEditora_TextChanged);
+            //this.nomeEditora.TextChanged += new System.EventHandler(this.nomeEditora_TextChanged);
             this.nomeEditora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeEditora_KeyPress);
             // 
             // dataGridView1

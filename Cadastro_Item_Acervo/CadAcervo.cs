@@ -26,11 +26,16 @@ namespace Cadastro_Item_Acervo
         public CadAcervo()
         {
             InitializeComponent();
+            SelectTable();            
+        }
 
+        private void SelectTable()
+        {
             try
             {
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
+
                     cn.Open();
 
                     string sqlQuery = "SELECT codItem, codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, nomeColecao, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, descricaoSecao, idioma FROM MvtBibItemAcervo";
@@ -43,19 +48,13 @@ namespace Cadastro_Item_Acervo
                         }
                     }
                 }
-
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
-
             this.formatColumns();
-
         }
-
-
 
         private void saveAcervo_Click(object sender, EventArgs e)
         {
@@ -91,9 +90,6 @@ namespace Cadastro_Item_Acervo
                 return;
             }
 
-
-
-
             var acervo = new Acervo()
             {
 
@@ -122,35 +118,7 @@ namespace Cadastro_Item_Acervo
             acervo.Salvar();
             MessageBox.Show("Cadastro feito com sucesso!");
 
-
-            try
-            {
-                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-                {
-                    cn.Open();
-
-                    string sqlQuery = "SELECT codItem, codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, nomeColecao, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, descricaoSecao, idioma FROM MvtBibItemAcervo";
-                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
-                    {
-                        using (DataTable dt = new DataTable())
-                        {
-                            da.Fill(dt);
-                            dataGridView1.DataSource = dt;
-                        }
-
-                    }
-                    ClearTextBoxes();
-                }
-
-
-
-
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Falha! \n" + ex.Message);
-            }
+            SelectTable();
         }
 
         private void deleteAcervo_Click(object sender, EventArgs e)
@@ -166,8 +134,6 @@ namespace Cadastro_Item_Acervo
                 {
                     cn.Open();
 
-
-
                     var sqlQuery = "DELETE MvtBibItemAcervo Where codItem = '" + codItem.Text + "'" + "SELECT codItem, codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, nomeColecao, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, descricaoSecao, idioma FROM MvtBibItemAcervo";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
@@ -177,20 +143,13 @@ namespace Cadastro_Item_Acervo
                             dataGridView1.DataSource = dt;
                         }
                     }
-
                 }
-
                 MessageBox.Show("Cadastro apagado com sucesso!");
                 ClearTextBoxes();
-
-
-
             }
             catch (Exception ex) //Mostra mensagem caso haver falha 
             {
-
                 MessageBox.Show("Falha! \n" + ex.Message);
-
             }
         }
 
@@ -247,9 +206,7 @@ namespace Cadastro_Item_Acervo
 
             this.dataGridView1.Columns["idioma"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-             
-
+            
             this.dataGridView1.Columns["codItem"].HeaderText = "Código Acervo";
             this.dataGridView1.Columns["codLocal"].HeaderText = "Código Local";
             this.dataGridView1.Columns["numExemplar"].HeaderText = "Numero do exemplar";
@@ -267,11 +224,6 @@ namespace Cadastro_Item_Acervo
             this.dataGridView1.Columns["secao"].HeaderText = "Seção";
             this.dataGridView1.Columns["descricaoSecao"].HeaderText = "Descrição da seção";
             this.dataGridView1.Columns["idioma"].HeaderText = "Idioma";
-
-                      
-
-
-
         }
 
         private void ClearTextBoxes() //Função para limpar formularios depois de salvar
@@ -298,72 +250,7 @@ namespace Cadastro_Item_Acervo
             labelSecao.Text = " ";
             func(Controls);
         }
-
-        
-
-        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
-        }
-
-        
-
-        private void nomeAcervo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
-            {
-                e.Handled = true;
-                e = null;
-            }
-        }
-
-        private void nomeLocal_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
-            {
-                e.Handled = true;
-                e = null;
-            }
-        }
-
-        private void nomeAutor_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
-            {
-                e.Handled = true;
-                e = null;
-            }
-        }
-
-        private void nomeEditora_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
-            {
-                e.Handled = true;
-                e = null;
-            }
-        }
-
-        private void nomeColecao_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
-            {
-                e.Handled = true;
-                e = null;
-            }
-        }
-
-        private void idioma_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
-            {
-                e.Handled = true;
-                e = null;
-            }
-        }
-
-        
-
+       
         private void codAutor_Leave(object sender, EventArgs e)
         {
             try
@@ -383,7 +270,6 @@ namespace Cadastro_Item_Acervo
                     }
                 }
 
-               
             }
             catch (Exception ex) //Mostra mensagem caso haver falha 
             {
@@ -410,7 +296,6 @@ namespace Cadastro_Item_Acervo
                         }
                     }
                 }
-
                 
             }
             catch (Exception ex) //Mostra mensagem caso haver falha 
@@ -498,21 +383,6 @@ namespace Cadastro_Item_Acervo
             labelSecao.Text = $"{row.Cells["descricaoSecao"].Value}";
         }
 
-        private void CadAcervo_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nomeColecao_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelCodLocal_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnPesquisaLocal_Click(object sender, EventArgs e)
         {
             Local tela = new Local();
@@ -531,27 +401,42 @@ namespace Cadastro_Item_Acervo
             tela.Show();
         }
 
-        private void codLocal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnPesquisaSecao_Click(object sender, EventArgs e)
         {
             Secao tela = new Secao();
             tela.Show();
         }
 
-        private void secao_TextChanged(object sender, EventArgs e)
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            e.Handled = true;
         }
 
-        
+        private void nomeAcervo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
+            {
+                e.Handled = true;
+                e = null;
+            }
+        }
+
+        private void nomeColecao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
+            {
+                e.Handled = true;
+                e = null;
+            }
+        }
+
+        private void idioma_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
+            {
+                e.Handled = true;
+                e = null;
+            }
+        }
     }
 }

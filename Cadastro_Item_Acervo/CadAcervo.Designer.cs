@@ -152,7 +152,7 @@
             this.label7.Size = new System.Drawing.Size(117, 17);
             this.label7.TabIndex = 12;
             this.label7.Text = "Nome da Coleção";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            //this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -247,7 +247,7 @@
             this.codLocal.Name = "codLocal";
             this.codLocal.Size = new System.Drawing.Size(45, 20);
             this.codLocal.TabIndex = 3;
-            this.codLocal.TextChanged += new System.EventHandler(this.codLocal_TextChanged);
+            //this.codLocal.TextChanged += new System.EventHandler(this.codLocal_TextChanged);
             this.codLocal.Leave += new System.EventHandler(this.codLocal_Leave);
             // 
             // nomeAcervo
@@ -266,7 +266,7 @@
             this.nomeColecao.Name = "nomeColecao";
             this.nomeColecao.Size = new System.Drawing.Size(188, 20);
             this.nomeColecao.TabIndex = 9;
-            this.nomeColecao.TextChanged += new System.EventHandler(this.nomeColecao_TextChanged);
+            //this.nomeColecao.TextChanged += new System.EventHandler(this.nomeColecao_TextChanged);
             this.nomeColecao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeColecao_KeyPress);
             // 
             // numeroExemplar
@@ -309,7 +309,7 @@
             this.txtSecao.Name = "txtSecao";
             this.txtSecao.Size = new System.Drawing.Size(45, 20);
             this.txtSecao.TabIndex = 15;
-            this.txtSecao.TextChanged += new System.EventHandler(this.secao_TextChanged);
+            //this.txtSecao.TextChanged += new System.EventHandler(this.secao_TextChanged);
             this.txtSecao.Leave += new System.EventHandler(this.secao_Leave);
             // 
             // localizacao
@@ -430,7 +430,7 @@
             this.labelCodLocal.Name = "labelCodLocal";
             this.labelCodLocal.Size = new System.Drawing.Size(0, 13);
             this.labelCodLocal.TabIndex = 38;
-            this.labelCodLocal.Click += new System.EventHandler(this.labelCodLocal_Click);
+            //this.labelCodLocal.Click += new System.EventHandler(this.labelCodLocal_Click);
             // 
             // btnPesquisaEditor
             // 
@@ -511,7 +511,7 @@
             this.MinimumSize = new System.Drawing.Size(1364, 447);
             this.Name = "CadAcervo";
             this.Text = "Cadastro do Acervo";
-            this.Load += new System.EventHandler(this.CadAcervo_Load);
+            //this.Load += new System.EventHandler(this.CadAcervo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

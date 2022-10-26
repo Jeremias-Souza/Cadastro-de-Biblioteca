@@ -19,7 +19,11 @@ namespace Cadastro_Leitor
         public CadLeitor()
         {
             InitializeComponent();
+            SelectTable();
+        }
 
+        private void SelectTable()
+        {
             try
             {
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
@@ -36,8 +40,6 @@ namespace Cadastro_Leitor
                         }
                     }
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -109,41 +111,12 @@ namespace Cadastro_Leitor
                 codLeitor = string.IsNullOrEmpty(this.codLeitor.Text)
                 ? 0
                 : int.Parse(this.codLeitor.Text)
-
-        };
-
+            };
             leitor.Salvar();
-
+            SelectTable();
 
             MessageBox.Show("Cadastro feito com sucesso!");
-
-            try
-            {
-                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-                {
-                    cn.Open();
-
-                    string sqlQuery = "SELECT codLeitor, nome, sexo, dataNascimento, cpf, rg, email, telefone, telefoneCelular, enderecoNome, enderecoBairro, enderecoCidade, enderecoCEP, enderecoUF, enderecoNumero FROM MvtBibLeitor";
-                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
-                    {
-                        using (DataTable dt = new DataTable())
-                        {
-                            da.Fill(dt);
-                            dataGridView1.DataSource = dt;
-                        }
-                    }
-                    ClearTextBoxes();
-                    
-                }
-
-
-            }
-
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Falha! \n" + ex.Message);
-            }
+    
         }
 
         private void deleteLeitor_Click(object sender, EventArgs e)
@@ -159,8 +132,6 @@ namespace Cadastro_Leitor
                 {
                     cn.Open();
 
-
-
                     var sqlQuery = "DELETE MvtBibLeitor Where codLeitor = '" + codLeitor.Text + "'" + "SELECT codLeitor, nome, sexo, dataNascimento, cpf, rg, email, telefone, telefoneCelular, enderecoNome, enderecoBairro, enderecoCidade, enderecoCEP, enderecoUF, enderecoNumero FROM MvtBibLeitor";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
@@ -170,22 +141,15 @@ namespace Cadastro_Leitor
                             dataGridView1.DataSource = dt;
                         }
                     }
-
                 }
 
                 MessageBox.Show("Cadastro apagado com sucesso!");
                 ClearTextBoxes();
 
-                
-
-
-
             }
             catch (Exception ex) //Mostra mensagem caso haver falha 
             {
-
                 MessageBox.Show("Falha! \n" + ex.Message);
-
             }
         }
 
@@ -251,7 +215,6 @@ namespace Cadastro_Leitor
             this.dataGridView1.Columns["enderecoCEP"].HeaderText = "CEP";
             this.dataGridView1.Columns["enderecoUF"].HeaderText = "UF";
             this.dataGridView1.Columns["enderecoNumero"].HeaderText = "Número";            
-
         }
 
         private void ClearTextBoxes() //Função para limpar formularios depois de salvar
@@ -271,8 +234,6 @@ namespace Cadastro_Leitor
             func(Controls);
         }
 
-        
-       
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indexRow = e.RowIndex;
@@ -293,13 +254,6 @@ namespace Cadastro_Leitor
             enderecoCEP.Text = $"{row.Cells["enderecoCEP"].Value}";
             enderecoUF.Text = $"{row.Cells["enderecoUF"].Value}";
             enderecoNumero.Text = $"{row.Cells["enderecoNumero"].Value}";
-        }
-
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {                      
-            
-
         }
 
         private void sexo_KeyPress(object sender, KeyPressEventArgs e)
@@ -371,7 +325,6 @@ namespace Cadastro_Leitor
                     i.Text += "-";
 
                 i.SelectionStart = i.Text.Length + 1;
-
             }
 
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true;
@@ -392,7 +345,6 @@ namespace Cadastro_Leitor
                     i.Text += "-";
 
                 i.SelectionStart = i.Text.Length + 1;
-
             }
 
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true;
@@ -436,7 +388,6 @@ namespace Cadastro_Leitor
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true;
         }
       
-
         private void enderecoUF_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar))
@@ -454,22 +405,7 @@ namespace Cadastro_Leitor
             }
             base.OnKeyPress(e);
 
-            /*if (enderecoUF.Text.Length == 2 )
-            {
-                e.Handled = true;
-            }*/
-
-            
         }
 
-        private void CadLeitor_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

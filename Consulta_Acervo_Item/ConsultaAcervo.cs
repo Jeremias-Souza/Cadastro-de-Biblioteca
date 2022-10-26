@@ -22,8 +22,12 @@ namespace Consulta_Acervo_Item
         public ConsultaAcervo()
         {
             InitializeComponent();
-
-           try
+            SelectTable();         
+        }    
+        
+        private void SelectTable()
+        {
+            try
             {
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
@@ -37,85 +41,15 @@ namespace Consulta_Acervo_Item
                             da.Fill(dt);
                             dataGridView1.DataSource = dt;
                         }
-                    }formatColumns();
-                    
-                }             
+                    }
+                    formatColumns();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
-            }         
-
-        }       
-
-        private void txtItem_Leave(object sender, EventArgs e)
-        {
-            if (txtItem.Text != ""){
-                try
-                {
-                    using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-                    {
-                        cn.Open();
-
-                        var sqlQuery = $"SELECT nome, numExemplar, tipoItem, localizacao FROM dbo.MvtBibItemAcervo WHERE codItem = {int.Parse(this.txtItem.Text)}";
-                        using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
-                        {
-                            using (DataTable dt = new DataTable())
-                            {
-                                da.Fill(dt);
-
-                                if (MessageBox.Show("Foram achados registros que correspondem o Código do Item.\r\n\r\nDeseja preenchelos automaticamente?", "Consulta Itens do Acervo", MessageBoxButtons.YesNo) == DialogResult.No)
-                                {
-                                    return;
-                                }
-
-                                this.txtNomeItem.Text = dt.Rows[0].Field<string>("nome");
-                                //this.numExemplar.Text = dt.Rows[0].Field<int>("numExemplar").ToString();
-                                this.comboTipoItem.Text = dt.Rows[0].Field<string>("tipoItem");
-                                this.txtLocal.Text = dt.Rows[0].Field<string>("localizacao");
-                            }
-                        }
-                    }
-
-                    MessageBox.Show("Item Carregado com sucesso!");
-                }
-
-                catch (Exception ex) //Mostra mensagem caso haver falha 
-                {
-                    MessageBox.Show("Item inexistente!");
-                    Console.WriteLine(ex.Message);
-                }
-            }       
+            }
         }
-
-        private void btnItem_Click(object sender, EventArgs e)
-        {
-            Item tela = new Item();
-            tela.Show();
-        }
-
-        private void txtLocal_Leave(object sender, EventArgs e)
-        {
-           
-        }
-      
-        private void btnAutor_Click(object sender, EventArgs e)
-        {
-            Autor tela = new Autor();
-            tela.Show();
-        }
-
-        private void btnColecao_Click(object sender, EventArgs e)
-        {
-            Coleção tela = new Coleção();
-            tela.Show();
-        }
-
-        private void btnSecao_Click(object sender, EventArgs e)
-        {
-            Secao tela = new Secao();
-            tela.Show();
-        }       
 
         private void txtAutor_Leave(object sender, EventArgs e)
         {
@@ -186,7 +120,6 @@ namespace Consulta_Acervo_Item
             labelAutor.Text = $"{row.Cells["nomeAutor"].Value}";
             txtColecao.Text = $"{row.Cells["nomeColecao"].Value}";
             txtSecao.Text = $"{row.Cells["Secao"].Value}";
-
         }
 
         private void formatColumns()
@@ -215,7 +148,6 @@ namespace Consulta_Acervo_Item
             this.dataGridView1.Columns["Secao"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-
             this.dataGridView1.Columns["codItem"].HeaderText = "Código do Item";
             this.dataGridView1.Columns["nome"].HeaderText = "Nome do Item";
             this.dataGridView1.Columns["tipoItem"].HeaderText = "tipo de item";
@@ -226,7 +158,6 @@ namespace Consulta_Acervo_Item
             this.dataGridView1.Columns["Secao"].HeaderText = "Seção";
 
         }
-
 
         private void txtItem_TextChanged(object sender, EventArgs e)
         {
@@ -274,9 +205,7 @@ namespace Consulta_Acervo_Item
                             this.labelSecao.Text = dt.Rows[0].Field<string>("descricaoSecao");
                         }
                     }
-                }
-
-               
+                }       
             }
             catch (Exception ex)
             {
@@ -285,9 +214,72 @@ namespace Consulta_Acervo_Item
             }
         }
 
-        private void ConsultaAcervo_Load(object sender, EventArgs e)
+        private void txtItem_Leave_1(object sender, EventArgs e)
         {
+            if (txtItem.Text != "")
+            {
+                try
+                {
+                    using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+                    {
+                        cn.Open();
 
+                        var sqlQuery = $"SELECT nome, codAutor, nomeAutor, numExemplar, tipoItem, localizacao, secao, nomeColecao FROM dbo.MvtBibItemAcervo WHERE codItem = {int.Parse(this.txtItem.Text)}";
+                        using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
+                        {
+                            using (DataTable dt = new DataTable())
+                            {
+                                da.Fill(dt);
+
+                                if (MessageBox.Show("Foram achados registros que correspondem o Código do Item.\r\n\r\nDeseja preenchelos automaticamente?", "Consulta Itens do Acervo", MessageBoxButtons.YesNo) == DialogResult.No)
+                                {
+                                    return;
+                                }
+
+                                this.txtNomeItem.Text = dt.Rows[0].Field<string>("nome");
+                                this.txtAutor.Text = dt.Rows[0].Field<int>("codAutor").ToString();
+                                this.labelAutor.Text = dt.Rows[0].Field<string>("nomeAutor");
+                                this.comboTipoItem.Text = dt.Rows[0].Field<string>("tipoItem");
+                                this.txtLocal.Text = dt.Rows[0].Field<string>("localizacao");
+                                this.txtSecao.Text = dt.Rows[0].Field<string>("secao");
+                                this.txtColecao.Text = dt.Rows[0].Field<string>("nomeColecao");
+                            }
+                        }
+                    }
+
+                    MessageBox.Show("Item Carregado com sucesso!");
+                }
+
+                catch (Exception ex) //Mostra mensagem caso haver falha 
+                {
+                    MessageBox.Show("Item inexistente!");
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
+
+        private void btnItem_Click(object sender, EventArgs e)
+        {
+            Item tela = new Item();
+            tela.Show();
+        }
+
+        private void btnAutor_Click(object sender, EventArgs e)
+        {
+            Autor tela = new Autor();
+            tela.Show();
+        }
+
+        private void btnColecao_Click(object sender, EventArgs e)
+        {
+            Coleção tela = new Coleção();
+            tela.Show();
+        }
+
+        private void btnSecao_Click(object sender, EventArgs e)
+        {
+            Secao tela = new Secao();
+            tela.Show();
         }
     }
 }

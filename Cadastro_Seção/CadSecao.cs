@@ -18,7 +18,11 @@ namespace Cadastro_Seção
         public CadSecao()
         {
             InitializeComponent();
+            SelectTable();           
+        }
 
+        private void SelectTable()
+        {
             try
             {
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
@@ -35,15 +39,13 @@ namespace Cadastro_Seção
                         }
                     }
                 }
-
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
-
             this.formatColumns();
+            ClearTextBoxes();
         }
 
         private void saveSecao_Click(object sender, EventArgs e)
@@ -61,39 +63,11 @@ namespace Cadastro_Seção
                 ? 0
                 : int.Parse(this.codSecao.Text)
             };
-
             secao.Salvar();
+            SelectTable();
                     
             MessageBox.Show("Cadastro feito com sucesso!");
-
-            try
-            {
-                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-                {
-                    cn.Open();
-
-                    string sqlQuery = "SELECT codSecao, descricaoSecao FROM MvtBibSecao";
-                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
-                    {
-                        using (DataTable dt = new DataTable())
-                        {
-                            da.Fill(dt);
-                            dataGridView1.DataSource = dt;
-                        }
-                    }
-                    ClearTextBoxes();
-                }
-
-
-            }
-
-
-
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Falha! \n" + ex.Message);
-            }
+           
         }
 
         private void deleteSecao_Click(object sender, EventArgs e)
@@ -109,8 +83,6 @@ namespace Cadastro_Seção
                 {
                     cn.Open();
 
-
-
                     var sqlQuery = "DELETE MvtBibSecao Where codSecao = '" + codSecao.Text + "'" + "SELECT codSecao, descricaoSecao FROM MvtBibSecao";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
@@ -120,13 +92,10 @@ namespace Cadastro_Seção
                             dataGridView1.DataSource = dt;
                         }
                     }
-
                 }
 
                 MessageBox.Show("Cadastro apagado com sucesso!");
                 ClearTextBoxes();
-
-
 
             }
             catch (Exception ex) //Mostra mensagem caso haver falha 
@@ -139,15 +108,11 @@ namespace Cadastro_Seção
 
         private void formatColumns()
         {
-            //Cód secao
             this.dataGridView1.Columns["codSecao"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //Descricao da secao
             this.dataGridView1.Columns["descricaoSecao"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
 
             this.dataGridView1.Columns["codSecao"].HeaderText = "Código";
             this.dataGridView1.Columns["descricaoSecao"].HeaderText = "Descrição";
-
         }
 
         private void ClearTextBoxes() //Função para limpar formularios depois de salvar
@@ -162,10 +127,7 @@ namespace Cadastro_Seção
 
                     else
                         func(control.Controls);
-
-
             };
-
             func(Controls);
         }
 

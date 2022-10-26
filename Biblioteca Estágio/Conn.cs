@@ -12,12 +12,12 @@ namespace Biblioteca_Estágio
     internal class Conn
     {
         private static string server = @"DESKTOP-LMGKQ6A\TREINAMENTO"; //Local MovTech      
-        private static string dataBase = "CADASTRO_AUTOR";
+        private static string dataBase = "CADASTROS_BIBLIOTECA";
         private static string user = "Jeremias Souza"; 
         private static string password = "MOVTECH2022";
 
         /*private static string server = @"DESKTOP-JTN552H\SQLEXPRESS";
-        private static string dataBase = "CADASTRO_AUTOR";
+        private static string dataBase = "CADASTROS_BIBLIOTECAS";
         private static string user = "sa";
         private static string password = "05092002";*/
 

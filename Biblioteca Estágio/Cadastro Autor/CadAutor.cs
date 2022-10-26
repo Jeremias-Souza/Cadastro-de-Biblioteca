@@ -38,16 +38,20 @@ using NetTopologySuite.Algorithm;
 
 namespace Biblioteca_Estágio
 {
-    
+
     public partial class CadastroAutor : Form
     {
-        
+
         int indexRow;
 
         public CadastroAutor()
         {
             InitializeComponent();
+            SelectTable();
+        }
 
+        private void SelectTable()
+        {
             try
             {
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
@@ -64,21 +68,13 @@ namespace Biblioteca_Estágio
                         }
                     }
                 }
-                toolStripStatusLabel1.Text = "Finalizado com sucesso";
-                statusStrip1.Refresh();
-
             }
             catch (Exception ex)
             {
-                toolStripStatusLabel1.Text = "Falha!";
-                statusStrip1.Refresh();
                 MessageBox.Show("Falha! \n" + ex.Message);
-
             }
             this.formatColumns();
-
         }
-       
        
         private void AddAutor_Click(object sender, EventArgs e) //Botao para adicionar o autor 
         {
@@ -87,7 +83,6 @@ namespace Biblioteca_Estágio
                 MessageBox.Show("Nome do autor é obrigatorio. ");
                 return;
             }
-
 
             var autor = new Autor()
             {
@@ -99,45 +94,14 @@ namespace Biblioteca_Estágio
               
             };           
             autor.Salvar();
-                                 
-                MessageBox.Show("Cadastro feito com sucesso!");
-            
+            SelectTable();
 
-            try
-            {
-                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-                {
-                    cn.Open();
-
-                    string sqlQuery = "SELECT codAutor, nomeAutor, descricaoAutor FROM MvtBibAutor";
-                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
-                    {
-                        using (DataTable dt = new DataTable())
-                        {
-                            da.Fill(dt);
-                            dataGridView1.DataSource = dt;
-                        }
-                    }
-                    ClearTextBoxes();
-                    
-                }
-
-
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Falha! \n" + ex.Message);
-            }  
-
+            MessageBox.Show("Cadastro feito com sucesso!");
+             
         }
-
 
         private void btnDelete_Click(object sender, EventArgs e) //Botão para deletar autor
         {
-            toolStripStatusLabel1.Text = "Conectando, aguarde";
-            statusStrip1.Refresh();
-
             if (MessageBox.Show("Deseja realmente DELETAR o autor? ", "Cadastro_autor", MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 return;
@@ -149,8 +113,6 @@ namespace Biblioteca_Estágio
                 {
                     cn.Open();
 
-
-
                     var sqlQuery = "DELETE MvtBibAutor Where codAutor = '" + CodAutor.Text + "'" + "SELECT codAutor, nomeAutor, descricaoAutor FROM MvtBibAutor";  //Deleta o autor pelo código digitado na caixa de código
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
@@ -160,52 +122,14 @@ namespace Biblioteca_Estágio
                             dataGridView1.DataSource = dt;
                         }
                     }
-                    //ClearTextBoxes();
-
                 }
-
-
                 ClearTextBoxes();
-                
-                toolStripStatusLabel1.Text = "Finalizado com sucesso";
-                statusStrip1.Refresh();
-
+                SelectTable();
             }
             catch (Exception ex) //Mostra mensagem caso haver falha 
             {
-                toolStripStatusLabel1.Text = "Falha!";
-                statusStrip1.Refresh();
                 MessageBox.Show("Falha! \n" + ex.Message);
-
-            }
-
-            try
-            {
-                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-                {
-                    cn.Open();
-
-                    string sqlQuery = "SELECT codAutor, nomeAutor, descricaoAutor FROM MvtBibAutor";
-                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
-                    {
-                        using (DataTable dt = new DataTable())
-                        {
-                            da.Fill(dt);
-                            dataGridView1.DataSource = dt;
-                        }
-                    }
-                }
-                toolStripStatusLabel1.Text = "Finalizado com sucesso";
-                statusStrip1.Refresh();
-
-            }
-            catch (Exception ex)
-            {
-                toolStripStatusLabel1.Text = "Falha!";
-                statusStrip1.Refresh();
-                MessageBox.Show("Falha! \n" + ex.Message);
-
-            }        
+            }                  
         }
 
         private void formatColumns()
@@ -225,11 +149,6 @@ namespace Biblioteca_Estágio
             this.dataGridView1.Columns["descricaoAutor"].HeaderText = "Descrição";            
         }
 
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)//Caixa aonde ocorre as atualizações de processos
-        {
-            toolStripStatusLabel1.Text = "";
-        }
-      
         private void ClearTextBoxes() //Função para limpar formularios depois de salvar
         {
             Action<Control.ControlCollection> func = null;
@@ -242,7 +161,6 @@ namespace Biblioteca_Estágio
 
                     else
                         func(control.Controls);
-
 
             };
             func(Controls);
@@ -270,7 +188,6 @@ namespace Biblioteca_Estágio
             CodAutor.Text = $"{row.Cells["codAutor"].Value}";
             NomeAutor.Text = $"{row.Cells["nomeAutor"].Value}";
             InfAutor.Text = $"{row.Cells["descricaoAutor"].Value}";
-        }
-        
+        } 
     }
 }

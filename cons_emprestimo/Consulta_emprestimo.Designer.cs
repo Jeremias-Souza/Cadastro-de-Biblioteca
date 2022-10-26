@@ -196,7 +196,7 @@
             this.txtNomeLeitor.Name = "txtNomeLeitor";
             this.txtNomeLeitor.Size = new System.Drawing.Size(47, 20);
             this.txtNomeLeitor.TabIndex = 158;
-            this.txtNomeLeitor.TextChanged += new System.EventHandler(this.txtNomeItem_TextChanged);
+            //this.txtNomeLeitor.TextChanged += new System.EventHandler(this.txtNomeItem_TextChanged);
             this.txtNomeLeitor.Leave += new System.EventHandler(this.txtNomeLeitor_Leave);
             // 
             // txtDataFinal
@@ -248,9 +248,9 @@
             this.txtNumReserva.Name = "txtNumReserva";
             this.txtNumReserva.Size = new System.Drawing.Size(47, 20);
             this.txtNumReserva.TabIndex = 185;
-            this.txtNumReserva.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumReserva_KeyPress);
-            this.txtNumReserva.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNumReserva_KeyUp);
-            this.txtNumReserva.Leave += new System.EventHandler(this.txtNumReserva_Leave);
+            //this.txtNumReserva.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumReserva_KeyPress);
+            //this.txtNumReserva.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNumReserva_KeyUp);
+            //this.txtNumReserva.Leave += new System.EventHandler(this.txtNumReserva_Leave);
             // 
             // btnLocal
             // 
@@ -316,7 +316,7 @@
             this.MinimumSize = new System.Drawing.Size(1364, 447);
             this.Name = "Consulta_emprestimo";
             this.Text = "Consulta Emprestimo";
-            this.Load += new System.EventHandler(this.Consulta_emprestimo_Load);
+            //this.Load += new System.EventHandler(this.Consulta_emprestimo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tabelas;
 using cons_emprestimo;
+using System.Security.Cryptography.X509Certificates;
 
 namespace cons_emprestimo
 {
@@ -20,7 +21,11 @@ namespace cons_emprestimo
         public Consulta_emprestimo()
         {
             InitializeComponent();
+            SelectTable();          
+        }
 
+        private void SelectTable()
+        {
             try
             {
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
@@ -36,24 +41,13 @@ namespace cons_emprestimo
                             dataGridView1.DataSource = dt;
                         }
                     }
-                    //ClearTextBoxes();
                 }
                 this.formatColumns();
-
             }
-
-
-
-
             catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
-        }
-        
-        private void txtNomeItem_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void formatColumns()
@@ -101,7 +95,7 @@ namespace cons_emprestimo
             this.dataGridView1.Columns["dataReserva"].HeaderText = "Data da reserva";
             this.dataGridView1.Columns["prazoReserva"].HeaderText = "Data para devolução";
             this.dataGridView1.Columns["numReserva"].HeaderText = "Número da reserva";
-            this.dataGridView1.Columns["encerrar"].HeaderText = "Reservado";
+            this.dataGridView1.Columns["encerrar"].HeaderText = "Situação";
 
         }
 
@@ -117,33 +111,8 @@ namespace cons_emprestimo
             labelLeitor.Text = $"{row.Cells["nomeLeitor"].Value}";
             txtDataReserva.Text = $"{row.Cells["dataReserva"].Value}";
             txtDataFinal.Text = $"{row.Cells["prazoReserva"].Value}";
-            comboSituacao.Text = $"{row.Cells["encerrar"].Value}";
             txtNumReserva.Text = $"{row.Cells["numReserva"].Value}";
 
-        }
-
-        private void btnItem_Click(object sender, EventArgs e)
-        {
-            Item tela = new Item();
-            tela.Show();
-        }
-
-        private void btnLocal_Click(object sender, EventArgs e)
-        {
-            Local tela = new Local();
-            tela.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Leitor tela = new Leitor();
-            tela.Show();
-        }
-
-        private void btnSecao_Click(object sender, EventArgs e)
-        {
-            Secao tela = new Secao();
-            tela.Show();
         }
 
         private void txtNomeLeitor_Leave(object sender, EventArgs e)
@@ -174,24 +143,22 @@ namespace cons_emprestimo
             }
         }
 
-        private void txtNumReserva_KeyUp(object sender, KeyEventArgs e)
+        private void btnItem_Click(object sender, EventArgs e)
         {
-
+            Item tela = new Item();
+            tela.Show();
         }
 
-        private void txtNumReserva_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnLocal_Click(object sender, EventArgs e)
         {
-            
+            Local tela = new Local();
+            tela.Show();
         }
 
-        private void txtNumReserva_Leave(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void Consulta_emprestimo_Load(object sender, EventArgs e)
-        {
-
+            Leitor tela = new Leitor();
+            tela.Show();
         }
     }
 }

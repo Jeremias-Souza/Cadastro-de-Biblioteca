@@ -9,7 +9,7 @@ namespace Cadastro_Item_Acervo
     internal class Conn
     {
         private static string server = @"DESKTOP-LMGKQ6A\TREINAMENTO"; //Local MovTech      
-        private static string dataBase = "CADASTRO_AUTOR";
+        private static string dataBase = "CADASTROS_BIBLIOTECA";
         private static string user = "Jeremias Souza"; 
         private static string password = "MOVTECH2022";
 
