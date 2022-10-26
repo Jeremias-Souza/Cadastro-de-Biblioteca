@@ -43,8 +43,6 @@
             this.txtDataReserva = new System.Windows.Forms.TextBox();
             this.txtLocal = new System.Windows.Forms.TextBox();
             this.txtNomeLeitor = new System.Windows.Forms.TextBox();
-            this.comboSituacao = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.txtDataFinal = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -201,29 +199,6 @@
             this.txtNomeLeitor.TextChanged += new System.EventHandler(this.txtNomeItem_TextChanged);
             this.txtNomeLeitor.Leave += new System.EventHandler(this.txtNomeLeitor_Leave);
             // 
-            // comboSituacao
-            // 
-            this.comboSituacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.comboSituacao.FormattingEnabled = true;
-            this.comboSituacao.Items.AddRange(new object[] {
-            "Reservado ",
-            "Disponivel "});
-            this.comboSituacao.Location = new System.Drawing.Point(1091, 9);
-            this.comboSituacao.Name = "comboSituacao";
-            this.comboSituacao.Size = new System.Drawing.Size(83, 21);
-            this.comboSituacao.TabIndex = 181;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(964, 13);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 17);
-            this.label8.TabIndex = 182;
-            this.label8.Text = "Situação:";
-            // 
             // txtDataFinal
             // 
             this.txtDataFinal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -250,7 +225,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(1065, 35);
+            this.label10.Location = new System.Drawing.Point(1101, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(0, 17);
             this.label10.TabIndex = 187;
@@ -260,7 +235,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(964, 37);
+            this.label11.Location = new System.Drawing.Point(1000, 11);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(127, 17);
             this.label11.TabIndex = 186;
@@ -269,7 +244,7 @@
             // txtNumReserva
             // 
             this.txtNumReserva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtNumReserva.Location = new System.Drawing.Point(1091, 35);
+            this.txtNumReserva.Location = new System.Drawing.Point(1127, 9);
             this.txtNumReserva.Name = "txtNumReserva";
             this.txtNumReserva.Size = new System.Drawing.Size(47, 20);
             this.txtNumReserva.TabIndex = 185;
@@ -322,8 +297,6 @@
             this.Controls.Add(this.txtNumReserva);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtDataFinal);
-            this.Controls.Add(this.comboSituacao);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnItem);
             this.Controls.Add(this.labelSecao);
             this.Controls.Add(this.dataGridView1);
@@ -366,8 +339,6 @@
         private System.Windows.Forms.TextBox txtDataReserva;
         private System.Windows.Forms.TextBox txtLocal;
         private System.Windows.Forms.TextBox txtNomeLeitor;
-        private System.Windows.Forms.ComboBox comboSituacao;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDataFinal;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label10;

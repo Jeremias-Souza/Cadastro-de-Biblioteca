@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tabelas;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using TextBox = System.Windows.Forms.TextBox;
 
@@ -400,24 +401,10 @@ namespace Reserva
             txtNumReserva.Text = $"{row.Cells["numReserva"].Value}";
         }
 
-        private void CadReserva_Load(object sender, EventArgs e)
+        private void btnItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void codItem_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nomeItem_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void situacao_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            Item tela = new Item();
+            tela.Show();
         }
     }
 }

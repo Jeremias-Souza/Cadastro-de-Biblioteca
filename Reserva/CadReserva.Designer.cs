@@ -57,6 +57,7 @@
             this.situacao = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtNumReserva = new System.Windows.Forms.TextBox();
+            this.btnItem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,7 +172,7 @@
             this.nomeItem.Name = "nomeItem";
             this.nomeItem.Size = new System.Drawing.Size(100, 20);
             this.nomeItem.TabIndex = 60;
-            this.nomeItem.TextChanged += new System.EventHandler(this.nomeItem_TextChanged);
+            //this.nomeItem.TextChanged += new System.EventHandler(this.nomeItem_TextChanged);
             // 
             // codItem
             // 
@@ -181,7 +182,7 @@
             this.codItem.Size = new System.Drawing.Size(33, 20);
             this.codItem.TabIndex = 59;
             this.codItem.Text = " ";
-            this.codItem.TextChanged += new System.EventHandler(this.codItem_TextChanged);
+            //this.codItem.TextChanged += new System.EventHandler(this.codItem_TextChanged);
             this.codItem.Leave += new System.EventHandler(this.codItem_Leave);
             // 
             // intencao
@@ -340,7 +341,7 @@
             this.situacao.Name = "situacao";
             this.situacao.Size = new System.Drawing.Size(77, 21);
             this.situacao.TabIndex = 83;
-            this.situacao.SelectedIndexChanged += new System.EventHandler(this.situacao_SelectedIndexChanged);
+            //this.situacao.SelectedIndexChanged += new System.EventHandler(this.situacao_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -362,11 +363,25 @@
             this.txtNumReserva.Size = new System.Drawing.Size(56, 20);
             this.txtNumReserva.TabIndex = 85;
             // 
+            // btnItem
+            // 
+            this.btnItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnItem.Location = new System.Drawing.Point(281, 34);
+            this.btnItem.MaximumSize = new System.Drawing.Size(19, 20);
+            this.btnItem.MinimumSize = new System.Drawing.Size(19, 20);
+            this.btnItem.Name = "btnItem";
+            this.btnItem.Size = new System.Drawing.Size(19, 20);
+            this.btnItem.TabIndex = 158;
+            this.btnItem.Text = "🔎";
+            this.btnItem.UseVisualStyleBackColor = true;
+            this.btnItem.Click += new System.EventHandler(this.btnItem_Click);
+            // 
             // CadReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 408);
+            this.Controls.Add(this.btnItem);
             this.Controls.Add(this.txtNumReserva);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.situacao);
@@ -399,7 +414,7 @@
             this.MinimumSize = new System.Drawing.Size(1364, 447);
             this.Name = "CadReserva";
             this.Text = "Cadastro de Reservas";
-            this.Load += new System.EventHandler(this.CadReserva_Load);
+            //this.Load += new System.EventHandler(this.CadReserva_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -436,5 +451,6 @@
         private System.Windows.Forms.ComboBox situacao;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtNumReserva;
+        private System.Windows.Forms.Button btnItem;
     }
 }

@@ -24,13 +24,14 @@ namespace Cadastro_Item_Acervo
         public string anoEdicao { get; set; }
         public string localizacao { get; set; }
         public string secao { get; set; }
+        public string descricaoSecao { get; set; }
         public string idioma { get; set; }
 
         public void Salvar()
         {
             if (this.codItem == 0)
             {
-                var sql = "INSERT INTO MvtBibItemAcervo (codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, nomeColecao, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma) VALUES (@codLocal, @numExemplar, @nome, @codAutor, @nomeAutor, @codEditora, @nomeEditora, @nomeColecao, @tipoItem, @nomeLocal, @Volume, @anoEdicao, @localizacao, @secao, @idioma)";
+                var sql = "INSERT INTO MvtBibItemAcervo (codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, nomeColecao, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, descricaoSecao, idioma) VALUES (@codLocal, @numExemplar, @nome, @codAutor, @nomeAutor, @codEditora, @nomeEditora, @nomeColecao, @tipoItem, @nomeLocal, @Volume, @anoEdicao, @localizacao, @secao, @descricaoSecao, @idioma)";
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
                     cn.Open();
@@ -51,6 +52,7 @@ namespace Cadastro_Item_Acervo
                         cmd.Parameters.AddWithValue("@anoEdicao", this.anoEdicao);
                         cmd.Parameters.AddWithValue("@localizacao", this.localizacao);
                         cmd.Parameters.AddWithValue("@secao", this.secao);
+                        cmd.Parameters.AddWithValue("@descricaoSecao", this.descricaoSecao);
                         cmd.Parameters.AddWithValue("@idioma", this.idioma);
 
                         cmd.ExecuteNonQuery();
@@ -62,7 +64,7 @@ namespace Cadastro_Item_Acervo
 
             else
             {
-                var sql = "UPDATE MvtBibItemAcervo SET codLocal = @codLocal, numExemplar = @numExemplar, nome = @nome, codAutor = @CodAutor, nomeAutor = @nomeAutor, codEditora = @codEditora, nomeEditora = @nomeEditora, tipoItem = @tipoItem, nomeColecao = @nomeColecao, nomeLocal = @nomeLocal, Volume = @Volume, anoEdicao = @anoEdicao, localizacao = @localizacao, secao = @secao, idioma = @idioma WHERE codItem = @codItem";
+                var sql = "UPDATE MvtBibItemAcervo SET codLocal = @codLocal, numExemplar = @numExemplar, nome = @nome, codAutor = @CodAutor, nomeAutor = @nomeAutor, codEditora = @codEditora, nomeEditora = @nomeEditora, tipoItem = @tipoItem, nomeColecao = @nomeColecao, nomeLocal = @nomeLocal, Volume = @Volume, anoEdicao = @anoEdicao, localizacao = @localizacao, secao = @secao, descricaoSecao = @descricaoSecao, idioma = @idioma WHERE codItem = @codItem";
                 using (SqlConnection cn = new SqlConnection(Conn.Strcon))
                 {
                     cn.Open();
@@ -83,6 +85,7 @@ namespace Cadastro_Item_Acervo
                         cmd.Parameters.AddWithValue("@anoEdicao", this.anoEdicao);
                         cmd.Parameters.AddWithValue("@localizacao", this.localizacao);
                         cmd.Parameters.AddWithValue("@secao", this.secao);
+                        cmd.Parameters.AddWithValue("@descricaoSecao", this.descricaoSecao);
                         cmd.Parameters.AddWithValue("@idioma", this.idioma);
                         cmd.Parameters.AddWithValue("@codItem", this.codItem);
 

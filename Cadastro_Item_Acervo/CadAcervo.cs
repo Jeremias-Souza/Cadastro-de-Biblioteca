@@ -33,7 +33,7 @@ namespace Cadastro_Item_Acervo
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codItem, codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, nomeColecao, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma FROM MvtBibItemAcervo";
+                    string sqlQuery = "SELECT codItem, codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, nomeColecao, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, descricaoSecao, idioma FROM MvtBibItemAcervo";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -110,7 +110,8 @@ namespace Cadastro_Item_Acervo
                 volume = this.volume.Text,
                 anoEdicao = this.anoEdicao.Text,
                 localizacao = this.localizacao.Text,
-                secao = this.secao.Text,
+                secao = this.txtSecao.Text,
+                descricaoSecao = this.labelSecao.Text,
                 idioma = this.idioma.Text,
                 codItem = string.IsNullOrEmpty(this.codItem.Text)
                 ? 0
@@ -128,7 +129,7 @@ namespace Cadastro_Item_Acervo
                 {
                     cn.Open();
 
-                    string sqlQuery = "SELECT codItem, codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, nomeColecao, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma FROM MvtBibItemAcervo";
+                    string sqlQuery = "SELECT codItem, codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, nomeColecao, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, descricaoSecao, idioma FROM MvtBibItemAcervo";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -136,14 +137,6 @@ namespace Cadastro_Item_Acervo
                             da.Fill(dt);
                             dataGridView1.DataSource = dt;
                         }
-
-                        /*int i = -1;
-                        for (i = -1; i <= 19; i++)
-                        {
-                            comboBox1.SelectedIndex = i;
-                            items[i] = comboBox1.SelectedItem.ToString();
-                        }
-                        comboBox1.Items.Clear();*/
 
                     }
                     ClearTextBoxes();
@@ -175,7 +168,7 @@ namespace Cadastro_Item_Acervo
 
 
 
-                    var sqlQuery = "DELETE MvtBibItemAcervo Where codItem = '" + codItem.Text + "'" + "SELECT codItem, codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, nomeColecao, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, idioma FROM MvtBibItemAcervo";
+                    var sqlQuery = "DELETE MvtBibItemAcervo Where codItem = '" + codItem.Text + "'" + "SELECT codItem, codLocal, numExemplar, nome, codAutor, nomeAutor, codEditora, nomeEditora, nomeColecao, tipoItem, nomeLocal, Volume, anoEdicao, localizacao, secao, descricaoSecao, idioma FROM MvtBibItemAcervo";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -249,6 +242,9 @@ namespace Cadastro_Item_Acervo
             this.dataGridView1.Columns["secao"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
+            this.dataGridView1.Columns["descricaoSecao"]
+                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
             this.dataGridView1.Columns["idioma"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
@@ -269,6 +265,7 @@ namespace Cadastro_Item_Acervo
             this.dataGridView1.Columns["anoEdicao"].HeaderText = "Ano da edição";
             this.dataGridView1.Columns["localizacao"].HeaderText = "Código Prateleira";
             this.dataGridView1.Columns["secao"].HeaderText = "Seção";
+            this.dataGridView1.Columns["descricaoSecao"].HeaderText = "Descrição da seção";
             this.dataGridView1.Columns["idioma"].HeaderText = "Idioma";
 
                       
@@ -298,6 +295,7 @@ namespace Cadastro_Item_Acervo
             labelCodLocal.Text = " ";
             labelNomeAutor.Text = " ";
             comboBox1.Text = " ";
+            labelSecao.Text = " ";
             func(Controls);
         }
 
@@ -441,16 +439,40 @@ namespace Cadastro_Item_Acervo
                     }
                 }
 
-               // MessageBox.Show("Local Carregado com sucesso!");
             }
             catch (Exception ex) //Mostra mensagem caso haver falha 
             {
-                MessageBox.Show("Editora inexistente!");
+                MessageBox.Show("Local inexistente!");
                 Console.WriteLine(ex.Message);
             }
         }
 
-       
+        private void secao_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(Conn.Strcon))
+                {
+                    cn.Open();
+
+                    var sqlQuery = $"SELECT descricaoSecao FROM MvtbibSecao WHERE codSecao = {int.Parse(this.txtSecao.Text)}";
+                    using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            da.Fill(dt);
+                            this.labelSecao.Text = dt.Rows[0].Field<string>("descricaoSecao");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) //Mostra mensagem caso haver falha 
+            {
+                MessageBox.Show("Seção inexistente!");
+                Console.WriteLine(ex.Message);
+            }
+        }
+
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -471,8 +493,9 @@ namespace Cadastro_Item_Acervo
             volume.Text = $"{row.Cells["volume"].Value}";
             anoEdicao.Text = $"{row.Cells["anoEdicao"].Value}";
             localizacao.Text = $"{row.Cells["localizacao"].Value}";
-            secao.Text = $"{row.Cells["secao"].Value}";           
+            txtSecao.Text = $"{row.Cells["secao"].Value}";
             idioma.Text = $"{row.Cells["idioma"].Value}";
+            labelSecao.Text = $"{row.Cells["descricaoSecao"].Value}";
         }
 
         private void CadAcervo_Load(object sender, EventArgs e)
@@ -517,5 +540,18 @@ namespace Cadastro_Item_Acervo
         {
 
         }
+
+        private void btnPesquisaSecao_Click(object sender, EventArgs e)
+        {
+            Secao tela = new Secao();
+            tela.Show();
+        }
+
+        private void secao_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

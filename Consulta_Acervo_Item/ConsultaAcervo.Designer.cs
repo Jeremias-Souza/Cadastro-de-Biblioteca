@@ -122,6 +122,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.Location = new System.Drawing.Point(239, 81);
             this.dataGridView1.Name = "dataGridView1";
@@ -281,6 +282,7 @@
             // 
             // txtstatus
             // 
+            this.txtstatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtstatus.Enabled = false;
             this.txtstatus.Location = new System.Drawing.Point(1016, 31);
             this.txtstatus.Name = "txtstatus";
