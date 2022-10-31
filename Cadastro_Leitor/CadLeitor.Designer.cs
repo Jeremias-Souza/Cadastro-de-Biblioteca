@@ -324,7 +324,6 @@
             this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 43;
             this.label1.Text = "Nome";
-            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -352,7 +351,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1362, 243);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            //this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // deleteLeitor
             // 
@@ -391,6 +389,7 @@
             this.sexo.Name = "sexo";
             this.sexo.Size = new System.Drawing.Size(121, 21);
             this.sexo.TabIndex = 3;
+            this.sexo.SelectedIndexChanged += new System.EventHandler(this.sexo_SelectedIndexChanged);
             this.sexo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sexo_KeyPress);
             // 
             // enderecoCidade
@@ -462,7 +461,6 @@
             this.MinimumSize = new System.Drawing.Size(1364, 447);
             this.Name = "CadLeitor";
             this.Text = "Cadastro do Leitor";
-            //this.Load += new System.EventHandler(this.CadLeitor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

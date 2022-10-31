@@ -407,5 +407,9 @@ namespace Cadastro_Leitor
 
         }
 
+        private void sexo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

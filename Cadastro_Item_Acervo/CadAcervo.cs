@@ -199,7 +199,7 @@ namespace Cadastro_Item_Acervo
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.dataGridView1.Columns["secao"]
-                .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+               .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             this.dataGridView1.Columns["descricaoSecao"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -209,7 +209,7 @@ namespace Cadastro_Item_Acervo
             
             this.dataGridView1.Columns["codItem"].HeaderText = "Código Acervo";
             this.dataGridView1.Columns["codLocal"].HeaderText = "Código Local";
-            this.dataGridView1.Columns["numExemplar"].HeaderText = "Numero do exemplar";
+            this.dataGridView1.Columns["numExemplar"].HeaderText = "N° do exemplar";
             this.dataGridView1.Columns["nome"].HeaderText = "Nome";
             this.dataGridView1.Columns["codAutor"].HeaderText = "Código do Autor";
             this.dataGridView1.Columns["nomeAutor"].HeaderText = "Nome do Autor";
@@ -221,8 +221,8 @@ namespace Cadastro_Item_Acervo
             this.dataGridView1.Columns["Volume"].HeaderText = "Volume";
             this.dataGridView1.Columns["anoEdicao"].HeaderText = "Ano da edição";
             this.dataGridView1.Columns["localizacao"].HeaderText = "Código Prateleira";
-            this.dataGridView1.Columns["secao"].HeaderText = "Seção";
-            this.dataGridView1.Columns["descricaoSecao"].HeaderText = "Descrição da seção";
+            this.dataGridView1.Columns["secao"].HeaderText = "N° da seção";
+            this.dataGridView1.Columns["descricaoSecao"].HeaderText = "Seção";
             this.dataGridView1.Columns["idioma"].HeaderText = "Idioma";
         }
 

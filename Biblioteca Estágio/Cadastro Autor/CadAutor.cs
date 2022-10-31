@@ -177,7 +177,7 @@ namespace Biblioteca_Estágio
 
         private void CodAutor_KeyPress(object sender, KeyPressEventArgs e) //Poder apenas numeros na tabela de texto CodAutor 
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) e.Handled = true; 
+                 
         }      
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -188,6 +188,11 @@ namespace Biblioteca_Estágio
             CodAutor.Text = $"{row.Cells["codAutor"].Value}";
             NomeAutor.Text = $"{row.Cells["nomeAutor"].Value}";
             InfAutor.Text = $"{row.Cells["descricaoAutor"].Value}";
-        } 
+        }
+
+        private void NomeAutor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

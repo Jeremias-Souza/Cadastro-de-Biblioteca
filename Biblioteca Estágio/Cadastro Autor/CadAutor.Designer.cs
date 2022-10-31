@@ -107,6 +107,7 @@
             this.NomeAutor.Name = "NomeAutor";
             this.NomeAutor.Size = new System.Drawing.Size(179, 23);
             this.NomeAutor.TabIndex = 2;
+            this.NomeAutor.TextChanged += new System.EventHandler(this.NomeAutor_TextChanged);
             this.NomeAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NomeAutor_KeyPress);
             // 
             // InfAutor
@@ -114,11 +115,11 @@
             this.InfAutor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.InfAutor.Location = new System.Drawing.Point(600, 59);
             this.InfAutor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.InfAutor.MaximumSize = new System.Drawing.Size(321, 35);
+            this.InfAutor.MaximumSize = new System.Drawing.Size(405, 35);
             this.InfAutor.MaxLength = 1000;
             this.InfAutor.Multiline = true;
             this.InfAutor.Name = "InfAutor";
-            this.InfAutor.Size = new System.Drawing.Size(321, 35);
+            this.InfAutor.Size = new System.Drawing.Size(405, 35);
             this.InfAutor.TabIndex = 3;
             // 
             // btnDelete

@@ -42,7 +42,7 @@
             // saveEditora
             // 
             this.saveEditora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.saveEditora.Location = new System.Drawing.Point(603, 51);
+            this.saveEditora.Location = new System.Drawing.Point(606, 75);
             this.saveEditora.MaximumSize = new System.Drawing.Size(75, 23);
             this.saveEditora.MinimumSize = new System.Drawing.Size(75, 23);
             this.saveEditora.Name = "saveEditora";
@@ -55,7 +55,7 @@
             // deleteEditora
             // 
             this.deleteEditora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.deleteEditora.Location = new System.Drawing.Point(684, 51);
+            this.deleteEditora.Location = new System.Drawing.Point(696, 75);
             this.deleteEditora.MaximumSize = new System.Drawing.Size(75, 23);
             this.deleteEditora.MinimumSize = new System.Drawing.Size(75, 23);
             this.deleteEditora.Name = "deleteEditora";
@@ -69,7 +69,7 @@
             // 
             this.codeEditora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.codeEditora.Enabled = false;
-            this.codeEditora.Location = new System.Drawing.Point(565, 8);
+            this.codeEditora.Location = new System.Drawing.Point(687, 8);
             this.codeEditora.MaximumSize = new System.Drawing.Size(82, 20);
             this.codeEditora.Name = "codeEditora";
             this.codeEditora.Size = new System.Drawing.Size(50, 20);
@@ -78,12 +78,11 @@
             // nomeEditora
             // 
             this.nomeEditora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.nomeEditora.Location = new System.Drawing.Point(778, 8);
+            this.nomeEditora.Location = new System.Drawing.Point(687, 34);
             this.nomeEditora.MaximumSize = new System.Drawing.Size(120, 20);
             this.nomeEditora.Name = "nomeEditora";
             this.nomeEditora.Size = new System.Drawing.Size(120, 20);
             this.nomeEditora.TabIndex = 2;
-            //this.nomeEditora.TextChanged += new System.EventHandler(this.nomeEditora_TextChanged);
             this.nomeEditora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomeEditora_KeyPress);
             // 
             // dataGridView1
@@ -95,20 +94,20 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(448, 93);
+            this.dataGridView1.Location = new System.Drawing.Point(570, 110);
+            this.dataGridView1.MaximumSize = new System.Drawing.Size(237, 233);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(450, 303);
+            this.dataGridView1.Size = new System.Drawing.Size(237, 233);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            //this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(445, 9);
+            this.label2.Location = new System.Drawing.Point(567, 9);
             this.label2.MaximumSize = new System.Drawing.Size(121, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 17);
@@ -120,7 +119,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(658, 9);
+            this.label1.Location = new System.Drawing.Point(567, 35);
             this.label1.MaximumSize = new System.Drawing.Size(114, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 17);
@@ -143,7 +142,6 @@
             this.MinimumSize = new System.Drawing.Size(500, 400);
             this.Name = "CadEditora";
             this.Text = "Cadastro da Editora";
-            //this.Load += new System.EventHandler(this.CadEditora_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
